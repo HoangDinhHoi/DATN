@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       <record model="ir.sequence" id="ir_sequence_employee_code">
+           <field name="name">HR Employee Code</field>
+           <field name="code">employee.code</field>
+           <field name="prefix">NV%(y)s</field>
+           <field name="padding">4</field>
+       </record>
+    </data>
+</odoo>
