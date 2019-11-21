@@ -24,25 +24,26 @@
                         </h2>
                         <group>
                             <group>
-                                <field name="user_id" required="1"/>
+                                <field name="user_id" required="1" force_save="1"
+                                       attrs="{'readonly':[('state','not in',('new'))]}"/>
                             </group>
                             <group>
-                                <field name="phone"/>
-                                <field name="customer_qty"/>
+                                <field name="phone" attrs="{'readonly':[('state','not in',('new'))]}"/>
+                                <field name="customer_qty" attrs="{'readonly':[('state','not in',('new'))]}"/>
                             </group>
                         </group>
                         <group>
                             <group>
-                                <field name="time_from" required="1"/>
-                                <field name="time_to" required="1"/>
+                                <field name="time_from" required="1" attrs="{'readonly':[('state','not in',('new', 'confirmed'))]}"/>
+                                <field name="time_to" required="1" attrs="{'readonly':[('state','not in',('new', 'confirmed'))]}"/>
                             </group>
                             <group>
-                                <field name="note"/>
+                                <field name="note" attrs="{'readonly':[('state','not in',('new'))]}"/>
                             </group>
                         </group>
                         <notebook>
                             <page string="Dịch vụ" attrs="{'readonly':[('state','not in',('new'))]}">
-                                <field name="service_ids">
+                                <field name="service_ids" context="{'tree_view_ref': 'bs_booking_service.product_product_tree_view_fixed'}">
                                     <tree editable="bottom">
                                         <field name="default_code"/>
                                         <field name="name"/>

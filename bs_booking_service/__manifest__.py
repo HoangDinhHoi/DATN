@@ -29,6 +29,7 @@
         'data/ir_sequence.xml',
         'views/bs_service_bed.xml',
         'views/booking_service.xml',
+        'views/product_product.xml',
         'views/menu.xml',
     ],
 }
