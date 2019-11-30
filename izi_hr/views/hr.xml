@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--author: hoihd: add field x_employee_code-->
+<odoo>e
+    <data>
+        <!-- them Ma Nhan Vien -->
+        <record id="view_hr_employee_form_inherit" model="ir.ui.view">
+            <field name="name">View Hr Employee Form Inherit</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='category_ids']" position="before">
+                    <div style="max-width:200px;width:150px;">
+                        <label for="x_employee_code" string="Employee Code" class="oe_edit_only"/>
+                        <field name="x_employee_code" required="1" options="{'color_field': 'color'}" placeholder="e.g: 0001"/>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='work_email']" position="attributes">
+                    <attribute name="attrs">{'required': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='mobile_phone']" position="attributes">
+                    <attribute name="attrs">{'required': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='work_phone']" position="attributes">
+                    <attribute name="attrs">{'invisible': 1}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- thay name bang display_name -->
+        <record id="view_hr_employee_tree_inherit" model="ir.ui.view">
+            <field name="name">HR Employee</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="replace">
+                    <field name="display_name"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_hr_employee_kanban_inherit" model="ir.ui.view">
+            <field name="name">HR Employee</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.hr_kanban_view_employees"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="replace">
+                    <field name="display_name"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

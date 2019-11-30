@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="pos_make_payment_coupon_form" model="ir.ui.view">
+        <field name="name">Pos make payment</field>
+        <field name="model">pos.make.payment</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_payment"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='journal_id']" position="attributes">
+                <attribute name="widget">radio</attribute>
+            </xpath>
+            <field name="journal_id" position="after">
+                <field name="journal_id" domain="[('journal_user', '=', True)]" invisible="1" widget="radio"/>
+                <field name="x_check_payment_coupon" invisible="1"/>
+                <field name="x_code_check"
+                       attrs="{'invisible': [('x_check_payment_coupon', '=', False)], 'required': [('x_check_payment_coupon', '=', True)]}"/>
+            </field>
+            <xpath expr="//field[@name='amount']" position="replace">
+                <field name="amount" force_save="1"
+                       attrs="{'readonly': [('x_check_payment_coupon', '=', True)]}"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

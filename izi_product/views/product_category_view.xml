@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="product_category_only_form_view_inherit" model="ir.ui.view">
+            <field name="name">product.category.only.form.view.inherit</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="product.product_category_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='property_account_expense_categ_id']" position="after">
+                    <field name="revenue_deduction"/>
+                    <field name="property_account_discount_vip_categ_id" domain="[('internal_type','=','other'),('deprecated', '=', False)]" options="{'no_create':1, 'no_create_edit':1}" attrs="{'required': [('revenue_deduction', '=', True)]}"/>
+                    <field name="property_account_discount_tm_categ_id" domain="[('internal_type','=','other'),('deprecated', '=', False)]" options="{'no_create':1, 'no_create_edit':1}" attrs="{'required': [('revenue_deduction', '=', True)]}"/>
+                </xpath>
+                <!-- tant thêm -->
+                <xpath expr="//field[@name='name']" position="after">
+                    <div class="oe_title">
+                        <label for="x_code" string="Code" class="oe_edit_only"/>
+                        <h1><field name="x_code"/></h1>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

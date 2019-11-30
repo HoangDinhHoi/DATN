@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- author: HoiHD-->
+<!-- description: Change default_code in product_template and product_product into required-->
+<odoo>
+    <data>
+        <record id="product_template_only_form_view_inherit" model="ir.ui.view">
+            <field name="name">product.only.form.view.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='default_code']" position="replace">
+                    <field name="default_code" attrs="{'invisible': [('product_variant_count', '>', 1)]}" required="1" string="Product code"/>
+                    <field name="x_show_in_app" />
+                </xpath>
+                <xpath expr="//field[@name='default_code']" position="after">
+                    <field name="x_feature_product" string="Feature Product"/>
+                    <field name="x_duration" attrs="{'invisible': [('type', '!=', 'service')]}"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="product_normal_form_view_inherit" model="ir.ui.view">
+            <field name="name">product_normal_form_view</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='default_code']" position="replace">
+                    <field name="default_code" attrs="{'invisible': [('product_variant_count', '>', 1)]}" required="1" string="Product code"/>
+                </xpath>
+                <xpath expr="//field[@name='default_code']" position="after">
+                    <field name="x_feature_product" string="Feature Product"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

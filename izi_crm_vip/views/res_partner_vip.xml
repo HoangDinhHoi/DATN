@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="partner_vip_tree_view" model="ir.ui.view">
+            <field name="name">Partner vip tree</field>
+            <field name="model">res.partner.vip</field>
+            <field name="arch" type="xml">
+                <tree string="Partner vip tree">
+                    <field name="partner_old_code"/>
+                    <field name="partner_code"/>
+                    <field name="partner_id"/>
+                    <field name="team_code"/>
+                    <field name="user_code"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                    <field name="birthday"/>
+                    <field name="customer_rank"/>
+                    <field name="up_rank_date"/>
+                    <field name="up_rank_expired_date"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="partner_vip_form_view">
+            <field name="name">Partner vip form view</field>
+            <field name="model">res.partner.vip</field>
+            <field name="arch" type="xml">
+                <form string="VIP Customer" edit="false">
+                    <header>
+                        <button name="action_up_rank" string="Up rank" type="object"
+                                help="Up rank" class="oe_highlight"/>
+                    </header>
+                    <sheet string="VIP Customer">
+                        <field name="last_profile_img" widget='image' class="oe_avatar oe_left" readonly="1"
+                               style="margin-right:10px"/>
+                        <div class="oe_title">
+                            <label for="partner_id" string="Customer Name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="partner_id"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="partner_code" readonly="1"/>
+                                <field name="phone" readonly="1"/>
+                                <field name="customer_rank" readonly="1"/>
+                                <field name="team_code" readonly="1"/>
+                                <field name="user_code" readonly="1"/>
+                                <field name="credit" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="partner_old_code" readonly="1"/>
+                                <field name="email" readonly="1"/>
+                                <field name="birthday"/>
+                                <field name="address" readonly="1"/>
+                                <field name="company_id" readonly="1" force_save="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="last_form_img" widget="image" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="last_signature_img" widget="image" readonly="1"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="status_note" readonly="1" attrs="{'invisible':[('status_note','=','')]}"
+                                   class="text-danger"/>
+                        </group>
+                        <notebook>
+                            <page string="Up rank history">
+                                <field name="history_ids">
+                                    <tree create="0" delete="0">
+                                        <field name="from_rank"/>
+                                        <field name="to_rank"/>
+                                        <field name="up_rank_date"/>
+                                        <field name="up_rank_expired_date"/>
+                                        <field name="extend_date"/>
+                                        <field name="request_shop_id"/>
+                                        <field name="state"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Extends history">
+                                <field name="history_extend_ids">
+                                    <tree create="0" delete="0">
+                                        <field name="rank_id"/>
+                                        <field name="extend_date"/>
+                                        <field name="year_extend"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Confirms">
+                                <field name="confirm_ids" readonly="1">
+                                    <tree editable="bottom" create="0" edit="0" delete="0">
+                                        <field name="to_rank"/>
+                                        <field name="register_date"/>
+                                        <field name="month_rank"/>
+                                        <field name="shop_confirm_time"/>
+                                        <field name="crm_confirm_time"/>
+                                        <field name="director_confirm_time"/>
+                                        <field name="type"/>
+                                        <button name="action_get_detail" string="Detail" icon="fa-arrow-right" type="object"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Revenue">
+                                <field name="partner_revenue_ids" readonly="1">
+                                    <tree default_order='revenue_date'>
+                                        <field name="revenue_date_view"/>
+                                        <field name="revenue_date" invisible="1"/>
+                                        <field name="revenue" sum="Total revenue"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="partner_vip_action" model="ir.actions.act_window">
+            <field name="name">Partner vip</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.partner.vip</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+         This Menu Item must have a parent and an action
+        <menuitem id="partner_vip_menu_categ" name="Partner vip" parent="crm.crm_menu_root"/>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="partner_vip_menu" name="Partner vip" parent="partner_vip_menu_categ" action="partner_vip_action"
+                  sequence="1"/>
+    </data>
+</odoo>

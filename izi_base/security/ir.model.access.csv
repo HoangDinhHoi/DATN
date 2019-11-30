@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ir_sequence,ir_sequence,base.model_ir_sequence,base.group_erp_manager,1,1,1,1
+access_pos_category,pos_category,point_of_sale.model_pos_category,stock.group_stock_manager,1,1,1,1

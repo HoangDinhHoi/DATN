@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="product_template_view_inherit_for_service">
+            <field name="name">product_template_view_inherit_for_service</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='general_information']" position="after">
+                    <page name="x_recipe_ids" string="Service Recipe"
+                          attrs="{'invisible':[('type', '!=', 'service')]}">
+                        <group>
+                            <field name="x_is_use_material"/>
+                        </group>
+                        <field name="x_recipe_ids" nolabel="1">
+                            <tree editable="bottom" default_order='sequence'>
+                                <field name="sequence" required="1"/>
+                                <field name="name" required="1"/>
+                                <field name="product_id" required="1"
+                                       options="{'no_create':1, 'no_create_edit':1}"/>
+                                <field name="uom_id" required="1" options="{'no_create':1, 'no_create_edit':1}"/>
+                                <field name="qty" required="1"/>
+                            </tree>
+                            <form>
+                                <group>
+                                    <group>
+                                        <field name="sequence"/>
+                                        <field name="name"/>
+                                    </group>
+                                    <group>
+                                        <field name="product_id"/>
+                                        <field name="uom_id"/>
+                                        <field name="qty"/>
+                                    </group>
+                                </group>
+                            </form>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

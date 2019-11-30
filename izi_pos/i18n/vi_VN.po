@@ -1,0 +1,321 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* izi_pos
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-11-29 10:22+0000\n"
+"PO-Revision-Date: 2019-11-29 10:22+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.view_pos_session_inherit_form
+msgid "+ Transactions"
+msgstr "+ Giao dịch"
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.pos_config_view_form_inherit
+msgid "<span class=\"o_form_label\">Session Reference</span>"
+msgstr ""
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.view_pos_session_inherit_form
+msgid "<span class=\"o_stat_text\">Put</span>\n"
+"                                    <span class=\"o_stat_text\">Money In</span>"
+msgstr ""
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.view_pos_session_inherit_form
+msgid "<span class=\"o_stat_text\">Set Closing Balance</span>"
+msgstr "<span class=\"o_stat_text\">Đặt Số dư cuối kỳ</span>"
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.view_pos_session_inherit_form
+msgid "<span class=\"o_stat_text\">Set Opening Balance</span>"
+msgstr "<span class=\"o_stat_text\">Đặt số dư đầu kỳ</span>"
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.view_pos_session_inherit_form
+msgid "<span class=\"o_stat_text\">Take</span>\n"
+"                                    <span class=\"o_stat_text\">Money Out</span>"
+msgstr ""
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.view_pos_session_inherit_form
+msgid "= Theoretical Closing Balance"
+msgstr "= Số dư cuối phiên lý thuyết"
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.pos_config_view_form_inherit
+msgid "Available product categories"
+msgstr ""
+
+#. module: izi_pos
+#: model:ir.ui.menu,name:izi_pos.menu_utm_campaign_act_pos
+msgid "Campaigns"
+msgstr "Chiến dịch"
+
+#. module: izi_pos
+#: selection:pos.order,state:0
+msgid "Cancelled"
+msgstr "Đã hủy"
+
+#. module: izi_pos
+#: model:ir.model.fields,field_description:izi_pos.field_res_config_settings__x_charge_refund_id
+#: model_terms:ir.ui.view,arch_db:izi_pos.res_config_settings_charge_refund_view_form
+msgid "Charge Refund"
+msgstr ""
+
+#. module: izi_pos
+#: model:ir.model,name:izi_pos.model_res_config_settings
+msgid "Config Settings"
+msgstr "Thiết lập cấu hình"
+
+#. module: izi_pos
+#: selection:pos.order,state:0
+msgid "Confirm"
+msgstr "Xác nhận"
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.view_pos_session_inherit_form
+msgid "Continue Selling"
+msgstr "Tiếp tục bán"
+
+#. module: izi_pos
+#: model:ir.model.fields,field_description:izi_pos.field_pos_config__module_izi_pos_customer_confirm
+#: selection:pos.order,state:0
+msgid "Customer Confirm"
+msgstr "Khách hàng xác nhận"
+
+#. module: izi_pos
+#: model:ir.model.fields,help:izi_pos.field_pos_config__x_journal_loyal_ids
+msgid "Các phương thức thanh toán được tính doanh thu"
+msgstr ""
+
+#. module: izi_pos
+#: model:ir.model.fields,field_description:izi_pos.field_res_config_settings__x_discount_product_id
+#: model_terms:ir.ui.view,arch_db:izi_pos.res_config_settings_charge_refund_view_form
+msgid "Discount Product"
+msgstr "Chiết khấu sản phẩm (%)"
+
+#. module: izi_pos
+#: model:ir.model.fields,field_description:izi_pos.field_res_config_settings__x_discount_service_id
+#: model_terms:ir.ui.view,arch_db:izi_pos.res_config_settings_charge_refund_view_form
+msgid "Discount Service"
+msgstr "Chiết khấu dịch vụ (%)"
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.view_pos_session_inherit_form
+msgid "End of Session"
+msgstr "Cuối phiên"
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.res_config_settings_charge_refund_view_form
+msgid "Fee"
+msgstr ""
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.pos_config_view_form_inherit
+msgid "Generation of your session references"
+msgstr ""
+
+#. module: izi_pos
+#: model:ir.model.fields,field_description:izi_pos.field_pos_config__x_journal_loyal_ids
+msgid "Ghi nhận doanh thu"
+msgstr ""
+
+#. module: izi_pos
+#: selection:pos.order,state:0
+msgid "Invoiced"
+msgstr "Đã xuất hóa đơn"
+
+#. module: izi_pos
+#: selection:pos.order,state:0
+msgid "New"
+msgstr "Mới"
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.view_pos_session_inherit_form
+msgid "Open Session"
+msgstr "Mở Phiên"
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.view_pos_session_inherit_form
+msgid "Opening Balance"
+msgstr "Số dư Đầu kỳ"
+
+#. module: izi_pos
+#: model:ir.model.fields,field_description:izi_pos.field_pos_order__x_pos_partner_refund_id
+msgid "POS Order Refund"
+msgstr ""
+
+#. module: izi_pos
+#: model:ir.model.fields,field_description:izi_pos.field_pos_config__x_category_ids
+#: model_terms:ir.ui.view,arch_db:izi_pos.pos_config_view_form_inherit
+msgid "POS category"
+msgstr ""
+
+#. module: izi_pos
+#: model:ir.model.fields,field_description:izi_pos.field_pos_order__amount_paid
+#: selection:pos.order,state:0
+msgid "Paid"
+msgstr "Đã thanh toán"
+
+#. module: izi_pos
+#: model:ir.ui.menu,name:izi_pos.menu_action_account_journal_form_open
+msgid "Payment Methods"
+msgstr "Phương thức thanh toán"
+
+#. module: izi_pos
+#: model:ir.model.fields,field_description:izi_pos.field_pos_order__picking_id
+msgid "Picking"
+msgstr "Xuất kho"
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.view_pos_session_inherit_form
+msgid "Picking Errors"
+msgstr "Lỗi Giao nhận"
+
+#. module: izi_pos
+#: model:ir.model,name:izi_pos.model_pos_config
+msgid "Point of Sale Configuration"
+msgstr "Cấu hình điểm bán lẻ"
+
+#. module: izi_pos
+#: model:ir.model,name:izi_pos.model_pos_order_line
+msgid "Point of Sale Order Lines"
+msgstr "Chi tiết đơn hàng bán lẻ"
+
+#. module: izi_pos
+#: model:ir.model,name:izi_pos.model_pos_order
+msgid "Point of Sale Orders"
+msgstr ""
+
+#. module: izi_pos
+#: model:ir.model,name:izi_pos.model_pos_session
+#: model_terms:ir.ui.view,arch_db:izi_pos.view_pos_session_inherit_form
+#: model_terms:ir.ui.view,arch_db:izi_pos.view_pos_session_inherit_tree
+msgid "Point of Sale Session"
+msgstr "Ca bán hàng"
+
+#. module: izi_pos
+#: selection:pos.order,x_type:0
+msgid "Pos"
+msgstr ""
+
+#. module: izi_pos
+#: model:ir.model.fields,field_description:izi_pos.field_pos_config__x_pos_session_sequence_id
+msgid "Pos session sequence"
+msgstr ""
+
+#. module: izi_pos
+#: selection:pos.order,state:0
+msgid "Posted"
+msgstr "Đã vào sổ"
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.view_pos_session_inherit_form
+msgid "Real Closing Balance"
+msgstr "Số dư Cuối kỳ Thực tế"
+
+#. module: izi_pos
+#: model:ir.model.fields,field_description:izi_pos.field_pos_order__amount_return
+msgid "Returned"
+msgstr "Được trả lại"
+
+#. module: izi_pos
+#: model:ir.model.fields,field_description:izi_pos.field_pos_order__x_revenue
+msgid "Revenue"
+msgstr "Doanh thu"
+
+#. module: izi_pos
+#: model:ir.model.fields,field_description:izi_pos.field_pos_order_line__x_revenue_rate
+msgid "Revenue Rate"
+msgstr ""
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.pos_config_view_form_inherit
+msgid "Save"
+msgstr "Lưu"
+
+#. module: izi_pos
+#: selection:pos.order,x_type:0
+msgid "Service"
+msgstr ""
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.view_pos_session_inherit_form
+msgid "Session:"
+msgstr "Phiên:"
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.view_pos_session_inherit_form
+msgid "Statements"
+msgstr "Sao kê"
+
+#. module: izi_pos
+#: model:ir.model.fields,field_description:izi_pos.field_pos_order__state
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.view_pos_session_inherit_form
+msgid "Summary by Payment Methods"
+msgstr "Tổng hợp theo Phương thức thanh toán"
+
+#. module: izi_pos
+#: model:ir.model.fields,field_description:izi_pos.field_pos_order__x_team_id
+msgid "Team"
+msgstr "Nhóm bán hàng"
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.res_config_settings_charge_refund_view_form
+msgid "This tax is applied to any new product created in the catalog."
+msgstr "Thuế này được áp dụng cho bất kỳ sản phẩm mới nào được tạo trong danh mục."
+
+#. module: izi_pos
+#: code:addons/izi_pos/models/pos_order.py:113
+#, python-format
+msgid "This transfer has been created from the point of sale session: <a href=# data-oe-model=pos.order data-oe-id=%d>%s</a>"
+msgstr ""
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.view_pos_session_inherit_form
+msgid "Validate Closing & Post Entries"
+msgstr "Thẩm định đóng & Vào sổ các bút toán"
+
+#. module: izi_pos
+#: selection:pos.order,state:0
+msgid "Wait Confirm"
+msgstr "Chờ xác nhận"
+
+#. module: izi_pos
+#: model:ir.model.fields,field_description:izi_pos.field_pos_order__x_type
+msgid "X Type"
+msgstr ""
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.view_pos_session_inherit_form
+msgid "You can define another list of available currencies on the\n"
+"                                        <i>Cash Registers</i>\n"
+"                                        tab of the"
+msgstr ""
+
+#. module: izi_pos
+#: code:addons/izi_pos/models/pos_session.py:45
+#, python-format
+msgid "Your ending balance is too different from the theoretical cash closing (%.2f), the maximum allowed is: %.2f. You can contact your manager to force it."
+msgstr ""
+
+#. module: izi_pos
+#: model_terms:ir.ui.view,arch_db:izi_pos.view_pos_session_inherit_form
+msgid "payment method."
+msgstr "Phương thức thanh toán."
+

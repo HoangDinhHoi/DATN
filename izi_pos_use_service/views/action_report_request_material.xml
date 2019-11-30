@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+                id="pos_material_request_report"
+                model="pos.material.request"
+                string="Pos material request"
+                report_type="qweb-pdf"
+                name="izi_pos_use_service.pos_material_request_report_view_id"
+                file="izi_pos_use_service.pos_material_request_report_view_id"/>
+
+    </data>
+</odoo>

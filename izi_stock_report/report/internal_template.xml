@@ -1,0 +1,20 @@
+<odoo>
+    <data>
+        <template id="izi_internal_layout">
+            <div class="article">
+                <t t-raw="0"/>
+            </div>
+        </template>
+        <template id="izi_internal_session">
+            <div class="article">
+                <t t-raw="0"/>
+            </div>
+            <div class="footer o_standard_footer" style="font-size:13px;">
+                <div class="text-center" style="border-top: 1px solid blac">
+                    • Email: info@vmt.vn • Website: http://w w w .vmt.vn
+                Page: <span class="page"/> / <span class="topage"/>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

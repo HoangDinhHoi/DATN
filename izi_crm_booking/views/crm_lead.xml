@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="crm_case_form_view_leads_service_booking_inherit" model="ir.ui.view">
+            <field name="name">Crm case form view lead service booking inherit</field>
+            <field name="model">crm.lead</field>
+            <field name="inherit_id" ref="izi_crm_lead.crm_case_form_view_leads_inherit"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_dead']" position="before">
+                    <button name="action_booking" type="object" string="Booking" states="contact" class="btn-primary"/>
+                    <button name="action_meeting" type="object" string="Meeting" states="contact" class="btn-primary"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

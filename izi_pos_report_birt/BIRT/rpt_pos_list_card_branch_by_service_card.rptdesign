@@ -1,0 +1,1855 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="author">Hoang Dinh Hoi</property>
+    <property name="comments">Báo cáo danh sách thẻ dịch vụ của nhượng quyền</property>
+    <property name="createdBy">Eclipse BIRT Designer Version 4.5.0.v201506092134 Build &lt;@BUILD@></property>
+    <text-property name="title">Báo cáo danh sách thẻ dịch vụ của nhượng quyền</text-property>
+    <html-property name="description">Báo cáo danh sách thẻ dịch vụ của nhượng quyền</html-property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">5</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">5</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">5</property>
+        </structure>
+        <structure>
+            <property name="name">odaDriverClass</property>
+            <property name="id">4</property>
+        </structure>
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">4</property>
+        </structure>
+        <structure>
+            <property name="name">odaUser</property>
+            <property name="id">4</property>
+        </structure>
+        <structure>
+            <property name="name">odaAutoCommit</property>
+            <property name="id">4</property>
+        </structure>
+        <structure>
+            <property name="name">odaIsolationMode</property>
+            <property name="id">4</property>
+        </structure>
+        <structure>
+            <property name="name">odaPassword</property>
+            <property name="id">4</property>
+        </structure>
+        <structure>
+            <property name="name">odaJndiName</property>
+            <property name="id">4</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileName</property>
+            <property name="id">4</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileStorePath</property>
+            <property name="id">4</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <text-property name="displayName">Báo cáo danh sách thẻ dịch vụ của nhượng quyền</text-property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">120</property>
+    <parameters>
+        <scalar-parameter name="branch_id" id="6">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">1</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="partner_id" id="7">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">0</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="state" id="8">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">activated</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="card_type" id="216">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">keep_card</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="List Service Card According to Branch" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://103.74.122.50:5336/erp_vmt_190503</property>
+            <property name="odaUser">odoo</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">TW5fT2Rvb19WbXRfMjAxOQ==</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/erp_menard</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="List Service card according to branch" id="5">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="computedColumns">
+                <structure>
+                    <property name="name">title_header</property>
+                    <expression name="expression">var a;&#13;
+if (row["x_card_type"] == 'keep_card') {&#13;
+	a = "Thẻ keep";&#13;
+}&#13;
+else {&#13;
+	a = "Thẻ dịch vụ";&#13;
+}&#13;
+"Theo: " + a</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">ten_chi_nhanh</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ten_chi_nhanh</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">ten_chi_nhanh</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ma_chi_nhanh</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ma_chi_nhanh</text-property>
+                    <text-property name="heading">ma_chi_nhanh</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ma_kh</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ma_kh</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">ma_kh</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ma_cu_kh</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ma_cu_kh</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">ma_cu_kh</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ten_kh</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ten_kh</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">ten_kh</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">hang_kh</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">hang_kh</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">hang_kh</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ma_the</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ma_the</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">ma_the</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">loai_the</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">loai_the</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">loai_the</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ngay_mua</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ngay_mua</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">ngay_mua</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ngay_het_han</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ngay_het_han</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">ngay_het_han</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ma_dich_vu</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ma_dich_vu</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">ma_dich_vu</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">tong_lan_su_dung</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">tong_lan_su_dung</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">tong_lan_su_dung</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">tong_lan_da_sd</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">tong_lan_da_sd</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">tong_lan_da_sd</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">tong_so_lan_con_lai</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">tong_so_lan_con_lai</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">tong_so_lan_con_lai</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">x_state</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">x_state</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">x_state</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">tham_chieu_dot_phat_hanh</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">tham_chieu_dot_phat_hanh</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">tham_chieu_dot_phat_hanh</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">x_card_type</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">x_card_type</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">x_card_type</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">card_type</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">branch_id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_3</property>
+                    <property name="paramName">state</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">3</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_4</property>
+                    <property name="paramName">state</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">4</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_5</property>
+                    <property name="paramName">partner_id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">5</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_6</property>
+                    <property name="paramName">partner_id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">6</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ten_chi_nhanh</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ma_chi_nhanh</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">ma_kh</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">ma_cu_kh</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">ten_kh</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">hang_kh</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">ma_the</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">loai_the</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">ngay_mua</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">ngay_het_han</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">ma_dich_vu</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">tong_lan_su_dung</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">tong_lan_da_sd</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">tong_so_lan_con_lai</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">x_state</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">tham_chieu_dot_phat_hanh</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">x_card_type</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">title_header</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">List Service Card According to Branch</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ten_chi_nhanh</property>
+                    <property name="nativeName">ten_chi_nhanh</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ma_chi_nhanh</property>
+                    <property name="nativeName">ma_chi_nhanh</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">ma_kh</property>
+                    <property name="nativeName">ma_kh</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">ma_cu_kh</property>
+                    <property name="nativeName">ma_cu_kh</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">ten_kh</property>
+                    <property name="nativeName">ten_kh</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">hang_kh</property>
+                    <property name="nativeName">hang_kh</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">ma_the</property>
+                    <property name="nativeName">ma_the</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">loai_the</property>
+                    <property name="nativeName">loai_the</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">ngay_mua</property>
+                    <property name="nativeName">ngay_mua</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">ngay_het_han</property>
+                    <property name="nativeName">ngay_het_han</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">ma_dich_vu</property>
+                    <property name="nativeName">ma_dich_vu</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">tong_lan_su_dung</property>
+                    <property name="nativeName">tong_lan_su_dung</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">tong_lan_da_sd</property>
+                    <property name="nativeName">tong_lan_da_sd</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">tong_so_lan_con_lai</property>
+                    <property name="nativeName">tong_so_lan_con_lai</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">x_state</property>
+                    <property name="nativeName">x_state</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">tham_chieu_dot_phat_hanh</property>
+                    <property name="nativeName">tham_chieu_dot_phat_hanh</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">x_card_type</property>
+                    <property name="nativeName">x_card_type</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT
+	rb.name ten_chi_nhanh,
+	rb.code ma_chi_nhanh,
+	kh_mua.x_partner_code AS ma_kh,
+	kh_mua.x_partner_old_code AS ma_cu_kh,
+	kh_mua.name AS ten_kh,
+	(SELECT name from crm_customer_rank WHERE id=kh_mua.x_rank_id) AS hang_kh,
+	spl.name AS ma_the,
+	pt.name AS loai_the,
+	(SELECT to_char(date_order, 'dd-mm-yyyy') FROM pos_order WHERE spl.x_order_id=id) AS ngay_mua,
+	to_char(spl.life_date, 'dd-mm-yyyy') AS ngay_het_han,
+	pt.default_code AS ma_dich_vu,
+	spl.x_total_count AS tong_lan_su_dung,
+	COALESCE(spl.x_used_count, 0) AS tong_lan_da_sd,
+	(spl.x_total_count - COALESCE(spl.x_used_count, 0)) AS tong_so_lan_con_lai,
+	spl.x_state,
+	(SELECT reference FROM product_release WHERE id=spl.x_release_id) AS tham_chieu_dot_phat_hanh,
+	pt.x_card_type
+FROM
+	stock_production_lot AS spl
+	JOIN res_branch rb ON (rb.id=spl.x_branch_id)
+	LEFT JOIN (
+		SELECT
+			id, x_partner_code, x_partner_old_code, name, x_rank_id
+		FROM res_partner
+	) AS kh_mua ON (kh_mua.id=spl.x_customer_id)
+	LEFT JOIN (
+		SELECT
+			id, x_partner_code, name
+		FROM
+			res_partner
+	) AS nguoi_sd ON (nguoi_sd.id=spl.x_use_customer_id)
+	LEFT JOIN product_product AS pp ON (spl.product_id=pp.id)
+	LEFT JOIN product_template AS pt ON (pp.product_tmpl_id=pt.id)
+WHERE
+	pt.x_card_type = ?
+	AND spl.x_branch_id = ?::INTEGER
+	AND (CASE WHEN ? <> '0' THEN spl.x_state = ? ELSE TRUE END )
+	AND (CASE WHEN ? <> '0' THEN spl.x_customer_id = ?::INTEGER ELSE TRUE END );]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>3</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>4</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>5</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>6</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ten_chi_nhanh</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>ten_chi_nhanh</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ten_chi_nhanh</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ma_kh</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ma_kh</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ma_kh</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ma_cu_kh</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ma_cu_kh</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ma_cu_kh</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ten_kh</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ten_kh</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ten_kh</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>hang_kh</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>hang_kh</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>hang_kh</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ma_the</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ma_the</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ma_the</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>loai_the</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>loai_the</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>loai_the</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ngay_mua</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>29</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>ngay_mua</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ngay_mua</design:label>
+            <design:formattingHints>
+              <design:displaySize>29</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ngay_het_han</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>91</design:nativeDataTypeCode>
+            <design:precision>13</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ngay_het_han</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ngay_het_han</design:label>
+            <design:formattingHints>
+              <design:displaySize>13</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ma_dich_vu</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ma_dich_vu</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ma_dich_vu</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>tong_lan_su_dung</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>tong_lan_su_dung</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>tong_lan_su_dung</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>tong_lan_da_sd</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>tong_lan_da_sd</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>tong_lan_da_sd</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>tong_so_lan_con_lai</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>tong_so_lan_con_lai</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>tong_so_lan_con_lai</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>x_state</design:name>
+              <design:position>14</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>x_state</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>x_state</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>tham_chieu_dot_phat_hanh</design:name>
+              <design:position>15</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>tham_chieu_dot_phat_hanh</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>tham_chieu_dot_phat_hanh</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">custom</property>
+            <property name="height">1000in</property>
+            <property name="width">15in</property>
+            <property name="showHeaderOnFirst">false</property>
+            <property name="showFooterOnLast">false</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="9">
+            <property name="fontFamily">"Times New Roman"</property>
+            <property name="fontSize">12pt</property>
+            <column id="10"/>
+            <column id="11"/>
+            <column id="12"/>
+            <column id="13"/>
+            <column id="14"/>
+            <column id="15"/>
+            <column id="16"/>
+            <column id="17"/>
+            <column id="18"/>
+            <column id="19"/>
+            <column id="58"/>
+            <column id="62"/>
+            <column id="66"/>
+            <column id="70"/>
+            <column id="74"/>
+            <column id="78"/>
+            <row id="20">
+                <cell id="21">
+                    <property name="colSpan">16</property>
+                    <property name="rowSpan">1</property>
+                    <label id="53">
+                        <property name="fontSize">16pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">BÁO CÁO DANH SÁCH THẺ CỦA NHƯỢNG QUYỀN</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="218">
+                <cell id="219">
+                    <property name="colSpan">16</property>
+                    <property name="rowSpan">1</property>
+                    <data id="240">
+                        <property name="fontWeight">bold</property>
+                        <property name="fontStyle">italic</property>
+                        <property name="textAlign">center</property>
+                        <property name="dataSet">List Service card according to branch</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ten_chi_nhanh</property>
+                                <text-property name="displayName">ten_chi_nhanh</text-property>
+                                <expression name="expression" type="javascript">var a;&#13;
+if (params["branch_id"].value != 0){&#13;
+a = dataSetRow["ten_chi_nhanh"];&#13;
+}&#13;
+a;</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">ten_chi_nhanh</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="31">
+                <cell id="32">
+                    <property name="colSpan">5</property>
+                    <property name="rowSpan">1</property>
+                    <data id="217">
+                        <property name="fontSize">10pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="fontStyle">italic</property>
+                        <property name="textAlign">left</property>
+                        <property name="dataSet">List Service card according to branch</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">title_header</property>
+                                <text-property name="displayName">title_header</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["title_header"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">title_header</property>
+                    </data>
+                </cell>
+                <cell id="37"/>
+                <cell id="38"/>
+                <cell id="39"/>
+                <cell id="40"/>
+                <cell id="41"/>
+                <cell id="56"/>
+                <cell id="60"/>
+                <cell id="64"/>
+                <cell id="68"/>
+                <cell id="72"/>
+                <cell id="76"/>
+            </row>
+            <row id="42">
+                <cell id="43">
+                    <property name="colSpan">16</property>
+                    <property name="rowSpan">1</property>
+                    <table id="79">
+                        <property name="borderBottomColor">#000000</property>
+                        <property name="borderBottomStyle">solid</property>
+                        <property name="borderBottomWidth">thin</property>
+                        <property name="borderLeftColor">#000000</property>
+                        <property name="borderLeftStyle">solid</property>
+                        <property name="borderLeftWidth">thin</property>
+                        <property name="borderRightColor">#000000</property>
+                        <property name="borderRightStyle">solid</property>
+                        <property name="borderRightWidth">thin</property>
+                        <property name="borderTopColor">#000000</property>
+                        <property name="borderTopStyle">solid</property>
+                        <property name="borderTopWidth">thin</property>
+                        <property name="dataSet">List Service card according to branch</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">hang_kh</property>
+                                <text-property name="displayName">hang_kh</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["hang_kh"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ma_cu_kh</property>
+                                <text-property name="displayName">ma_cu_kh</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ma_cu_kh"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ma_kh</property>
+                                <text-property name="displayName">ma_kh</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ma_kh"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ten_chi_nhanh</property>
+                                <text-property name="displayName">ten_chi_nhanh</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ten_chi_nhanh"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ten_kh</property>
+                                <text-property name="displayName">ten_kh</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ten_kh"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">x_state</property>
+                                <text-property name="displayName">x_state</text-property>
+                                <expression name="expression" type="javascript">var a;&#13;
+if (dataSetRow["x_state"] == 'new') {&#13;
+	a = "Mới";&#13;
+}&#13;
+else if (dataSetRow["x_state"] == 'activated') {&#13;
+	a = "Đã kích hoạt";&#13;
+}&#13;
+else if (dataSetRow["x_state"] == 'using') {&#13;
+	a = "Đang sử dụng";&#13;
+}&#13;
+else if (dataSetRow["x_state"] == 'used') {&#13;
+	a = "Đã sử dụng";&#13;
+}&#13;
+else {&#13;
+	a = "Hủy";&#13;
+}&#13;
+a</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                            <structure>
+                                <property name="name">tham_chieu_dot_phat_hanh</property>
+                                <text-property name="displayName">tham_chieu_dot_phat_hanh</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["tham_chieu_dot_phat_hanh"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ma_the</property>
+                                <text-property name="displayName">ma_the</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ma_the"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">loai_the</property>
+                                <text-property name="displayName">loai_the</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["loai_the"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ngay_mua</property>
+                                <text-property name="displayName">ngay_mua</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ngay_mua"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ngay_het_han</property>
+                                <text-property name="displayName">ngay_het_han</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ngay_het_han"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ma_dich_vu</property>
+                                <text-property name="displayName">ma_dich_vu</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ma_dich_vu"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">tong_lan_su_dung</property>
+                                <text-property name="displayName">tong_lan_su_dung</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["tong_lan_su_dung"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">tong_lan_da_sd</property>
+                                <text-property name="displayName">tong_lan_da_sd</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["tong_lan_da_sd"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">tong_so_lan_con_lai</property>
+                                <text-property name="displayName">tong_so_lan_con_lai</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["tong_so_lan_con_lai"]</expression>
+                                <property name="dataType">integer</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ma_chi_nhanh</property>
+                                <text-property name="displayName">ma_chi_nhanh</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ma_chi_nhanh"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="repeatHeader">true</property>
+                        <property name="pageBreakInterval">0</property>
+                        <column id="131">
+                            <property name="width">0.7083333333333334in</property>
+                        </column>
+                        <column id="237">
+                            <property name="width">0.7083333333333334in</property>
+                        </column>
+                        <column id="133">
+                            <property name="width">1.1916666666666667in</property>
+                        </column>
+                        <column id="134"/>
+                        <column id="135"/>
+                        <column id="136"/>
+                        <column id="137"/>
+                        <column id="138"/>
+                        <column id="139">
+                            <property name="width">1.175in</property>
+                        </column>
+                        <column id="140">
+                            <property name="width">1in</property>
+                        </column>
+                        <column id="141">
+                            <property name="width">1.5083333333333333in</property>
+                        </column>
+                        <column id="142">
+                            <property name="width">1.275in</property>
+                        </column>
+                        <column id="143">
+                            <property name="width">1.1416666666666666in</property>
+                        </column>
+                        <column id="144">
+                            <property name="width">0.9583333333333334in</property>
+                        </column>
+                        <column id="145"/>
+                        <column id="146"/>
+                        <header>
+                            <row id="80">
+                                <property name="backgroundColor">#233C98</property>
+                                <property name="fontWeight">bold</property>
+                                <property name="color">#FFFFFF</property>
+                                <cell id="81">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="147">
+                                        <text-property name="text">STT</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="235">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="238">
+                                        <text-property name="text">Mã chi nhánh</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="83">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="149">
+                                        <text-property name="text">Mã KH</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="84">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="150">
+                                        <text-property name="text">Mã cũ KH</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="85">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="151">
+                                        <text-property name="text">Tên KH</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="86">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="152">
+                                        <text-property name="text">Hạng KH</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="87">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="153">
+                                        <text-property name="text">Mã thẻ</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="88">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="154">
+                                        <text-property name="text">Loại thẻ</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="89">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="155">
+                                        <text-property name="text">Ngày mua</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="90">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="156">
+                                        <text-property name="text">Ngày hết hạn</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="91">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="157">
+                                        <text-property name="text">Mã dịch vụ</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="92">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="158">
+                                        <text-property name="text">Tổng lần sử dụng</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="93">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="159">
+                                        <text-property name="text">Đã sử dụng</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="94">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="160">
+                                        <text-property name="text">Còn lại</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="95">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="161">
+                                        <text-property name="text">Trạng thái thẻ</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="96">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <label id="162">
+                                        <text-property name="text">Tham chiếu đợt phát hành</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <group id="180">
+                            <property name="groupName">chi_nhanh</property>
+                            <expression name="keyExpr" type="javascript">row["ten_chi_nhanh"]</expression>
+                            <structure name="toc">
+                                <expression name="expressionValue" type="javascript">row["ten_chi_nhanh"]</expression>
+                            </structure>
+                            <property name="hideDetail">false</property>
+                        </group>
+                        <detail>
+                            <row id="97">
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderLeftColor">#000000</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderRightColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="verticalAlign">middle</property>
+                                <cell id="98">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <text-data id="179">
+                                        <property name="textAlign">center</property>
+                                        <expression name="valueExpr">row.__rownum+1</expression>
+                                        <property name="contentType">html</property>
+                                    </text-data>
+                                </cell>
+                                <cell id="236">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="239">
+                                        <property name="resultSetColumn">ma_chi_nhanh</property>
+                                    </data>
+                                </cell>
+                                <cell id="100">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="166">
+                                        <property name="resultSetColumn">ma_kh</property>
+                                    </data>
+                                </cell>
+                                <cell id="101">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="165">
+                                        <property name="resultSetColumn">ma_cu_kh</property>
+                                    </data>
+                                </cell>
+                                <cell id="102">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="168">
+                                        <property name="resultSetColumn">ten_kh</property>
+                                    </data>
+                                </cell>
+                                <cell id="103">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="164">
+                                        <property name="resultSetColumn">hang_kh</property>
+                                    </data>
+                                </cell>
+                                <cell id="104">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="171">
+                                        <property name="resultSetColumn">ma_the</property>
+                                    </data>
+                                </cell>
+                                <cell id="105">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="172">
+                                        <property name="resultSetColumn">loai_the</property>
+                                    </data>
+                                </cell>
+                                <cell id="106">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="173">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">ngay_mua</property>
+                                    </data>
+                                </cell>
+                                <cell id="107">
+                                    <data id="174">
+                                        <property name="textAlign">center</property>
+                                        <property name="resultSetColumn">ngay_het_han</property>
+                                    </data>
+                                </cell>
+                                <cell id="108">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="175">
+                                        <property name="resultSetColumn">ma_dich_vu</property>
+                                    </data>
+                                </cell>
+                                <cell id="109">
+                                    <data id="176">
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">tong_lan_su_dung</property>
+                                    </data>
+                                </cell>
+                                <cell id="110">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="177">
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">tong_lan_da_sd</property>
+                                    </data>
+                                </cell>
+                                <cell id="111">
+                                    <data id="178">
+                                        <property name="textAlign">right</property>
+                                        <property name="resultSetColumn">tong_so_lan_con_lai</property>
+                                    </data>
+                                </cell>
+                                <cell id="112">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="169">
+                                        <property name="resultSetColumn">x_state</property>
+                                    </data>
+                                </cell>
+                                <cell id="113">
+                                    <property name="borderBottomColor">#000000</property>
+                                    <property name="borderBottomStyle">solid</property>
+                                    <property name="borderBottomWidth">thin</property>
+                                    <property name="borderLeftColor">#000000</property>
+                                    <property name="borderLeftStyle">solid</property>
+                                    <property name="borderLeftWidth">thin</property>
+                                    <property name="borderRightColor">#000000</property>
+                                    <property name="borderRightStyle">solid</property>
+                                    <property name="borderRightWidth">thin</property>
+                                    <property name="borderTopColor">#000000</property>
+                                    <property name="borderTopStyle">solid</property>
+                                    <property name="borderTopWidth">thin</property>
+                                    <data id="170">
+                                        <property name="resultSetColumn">tham_chieu_dot_phat_hanh</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                    </table>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

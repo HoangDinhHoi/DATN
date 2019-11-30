@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_charge_refund_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.point_of_sale_charge_refund</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@data-key='point_of_sale']" position="inside">
+                <h2>Fee</h2>
+                <div class="row mt16 o_settings_container">
+                    <div class="col-12 col-lg-6 o_setting_box" title="This tax is applied to any new product created in the catalog.">
+                        <div class="o_setting_right_pane">
+                            <div>
+                                <label string="Charge Refund" for="x_charge_refund_id"/>
+                                <div class="content-group mt16">
+                                    <field name="x_charge_refund_id" colspan="4" nolabel="1" options="{'no_create':1, 'no_create_edit':1}" domain="[('product_tmpl_id.type', '=', 'service')]"/>
+                                </div>
+                            </div>
+                            <div>
+                                <label string="Discount Product" for="x_discount_vip_id"/>
+                                <div class="content-group mt16">
+                                    <field name="x_discount_product_id" colspan="4" nolabel="1" options="{'no_create':1, 'no_create_edit':1}" domain="[('product_tmpl_id.type', '=', 'service')]"/>
+                                </div>
+                            </div>
+                            <div>
+                                <label string="Discount Service" for="x_discount_ctkm_id"/>
+                                <div class="content-group mt16">
+                                    <field name="x_discount_service_id" colspan="4" nolabel="1" options="{'no_create':1, 'no_create_edit':1}" domain="[('product_tmpl_id.type', '=', 'service')]"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="col-xs-12 col-md-6 o_setting_box">-->
+                    <!--<div class="o_setting_right_pane">-->
+                        <!--<label for="x_charge_refund_id"/>-->
+                        <!--<div class="content-group mt16">-->
+                            <!--<field name="x_charge_refund_id" colspan="4" nolabel="1"/>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-xs-12 col-md-6 o_setting_box">-->
+                    <!--<div class="o_setting_right_pane">-->
+                        <!--<label for="x_discount_vip"/>-->
+                        <!--<div class="content-group mt16">-->
+                            <!--<field name="x_discount_vip" colspan="4" nolabel="1"/>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="col-xs-12 col-md-6 o_setting_box">-->
+                    <!--<div class="o_setting_right_pane">-->
+                        <!--<label for="x_discount_ctkm"/>-->
+                        <!--<div class="content-group mt16">-->
+                            <!--<field name="x_discount_ctkm" colspan="4" nolabel="1"/>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            </xpath>
+        </field>
+    </record>
+</odoo>

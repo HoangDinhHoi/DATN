@@ -1,0 +1,301 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* izi_sale_order
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-13 10:58+0000\n"
+"PO-Revision-Date: 2019-09-13 18:01+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: vi_VN\n"
+"X-Generator: Poedit 2.2.3\n"
+
+#. module: izi_sale_order
+#: model_terms:ir.ui.view,arch_db:izi_sale_order.sale_order_retail_form
+msgid "Amount total"
+msgstr "Tổng tiền"
+
+#. module: izi_sale_order
+#: selection:crm.lead,state:0
+msgid "Assigned"
+msgstr "Đã giao"
+
+#. module: izi_sale_order
+#: selection:crm.lead,state:0
+msgid "Booking"
+msgstr "Booking"
+
+#. module: izi_sale_order
+#: model_terms:ir.ui.view,arch_db:izi_sale_order.sale_order_make_pos_order
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: izi_sale_order
+#: selection:sale.order,state:0
+msgid "Cancelled"
+msgstr "Đã hủy"
+
+#. module: izi_sale_order
+#: model_terms:ir.ui.view,arch_db:izi_sale_order.sale_order_retail_tree
+msgid "Confirmation Date"
+msgstr "Ngày xác nhận"
+
+#. module: izi_sale_order
+#: selection:crm.lead,state:0
+msgid "Contact"
+msgstr "Contact"
+
+#. module: izi_sale_order
+#: model_terms:ir.ui.view,arch_db:izi_sale_order.sale_order_make_pos_order
+msgid "Create pos"
+msgstr "Tạo đơn POS"
+
+#. module: izi_sale_order
+#: model:ir.model.fields,field_description:izi_sale_order.field_sale_order_make_pos_order__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: izi_sale_order
+#: model:ir.model.fields,field_description:izi_sale_order.field_sale_order_make_pos_order__create_date
+msgid "Created on"
+msgstr "Thời điểm tạo"
+
+#. module: izi_sale_order
+#: selection:crm.lead,state:0
+msgid "Dead"
+msgstr "Thất bại"
+
+#. module: izi_sale_order
+#: model:ir.model,name:izi_sale_order.model_pos_order
+msgid "Deduction of deposit"
+msgstr "Khấu trừ tiền gửi"
+
+#. module: izi_sale_order
+#: model_terms:ir.ui.view,arch_db:izi_sale_order.sale_order_retail_form
+msgid "Detail"
+msgstr "Chi tiết"
+
+#. module: izi_sale_order
+#: model:ir.model.fields,field_description:izi_sale_order.field_sale_order_make_pos_order__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: izi_sale_order
+#: selection:sale.order,state:0
+msgid "Done"
+msgstr "Hoàn thành"
+
+#. module: izi_sale_order
+#: code:addons/izi_sale_order/wizards/sale_order_make_pos_order.py:48
+#, python-format
+msgid "Error"
+msgstr "Lỗi"
+
+#. module: izi_sale_order
+#: model:ir.model.fields,field_description:izi_sale_order.field_sale_order_make_pos_order__id
+msgid "ID"
+msgstr ""
+
+#. module: izi_sale_order
+#: model:ir.model.fields,field_description:izi_sale_order.field_sale_order_make_pos_order____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: izi_sale_order
+#: model:ir.model.fields,field_description:izi_sale_order.field_sale_order_make_pos_order__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: izi_sale_order
+#: model:ir.model.fields,field_description:izi_sale_order.field_sale_order_make_pos_order__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: izi_sale_order
+#: model:ir.model,name:izi_sale_order.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Tiềm năng/Cơ hội"
+
+#. module: izi_sale_order
+#: selection:crm.lead,state:0
+msgid "Meeting"
+msgstr "Meeting"
+
+#. module: izi_sale_order
+#: model:ir.model.fields,field_description:izi_sale_order.field_sale_order_make_pos_order__message
+msgid "Message"
+msgstr "Thông điệp"
+
+#. module: izi_sale_order
+#: model_terms:ir.ui.view,arch_db:izi_sale_order.sale_order_retail_form
+msgid "Move to pos"
+msgstr "Tạo đơn POS"
+
+#. module: izi_sale_order
+#: selection:sale.order,state:0
+msgid "Moved to pos"
+msgstr "Đã tạo đơn POS"
+
+#. module: izi_sale_order
+#: selection:crm.lead,state:0
+msgid "New"
+msgstr "Mới"
+
+#. module: izi_sale_order
+#: selection:crm.lead,state:0
+msgid "No pick up"
+msgstr "Không nhấc máy"
+
+#. module: izi_sale_order
+#: model_terms:ir.ui.view,arch_db:izi_sale_order.sale_order_retail_tree
+msgid "Order Number"
+msgstr "Số đơn hàng"
+
+#. module: izi_sale_order
+#: model_terms:ir.ui.view,arch_db:izi_sale_order.sale_order_retail_form
+msgid "POS Orders"
+msgstr "Các đơn hàng POS"
+
+#. module: izi_sale_order
+#: model_terms:ir.ui.view,arch_db:izi_sale_order.sale_order_retail_form
+msgid "Pos Orders"
+msgstr "Đơn hàng POS"
+
+#. module: izi_sale_order
+#: model:ir.model.fields,field_description:izi_sale_order.field_sale_order_make_pos_order__pos_config_id
+msgid "Pos config"
+msgstr "POS áp dụng"
+
+#. module: izi_sale_order
+#: model:ir.model.fields,field_description:izi_sale_order.field_sale_order__pos_order_ids
+msgid "Pos order"
+msgstr "Đơn hàng POS"
+
+#. module: izi_sale_order
+#: model:ir.model.fields,field_description:izi_sale_order.field_sale_order_make_pos_order__pos_session_id
+msgid "Pos session"
+msgstr "Phiên bán hàng"
+
+#. module: izi_sale_order
+#: selection:sale.order,state:0
+msgid "Quotation"
+msgstr "Báo giá"
+
+#. module: izi_sale_order
+#: selection:sale.order,state:0
+msgid "Quotation Sent"
+msgstr "Báo giá đã Gửi"
+
+#. module: izi_sale_order
+#: code:addons/izi_sale_order/wizards/sale_order_make_pos_order.py:27
+#, python-format
+msgid "Request to create a session before create pos order."
+msgstr "Yêu cầu tạo một phiên trước khi tạo đơn POS"
+
+#. module: izi_sale_order
+#: model:ir.ui.menu,name:izi_sale_order.menuitem_sale_orders_retail
+#: model:ir.ui.menu,name:izi_sale_order.menuitem_sale_orders_retail_crm
+msgid "Retail"
+msgstr "Bán lẻ"
+
+#. module: izi_sale_order
+#: selection:sale.order,type:0
+msgid "Retail customer"
+msgstr "Khách hàng lẻ"
+
+#. module: izi_sale_order
+#: model:ir.model,name:izi_sale_order.model_sale_order
+msgid "Sale Order"
+msgstr "Đơn bán hàng"
+
+#. module: izi_sale_order
+#: selection:crm.lead,state:0
+#: model:ir.model.fields,field_description:izi_sale_order.field_crm_lead__ref_sale_order_id
+#: model:ir.model.fields,field_description:izi_sale_order.field_pos_order__sale_order_id
+#: model_terms:ir.ui.view,arch_db:izi_sale_order.crm_case_form_view_leads_service_booking_inherit_sale_order
+msgid "Sale order"
+msgstr "Đơn hàng SO"
+
+#. module: izi_sale_order
+#: model_terms:ir.ui.view,arch_db:izi_sale_order.sale_order_make_pos_order
+msgid "Sale order make pos order"
+msgstr "Tạo đơn POS từ SO"
+
+#. module: izi_sale_order
+#: code:addons/izi_sale_order/wizards/sale_order_make_pos_order.py:48
+#, python-format
+msgid "Sale order not exists"
+msgstr "Đơn SO không tồn tại"
+
+#. module: izi_sale_order
+#: model:ir.actions.act_window,name:izi_sale_order.sale_orders_retail_action
+msgid "Sale orders retail action"
+msgstr "Đơn hàng mua lẻ"
+
+#. module: izi_sale_order
+#: selection:sale.order,state:0
+msgid "Sales Order"
+msgstr "Đơn hàng mua lẻ"
+
+#. module: izi_sale_order
+#: model_terms:ir.ui.view,arch_db:izi_sale_order.sale_order_retail_tree
+msgid "Sales Orders retail tree"
+msgstr "Đơn hàng mua lẻ"
+
+#. module: izi_sale_order
+#: model:ir.model.fields,field_description:izi_sale_order.field_crm_lead__state
+msgid "State"
+msgstr "Giai đoạn"
+
+#. module: izi_sale_order
+#: model:ir.model.fields,field_description:izi_sale_order.field_sale_order__state
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: izi_sale_order
+#: model:ir.model.fields,field_description:izi_sale_order.field_sale_order_make_pos_order__title
+msgid "Title"
+msgstr "Xưng hô"
+
+#. module: izi_sale_order
+#: model_terms:ir.ui.view,arch_db:izi_sale_order.sale_order_retail_tree
+msgid "Total Tax Included"
+msgstr "Tổng tiền sau thuế"
+
+#. module: izi_sale_order
+#: model:ir.model.fields,field_description:izi_sale_order.field_sale_order__type
+msgid "Type"
+msgstr "Loại"
+
+#. module: izi_sale_order
+#: code:addons/izi_sale_order/wizards/sale_order_make_pos_order.py:27
+#, python-format
+msgid "Warning"
+msgstr "Cảnh báo"
+
+#. module: izi_sale_order
+#: selection:sale.order,type:0
+msgid "Wholesale customer"
+msgstr "Bán buôn"
+
+#. module: izi_sale_order
+#: selection:crm.lead,state:0
+msgid "Won"
+msgstr "Thành công"
+
+#. module: izi_sale_order
+#: selection:crm.lead,state:0
+msgid "Wrong number"
+msgstr "Sai số điện thoại"
+
+#. module: izi_sale_order
+#: model:ir.model,name:izi_sale_order.model_sale_order_make_pos_order
+msgid "sale.order.make.pos.order"
+msgstr ""

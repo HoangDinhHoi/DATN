@@ -1,0 +1,47 @@
+<openerp>
+    <data>
+        <record id="seq_company_code" model="ir.sequence">
+            <field name="name">Company Code - Sequence type</field>
+            <field name="code">company_code</field>
+            <field name="prefix">CTY</field>
+            <field name="padding">4</field>
+        </record>
+
+        <record model="ir.sequence" id="seq_supplier_code">
+            <field name="name">Supplier Code - Sequence type</field>
+            <field name="code">supplier_code</field>
+            <field name="prefix">NCC</field>
+            <field name="padding">4</field>
+        </record>
+
+        <record model="ir.sequence" id="seq_shop_code">
+            <field name="name">Shop Code - Sequence type</field>
+            <field name="code">shop_code</field>
+            <field name="prefix">SH</field>
+            <field name="padding">4</field>
+        </record>
+
+        <record forcecreate="1" id="customer_seq_id" model="ir.sequence">
+            <field name="name">Customer code seq</field>
+            <field name="code">customer_seq</field>
+            <field name="padding" eval="6"/>
+            <field name="prefix">KH%(y)s</field>
+            <field name="implementation">standard</field>
+        </record>
+
+        <record model="ir.sequence" id="seq_user_code">
+            <field name="name">User Code - Sequence type</field>
+            <field name="code">user_code</field>
+            <field name="prefix">ND</field>
+            <field name="padding">4</field>
+        </record>
+
+        <record forcecreate="1" id="seq_franchise_code" model="ir.sequence">
+            <field name="name">Franchise Code - Sequence type</field>
+            <field name="code">franchise_code</field>
+            <field name="padding" eval="4"/>
+            <field name="prefix">KHF%(y)s%(month)s</field>
+            <field name="implementation">standard</field>
+        </record>
+    </data>
+</openerp>

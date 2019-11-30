@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_crm_team_bed_sale,access_crm_team_bed,model_crm_team_bed,sales_team.group_sale_salesman,1,1,1,1
+access_crm_booking_sale,access_crm_booking,model_service_booking,sales_team.group_sale_salesman,1,1,1,1
+access_crm_booking_product_sale,access_crm_booking_product_sale,model_service_booking_product,sales_team.group_sale_salesman,1,1,1,1
+
+access_crm_team_bed_pos,access_crm_team_bed_pos,model_crm_team_bed,point_of_sale.group_pos_user,1,1,1,1
+access_crm_booking_pos,access_crm_booking_pos,model_service_booking,point_of_sale.group_pos_user,1,1,1,1
+access_crm_booking_product_pos,access_crm_booking_product_pos,model_service_booking_product,point_of_sale.group_pos_user,1,1,1,1

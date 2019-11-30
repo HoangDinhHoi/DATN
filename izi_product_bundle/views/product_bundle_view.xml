@@ -1,0 +1,56 @@
+<odoo>
+    <data>
+        <record id="product_template_form_view_inherit" model="ir.ui.view">
+            <field name="name">Product template</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <notebook>
+                    <page name="bundle" string="Bundle" attrs="{'invisible': [('type', '!=', 'bundle')]}">
+                        <field name="x_bundle_component_ids">
+                            <tree>
+                                <field name="name"/>
+                                <field name="revenue_rate"/>
+                                <field name="status"/>
+                            </tree>
+                            <form>
+                                <sheet>
+                                    <group>
+                                        <field name="name" required="1"/>
+                                        <field name="revenue_rate" required="1"/>
+                                        <field name="status" required="1"/>
+                                    </group>
+                                    <field name="bundle_option_ids">
+                                        <tree editable="bottom">
+                                            <field name="name"/>
+                                            <field name="product_id" required="1" domain="[('product_tmpl_id.type', '!=', 'bundle')]"/>
+                                            <field name="uom_id" required="1"/>
+                                            <field name="qty" required="1"/>
+                                        </tree>
+                                    </field>
+                                </sheet>
+                            </form>
+                        </field>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+        <record id="action_product_bundle_management" model="ir.actions.act_window">
+            <field name="name">Product bundle management</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('product.product_template_tree_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('product_template_form_view_inherit')})]"/>
+            <field name="context">{'default_type': 'bundle'}</field>
+            <field name="domain">[('type', '=', 'bundle')]</field>
+        </record>
+
+        <menuitem id="menu_product_bundle_management"
+                  name="Product bundle management"
+                  action="action_product_bundle_management"
+                  parent="stock.menu_stock_inventory_control"
+                  sequence="3"/>
+    </data>
+</odoo>

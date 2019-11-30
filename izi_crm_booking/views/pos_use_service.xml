@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="pos_use_service_inherit_tree_view" model="ir.ui.view">
+            <field name="name">Pos use service inherit</field>
+            <field name="model">pos.use.service</field>
+            <field name="inherit_id" ref="izi_pos_use_service.pos_use_service_list"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="origin"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

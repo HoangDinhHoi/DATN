@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="rpt_pos_revenue_by_product" model="ir.ui.view">
+            <field name="name">Báo cáo doanh thu theo sản phẩm</field>
+            <field name="model">rpt.pos.revenue.by.product</field>
+            <field name="arch" type="xml">
+                <form string="Báo cáo doanh thu theo sản phẩm">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="from_date" required="1" string="Từ ngày"/>
+                                <field name="branch_id" string="Chi nhánh"
+                                       options="{'no_create':1}"/>
+                            </group>
+                            <group>
+                                <field name="to_date" required="1" string="Đến ngày"/>
+                                <field name="export_excel" string="Xuất Excel"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button name="export_report"
+                                    type="object"
+                                    string="Xuất báo cáo"
+                                    class="oe_highlight"
+                                    icon="fa-print"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="rpt_pos_revenue_by_product_action" model="ir.actions.act_window">
+            <field name="name">Báo cáo doanh thu theo sản phẩm</field>
+            <field name="res_model">rpt.pos.revenue.by.product</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="rpt_pos_revenue_by_product_menu"
+                  name="Báo cáo doanh thu theo sản phẩm"
+                  parent="izi_pos_report_birt.rpt_pos_revenue_categ"
+                  action="izi_pos_report_birt.rpt_pos_revenue_by_product_action"
+                  sequence="1"/>
+    </data>
+</odoo>

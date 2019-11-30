@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="izi_pos_order_confirm_form">
+            <field name="name">izi_pos_order_confirm Form</field>
+            <field name="model">pos.order</field>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="partner_id" readonly="1" force_save="1"/>
+                            <field name="x_signature" widget="signature"/>
+                        </group>
+                        <notebook>
+                            <page name="order_line" string="Order Line">
+                                <field name="lines" readonly="1" force_save="1">
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <footer>
+                        <button name="action_customer_signature" type="object" string="Confirm" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

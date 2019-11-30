@@ -1,0 +1,228 @@
+<odoo>
+    <data>
+        <record id="point_of_sale.view_pos_pos_form" model="ir.ui.view">
+            <field name="name">pos.order.form</field>
+            <field name="model">pos.order</field>
+            <field name="arch" type="xml">
+                <form string="Point of Sale Orders">
+                    <header>
+                        <button name="%(point_of_sale.action_pos_payment)d" string="Payment" class="oe_highlight" type="action"
+                                states="draft" context="{'pos_session_id' : session_id}"/>
+                        <button name="action_pos_order_invoice" string="Invoice" type="object"
+                                attrs="{'invisible': ['|', ('invoice_group', '=', False), ('state','!=','paid')]}"/>
+                        <button name="action_confirm_order" type="object" string="Confirm" class="oe_highlight"
+                                attrs="{'invisible':['|',('state','not in',('draft')), ('x_pos_partner_refund_id','!=', False)]}"
+                                confirm="Vui lòng kiểm tra lại hình thức thanh toán trước khi xác nhận. Nếu đúng nhấn Đồng ý"/>
+                        <!--<button name="action_back_order" states="confirm" type="object" string="Back" confirm="Xóa hết các hình thức thanh toán"/>-->
+                        <field name="state" widget="statusbar" statusbar_visible="draft,paid,done"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_invoice"
+                                    string="Invoice"
+                                    type="object"
+                                    class="oe_stat_button"
+                                    icon="fa-pencil-square-o"
+                                    attrs="{'invisible':[('state','!=','invoiced')]}">
+                            </button>
+                            <!--<field name="x_control" widget="boolean_button" options='{"terminology": "archive"}'/>-->
+                        </div>
+                        <h3 class="text-center">
+                            <field name="name" attrs="{'invisible': [('name','=','/')]}"
+                                   style="margin-right: 35%%; margin-left: 35%%; max-width: 30%%"
+                                   placeholder="Number" readonly="1"/>
+                        </h3>
+                        <group name="order_fields">
+                            <group>
+                                <field name="partner_id" domain="[('customer', '=', True)]"
+                                       context="{'search_default_customer':1, 'form_view_ref':'izi_partner.customer_form_view_ref', 'limit_company': 1}"
+                                       attrs="{'readonly': ['|',('x_pos_partner_refund_id', '!=', False), ('state', '!=', 'draft')]}"
+                                       options="{'no_create':1, 'no_create_edit':1}" required="1"/>
+                                <field name="pricelist_id" attrs="{'readonly': ['|',('x_pos_partner_refund_id', '!=', False), ('state', '!=', 'draft')]}"
+                                       groups="product.group_sale_pricelist"
+                                       options="{'no_create':1, 'no_create_edit':1}"/>
+                                <field name="branch_id" readonly="1" force_save="1"/>
+                                <field name="x_revenue" readonly="1" force_save="1" string="Doanh thu"/>
+                            </group>
+                            <group>
+                                <field name="date_order" readonly="1" force_save="1"/>
+                                <field name="user_id" readonly="1" force_save="1"/>
+                                <field name="x_team_id" readonly="1" force_save="1" string="Nhóm bán hàng"/>
+                                <field name="x_pos_partner_refund_id" attrs="{'invisible': [('x_pos_partner_refund_id', '=', False)]}"
+                                       context="{'form_view_ref': 'point_of_sale.view_pos_pos_form'}"
+                                       readonly="1" force_save="1"/>
+                                <field name="session_id" invisible="1"/>
+                                <field name="invoice_group" invisible="1"/>
+                            </group>
+                            <!--<field name="name"/>-->
+                            <!--<field name="date_order"/>-->
+                            <!--<field name="session_id"/>-->
+                            <!--<field name="partner_id" domain="[('customer', '=', True)]"-->
+                            <!--context="{'search_default_customer':1}"-->
+                            <!--attrs="{'readonly': [('state','=','invoiced')]}"/>-->
+                            <!--<field name="fiscal_position_id" options="{'no_create': True}"/>-->
+                            <!--<field name="invoice_group" invisible="1"/>-->
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Products">
+                                <field name="lines" colspan="4" nolabel="1"
+                                       attrs="{'readonly': ['|',('x_pos_partner_refund_id', '!=', False), ('state', '!=', 'draft')]}">
+                                    <tree string="Order lines" editable="bottom">
+                                        <field name="order_id" invisible="1"/>
+                                        <field name="product_id" options="{'no_create':1, 'no_create_edit':1}"/>
+                                        <field name="qty"/>
+                                        <field name="price_unit" widget="monetary" readonly="1" force_save="1"/>
+                                        <field name="discount" widget="monetary" force_save="1"/>
+                                        <field name="tax_ids_after_fiscal_position" widget="many2many_tags"
+                                               string="Taxes" invisible="1"/>
+                                        <field name="tax_ids" widget="many2many_tags" invisible="1"/>
+                                        <field name="price_subtotal" widget="monetary" invisible="1"/>
+                                        <field name="price_subtotal_incl" widget="monetary" force_save="1" readonly="1"/>
+                                        <field name="x_revenue_rate" invisible="1"/>
+                                    </tree>
+                                    <form string="Order lines">
+                                        <group col="4">
+                                            <field name="order_id"/>
+                                            <field name="product_id"/>
+                                            <field name="qty"/>
+                                            <field name="discount" widget="monetary" force_save="1"/>
+                                            <field name="price_unit" widget="monetary"/>
+                                            <field name="price_subtotal" invisible="1" widget="monetary"
+                                                   force_save="1"/>
+                                            <field name="price_subtotal_incl" invisible="1" widget="monetary"
+                                                   force_save="1"/>
+                                            <field name="tax_ids_after_fiscal_position" widget="many2many_tags"
+                                                   string="Taxes" invisible="1"/>
+                                            <field name="tax_ids" widget="many2many_tags" invisible="1"/>
+                                            <field name="notice"/>
+                                        </group>
+                                    </form>
+                                </field>
+                                <group class="oe_subtotal_footer oe_right" colspan="2" name="order_total">
+                                    <field name="amount_paid" invisible="1"/>
+                                    <field name="amount_return" invisible="1"/>
+                                    <field name="amount_tax"
+                                           force_save="1"
+                                           widget="monetary" invisible="1"/>
+                                    <div>
+                                        <label for="amount_total"/>
+                                        <!--<button name="button_dummy"-->
+                                        <!--states="draft" string="(update)" class="oe_edit_only oe_link"/>-->
+                                    </div>
+                                    <field name="amount_total"
+                                           force_save="1"
+                                           nolabel="1"
+                                           class="oe_subtotal_footer_separator"
+                                           widget="monetary"/>
+                                </group>
+                                <div class="oe_clear"/>
+                            </page>
+                            <page string="Payments">
+                                <field name="statement_ids" colspan="4" nolabel="1">
+                                    <tree editable="bottom" string="Statement lines" create="0" edit="0">
+                                        <field name="journal_id" readonly="1" force_save="1"/>
+                                        <field name="statement_id" readonly="1" force_save="1"/>
+                                        <field name="amount" readonly="1" force_save="1"/>
+                                        <field name="branch_id"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="sequence"/>
+                                                <field name="name"/>
+                                                <field name="statement_id"/>
+                                                <field name="journal_id"/>
+                                                <field name="note"/>
+                                            </group>
+                                            <group>
+                                                <field name="date"/>
+                                                <field name="ref"/>
+                                                <field name="amount"/>
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                            </page>
+                            <page name="extra" string="Extra Info">
+                                <group string="General Information">
+                                    <field name="company_id" groups="base.group_multi_company"/>
+                                    <field name="location_id" widget="selection"
+                                           groups="stock.group_stock_multi_locations"/>
+                                    <!--<field name="user_id"/>-->
+                                    <!--<field name="pricelist_id" groups="product.group_sale_pricelist"/>-->
+                                    <field name="picking_id" readonly="1"/>
+                                    <field name="pos_reference"/>
+                                </group>
+                                <group string="Accounting Information" groups="account.group_account_manager">
+                                    <group>
+                                        <field name="sale_journal" domain="[('type','=','sale')]"/>
+                                        <field name="account_move" readonly="1"
+                                               attrs="{'invisible':[('state','!=','done')]}"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="notes" string="Notes">
+                                <field name="note"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="point_of_sale.view_pos_order_tree" model="ir.ui.view">
+            <field name="name">pos.order.tree</field>
+            <field name="model">pos.order</field>
+            <field name="arch" type="xml">
+                <tree string="POS Orders" decoration-info="state == 'draft'" decoration-muted="state in ('done','cancel')">
+                    <field name="name"/>
+                    <field name="pos_reference"/>
+                    <field name="partner_id"/>
+                    <field name="date_order"/>
+                    <field name="user_id"/>
+                    <field name="amount_total" sum="Amount total" widget="monetary"/>
+                    <field name="company_id" groups="base.group_multi_company"/>
+                    <field name="state"/>
+                    <field name="session_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="point_of_sale.action_pos_pos_form" model="ir.actions.act_window">
+            <field name="name">Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pos.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="view_id" eval="False"/>
+            <field name="context">{'pos_refund': True}</field>
+            <field name="domain">[]</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_empty_folder">
+                    No orders found
+                </p>
+                <p>
+                    To record new orders, start a new session.
+                </p>
+            </field>
+        </record>
+        <record id="pos_order_action_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="point_of_sale.view_pos_order_tree"/>
+            <field name="act_window_id" ref="point_of_sale.action_pos_pos_form"/>
+        </record>
+
+        <record id="pos_order_action_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="act_window_id" ref="point_of_sale.action_pos_pos_form"/>
+        </record>
+
+        <menuitem id="booking_service_pos"
+                  name="Làm dịch vụ"
+                  parent="point_of_sale.menu_point_root"
+                  sequence="98"/>
+    </data>
+</odoo>

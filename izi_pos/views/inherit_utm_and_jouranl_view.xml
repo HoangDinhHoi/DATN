@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <menuitem action="utm.utm_campaign_act" id="menu_utm_campaign_act_pos" sequence="20" parent="point_of_sale.menu_point_config_product"/>
+
+<!--        <menuitem id="menu_action_account_journal_form_open"-->
+<!--         action="point_of_sale.action_account_journal_form"-->
+<!--         parent="point_of_sale.menu_point_config_product"-->
+<!--         groups="point_of_sale.group_pos_manager"-->
+<!--         sequence="30"/>-->
+    </data>
+</odoo>

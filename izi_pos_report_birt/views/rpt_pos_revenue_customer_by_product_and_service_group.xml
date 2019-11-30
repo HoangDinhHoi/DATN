@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- HoiHD -->
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="rpt_revenue_customer_according_to_product_and_service_group_form">
+            <field name="name">Báo cáo doanh thu của khách hàng theo nhóm sản phẩm và dịch vụ</field>
+            <field name="model">rpt.revenue.customer.product.service.group</field>
+            <field name="arch" type="xml">
+                <form string="Báo cáo doanh thu của khách hàng theo nhóm sản phẩm và dịch vụ">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date_from" required="1" string="Từ ngày"/>
+                                <field name="branch_id" required="1" string="Chi nhánh"
+                                       options="{'no_create':1, 'no_open':1}"/>
+                            </group>
+                            <group>
+                                <field name="date_to" required="1" string="Đến ngày"/>
+                                <field name="is_export_excel" string="Xuất Excel"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button name="action_report"
+                                    type="object"
+                                    class="oe_highlight"
+                                    string="Xuất báo cáo"
+                                    icon="fa-print"/>
+                            <button special="cancel" string="Hủy" class="btn btn-default"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- action -->
+        <record model="ir.actions.act_window" id="rpt_revenue_customer_according_to_product_and_service_group_action">
+            <field name="name">Báo cáo doanh thu của khách hàng theo nhóm sản phẩm và dịch vụ</field>
+            <field name="res_model">rpt.revenue.customer.product.service.group</field>
+            <field name="view_mode">form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="rpt_revenue_customer_according_to_product_and_service_group_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <!-- menu item -->
+        <menuitem id="rpt_customer_revenue_according_to_product_and_service_group"
+                  name="Báo cáo doanh thu của khách hàng theo nhóm sản phẩm và dịch vụ"
+                  action="rpt_revenue_customer_according_to_product_and_service_group_action"
+                  parent="izi_pos_report_birt.rpt_pos_revenue_categ"/>
+    </data>
+</odoo>

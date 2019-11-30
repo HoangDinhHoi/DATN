@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="sale_order_make_pos_order" model="ir.ui.view">
+            <field name="name">Sale order make pos order</field>
+            <field name="model">sale.order.make.pos.order</field>
+            <field name="arch" type="xml">
+                <form string="Sale order make pos order">
+                    <sheet>
+                        <group>
+                            <field name="pos_config_id" required="True"/>
+                            <field name="pos_session_id" readonly="True" force_save="True"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="create_pos_order" string="Create pos" class="btn btn-primary" type="object" />
+                        <button special="cancel" string="Cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

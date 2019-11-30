@@ -1,0 +1,1757 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* izi_pos_search
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-10 02:43+0000\n"
+"PO-Revision-Date: 2019-07-10 02:43+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+msgid "<b>Current details</b>"
+msgstr "Dịch vụ hiện tại"
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+msgid "<b>New details</b>"
+msgstr "Dịch vụ mới"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:43
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_line_transient__move_line
+#, python-format
+msgid "Account Move Line"
+msgstr "Chi tiết bút toán"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/coupon_transient.py:23
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:39
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:60
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:20
+#: code:addons/izi_pos_search/models/service_card_transient.py:20
+#, python-format
+msgid "Activated"
+msgstr "Đã kích hoạt"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/coupon_transient.py:19
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:42
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:60
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__amount
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_deduction__amount
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_line_transient__amount
+#, python-format
+msgid "Amount"
+msgstr "Tổng tiền"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:49
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__x_deposit_amount_total
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+#, python-format
+msgid "Amount Deposited"
+msgstr "Tổng tiền đã đặt cọc"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:20
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:41
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:66
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:16
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient__amount_total
+#: model:ir.model.fields,field_description:izi_pos_search.field_new_service_exchange_transient__amount_total
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_transient__total_amount
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__amount_total
+#, python-format
+msgid "Amount Total"
+msgstr "Tổng tiền"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:18
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:28
+#, python-format
+msgid "Approval"
+msgstr "Chấp thuận"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:46
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_line_transient__bank_card_id
+#, python-format
+msgid "Bank Card"
+msgstr "Thẻ ngân hàng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:25
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:26
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:23
+#, python-format
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:26
+#, python-format
+msgid "Canceled"
+msgstr "Đã hủy"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:55
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:55
+#: model:ir.model.fields,field_description:izi_pos_search.field_current_service_exchange_transient__card_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_line_transient__product_id
+#, python-format
+msgid "Card"
+msgstr "Thẻ"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:35
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:12
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient__lot_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__old_lot_id
+#, python-format
+msgid "Card Code"
+msgstr "Mã thẻ"
+
+#. module: izi_pos_search
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history__detail_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__detail_id
+msgid "Card Detail"
+msgstr "Chi tiết thẻ"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:26
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__pos_card_exchange_ids
+#, python-format
+msgid "Card Exchange / Split/ Redeem"
+msgstr "Tách / Đổi / Thu hồi thẻ"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:38
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__product_lot_inventory_history_ids
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_form_view_inherit
+#, python-format
+msgid "Card Inventory History"
+msgstr "Lịch sử tồn thẻ"
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+msgid "Card Split/Exchange/Redeem"
+msgstr "Tách/Đổi/Thu hồi Thẻ"
+
+#. module: izi_pos_search
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history__card_total_count
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__card_total_count
+msgid "Card Total Count"
+msgstr "Số lượng sử dụng của thẻ"
+
+#. module: izi_pos_search
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history__card_used_count
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__card_used_count
+msgid "Card Used Count"
+msgstr "Số lượng đã sử dụng của thẻ"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:67
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_line_transient__exchange_ids
+#, python-format
+msgid "Cards Detail"
+msgstr "Chi tiết các thẻ"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:52
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__check_coupon
+#, python-format
+msgid "Check Coupon"
+msgstr "Kiểm tra phiếu mua hàng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:53
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__check_service_card
+#, python-format
+msgid "Check Service Card"
+msgstr "Kiểm tra thẻ dịch vụ"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:13
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__check_by_date
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_form_view_inherit
+#, python-format
+msgid "Check by Date"
+msgstr "Kiểm tra theo ngày"
+
+#. module: izi_pos_search
+#: selection:card.service.history.transient,state:0
+#: selection:pos.card.exchange.transient,state:0
+msgid "Chấp thuận"
+msgstr ""
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:28
+#, python-format
+msgid "Closed"
+msgstr "Đã đóng"
+
+#. module: izi_pos_search
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history__card_code
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__card_code
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+msgid "Code"
+msgstr "Mã"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:53
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:32
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_line_transient__serial
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__serial
+#, python-format
+msgid "Code Card"
+msgstr "Mã thẻ"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:52
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_line_transient__lot_id
+#, python-format
+msgid "Code card"
+msgstr "Mã thẻ"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:17
+#, python-format
+msgid "Comment of Customer"
+msgstr "Nhận xét của Khách hàng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/coupon_transient.py:31
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:33
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:32
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:64
+#: code:addons/izi_pos_search/models/pos_search.py:54
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:42
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:32
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:32
+#: code:addons/izi_pos_search/models/service_card_transient.py:28
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__company_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient__company_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient__company_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__company_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__company_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_deduction__company_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_transient__company_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__x_company_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__company_id
+#, python-format
+msgid "Company"
+msgstr "Công ty"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:23
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:25
+#, python-format
+msgid "Confirm"
+msgstr "Xác nhận"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:27
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__cost
+#, python-format
+msgid "Cost"
+msgstr "Giá vốn"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:18
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__coupon_ids
+#, python-format
+msgid "Coupon"
+msgstr "Phiếu mua hàng"
+
+#. module: izi_pos_search
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__create_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient__create_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient__create_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__create_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_current_service_exchange_transient__create_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_new_service_exchange_transient__create_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_detail_transient__create_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_line_transient__create_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__create_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_deduction__create_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_line_transient__create_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_transient__create_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__create_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__create_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history__create_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: izi_pos_search
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__create_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient__create_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient__create_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__create_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_current_service_exchange_transient__create_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_new_service_exchange_transient__create_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_detail_transient__create_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_line_transient__create_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__create_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_deduction__create_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_line_transient__create_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_transient__create_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__create_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__create_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history__create_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__create_date
+msgid "Created on"
+msgstr "Thời điểm tạo"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:39
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__amount_current
+#, python-format
+msgid "Current Amount"
+msgstr "Tổng tiền hiện tại"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:35
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__current_detail_line_ids
+#, python-format
+msgid "Current exchange"
+msgstr ""
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/coupon_transient.py:15
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:26
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:54
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:27
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:15
+#: code:addons/izi_pos_search/models/service_card_transient.py:15
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__customer_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient__customer_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__customer_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_line_transient__customer_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__customer_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__partner_id
+#, python-format
+msgid "Customer"
+msgstr "Khách hàng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:30
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient__customer_sign
+#, python-format
+msgid "Customer Sign"
+msgstr "Chữ ký khách hàng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:31
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_transient__customer_signature
+#, python-format
+msgid "Customer Signature"
+msgstr "Chữ ký khách hàng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:30
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:21
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:58
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__date
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_deduction__date
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_transient__date
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history__date
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__date
+#, python-format
+msgid "Date"
+msgstr "Ngày"
+
+#. module: izi_pos_search
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history__date_time
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__date_time
+msgid "Date Time"
+msgstr "Thời gian"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:36
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__deduction_of_deposit_ids
+#, python-format
+msgid "Deduction of Deposit"
+msgstr "Cấn trừ đặt cọc"
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_form_view_inherit
+msgid "Deduction of Deposit History"
+msgstr "Lịch sử cấn trừ đặt cọc"
+
+#. module: izi_pos_search
+#: model:ir.model,name:izi_pos_search.model_pos_order
+msgid "Deduction of deposit"
+msgstr "Cấn trừ đặt cọc"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:15
+#, python-format
+msgid "Deposit"
+msgstr "Đặt cọc"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:50
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__x_balance_deposit
+#, python-format
+msgid "Deposit Balance"
+msgstr "Số dư đặt cọc"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:30
+#: code:addons/izi_pos_search/models/pos_search.py:30
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_transient__lines
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__pos_customer_deposit_ids
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+#, python-format
+msgid "Deposit History"
+msgstr "Lịch sử đặt cọc"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:44
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_line_transient__deposit_id
+#, python-format
+msgid "Deposit of Customer"
+msgstr "Đặt cọc của khách hàng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/coupon_transient.py:26
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:42
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:63
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:23
+#: code:addons/izi_pos_search/models/service_card_transient.py:23
+#, python-format
+msgid "Destroy"
+msgstr "Hủy"
+
+#. module: izi_pos_search
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history__product_used_count
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__product_used_count
+msgid "Detail Used Count"
+msgstr "Số lượng đã sử dụng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/coupon_transient.py:20
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__discount
+#, python-format
+msgid "Discount"
+msgstr "Chiết khấu"
+
+#. module: izi_pos_search
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__display_name
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient__display_name
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient__display_name
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__display_name
+#: model:ir.model.fields,field_description:izi_pos_search.field_current_service_exchange_transient__display_name
+#: model:ir.model.fields,field_description:izi_pos_search.field_new_service_exchange_transient__display_name
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_detail_transient__display_name
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_line_transient__display_name
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__display_name
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_deduction__display_name
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_line_transient__display_name
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_transient__display_name
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__display_name
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__display_name
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history__display_name
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:24
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:27
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:19
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:24
+#, python-format
+msgid "Done"
+msgstr "Hoàn thành"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:19
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:25
+#, python-format
+msgid "Done Refund"
+msgstr "Hoàn thành hoàn hủy"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:17
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:24
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:14
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:19
+#, python-format
+msgid "Draft"
+msgstr "Dự thảo"
+
+#. module: izi_pos_search
+#: selection:card.service.history.transient,state:0
+#: selection:pos.card.exchange.transient,state:0
+#: selection:pos.customer.deposit.transient,state:0
+#: selection:pos.service.exchange.transient,state:0
+msgid "Dự thảo"
+msgstr ""
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:48
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__x_email
+#, python-format
+msgid "Email"
+msgstr ""
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:17
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient__employee_ids
+#, python-format
+msgid "Employee"
+msgstr "Người lao động"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:14
+#, python-format
+msgid "Exchange"
+msgstr "Đổi"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:76
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_detail_transient__option_id
+#, python-format
+msgid "Exchange Card"
+msgstr "Thẻ đổi"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:54
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:64
+#: model:ir.model.fields,field_description:izi_pos_search.field_current_service_exchange_transient__exchange_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_new_service_exchange_transient__exchange_id
+#, python-format
+msgid "Exchange Service"
+msgstr "Đổi dịch vụ"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:26
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__exchange_date
+#, python-format
+msgid "Exchange date"
+msgstr "Ngày đổi"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:52
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:62
+#: model:ir.model.fields,field_description:izi_pos_search.field_current_service_exchange_transient__to_subtract_count
+#: model:ir.model.fields,field_description:izi_pos_search.field_new_service_exchange_transient__exchange_qty
+#, python-format
+msgid "Exchange qty"
+msgstr "Số lượng đổi"
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_form_view_inherit
+msgid "From Date"
+msgstr "Từ ngày"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:14
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__from_date
+#, python-format
+msgid "From date"
+msgstr "Từ ngày"
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+msgid "General"
+msgstr "Chung"
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+msgid "GỘP THẺ"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:pos.card.exchange.transient,type:0
+msgid "Gộp"
+msgstr ""
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+msgid "HOÀN TIỀN"
+msgstr ""
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:24
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__history_service_card_ids
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+#, python-format
+msgid "History Use Service Card"
+msgstr "Lịch sử sử dụng thẻ dịch vụ"
+
+#. module: izi_pos_search
+#: selection:card.service.detail.transient,state:0
+#: selection:card.service.transient,state:0
+#: selection:coupon.transient,state:0
+#: selection:pos.card.exchange.line.transient,status:0
+#: selection:pos.card.exchange.transient,old_status:0
+msgid "Hiệu lực"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:card.service.history.transient,state:0
+#: selection:pos.card.exchange.transient,state:0
+#: selection:pos.customer.deposit.transient,state:0
+#: selection:pos.service.exchange.transient,state:0
+msgid "Hoàn thành"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:card.service.history.transient,state:0
+#: selection:pos.card.exchange.transient,state:0
+msgid "Hoàn thành hoàn hủy"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:card.service.detail.transient,state:0
+#: selection:card.service.transient,state:0
+#: selection:coupon.transient,state:0
+#: selection:pos.card.exchange.line.transient,status:0
+#: selection:pos.card.exchange.transient,old_status:0
+#: selection:pos.card.exchange.transient,state:0
+#: selection:pos.customer.deposit.transient,state:0
+#: selection:pos.service.exchange.transient,state:0
+msgid "Hủy"
+msgstr ""
+
+#. module: izi_pos_search
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__id
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient__id
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient__id
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__id
+#: model:ir.model.fields,field_description:izi_pos_search.field_current_service_exchange_transient__id
+#: model:ir.model.fields,field_description:izi_pos_search.field_new_service_exchange_transient__id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_detail_transient__id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_line_transient__id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_deduction__id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_line_transient__id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_transient__id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__id
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history__id
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__id
+msgid "ID"
+msgstr ""
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:43
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__x_image
+#, python-format
+msgid "Image"
+msgstr "Hình ảnh"
+
+#. module: izi_pos_search
+#: selection:pos.card.exchange.transient,state:0
+msgid "Implement"
+msgstr "Ghi sổ"
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+msgid "Information Genaral"
+msgstr "Thông tin chung"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:45
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_line_transient__intermediary_partner_id
+#, python-format
+msgid "Intermediary Partner"
+msgstr "Đối tác trung gian"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:41
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_line_transient__journal_id
+#, python-format
+msgid "Journal Entry"
+msgstr "Bút toán sổ nhật ký"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:56
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_deduction__name
+#, python-format
+msgid "Label"
+msgstr "Nhãn"
+
+#. module: izi_pos_search
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient____last_update
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient____last_update
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient____last_update
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient____last_update
+#: model:ir.model.fields,field_description:izi_pos_search.field_current_service_exchange_transient____last_update
+#: model:ir.model.fields,field_description:izi_pos_search.field_new_service_exchange_transient____last_update
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_detail_transient____last_update
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_line_transient____last_update
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient____last_update
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_deduction____last_update
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_line_transient____last_update
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_transient____last_update
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search____last_update
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient____last_update
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history____last_update
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: izi_pos_search
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__write_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient__write_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient__write_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__write_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_current_service_exchange_transient__write_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_new_service_exchange_transient__write_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_detail_transient__write_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_line_transient__write_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__write_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_deduction__write_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_line_transient__write_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_transient__write_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__write_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__write_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history__write_uid
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: izi_pos_search
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__write_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient__write_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient__write_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__write_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_current_service_exchange_transient__write_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_new_service_exchange_transient__write_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_detail_transient__write_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_line_transient__write_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__write_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_deduction__write_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_line_transient__write_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_transient__write_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__write_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__write_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history__write_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/coupon_transient.py:18
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:36
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:56
+#: code:addons/izi_pos_search/models/service_card_transient.py:17
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__life_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient__life_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__life_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_line_transient__life_date
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__old_life_date
+#, python-format
+msgid "Life Date"
+msgstr "Hạn sử dụng"
+
+#. module: izi_pos_search
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history__lot_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__lot_id
+msgid "Lot"
+msgstr ""
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:16
+#, python-format
+msgid "Merger"
+msgstr "Gộp"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:44
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_line_transient__merger_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__old_card_ids
+#, python-format
+msgid "Merger Card"
+msgstr "Thẻ gộp"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:16
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:17
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__type
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_transient__type
+#, python-format
+msgid "Method"
+msgstr "Phương thức"
+
+#. module: izi_pos_search
+#: selection:card.service.detail.transient,state:0
+#: selection:card.service.transient,state:0
+#: selection:coupon.transient,state:0
+#: selection:pos.card.exchange.line.transient,status:0
+#: selection:pos.card.exchange.transient,old_status:0
+msgid "Mới"
+msgstr ""
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/coupon_transient.py:11
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:11
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:13
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:12
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:11
+#: code:addons/izi_pos_search/models/service_card_transient.py:11
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__name
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient__name
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__name
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__name
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_transient__name
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__name
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__name
+#, python-format
+msgid "Name"
+msgstr "Tên"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/coupon_transient.py:22
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:38
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:59
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:19
+#: code:addons/izi_pos_search/models/service_card_transient.py:19
+#, python-format
+msgid "New"
+msgstr ""
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:40
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__amount_new
+#, python-format
+msgid "New Amount"
+msgstr ""
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:45
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__new_card_ids
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+#, python-format
+msgid "New Card"
+msgstr "Thẻ mới"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:37
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__new_service_detail_line_ids
+#, python-format
+msgid "New exchange"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:pos.service.exchange.transient,state:0
+msgid "Nhận xét của Khách hàng"
+msgstr ""
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:32
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:22
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:25
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:31
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient__note
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__note
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_transient__note
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__note
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+#, python-format
+msgid "Note"
+msgstr "Ghi chú"
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+msgid "Note..."
+msgstr "Ghi chú..."
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:62
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_deduction__note
+#, python-format
+msgid "Notes"
+msgstr "Ghi chú"
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+msgid "Number"
+msgstr "Số"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/product_lot_inventory_history_transient.py:23
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__number_export
+#, python-format
+msgid "Number Export"
+msgstr "SL Xuất"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/product_lot_inventory_history_transient.py:24
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__number_import
+#, python-format
+msgid "Number Import"
+msgstr "SL Nhập"
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+msgid "Old Card"
+msgstr "Thẻ cũ"
+
+#. module: izi_pos_search
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_line_transient__option_id
+msgid "Option Card"
+msgstr "Đơn"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:78
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_detail_transient__line_id
+#, python-format
+msgid "Option Exchange"
+msgstr "Đơn"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/coupon_transient.py:14
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:28
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:30
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:14
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:18
+#: code:addons/izi_pos_search/models/service_card_transient.py:14
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__order_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient__order_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient__order_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__order_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__order_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__pos_order_id
+#, python-format
+msgid "Order"
+msgstr "Lệnh"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/coupon_transient.py:28
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__order_use_id
+#, python-format
+msgid "Order Payment"
+msgstr "Thanh toán đơn bán"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:31
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__pos_rf_order_id
+#, python-format
+msgid "Order Refund"
+msgstr "Đơn hàng RF"
+
+#. module: izi_pos_search
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history__origin
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__origin
+msgid "Origin"
+msgstr "Tham chiếu"
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+msgid "POS Customer Deposit"
+msgstr "Đặt cọc của khách hàng tại POS"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/coupon_transient.py:16
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:18
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:57
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:16
+#: code:addons/izi_pos_search/models/service_card_transient.py:16
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__branch_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient__branch_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__branch_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_deduction__partner_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_transient__partner_id
+#, python-format
+msgid "Partner"
+msgstr "Đối tác"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:41
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__x_partner_code
+#, python-format
+msgid "Partner Code"
+msgstr "Mã đối tác"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:40
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__x_name
+#, python-format
+msgid "Partner Name"
+msgstr "Tên đối tác"
+
+#. module: izi_pos_search
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__x_partner_old_code
+msgid "Partner Old Code"
+msgstr "Mã cũ đối tác"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:29
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__payment_ids
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+#, python-format
+msgid "Payment"
+msgstr "Thanh toán"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:47
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__x_phone
+#, python-format
+msgid "Phone"
+msgstr "Điện thoại"
+
+#. module: izi_pos_search
+#: model:ir.actions.act_window,name:izi_pos_search.pos_search_action
+msgid "Pos Search"
+msgstr "Tìm kiếm"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:33
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_transient__journal_id
+#, python-format
+msgid "Prepaid deposit book"
+msgstr "Sổ đặt cọc trả trước"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:80
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:30
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__price_sub_total
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_detail_transient__price_sub_total
+#, python-format
+msgid "Price Sub Total"
+msgstr "Tổng giá trị"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:79
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:29
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:15
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__price_unit
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient__price_unit
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_detail_transient__price_unit
+#, python-format
+msgid "Price Unit"
+msgstr "Giá thành"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:65
+#: model:ir.model.fields,field_description:izi_pos_search.field_new_service_exchange_transient__price_unit
+#, python-format
+msgid "Price unit"
+msgstr "Đơn giá"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:28
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__pricelist_id
+#, python-format
+msgid "Pricelist"
+msgstr "Bảng giá"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/coupon_transient.py:13
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:13
+#: code:addons/izi_pos_search/models/service_card_transient.py:13
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__product_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient__product_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__product_id
+#, python-format
+msgid "Product"
+msgstr "Sản phẩm"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/coupon_transient.py:9
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:9
+#: code:addons/izi_pos_search/models/service_card_transient.py:9
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__product_release_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient__product_release_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__product_release_id
+#, python-format
+msgid "Product Release"
+msgstr "Lần phát hành"
+
+#. module: izi_pos_search
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history__product_total_count
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__product_total_count
+msgid "Product Total Count"
+msgstr "Số lượng sử dụng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:77
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_detail_transient__qty_hand
+#, python-format
+msgid "Qty Hand"
+msgstr "SL chưa sử dụng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:14
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient__qty
+#, python-format
+msgid "Quantity"
+msgstr "Số lượng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/product_lot_inventory_history_transient.py:22
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history__qty_exchange
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__qty_exchange
+#, python-format
+msgid "Quantity Exchange"
+msgstr "SL thay đổi"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:44
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__x_rank_id
+#, python-format
+msgid "Rank"
+msgstr "Hạng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:23
+#, python-format
+msgid "Rate"
+msgstr "Đánh giá"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:31
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__reason
+#, python-format
+msgid "Reason of Cancellation"
+msgstr "Lý do hủy"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:15
+#, python-format
+msgid "Redeem"
+msgstr ""
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:11
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient__date
+#, python-format
+msgid "Redeem Date"
+msgstr "Ngày sử dụng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:47
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_line_transient__reference
+#, python-format
+msgid "Ref"
+msgstr "Tham chiếu"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:59
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_deduction__ref
+#, python-format
+msgid "Reference"
+msgstr "Tham chiếu"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:16
+#, python-format
+msgid "Refund"
+msgstr "Trả lại"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:33
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__pos_customer_refund_deposit_ids
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+#, python-format
+msgid "Refund Deposit History"
+msgstr "Lịch sử trả lại đặt cọc"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:22
+#, python-format
+msgid "Refunded"
+msgstr "Đã trả lại"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:81
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:31
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__remain_sub_total
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_detail_transient__remain_sub_total
+#, python-format
+msgid "Remain Sub total"
+msgstr "Giá trị cho phép sử dụng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:28
+#: code:addons/izi_pos_search/models/service_card_transient.py:27
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__residual_count
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient__residual_count
+#, python-format
+msgid "Residual Count"
+msgstr "Số lần còn lại"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/coupon_transient.py:10
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:10
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:12
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:63
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:9
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:10
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:9
+#: code:addons/izi_pos_search/models/service_card_transient.py:10
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__search_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient__search_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient__search_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__search_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__search_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_deduction__search_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_transient__search_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__search_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__search_id
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+#, python-format
+msgid "Search"
+msgstr "Tìm"
+
+#. module: izi_pos_search
+#: model:ir.model,name:izi_pos_search.model_pos_customer_deposit_transient
+msgid "Search Customer deposit"
+msgstr "Tìm kiếm công nợ KH"
+
+#. module: izi_pos_search
+#: model:ir.ui.menu,name:izi_pos_search.pos_search_menu_item
+msgid "Search Information"
+msgstr "Tìm kiếm thông tin"
+
+#. module: izi_pos_search
+#: model:ir.model,name:izi_pos_search.model_pos_customer_deposit_line_transient
+msgid "Search deposit of customer in Line table"
+msgstr "Tìm kiếm công nợ KH"
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+msgid "Search information (Card service code, Coupon code, Customer code or phone)"
+msgstr "Tìm kiếm thông tin (Mã thẻ dịch vụ, mã phiếu mua hàng, mã hoặc số điện thoại khách hàng )"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:61
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_deduction__sequence
+#, python-format
+msgid "Sequence"
+msgstr "Trình tự"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/models.py:12
+#: code:addons/izi_pos_search/models/pos_search.py:12
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:29
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__serial
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__product_lot_id
+#, python-format
+msgid "Serial"
+msgstr "Mã"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:73
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:49
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:61
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:25
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:13
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__service_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient__service_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_current_service_exchange_transient__service_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_new_service_exchange_transient__service_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_detail_transient__product_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history__product_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_product_lot_inventory_history_transient__product_id
+#, python-format
+msgid "Service"
+msgstr "Dịch vụ"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:20
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__service_card_ids
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+#, python-format
+msgid "Service Card"
+msgstr "Thẻ dịch vụ"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:22
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__detail_service_card_ids
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+#, python-format
+msgid "Service Card Detail"
+msgstr "Chi tiết thẻ dịch vụ"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:28
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__pos_service_exchange_ids
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+#, python-format
+msgid "Service Exchange"
+msgstr "Đổi dịch vụ"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:12
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:19
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:40
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:10
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__session_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_line_transient__session_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_transient__session_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__session_id
+#, python-format
+msgid "Session"
+msgstr "Phiên"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:43
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__signature
+#, python-format
+msgid "Signature"
+msgstr "Chữ ký"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:46
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__customer_signature
+#, python-format
+msgid "Signature Image"
+msgstr "Chữ ký"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:13
+#, python-format
+msgid "Split"
+msgstr "Tách"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:29
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:24
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:29
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__state
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient__state
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient__state
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__state
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__state
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_transient__state
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_service_exchange_transient__state
+#, python-format
+msgid "State"
+msgstr "Giai đoạn"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:55
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_customer_deposit_deduction__statement_id
+#, python-format
+msgid "Statement"
+msgstr "Sao kê"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:43
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:64
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_line_transient__status
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_transient__old_status
+#, python-format
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/coupon_transient.py:12
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:12
+#: code:addons/izi_pos_search/models/service_card_transient.py:12
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__stk_prdt_lot_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient__stk_prdt_lot_id
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__stk_prdt_lot_id
+#, python-format
+msgid "Stock Production Lot"
+msgstr "Mã thẻ"
+
+#. module: izi_pos_search
+#: model:ir.model,name:izi_pos_search.model_product_lot_inventory_history
+#: model:ir.model,name:izi_pos_search.model_product_lot_inventory_history_transient
+msgid "Store inventory histories of card and services in that card."
+msgstr "Lưu trữ lịch sử tồn của thẻ dịch vụ"
+
+#. module: izi_pos_search
+#: model:ir.model,name:izi_pos_search.model_pos_use_service
+msgid "Store inventory histories of service card"
+msgstr "Lưu trữ lịch sử tồn của thẻ"
+
+#. module: izi_pos_search
+#: model:ir.model,name:izi_pos_search.model_pos_card_exchange
+msgid "Store inventory histories of service card from exchange card"
+msgstr "Lưu trữ các lịch sử tôn của thẻ dịch vụ từ đợt đổi thẻ"
+
+#. module: izi_pos_search
+#: model:ir.model,name:izi_pos_search.model_pos_service_exchange
+msgid "Store inventory history of service card"
+msgstr "Lưu trữ lịch sử tồn của thẻ"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:45
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__x_street
+#, python-format
+msgid "Street"
+msgstr "Địa chỉ"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:53
+#: model:ir.model.fields,field_description:izi_pos_search.field_current_service_exchange_transient__amount_subtract
+#, python-format
+msgid "Subtract"
+msgstr "Tổng"
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+msgid "THU HỒI THẺ"
+msgstr ""
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:183
+#, python-format
+msgid "This code has not exist!"
+msgstr "Mã này không tồn tại!"
+
+#. module: izi_pos_search
+#: selection:pos.card.exchange.transient,type:0
+msgid "Thu hồi"
+msgstr ""
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_form_view_inherit
+msgid "To Date"
+msgstr "Đến ngày"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_search.py:15
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__to_date
+#, python-format
+msgid "To date"
+msgstr "Đến ngày"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:20
+#, python-format
+msgid "To refund"
+msgstr "Để trả lại"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:57
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:74
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:26
+#: code:addons/izi_pos_search/models/service_card_transient.py:25
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__total_count
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient__total_count
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_detail_transient__total_count
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_line_transient__total_count
+#, python-format
+msgid "Total Count"
+msgstr "Tổng lần sử dụng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:50
+#: model:ir.model.fields,field_description:izi_pos_search.field_current_service_exchange_transient__total_count
+#, python-format
+msgid "Total qty"
+msgstr "Tổng số lần sử dụng"
+
+#. module: izi_pos_search
+#: selection:pos.customer.deposit.transient,type:0
+msgid "Trả lại"
+msgstr ""
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+msgid "TÁCH THẺ"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:pos.card.exchange.transient,type:0
+msgid "Tách"
+msgstr ""
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/coupon_transient.py:29
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__use_customer_id
+#, python-format
+msgid "Use Customer"
+msgstr "Khách hàng sử dụng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/coupon_transient.py:30
+#: model:ir.model.fields,field_description:izi_pos_search.field_coupon_transient__use_date
+#, python-format
+msgid "Use Date"
+msgstr "Ngày sử dụng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/coupon_transient.py:25
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:41
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:62
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:22
+#: code:addons/izi_pos_search/models/service_card_transient.py:22
+#, python-format
+msgid "Used"
+msgstr "Đã sử dụng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:75
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:27
+#: code:addons/izi_pos_search/models/service_card_transient.py:26
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_detail_transient__used_count
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_transient__used_count
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_card_exchange_detail_transient__used_count
+#, python-format
+msgid "Used Count"
+msgstr "Số lần đã sử dụng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:51
+#: model:ir.model.fields,field_description:izi_pos_search.field_current_service_exchange_transient__used_count
+#, python-format
+msgid "Used qty"
+msgstr "Số lần đã sử dụng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/coupon_transient.py:24
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:40
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:61
+#: code:addons/izi_pos_search/models/service_card_detail_transient.py:21
+#: code:addons/izi_pos_search/models/service_card_transient.py:21
+#, python-format
+msgid "Using"
+msgstr "Đang sử dụng"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:10
+#: model:ir.model.fields,field_description:izi_pos_search.field_card_service_history_transient__using_id
+#, python-format
+msgid "Using Order"
+msgstr "Đơn sử dụng dịch vụ"
+
+#. module: izi_pos_search
+#: model:ir.model.fields,field_description:izi_pos_search.field_pos_search__x_vat
+msgid "VAT"
+msgstr "Mã số Thuế"
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+msgid "Voucher/Coupon"
+msgstr "Phiếu mua hàng/ Phiếu giảm giá"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:21
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:15
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:27
+#, python-format
+msgid "Wait Confirm"
+msgstr "Đợi xác nhận"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:18
+#, python-format
+msgid "Wait Exchange"
+msgstr "Đợi đổi"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:21
+#, python-format
+msgid "Wait Material"
+msgstr "Đợi nguyên vật liệu"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_card_exchange_transient.py:22
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:20
+#, python-format
+msgid "Wait Payment"
+msgstr "Đợi thanh toán"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:16
+#, python-format
+msgid "Wait payment"
+msgstr "Đợi thanh toán"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_service_exchange_transient.py:21
+#, python-format
+msgid "Wait refund"
+msgstr "Đợi trả lại"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/pos_customer_deposit_transient.py:5
+#: code:addons/izi_pos_search/models/pos_search.py:5
+#: code:addons/izi_pos_search/models/pos_search_function.py:5
+#, python-format
+msgid "Warning!"
+msgstr "Cảnh báo !"
+
+#. module: izi_pos_search
+#: code:addons/izi_pos_search/models/service_card_history_transient.py:22
+#, python-format
+msgid "Working"
+msgstr "Đang làm"
+
+#. module: izi_pos_search
+#: selection:pos.card.exchange.transient,state:0
+#: selection:pos.customer.deposit.transient,state:0
+msgid "Xác nhận"
+msgstr ""
+
+#. module: izi_pos_search
+#: model:ir.model,name:izi_pos_search.model_card_service_detail_transient
+msgid "card.service.detail.transient"
+msgstr ""
+
+#. module: izi_pos_search
+#: model:ir.model,name:izi_pos_search.model_card_service_history_transient
+msgid "card.service.history.transient"
+msgstr ""
+
+#. module: izi_pos_search
+#: model:ir.model,name:izi_pos_search.model_card_service_transient
+msgid "card.service.transient"
+msgstr ""
+
+#. module: izi_pos_search
+#: model:ir.model,name:izi_pos_search.model_coupon_transient
+msgid "coupon.transient"
+msgstr ""
+
+#. module: izi_pos_search
+#: model:ir.model,name:izi_pos_search.model_current_service_exchange_transient
+msgid "current.service.exchange.transient"
+msgstr ""
+
+#. module: izi_pos_search
+#: model:ir.model,name:izi_pos_search.model_pos_customer_deposit_deduction
+msgid "deduction of deposit"
+msgstr ""
+
+#. module: izi_pos_search
+#: model:ir.model,name:izi_pos_search.model_new_service_exchange_transient
+msgid "new.service.exchange.transient"
+msgstr ""
+
+#. module: izi_pos_search
+#: model:ir.model,name:izi_pos_search.model_pos_card_exchange_detail_transient
+msgid "pos.card.exchange.detail.transient"
+msgstr ""
+
+#. module: izi_pos_search
+#: model:ir.model,name:izi_pos_search.model_pos_card_exchange_line_transient
+msgid "pos.card.exchange.line.transient"
+msgstr ""
+
+#. module: izi_pos_search
+#: model:ir.model,name:izi_pos_search.model_pos_card_exchange_transient
+msgid "pos.card.exchange.transient"
+msgstr ""
+
+#. module: izi_pos_search
+#: model:ir.model,name:izi_pos_search.model_pos_search
+msgid "pos.search"
+msgstr ""
+
+#. module: izi_pos_search
+#: model:ir.model,name:izi_pos_search.model_pos_service_exchange_transient
+msgid "pos.service.exchange.transient"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:card.service.history.transient,state:0
+msgid "Đang làm"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:card.service.detail.transient,state:0
+#: selection:card.service.transient,state:0
+#: selection:coupon.transient,state:0
+#: selection:pos.card.exchange.line.transient,status:0
+#: selection:pos.card.exchange.transient,old_status:0
+msgid "Đang sử dụng"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:card.service.history.transient,state:0
+msgid "Đánh giá"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:card.service.history.transient,state:0
+msgid "Đã huỷ"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:card.service.detail.transient,state:0
+#: selection:card.service.transient,state:0
+#: selection:coupon.transient,state:0
+#: selection:pos.card.exchange.line.transient,status:0
+#: selection:pos.card.exchange.transient,old_status:0
+msgid "Đã sử dụng"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:pos.service.exchange.transient,state:0
+msgid "Đã trả lại"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:pos.customer.deposit.transient,state:0
+msgid "Đã đóng"
+msgstr ""
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+msgid "ĐẶT CỌC"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:pos.customer.deposit.transient,type:0
+msgid "Đặt cọc"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:pos.service.exchange.transient,state:0
+msgid "Để trả lại"
+msgstr ""
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+msgid "ĐỔI DỊCH VỤ"
+msgstr ""
+
+#. module: izi_pos_search
+#: model_terms:ir.ui.view,arch_db:izi_pos_search.pos_search_view_form
+msgid "ĐỔI THẺ"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:pos.card.exchange.transient,type:0
+msgid "Đổi"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:card.service.history.transient,state:0
+msgid "Đợi nguyên vật liệu"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:card.service.history.transient,state:0
+#: selection:pos.card.exchange.transient,state:0
+#: selection:pos.service.exchange.transient,state:0
+msgid "Đợi thanh toán"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:pos.service.exchange.transient,state:0
+msgid "Đợi trả lại"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:card.service.history.transient,state:0
+#: selection:pos.card.exchange.transient,state:0
+#: selection:pos.service.exchange.transient,state:0
+msgid "Đợi xác nhận"
+msgstr ""
+
+#. module: izi_pos_search
+#: selection:pos.service.exchange.transient,state:0
+msgid "Đợi đổi"
+msgstr ""
+

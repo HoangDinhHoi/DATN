@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="search_vd" model="ir.ui.view">
+            <filed name="name">Search VC</filed>
+            <filed name="model">pos.use.service</filed>
+            <filed name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="x_code_search" widget="enter2action" style="max-width: 345px;margin-left:145px" nolabel="1" placeholder="Search Code"
+                                   attrs="{'action_element_class': '.izi_btn_action_pos_card'}"/>
+                        </group>
+                        <group>
+                            <button name="action_search_code" type="object" string="Search" icon="fa-search" class="izi_btn_action_pos_card"/>
+                        </group>
+                    </group>
+                </form>
+            </filed>
+        </record>
+    </data>
+</odoo>

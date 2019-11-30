@@ -1,0 +1,115 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="izi_pos_revenue_allocation_search">
+            <field name="name">izi_pos_revenue_allocation_search</field>
+            <field name="model">pos.revenue.allocation</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="order_id"/>
+                    <field name="name"/>
+                    <field name="state"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="izi_pos_revenue_allocation_list">
+            <field name="name">izi_pos_revenue_allocation_list</field>
+            <field name="model">pos.revenue.allocation</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="order_id"/>
+                    <field name="amount_total"/>
+                    <field name="amount_allocated"/>
+                    <field name="remain_amount"/>
+                    <field name="amount_product"/>
+                    <field name="amount_service"/>
+                    <field name="amount_keep"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="izi_pos_revenue_allocation_form">
+            <field name="name">izi_pos_revenue_allocation_form</field>
+            <field name="model">pos.revenue.allocation</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_confirm" type="object" class="oe_highlight" string="Confirm" attrs="{'invisible': [('state', '=', 'confirmed')]}"/>
+                        <button name="action_edit" type="object" states="confirmed" class="oe_highlight" string="Edit"
+                                groups="point_of_sale.group_pos_manager"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,editing"
+                               readonly="1"
+                               force_save="1"/>
+                    </header>
+                    <sheet>
+                        <h2 class="text-center">PHÂN BỔ DOANH THU</h2>
+                        <h3 class="text-center">
+                            <field name="name" readonly="1" force_save="1"/>
+                        </h3>
+                        <group>
+                            <group>
+                                <field name="order_id" options="{'no_create':1, 'no_create_edit':1}" required="1"
+                                       attrs="{'readonly': [('state', '=', 'confirmed')]}" force_save="1"/>
+                                <field name="amount_total" readonly="1" force_save="1"/>
+                                <field name="remain_amount" readonly="1" force_save="1"/>
+                            </group>
+                            <group>
+                                <field name="style_allocation" required="1" attrs="{'readonly': [('state', '=', 'confirmed')]}" force_save="1"/>
+                                <field name="amount_product" invisible="1"/>
+                                <field name="amount_service" invisible="1"/>
+                                <field name="amount_keep" invisible="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="revenue_allocation" string="Revenuw Allocation Detail">
+                                <field name="revenue_allocation_ids" attrs="{'readonly': [('state', '=', 'confirmed')]}">
+                                    <tree editable="bottom">
+                                        <field name="employee_id" options="{'no_create':1, 'no_create_edit':1}" required="1"/>
+                                        <field name="amount_product" attrs="{'readonly': [('parent.style_allocation', '=', 'percent')]}" force_save="1"/>
+                                        <field name="amount_service" attrs="{'readonly': [('parent.style_allocation', '=', 'percent')]}" force_save="1"/>
+                                        <field name="amount_keep" attrs="{'readonly': [('parent.style_allocation', '=', 'percent')]}" force_save="1"/>
+                                        <field name="amount_product_percent" attrs="{'readonly': [('parent.style_allocation', '=', 'money')]}" force_save="1"/>
+                                        <field name="amount_service_percent" attrs="{'readonly': [('parent.style_allocation', '=', 'money')]}" force_save="1"/>
+                                        <field name="amount_keep_percent" attrs="{'readonly': [('parent.style_allocation', '=', 'money')]}" force_save="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="pos_revenue_allocation_action_window" model="ir.actions.act_window">
+            <field name="name">Pos Revenue Allocation</field>
+            <field name="res_model">pos.revenue.allocation</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+        </record>
+
+        <record id="pos_revenue_allocation_action_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="izi_pos_revenue_allocation_list"/>
+            <field name="act_window_id" ref="pos_revenue_allocation_action_window"/>
+        </record>
+
+        <record id="pos_revenue_allocation_action_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="izi_pos_revenue_allocation_form"/>
+            <field name="act_window_id" ref="pos_revenue_allocation_action_window"/>
+        </record>
+
+        <menuitem id="pos_revenue_allocation_menu" action="pos_revenue_allocation_action_window"
+                  parent="point_of_sale.menu_point_of_sale"/>
+
+    </data>
+</odoo>

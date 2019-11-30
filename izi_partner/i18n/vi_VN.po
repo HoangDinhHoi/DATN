@@ -1,0 +1,146 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* izi_partner
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-13 10:53+0000\n"
+"PO-Revision-Date: 2019-09-13 17:53+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: vi_VN\n"
+"X-Generator: Poedit 2.2.3\n"
+
+#. module: izi_partner
+#: model:ir.model.fields,field_description:izi_partner.field_res_partner__x_birthday
+#: model:ir.model.fields,field_description:izi_partner.field_res_users__x_birthday
+msgid "Birthday"
+msgstr "Ngày sinh"
+
+#. module: izi_partner
+#: model:ir.model.fields,field_description:izi_partner.field_res_partner__brand_id
+#: model:ir.model.fields,field_description:izi_partner.field_res_users__brand_id
+msgid "Brand"
+msgstr "Nhãn hiệu"
+
+#. module: izi_partner
+#: code:addons/izi_partner/models/res_partner.py:21
+#, python-format
+msgid "Check this box if this contact is a shop."
+msgstr "Tích vào ô này nếu là cửa hàng."
+
+#. module: izi_partner
+#: model:ir.model,name:izi_partner.model_res_partner
+msgid "Contact"
+msgstr "Liên hệ"
+
+#. module: izi_partner
+#: selection:res.partner,x_gender:0
+msgid "Female"
+msgstr "Nữ"
+
+#. module: izi_partner
+#: code:addons/izi_partner/models/res_partner.py:21
+#, python-format
+msgid "Is a Shop"
+msgstr "Là cửa hàng"
+
+#. module: izi_partner
+#: model:ir.model.fields,field_description:izi_partner.field_res_partner__join_date
+#: model:ir.model.fields,field_description:izi_partner.field_res_users__join_date
+msgid "Join Date"
+msgstr "Tham gia ngày"
+
+#. module: izi_partner
+#: model:ir.model.fields,field_description:izi_partner.field_res_partner__x_is_shop
+#: model:ir.model.fields,field_description:izi_partner.field_res_users__x_is_shop
+msgid "Là cửa hàng"
+msgstr ""
+
+#. module: izi_partner
+#: selection:res.partner,x_gender:0
+msgid "Male"
+msgstr "Nam"
+
+#. module: izi_partner
+#: model_terms:ir.ui.view,arch_db:izi_partner.customer_form_view_ref
+#: model_terms:ir.ui.view,arch_db:izi_partner.shop_form_view
+msgid "Name"
+msgstr "Tên"
+
+#. module: izi_partner
+#: selection:res.partner,x_gender:0
+msgid "Other"
+msgstr "Khác"
+
+#. module: izi_partner
+#: model:ir.model.fields,field_description:izi_partner.field_res_partner__x_partner_code
+#: model:ir.model.fields,field_description:izi_partner.field_res_users__x_partner_code
+msgid "Partner code"
+msgstr "Mã đối tác"
+
+#. module: izi_partner
+#: model:ir.model.fields,field_description:izi_partner.field_res_partner__x_partner_old_code
+#: model:ir.model.fields,field_description:izi_partner.field_res_users__x_partner_old_code
+msgid "Partner old code"
+msgstr "Mã nội bộ"
+
+#. module: izi_partner
+#: model:ir.model.fields,field_description:izi_partner.field_res_partner__presenter_id
+#: model:ir.model.fields,field_description:izi_partner.field_res_users__presenter_id
+msgid "Presenter"
+msgstr "Người giới thiệu"
+
+#. module: izi_partner
+#: model:ir.model.fields,field_description:izi_partner.field_res_partner__x_gender
+#: model:ir.model.fields,field_description:izi_partner.field_res_users__x_gender
+msgid "Sex"
+msgstr "Giới tính"
+
+#. module: izi_partner
+#: model:ir.actions.act_window,name:izi_partner.res_partner_inherit_action
+#: model:ir.ui.menu,name:izi_partner.res_partner_inherit_menu_item
+msgid "Shop Management"
+msgstr "Shop"
+
+#. module: izi_partner
+#: sql_constraint:res.partner:0
+msgid "The mobile of this Partner must be unique !"
+msgstr "Số di động của đối tác phải là duy nhất !"
+
+#. module: izi_partner
+#: sql_constraint:res.partner:0
+msgid "The new code of this Partner must be unique !"
+msgstr "Mã đối tác phải là duy nhất !"
+
+#. module: izi_partner
+#: sql_constraint:res.partner:0
+msgid "The old code of this Partner must be unique !"
+msgstr "Mã nội bộ phải là duy nhất !"
+
+#. module: izi_partner
+#: sql_constraint:res.partner:0
+msgid "The phone of this Partner must be unique !"
+msgstr "Số điện thoại của đối tác phải là duy nhất !"
+
+#. module: izi_partner
+#: model:ir.model.fields,help:izi_partner.field_res_partner__x_is_shop
+#: model:ir.model.fields,help:izi_partner.field_res_users__x_is_shop
+msgid "Tích vào ô này nếu là cửa hàng."
+msgstr ""
+
+#. module: izi_partner
+#: model:ir.model,name:izi_partner.model_customer_source
+msgid "customer.source"
+msgstr ""
+
+#. module: izi_partner
+#: model:ir.model,name:izi_partner.model_res_brand
+msgid "res.brand"
+msgstr ""

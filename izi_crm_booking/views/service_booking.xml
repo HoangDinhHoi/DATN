@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="service_booking_form_view">
+            <field name="name">Đặt làm dịch vụ</field>
+            <field name="model">service.booking</field>
+            <field name="arch" type="xml">
+                <form string="Đặt làm dịch vụ">
+                    <header>
+                        <field name="type" invisible="1" attrs="{'readonly':[('state','not in',('new'))]}"/>
+                        <button name="action_confirm" string="Confirm" type="object" states="new" class="oe_highlight"/>
+                        <button name="action_sale_order" string="Create sale order" type="object" states="confirmed"
+                                attrs="{'invisible': ['|', ('type', '=', 'service')]}"
+                                class="oe_highlight"/>
+                        <button name="action_no_sale" string="No sale" type="object" states="confirmed"
+                                attrs="{'invisible': ['|', ('type', '=', 'service')]}"
+                                class="oe_highlight"/>
+                        <button name="action_back_to_new" string="Back to new" type="object"
+                                 states="confirmed" confirm="Bạn có chắc chắn muốn quay lại trạng thái mới"/>
+                        <button name="action_done" string="Make done" type="object" states="working"
+                                attrs="{'invisible': ['|', ('type', '=', 'meeting')]}"
+                                class="oe_highlight"/>
+                        <button name="action_working" string="Working" type="object" states="confirmed"
+                                attrs="{'invisible': ['|', ('type', '=', 'meeting')]}"
+                                class="oe_highlight"/>
+                        <button name="action_redeem" string="Redeem" type="object" states="working"
+                                attrs="{'invisible': ['|', ('type', '=', 'meeting')]}"
+                                class="oe_highlight"/>
+                        <button name="action_cancel" string="Cancel" type="object" states="new,confirmed,working"
+                                confirm="Bạn có chắc chắn muốn hủy bỏ lịch đặt hẹn này"/>
+                        <field name="state" widget="statusbar" statusbar_visible="new,confirmed,done"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <div class="oe_title">
+                                <h1 class="text-center">
+                                    <field name="name" class="oe_inline" readonly="1"
+                                           attrs="{'invisible': [('name', '=', False)]}"/>
+                                </h1>
+                            </div>
+                        </group>
+                        <label for="customer_id" string="Customer" domain="[('customer', '=', True)]"
+                               context="{'search_default_customer':1, 'form_view_ref':'izi_partner.customer_form_view_ref', 'limit_company': 1}"
+                               attrs="{'readonly':[('state','not in',('new'))]}"/>
+                        <h2>
+                            <field name="customer_id" options="{'no_create': 1, 'no_create_edit': 1, 'no_open': True}"
+                                   context="{'search_default_customer':1, 'form_view_ref':'izi_partner.customer_form_view_ref', 'limit_company': 1}"
+                                   attrs="{'readonly':[('state','not in',('new'))]}"/>
+                        </h2>
+                        <group>
+                            <group>
+                                <field name="branch_id"
+                                       options="{'no_create': 1, 'no_create_edit': 1, 'no_open': True}"
+                                       attrs="{'readonly':[('state','not in',('new'))]}"/>
+                                <field name="team_id" required="1" force_save="1"
+                                       attrs="{'readonly':[('state','not in',('new'))]}"/>
+                                <field name="company_id" invisible="1" force_save="1"
+                                       attrs="{'readonly':[('state','not in',('new'))]}"/>
+                                <field name="user_id" required="1" force_save="1"
+                                       attrs="{'readonly':[('state','not in',('new'))]}"/>
+                            </group>
+                            <group>
+                                <field name="contact_number" attrs="{'readonly':[('state','not in',('new'))]}"/>
+                                <field name="customer_qty" attrs="{'readonly':[('state','not in',('new'))]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="time_from" attrs="{'readonly':[('state','not in',('new', 'confirmed'))]}"
+                                       required="1"/>
+                                <field name="time_to" attrs="{'readonly':[('state','not in',('new', 'confirmed'))]}"
+                                       required="1"/>
+<!--                                <field name="is_create_event" attrs="{'readonly':[('state','not in',('new'))]}"/>-->
+                            </group>
+                            <group>
+                                <field name="note" attrs="{'readonly':[('state','not in',('new'))]}"/>
+<!--                                <field name="ref_sale_order_id" readonly="1"/>-->
+                                <field name="ref_order_id" readonly="1"/>
+                                <field name="use_service_id" readonly="1" attrs="{'invisible': [('type', '=', 'meeting')]}"/>
+                                <field name="reason_no_sale" readonly="1"
+                                       attrs="{'invisible': [('state', '!=', 'no_sale')]}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Dịch vụ" attrs="{'invisible': [('type', '=', 'meeting')]}">
+                                <field name="services"
+                                       attrs="{'readonly':[('state','not in',('new'))]}"
+                                       context="{'tree_view_ref': 'izi_crm_booking.product_product_tree_view_p1000'}">
+                                    <tree editable="bottom">
+                                        <field name="default_code"/>
+                                        <field name="name"/>
+                                        <field name="x_duration" widget="float_time" sum="Total duration" string="Thời lượng"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Giường" attrs="{'invisible': [('type', '=', 'meeting')]}">
+                                <field name="beds" domain="[('team_id', '=', team_id)]"
+                                       attrs="{'readonly':[('state','not in',('new'))]}"
+                                       context="{'time_from': time_from, 'time_to': time_to, 'tree_view_ref': 'izi_crm_booking.crm_team_bed_tree_state'}">
+                                    <tree editable="bottom">
+                                        <field name="name"/>
+                                        <field name="code"/>
+                                        <field name="description"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Nhân viên" attrs="{'invisible': [('type', '=', 'meeting')]}">
+                                <field name="employees"
+                                       attrs="{'readonly':[('state','not in',('new'))]}"
+                                       context="{'default_company_id': company_id, 'time_from': time_from, 'time_to': time_to, 'tree_view_ref': 'izi_crm_booking.view_employee_tree_p1000'}">
+                                    <tree>
+                                        <field name="x_employee_code"/>
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="service_booking_calendar_view" model="ir.ui.view">
+            <field name="name">Đặt làm dịch vụ</field>
+            <field name="model">service.booking</field>
+            <field name="arch" type="xml">
+                <calendar string="Đặt làm dịch vụ"
+                          date_start="time_from"
+                          date_stop="time_to"
+                          color="state"
+                          quick_add="False">
+                    <field name="name"/>
+                    <field name="customer_id"/>
+                </calendar>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="services_booking_tree_view">
+            <field name="name">Đặt làm dịch vụ</field>
+            <field name="model">service.booking</field>
+            <field name="arch" type="xml">
+                <tree colors="orange:state == 'pending';green:state == 'new';blue:state == 'confirmed';gray:state == 'cancel'">
+                    <field name="name"/>
+                    <field name="customer_id"/>
+                    <field name="branch_id"/>
+                    <field name="user_id"/>
+                    <field name="time_from"/>
+                    <field name="time_to"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_service_booking" model="ir.actions.act_window">
+            <field name="name">Đặt làm dịch vụ</field>
+            <field name="res_model">service.booking</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="domain">[('type','=','service')]</field>
+            <field name="context">{'default_type' : 'service'}
+            </field>
+        </record>
+
+
+        <record id="action_customer_meeting" model="ir.actions.act_window">
+            <field name="name">Đặt hẹn</field>
+            <field name="res_model">service.booking</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form,calendar</field>
+            <field name="domain">[('type','=','meeting')]</field>
+            <field name="context">{'default_type' : 'meeting'}
+            </field>
+        </record>
+
+        <menuitem id="crm_service_booking_category"
+                  name="Booking/Meeting"
+                  parent="crm.crm_menu_sales"
+                  sequence="7"/>
+
+        <menuitem id="menu_service_booking"
+                  name="Đặt làm dịch vụ"
+                  action="action_service_booking"
+                  parent="izi_pos.booking_service_pos"
+                  sequence="1"/>
+        <!--                  parent="izi_crm_booking.crm_service_booking_category"-->
+
+        <menuitem id="menu_customer_meeting"
+                  name="Đặt hẹn"
+                  action="action_customer_meeting"
+                  parent="izi_crm_booking.crm_service_booking_category"
+                  sequence="5"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <menuitem id="report_pos"
+                  name="Xuất báo cáo"
+                  parent="point_of_sale.menu_point_root"
+                  sequence="99"
+                  groups="base.group_system"/>
+        <menuitem id="rpt_pos_revenue_categ"
+                  name="Revenue Reports"
+                  parent="report_pos"
+                  sequence="2"/>
+        <menuitem id="rpt_pos_employee_categ"
+                  name="Employee Reports"
+                  parent="report_pos"
+                  sequence="3"/>
+        <menuitem id="rpt_pos_card_categ"
+                  name="Card Reports"
+                  parent="report_pos"
+                  sequence="4"/>
+        <menuitem id="rpt_pos_list_categ"
+                  name="List"
+                  parent="report_pos"
+                  sequence="5"/>
+    </data>
+</odoo>

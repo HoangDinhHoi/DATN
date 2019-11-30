@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_template_stock_picking_internal_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="izi_stock_report.izi_internal_layout" t-lang="en_US">
+                        <div class="page" style="font-size:15px">
+                            <style>
+                                .table {
+                                border-collapse: collapse;
+                                border-color: black;
+                                width:100%
+                                }
+                                .table > tbody > tr > th {border: 1px solid black; padding: 5px;}
+                                .table > tbody > tr > td {border: 1px solid black; padding: 5px;}
+                                .table > tr {border: 1px solid black; padding: 5px;}
+                                .table > tr > td {border: 1px solid black; padding: 5px;}
+                            </style>
+                            <div style="width: 100%; height: 70px;">
+                                <div style="width: 25%; height: 70px;float: left;padding-right:20px;">
+                                    <div style="width: 30%; height: 70px;float: left;padding-right:20px;">
+                                        <img src="/izi_stock_report/static/image/company_logo.png"
+                                             style="max-width:150px;max-height:150px;"/>
+                                    </div>
+                                </div>
+                                <div style="width: 50%; height: 60px; margin-top: 100px; padding: 5px; float: left;">
+                                    <h3 style="margin-top: 0px;text-align: center; font-weight: 400; margin: 0px;">
+                                        PHIẾU CHUYỂN KHO NỘI BỘ
+                                    </h3>
+                                    <div style="width: 100%; text-align: center; margin: 0px; padding: 0px;">
+                                        <h4 style="margin-top: 3px; margin-left: 0px; margin-right: 0px; margin-bottom: 0px;font-size:14px">
+                                            SỐ:
+                                            <span t-field="o.name"/>
+                                        </h4>
+                                    </div>
+                                </div>
+                                <div style="width: 25%; height: 70px;float: left;text-align: center;padding-left: 30px;margin-top:20px">
+                                    <p style="font-style:italic; font-size:13px; font-weight: bold; margin: 0px;">
+                                        Mẫu Số 02-VT
+                                    </p>
+                                    <p style="font-size:13px; margin: 0px;">
+                                        (Ban hành theo Thông tư số: 200/2014/TT-BTC
+                                    </p>
+                                    <p style="font-size:13px; margin: 0px;">
+                                        Ngày 22/12/2014 của BTC)
+                                    </p>
+                                </div>
+                                <br clear="both"/>
+                            </div>
+                            <br clear="both"/>
+                            <br clear="both"/>
+                            <div>
+                                <div style="width: 50%; float: left;font-size:14px; margin: 0px; padding:0px;">
+                                    Xưởng/Kho xuất:
+                                    <span t-field="o.location_id"/>
+                                </div>
+                                <div style="width: 50%;float: left;font-size:14px; margin: 0px; padding:0px;">
+                                    Ngày xuất:
+                                    <sapn t-field="o.scheduled_date"/>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="width: 50%; float: left;font-size:14px; margin: 0px; padding:0px;">
+                                    Xưởng/Kho nhập:
+                                    <span t-field="o.dest_location_id"/>
+                                </div>
+                                <div style="width: 50%;float: left;font-size:14px; margin: 0px; padding:0px;">
+                                    Ngày nhập:
+                                    <sapn t-field="o.date_receive"/>
+                                </div>
+                            </div>
+                            <div>
+                                <div style="width: 50%; float: left;font-size:14px; margin: 0px; padding:0px;">
+                                    Diễn giải:
+                                    <span t-field="o.note"/>
+                                </div>
+                            </div>
+                            <br clear="both"/>
+                            <br clear="both"/>
+                            <div style="width: 100%;float: left; margin-top: 5px;font-size:13px;">
+                                <table class="table" style="width: 100%;height: 30px; padding: 1px; margin: 1px">
+                                    <tr style="padding:1px; margin: 1px;">
+                                        <th class="text-center" width="5%" style="padding:1px; margin: 1px;">
+                                            <p style="padding:1px; margin: 1px;">STT</p>
+                                        </th>
+                                        <th class="text-center" width="15%" style="padding:1px; margin: 1px;">
+                                            <p style="padding:1px; margin: 1px;">Mã hàng</p>
+                                        </th>
+                                        <th class="text-center" width="30%" style="padding:1px; margin: 1px;">
+                                            <p style="padding:1px; margin: 1px;">Tên hàng</p>
+                                        </th>
+                                        <th class="text-center" width="10%" style="padding:1px; margin: 1px;">
+                                            <p style="padding:1px; margin: 1px;">Đvt</p>
+                                        </th>
+                                        <th class="text-center" width="8%" style="padding:1px; margin: 1px;">
+                                            <p style="padding:1px; margin: 1px;">Số lượng</p>
+                                        </th>
+                                        <th class="text-center" width="15%" style="padding:1px; margin: 1px;">
+                                            <p style="padding:1px; margin: 1px;">Lot/Serial Number</p>
+                                        </th>
+                                        <th class="text-center" width="10%" style="padding:1px; margin: 1px;">
+                                            <p style="padding:1px; margin: 1px;">Hạn sử dụng</p>
+                                        </th>
+                                        <th class="text-center" width="7%" style="padding:1px; margin: 1px;">
+                                            <p style="padding:1px; margin: 1px;">Ghi chú</p>
+                                        </th>
+                                    </tr>
+                                    <t t-set="total" t-value="0"/>
+                                    <t t-set="number" t-value="1"/>
+                                    <tr t-foreach="o.transfer_line_ids" t-as="k"
+                                        style="padding:1px; margin: 1px">
+                                        <t t-if="len(k.lot_lines) &gt; 0">
+                                            <t t-foreach="k.lot_lines" t-as="l">
+                                                <t t-set="number" t-value="number+1"/>
+                                                <td id="td1" class="text-center" width="5%"
+                                                    style="padding:1px; margin: 1px">
+                                                    <t t-esc="number-1"/>
+                                                </td>
+                                                <td class="text-left" style="font-size:13px; padding:1px; margin: 1px">
+                                                    <span style="padding:1px; margin: 1px;"
+                                                          t-field="l.product_id.default_code"/>
+                                                </td>
+                                                <td class="text-left" style="font-size:13px; padding:1px; margin: 1px">
+                                                    <span style="padding:1px; margin: 1px;"
+                                                          t-field="l.product_id"/>
+                                                </td>
+                                                <td class="text-center" style="font-size:13px;padding:1px; margin: 1px">
+                                                    <span style="padding:1px; margin: 1px;" t-field="l.uom_id"/>
+                                                </td>
+                                                <td class="text-center" style="font-size:13px;padding:1px; margin: 1px">
+                                                    <span style="padding:1px; margin: 1px;" t-esc="l.qty_done"/>
+                                                </td>
+                                                <td class="text-left" style="font-size:13px;padding:1px; margin: 1px">
+                                                    <span t-field="l.lot_id"/>
+                                                    <t t-if="not l.lot_id">
+                                                        <span t-field="l.lot_name"/>
+                                                    </t>
+                                                </td>
+                                                <td class="text-center" style="font-size:13px;padding:1px; margin: 1px">
+                                                    <t t-if="l.life_date">
+                                                        <span t-esc="l.life_date.strftime('%d/%m/%Y')"/>
+                                                    </t>
+                                                </td>
+                                                <td class="text-center" style="font-size:13px; padding:1px; margin: 1px">
+                                                </td>
+                                            </t>
+                                        </t>
+                                        <t t-if="len(k.lot_lines) == 0">
+                                            <t t-set="number" t-value="number+1"/>
+                                            <td id="td1" class="text-center" width="5%"
+                                                style="padding:1px; margin: 1px">
+                                                <t t-esc="number-1"/>
+                                            </td>
+                                            <td class="text-left" style="font-size:13px; padding:1px; margin: 1px">
+                                                <span style="padding:1px; margin: 1px;"
+                                                      t-field="k.product_id.default_code"/>
+                                            </td>
+                                            <td class="text-left" style="font-size:13px; padding:1px; margin: 1px">
+                                                <span style="padding:1px; margin: 1px;"
+                                                      t-field="k.product_id"/>
+                                            </td>
+                                            <td class="text-center" style="font-size:13px;padding:1px; margin: 1px">
+                                                <span style="padding:1px; margin: 1px;" t-field="k.product_uom"/>
+                                            </td>
+                                            <td class="text-center" style="font-size:13px;padding:1px; margin: 1px">
+                                                <span style="padding:1px; margin: 1px;" t-esc="k.qty_done"/>
+                                            </td>
+                                            <td class="text-left" style="font-size:13px;padding:1px; margin: 1px">
+                                            </td>
+                                            <td class="text-center" style="font-size:13px;padding:1px; margin: 1px">
+                                            </td>
+                                            <td class="text-center" style="font-size:13px; padding:1px; margin: 1px">
+                                            </td>
+                                        </t>
+                                    </tr>
+                                </table>
+                            </div>
+                            <br clear="both"/>
+                            <br clear="both"/>
+                            <div style="width: 100%; height: 30px; padding:0px; margin: 0px">
+                                <p>- Số chứng từ gốc kèm theo :</p>
+                            </div>
+                            <div style="width: 100%; height: 30px; padding:0px; margin: 0px">
+                                <div style="height: 30px; float: right; font-size:15px; font-style:italic;  padding:0px; margin: 0px">
+                                    Ngày
+                                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d')"/>
+                                    tháng
+                                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%m')"/>
+                                    năm
+                                    <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%Y')"/>
+                                </div>
+                            </div>
+                            <br clear="both"/>
+                            <table style="width:100%;  padding:0px; margin: 0px">
+                                <tr width="100%" style="text-align: center">
+                                    <td>
+                                        <b>Người lập phiếu</b>
+                                        <p style="font-style:italic">(Ký, họ tên)</p>
+                                    </td>
+                                    <td>
+                                        <b>Người xuất hàng</b>
+                                        <p style="font-style:italic">(Ký, họ tên)</p>
+                                    </td>
+                                    <td>
+                                        <b>Người nhập hàng</b>
+                                        <p style="font-style:italic">(Ký, họ tên)</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+        <report
+                id="qweb_stock_picking_internal_rpt"
+                model="stock.transfer"
+                string="Print stock"
+                report_type="qweb-pdf"
+                name="izi_stock_transfer.report_template_stock_picking_internal_view"
+                file="izi_stock_transfer.report_template_stock_picking_internal_view"
+                print_report_name="'Stock picking - %s - %s' % (object.picking_type_id.code or '', object.name)"
+                menu="0"
+        />
+    </data>
+</odoo>

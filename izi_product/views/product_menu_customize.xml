@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- author: HoiHD -->
+<odoo>
+    <data>
+        <!-- Action Service -->
+        <record id="product_template_service_action" model="ir.actions.act_window">
+            <field name="name">Service</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{'default_type': 'service'}</field>
+            <field name="domain">[('type', '=', 'service')]</field>
+        </record>
+        <!-- Menu Service -->
+        <menuitem id="product_template_service_menu_item"
+              name="Service" action="product_template_service_action"
+              parent="stock.menu_stock_inventory_control" sequence="50"/>
+        <!-- Action Service Card -->
+        <record id="product_template_service_card_action" model="ir.actions.act_window">
+            <field name="name">Service Card</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{
+                'default_x_card_type': 'service_card',
+                'default_tracking': 'serial',
+                'default_type': 'product'}
+            </field>
+            <field name="domain">[ '|',('x_card_type', '=', 'service_card'), ('x_card_type', '=', 'keep_card')]</field>
+        </record>
+        <!-- Menu Service Card-->
+        <menuitem id="product_template_service_card_menu_item"
+              name="Service Card" action="product_template_service_card_action"
+              parent="stock.menu_stock_inventory_control" sequence="52"/>
+        <!-- Action Coupon -->
+        <record id="product_template_voucher_action" model="ir.actions.act_window">
+            <field name="name">Coupon</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{
+                'default_x_card_type': 'voucher',
+                'default_tracking': 'serial', 'default_type': 'product'}</field>
+            <field name="domain">[('x_card_type', '=', 'voucher')]</field>
+        </record>
+        <!-- Menu Coupon -->
+        <menuitem id="product_template_voucher_menu_item"
+              name="Coupon" action="product_template_voucher_action"
+              parent="stock.menu_stock_inventory_control" sequence="54"/>
+        <!-- Action Blank Card -->
+        <record id="product_template_blank_card_action" model="ir.actions.act_window">
+            <field name="name">Blank Card</field>
+            <field name="res_model">product.template</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="context">{
+                'default_x_is_blank_card': 1,
+                'default_type': 'product'}</field>
+            <field name="domain">[('x_is_blank_card', '=', 1),('type', '=', 'product')]</field>
+        </record>
+        <!-- Menu Blank Card -->
+        <menuitem id="product_template_blank_card_menu_item"
+              name="Blank Card Management" action="product_template_blank_card_action"
+              parent="stock.menu_stock_inventory_control" sequence="56"/>
+    </data>
+</odoo>

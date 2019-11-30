@@ -1,0 +1,98 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* izi_brand
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-13 14:19+0000\n"
+"PO-Revision-Date: 2019-09-13 21:20+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: vi_VN\n"
+"X-Generator: Poedit 2.2.3\n"
+
+#. module: izi_brand
+#: model:ir.ui.menu,name:izi_brand.menuitem_res_brand
+msgid "Brand"
+msgstr "Nhãn hiệu"
+
+#. module: izi_brand
+#: model:ir.actions.act_window,name:izi_brand.res_brand_act
+msgid "Brand action"
+msgstr "Nhãn hiệu"
+
+#. module: izi_brand
+#: model_terms:ir.ui.view,arch_db:izi_brand.res_brand_form
+msgid "Brand form"
+msgstr "Nhãn hiệu"
+
+#. module: izi_brand
+#: model_terms:ir.ui.view,arch_db:izi_brand.res_brand_tree
+msgid "Brand tree"
+msgstr "Nhãn hiệu"
+
+#. module: izi_brand
+#: sql_constraint:res.brand:0
+msgid "Code must be unique"
+msgstr "Mã nhãn hiệu phải là duy nhất"
+
+#. module: izi_brand
+#: model:ir.model.fields,field_description:izi_brand.field_res_brand__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: izi_brand
+#: model:ir.model.fields,field_description:izi_brand.field_res_brand__create_date
+msgid "Created on"
+msgstr "Thời điểm tạo"
+
+#. module: izi_brand
+#: model:ir.model.fields,field_description:izi_brand.field_res_brand__description
+msgid "Description"
+msgstr "Miêu tả"
+
+#. module: izi_brand
+#: model:ir.model.fields,field_description:izi_brand.field_res_brand__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: izi_brand
+#: model:ir.model.fields,field_description:izi_brand.field_res_brand__id
+msgid "ID"
+msgstr ""
+
+#. module: izi_brand
+#: model:ir.model.fields,field_description:izi_brand.field_res_brand____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: izi_brand
+#: model:ir.model.fields,field_description:izi_brand.field_res_brand__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: izi_brand
+#: model:ir.model.fields,field_description:izi_brand.field_res_brand__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: izi_brand
+#: model:ir.model.fields,field_description:izi_brand.field_res_brand__name
+msgid "Name"
+msgstr "Tên"
+
+#. module: izi_brand
+#: model:ir.model.fields,field_description:izi_brand.field_res_brand__code
+msgid "code"
+msgstr "Mã"
+
+#. module: izi_brand
+#: model:ir.model,name:izi_brand.model_res_brand
+msgid "res.brand"
+msgstr ""

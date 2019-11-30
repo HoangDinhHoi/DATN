@@ -1,0 +1,292 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Added by HoiHD -->
+<odoo>
+    <data>
+        <template id="izi_internal_pos_use">
+            <div class="article">
+                <t t-raw="0"/>
+            </div>
+        </template>
+        <template id="report_template_pos_use_service_retail_service_view">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="izi_pos_report.izi_internal_layout" t-lang="en_US">
+                        <div class="page" style="font-size:15px">
+                            <br/>
+                            <div style="padding: 20px; width:100%;">
+                                <div style="width: 100%; height: 50px;font-size:13px;">
+                                    <div style="width: 70%; height: 50px;float: left;padding-right:20px;">
+                                        <p>
+                                            <span t-field="o.company_id"/>
+                                        </p>
+                                        <p>
+                                            ĐT: <span t-field="o.company_id.phone"/>
+                                        </p>
+                                        <p>*****************</p>
+                                    </div>
+                                    <div style="width: 30%; height: 50px;float: left;padding-left:20px;text-align:center;">
+                                        <div style="height: 70px;float: right;padding-right:20px;">
+                                            <img src="/izi_pos_report/static/image/menard.png"
+                                                 style="max-width:350px;max-height:150px;width:184px;height:50px;"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br clear="both"/>
+                                <div style="height: 300px">
+                                    <div style="text-align: center;margin: 0;padding: 0;">
+                                        <h2>BILL</h2>
+                                        <h5 style="margin-bottom: 0;font-size:12px;">
+                                            <span t-esc="(o.date+ relativedelta(hours=7)).strftime('%d/%m/%Y')"/>
+                                        </h5>
+                                    </div>
+                                    <br clear="both"/>
+                                    <div>
+                                        <p style="float: right;margin: 0;padding: 0;font-size:10px;">
+                                            <i>Đơn:
+                                                <span t-field="o.name"/>
+                                            </i>
+                                        </p>
+                                    </div>
+                                    <br clear="both"/>
+                                    <div style="font-size: 10px;width:100%;margin:0px;padding:0px;">
+                                        <table cellspacing="10" style="width:100%">
+                                            <tr>
+                                                <td width="33%;">Khách hàng:
+                                                    <span t-field="o.partner_id.name"/>
+                                                </td>
+                                                <td width="34%;">Mã KH:
+                                                    <span t-field="o.partner_id.x_partner_code"/>
+                                                </td>
+                                                <td width="33%;">Hạng:
+                                                    <span t-field="o.rank_id.name"/>
+                                                </td>
+                                            </tr>
+                                            <tr style="margin-top:5px;">
+                                                <td width="33%;">Bộ phận:
+                                                    <span t-field="o.crm_team_id.name"/>
+                                                </td>
+                                                <td width="34%;">NV làm:
+                                                    <t t-foreach="o.get_employee_do_service()" t-as="line">
+                                                        <span t-esc="line"/>
+                                                        <br/>
+                                                    </t>
+                                                </td>
+                                                <td width="33%;">NV Bán hàng:
+                                                    <span t-field="o.crm_team_id.name"/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <br clear="both"/>
+                                    <div style="font-size:10px;">
+                                        <table class="table table-sm" style="margin-bottom: 3px; border-bottom: solid 1px rgb(216,216,216)">
+                                            <!--style="width: 100%;height: 30px; padding: 1px; margin: 1px;-->
+                                            <tr style="padding:1px; margin: 1px;text-align: left;">
+                                                <th class="text-center" width="10%" style="padding:1px; margin: 1px;">
+                                                    <p style="padding:1px; margin: 1px;">Mã hàng</p>
+                                                </th>
+                                                <th class="text-center" width="8%" style="padding:1px; margin: 1px;">
+                                                    <p style="padding:1px; margin: 1px;">APN</p>
+                                                </th>
+                                                <th class="text-center" width="32%" style="padding:1px; margin: 1px;">
+                                                    <p style="padding:1px; margin: 1px;">Tên hàng</p>
+                                                </th>
+                                                <th class="text-center" width="5%" style="padding:1px; margin: 1px;">
+                                                    <p style="padding:1px; margin: 1px;">SL</p>
+                                                </th>
+                                                <th class="text-center" width="12%" style="padding:1px; margin: 1px;">
+                                                    <p style="padding:1px; margin: 1px;">Đơn giá</p>
+                                                </th>
+                                                <th class="text-center" width="12%" style="padding:1px; margin: 1px;">
+                                                    <p style="padding:1px; margin: 1px;">CK đơn hàng</p>
+                                                </th>
+                                                <th class="text-center" width="12%" style="padding:1px; margin: 1px;">
+                                                    <p style="padding:1px; margin: 1px;">Thành tiền</p>
+                                                </th>
+                                            </tr>
+
+                                            <tr t-foreach="o.use_service_ids" t-as="i" style="padding:1px; margin: 1px;">
+                                                <td>
+                                                    <t t-esc="i.service_id.default_code"/>
+                                                </td>
+                                                <td class="text-center"></td>
+                                                <td>
+                                                    <t t-esc="i.service_id.name"/>
+                                                </td>
+                                                <td class="text-right">
+                                                    <t t-esc="'{0:,.0f}'.format(i.qty).replace(',', '.')"/>
+                                                </td>
+                                                <td class="text-right">
+                                                    <t t-esc="'{0:,.0f}'.format(i.price_unit).replace(',', '.')"/>
+                                                </td>
+                                                <td class="text-right">
+                                                    <t t-esc="'{0:,.0f}'.format(i.discount).replace('.', ',')"/>
+                                                    %
+                                                </td>
+                                                <td class="text-right">
+                                                    <t t-esc="'{0:,.0f}'.format(i.amount).replace(',', '.')"/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <div style="width: 100%;font-size:10px;margin: 0;padding: 0;">
+                                        <div style="width: 55%; float: left">
+                                            <p style="margin: 0;padding: 0;font-weight: bold;">Ghi chú:</p>
+                                            <p></p>
+                                            <p style="margin: 0;padding: 0;">
+                                                <span t-field="o.note"/>
+                                            </p>
+                                            <p style="margin: 0;padding: 0;">Các thẻ thu hồi:
+                                                <br/>
+                                                <span t-field="o.use_service_ids[0].lot_id.name"/>
+                                            </p>
+                                            <p style="margin: 0;padding: 0;">
+                                                <t t-foreach="o.use_service_ids" t-as="line">
+                                                    <span t-field="line.service_id.default_code"/>: <span t-esc="int(line.qty+line.used_count)"/>/<span t-esc="int(line.total_count)"/>
+                                                    <br/>
+                                                </t>
+                                            </p>
+                                            <t t-if="o.use_service_ids[0].lot_id">
+                                                <t t-if="o.use_service_ids[0].lot_id.product_id.x_card_type=='keep_card'">
+                                                    <p style="margin: 0;padding:0;">Số lần đã thanh toán: <span t-esc="'{0:,.0f}'.format(o.use_service_ids[0].paid_count).replace(',', '.')"/></p>
+                                                </t>
+                                            </t>
+                                        </div>
+                                        <div style="width: 45%; float: left;">
+                                            <table style="width: 100%;">
+                                                <tr style="padding:1px; margin: 1px;">
+                                                    <td style="font-weight: bold;">
+                                                        Tổng cộng:
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <t t-esc="'{0:,.0f}'.format(o.amount_total).replace(',', '.')"/>
+                                                    </td>
+                                                </tr>
+                                                <tr style="padding:1px; margin: 1px;">
+                                                    <td style="font-weight: bold;">
+                                                        Chiết khấu đơn hàng:
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <t t-esc="'{0:,.0f}'.format(o.get_discount_by_money()).replace(',', '.')"/>
+                                                    </td>
+                                                </tr>
+
+                                                <tr style="padding:1px; margin: 1px;">
+                                                    <td>
+                                                        -----------
+                                                    </td>
+                                                    <td class="text-right">
+                                                        -----------
+                                                    </td>
+                                                </tr>
+                                                <tr style="padding:1px; margin: 1px;">
+                                                    <td style="font-weight: bold;">
+                                                        Tổng phải trả:
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <t t-esc="'{0:,.0f}'.format(o.amount_total).replace(',', '.')"/>
+                                                    </td>
+                                                </tr>
+<!--                                                <tr style="padding:1px; margin: 1px;" t-foreach="o.get_payment_method_and_money_without_debit()" t-as="line">-->
+<!--                                                    <td style="font-weight: bold;">-->
+<!--                                                        <span t-esc="line"/>-->
+<!--                                                    </td>-->
+<!--                                                    <td class="text-right">-->
+<!--                                                        <span t-esc="'{0:,.0f}'.format(o.get_payment_method_and_money_without_debit()[line]).replace(',', '.')"-->
+<!--                                                              style="padding-right: 3px;"/>-->
+<!--                                                    </td>-->
+<!--                                                </tr>-->
+                                                <tr style="padding:1px; margin: 1px;">
+                                                    <td style="font-weight: bold;">
+                                                        -----------
+                                                    </td>
+                                                    <td class="text-right">
+                                                        -----------
+                                                    </td>
+                                                </tr>
+                                                <tr style="padding:1px; margin: 1px;">
+                                                    <td style="font-weight: bold;">
+                                                        Còn lại:
+                                                    </td>
+                                                    <td class="text-right">
+                                                        <span style="padding-right: 3px;"></span>
+                                                    </td>
+                                                </tr>
+<!--                                                <tr t-foreach="o.get_payment_method_with_debit()" t-as="line"-->
+<!--                                                    style="padding:1px; margin: 1px;">-->
+<!--                                                    <td style="font-weight: bold;">-->
+<!--                                                        <span t-esc="line"/>-->
+<!--                                                    </td>-->
+<!--                                                    <td class="text-right">-->
+<!--                                                        <span t-esc="'{0:,.0f}'.format(o.get_payment_method_with_debit()[line]).replace(',', '.')"-->
+<!--                                                              style="padding-right: 3px;"/>-->
+<!--                                                    </td>-->
+<!--                                                </tr>-->
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br clear="both"/>
+                                <div style="font-size:10px;">
+                                    <p style="margin: 0;padding: 0;">---------------------------------------</p>
+                                    <div>
+                                        <p>Mọi thắc mắc xin liên hệ với chúng tôi trong giờ hành chính</p>
+                                        <p style="margin: 0;padding: 0; font-weight: bold;">Trung tâm chăm sóc khách
+                                            hàng - 037 901 0101
+                                        </p>
+                                        <p style="margin: 0;padding: 0; font-weight: bold;">Cảm ơn quý khách đã sử dụng
+                                            sản phẩm và dịch vụ của
+                                            Menard
+                                        </p>
+                                    </div>
+                                    <br/>
+                                    <table style="width:100%;  padding:0px; margin: 0px">
+                                        <tr width="100%" style="text-align: center">
+                                            <td>
+                                                <b>Người lập phiếu</b>
+                                                <p style="font-style:italic">(Ký, họ tên)</p>
+                                            </td>
+                                            <td>
+                                                <b>Kiểm soát</b>
+                                                <p style="font-style:italic">(Ký, họ tên)</p>
+                                            </td>
+                                            <td>
+                                                <b>Người mua hàng</b>
+                                                <p style="font-style:italic">(Ký, họ tên)</p>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+
+        <record id="paperformat_qweb_pos_use_report_bill" model="report.paperformat">
+            <field name="name">Short (Half-A4)</field>
+            <field name="default" eval="False"/>
+            <field name="format">A5</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">5</field>
+            <field name="margin_bottom">5</field>
+            <field name="margin_left">5</field>
+            <field name="margin_right">5</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">96</field>
+        </record>
+
+        <report
+                id="qweb_pos_use_service_retail_service_rpt"
+                model="pos.use.service"
+                string="Use Service"
+                report_type="qweb-pdf"
+                name="izi_pos_use_service.report_template_pos_use_service_retail_service_view"
+                file="izi_pos_use_service.report_template_pos_use_service_retail_service_view"
+                paperformat="izi_pos_use_service.paperformat_qweb_pos_use_report_bill"
+                menu="False"
+        />
+    </data>
+</odoo>

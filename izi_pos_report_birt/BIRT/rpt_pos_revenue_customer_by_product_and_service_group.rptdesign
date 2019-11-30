@@ -1,0 +1,2216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.5.0.v201506092134 Build &lt;@BUILD@></property>
+    <list-property name="userProperties">
+        <structure>
+            <property name="name">Data Cube.Revenue Customer According to Product and Service Group.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube.Revenue Customer According to Product and Service Group.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+    </list-property>
+    <property name="Data Cube.Revenue Customer According to Product and Service Group.x">135</property>
+    <property name="Data Cube.Revenue Customer According to Product and Service Group.y">80</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaDriverClass</property>
+            <property name="id">89</property>
+        </structure>
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">89</property>
+        </structure>
+        <structure>
+            <property name="name">odaUser</property>
+            <property name="id">89</property>
+        </structure>
+        <structure>
+            <property name="name">odaAutoCommit</property>
+            <property name="id">89</property>
+        </structure>
+        <structure>
+            <property name="name">odaIsolationMode</property>
+            <property name="id">89</property>
+        </structure>
+        <structure>
+            <property name="name">odaPassword</property>
+            <property name="id">89</property>
+        </structure>
+        <structure>
+            <property name="name">odaJndiName</property>
+            <property name="id">89</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileName</property>
+            <property name="id">89</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileStorePath</property>
+            <property name="id">89</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">120</property>
+    <parameters>
+        <scalar-parameter name="branch_id" id="91">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">1</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="date_to" id="92">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">30/05/2019</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="date_from" id="93">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">01/05/2019</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="89">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://103.74.122.50:5336/erp_vmt_190503</property>
+            <property name="odaUser">odoo</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">TW5fT2Rvb19WbXRfMjAxOQ==</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/erp_menard</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Revenue Customer According to Product and Service Group" id="90">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="computedColumns">
+                <structure>
+                    <property name="name">date_header</property>
+                    <expression name="expression">"Từ ngày " + params["date_from"].value + " đến ngày " + params["date_to"].value</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">ten_kh</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ten_kh</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">ten_kh</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">sdt_kh</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">sdt_kh</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">sdt_kh</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">hang</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">hang</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">hang</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ten_nhom_bh</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ten_nhom_bh</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">ten_nhom_bh</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ten_nhan_vien_cham_soc</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ten_nhan_vien_cham_soc</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">ten_nhan_vien_cham_soc</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">nhom_loai</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">nhom_loai</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">nhom_loai</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">loai</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">loai</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">loai</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">doanh_thu</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">doanh_thu</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">doanh_thu</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">branch_id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">4</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">date_from</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_3</property>
+                    <property name="paramName">date_to</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ten_kh</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">sdt_kh</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">hang</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">ten_nhom_bh</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">ten_nhan_vien_cham_soc</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">nhom_loai</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">loai</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">doanh_thu</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">date_header</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ten_kh</property>
+                    <property name="nativeName">ten_kh</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">sdt_kh</property>
+                    <property name="nativeName">sdt_kh</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">hang</property>
+                    <property name="nativeName">hang</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">ten_nhom_bh</property>
+                    <property name="nativeName">ten_nhom_bh</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">ten_nhan_vien_cham_soc</property>
+                    <property name="nativeName">ten_nhan_vien_cham_soc</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">nhom_loai</property>
+                    <property name="nativeName">nhom_loai</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">loai</property>
+                    <property name="nativeName">loai</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">doanh_thu</property>
+                    <property name="nativeName">doanh_thu</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT
+	tom_tat.ten_kh,
+	tom_tat.sdt_kh,
+	tom_tat.hang,
+	tom_tat.ten_nhom_ban_hang ten_nhom_bh,
+	tom_tat.ten_nhan_vien_cham_soc,
+	(CASE WHEN tom_tat.nhom_loai = 'service' then 'Dịch vụ' else 'Sản phẩm' end) nhom_loai,
+	tom_tat.loai loai, 
+	sum(tom_tat.doanh_thu) doanh_thu
+FROM
+		(SELECT
+			pc.name loai, 
+			sum(pol.price_subtotal_incl) doanh_thu, 
+			pt.type nhom_loai,
+			pt.default_code ma,
+			rp.name ten_kh,
+			ccr.name hang,
+			rp.phone sdt_kh,
+			ct.name ten_nhom_ban_hang,
+			rp_rus.name AS ten_nhan_vien_cham_soc
+		FROM
+			pos_order_line AS pol
+			join pos_order AS po ON (pol.order_id=po.id)
+			join product_product AS pp ON (pol.product_id=pp.id)
+			join product_template AS pt ON (pp.product_tmpl_id=pt.id)
+			join product_category AS pc ON (pt.categ_id=pc.id)
+			JOIN res_partner AS rp ON po.partner_id=rp.id
+			JOIN res_branch AS rb ON (po.branch_id=rb.id)
+			JOIN crm_customer_rank AS ccr ON (ccr.id=po.x_rank_id)
+			JOIN crm_team AS ct ON (CT.ID=po.x_team_id)
+			JOIN res_users AS rus ON (po.user_id = rus.id)
+			JOIN res_partner AS rp_rus ON (rus.partner_id=rp_rus.id)
+		WHERE
+			po.state IN ('paid', 'invoiced')
+			AND rb.id = ? :: INTEGER
+			AND pt.type in ('product', 'service')
+			AND (po.date_order + INTERVAL '7 hours') :: DATE >= to_date(?,'dd/mm/yyyy') 
+			AND (po.date_order + INTERVAL '7 hours') :: DATE <= to_date(?,'dd/mm/yyyy')
+		GROUP BY
+			pc.name, pt.type, pt.default_code, rp.name, ccr.name, rp.phone, ct.name, rp_rus.name
+		ORDER BY
+			pt.type) AS tom_tat
+GROUP BY
+	tom_tat.loai, 
+	tom_tat.nhom_loai, tom_tat.ten_kh, tom_tat.hang, tom_tat.sdt_kh, tom_tat.ten_nhom_ban_hang, tom_tat.ten_nhan_vien_cham_soc
+ORDER BY
+	tom_tat.ten_kh
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>id</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>company_id</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>company_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>company_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>date_order</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>29</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>date_order</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>date_order</design:label>
+            <design:formattingHints>
+              <design:displaySize>29</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>user_id</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>user_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>user_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>amount_tax</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>amount_tax</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>amount_tax</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>amount_total</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>amount_total</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>amount_total</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>amount_paid</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>amount_paid</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>amount_paid</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>amount_return</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>amount_return</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>amount_return</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>pricelist_id</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>pricelist_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>pricelist_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>partner_id</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>partner_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>partner_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>sequence_number</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>sequence_number</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>sequence_number</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>session_id</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>session_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>session_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>state</design:name>
+              <design:position>14</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>state</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>state</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>invoice_id</design:name>
+              <design:position>15</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>invoice_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>invoice_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>account_move</design:name>
+              <design:position>16</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>account_move</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>account_move</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>picking_id</design:name>
+              <design:position>17</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>picking_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>picking_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>location_id</design:name>
+              <design:position>18</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>location_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>location_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>note</design:name>
+              <design:position>19</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>note</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>note</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>nb_print</design:name>
+              <design:position>20</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>nb_print</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>nb_print</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>pos_reference</design:name>
+              <design:position>21</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>pos_reference</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>pos_reference</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>sale_journal</design:name>
+              <design:position>22</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>sale_journal</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>sale_journal</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>fiscal_position_id</design:name>
+              <design:position>23</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>fiscal_position_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>fiscal_position_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>create_uid</design:name>
+              <design:position>24</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>create_uid</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>create_uid</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>create_date</design:name>
+              <design:position>25</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>29</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>create_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>create_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>29</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>write_uid</design:name>
+              <design:position>26</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>write_uid</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>write_uid</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>write_date</design:name>
+              <design:position>27</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>29</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>write_date</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>write_date</design:label>
+            <design:formattingHints>
+              <design:displaySize>29</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>currency_rate</design:name>
+              <design:position>28</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>currency_rate</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>currency_rate</design:label>
+            <design:formattingHints>
+              <design:displaySize>131089</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>x_revenue</design:name>
+              <design:position>29</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>x_revenue</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>x_revenue</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>x_red_point</design:name>
+              <design:position>30</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>x_red_point</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>x_red_point</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>x_team_id</design:name>
+              <design:position>31</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>x_team_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>x_team_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>x_type</design:name>
+              <design:position>32</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>x_type</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>x_type</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>x_pos_partner_refund_id</design:name>
+              <design:position>33</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>x_pos_partner_refund_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>x_pos_partner_refund_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>x_code_search</design:name>
+              <design:position>34</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>x_code_search</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>x_code_search</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>x_rank_id</design:name>
+              <design:position>35</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>x_rank_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>x_rank_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>x_amount_promotion_product</design:name>
+              <design:position>36</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>x_amount_promotion_product</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>x_amount_promotion_product</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>x_amount_promotion_service</design:name>
+              <design:position>37</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>x_amount_promotion_service</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>x_amount_promotion_service</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>branch_id</design:name>
+              <design:position>38</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>branch_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>branch_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>x_compare</design:name>
+              <design:position>39</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>x_compare</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>x_compare</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>x_total_red_point</design:name>
+              <design:position>40</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>x_total_red_point</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>x_total_red_point</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>x_use_red_point</design:name>
+              <design:position>41</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>x_use_red_point</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>x_use_red_point</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>x_check_use_red_point_moved0</design:name>
+              <design:position>42</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-7</design:nativeDataTypeCode>
+            <design:precision>1</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>x_check_use_red_point_moved0</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>x_check_use_red_point_moved0</design:label>
+            <design:formattingHints>
+              <design:displaySize>1</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>x_check_promotion_red_point</design:name>
+              <design:position>43</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-7</design:nativeDataTypeCode>
+            <design:precision>1</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>x_check_promotion_red_point</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>x_check_promotion_red_point</design:label>
+            <design:formattingHints>
+              <design:displaySize>1</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>x_user_compare_id</design:name>
+              <design:position>44</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>4</design:nativeDataTypeCode>
+            <design:precision>10</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>x_user_compare_id</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>x_user_compare_id</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>x_compute_vip</design:name>
+              <design:position>45</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>-7</design:nativeDataTypeCode>
+            <design:precision>1</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>x_compute_vip</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>x_compute_vip</design:label>
+            <design:formattingHints>
+              <design:displaySize>1</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>x_note_reason</design:name>
+              <design:position>46</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>x_note_reason</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>x_note_reason</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube" id="650">
+            <property name="dimensions">
+                <tabular-dimension name="ten_kh" id="896">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="897">
+                            <property name="levels">
+                                <tabular-level name="ten_kh" id="898">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">ten_kh</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="sdt_kh" id="899">
+                    <property name="defaultHierarchy">NewTabularHierarchy1</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy1" id="900">
+                            <property name="levels">
+                                <tabular-level name="sdt_kh" id="901">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">sdt_kh</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="ten_nhan_vien_cham_soc" id="902">
+                    <property name="defaultHierarchy">NewTabularHierarchy2</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy2" id="903">
+                            <property name="levels">
+                                <tabular-level name="ten_nhan_vien_cham_soc" id="904">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">ten_nhan_vien_cham_soc</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="ten_nhom_bh" id="905">
+                    <property name="defaultHierarchy">NewTabularHierarchy3</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy3" id="906">
+                            <property name="levels">
+                                <tabular-level name="ten_nhom_bh" id="907">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">ten_nhom_bh</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="hang" id="908">
+                    <property name="defaultHierarchy">NewTabularHierarchy4</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy4" id="909">
+                            <property name="levels">
+                                <tabular-level name="hang" id="910">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">hang</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="nhom_loai" id="987">
+                    <property name="defaultHierarchy">NewTabularHierarchy5</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy5" id="988">
+                            <property name="levels">
+                                <tabular-level name="nhom_loai" id="989">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">nhom_loai</property>
+                                </tabular-level>
+                                <tabular-level name="loai" id="990">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">loai</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field" id="915">
+                    <property name="measures">
+                        <tabular-measure name="doanh_thu" id="916">
+                            <expression name="measureExpression" type="javascript">dataSetRow["doanh_thu"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">Revenue Customer According to Product and Service Group</property>
+        </tabular-cube>
+    </cubes>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">custom</property>
+            <property name="height">1000in</property>
+            <property name="width">15in</property>
+            <property name="showHeaderOnFirst">false</property>
+            <property name="showFooterOnLast">false</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="96">
+            <property name="fontFamily">"Times New Roman"</property>
+            <property name="fontSize">12pt</property>
+            <column id="97"/>
+            <column id="98"/>
+            <column id="99"/>
+            <column id="100"/>
+            <column id="101"/>
+            <column id="102"/>
+            <column id="103"/>
+            <column id="104"/>
+            <column id="105"/>
+            <column id="106"/>
+            <column id="107"/>
+            <column id="108"/>
+            <column id="109"/>
+            <column id="110"/>
+            <column id="111"/>
+            <column id="112"/>
+            <column id="113"/>
+            <column id="114"/>
+            <column id="115"/>
+            <column id="116"/>
+            <row id="117">
+                <cell id="118">
+                    <property name="colSpan">20</property>
+                    <property name="rowSpan">1</property>
+                    <label id="182">
+                        <property name="fontSize">14pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">BÁO CÁO DOANH THU KHÁCH HÀNG THEO NHÓM SẢN PHẨM VÀ DỊCH VỤ</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="138">
+                <cell id="139">
+                    <property name="colSpan">20</property>
+                    <property name="rowSpan">1</property>
+                    <data id="183">
+                        <property name="fontStyle">italic</property>
+                        <property name="textAlign">center</property>
+                        <property name="dataSet">Revenue Customer According to Product and Service Group</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">date_header</property>
+                                <text-property name="displayName">date_header</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["date_header"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">date_header</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="159">
+                <cell id="160">
+                    <property name="colSpan">20</property>
+                    <property name="rowSpan">1</property>
+                    <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="1027">
+                        <property name="cube">Data Cube</property>
+                        <property name="measures">
+                            <extended-item extensionName="MeasureView" id="1073">
+                                <property name="measure">doanh_thu</property>
+                                <property name="detail">
+                                    <extended-item extensionName="AggregationCell" id="1074">
+                                        <property name="aggregationOnRow">ten_nhom_bh/ten_nhom_bh</property>
+                                        <property name="aggregationOnColumn">nhom_loai/loai</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderLeftStyle">solid</property>
+                                        <property name="borderLeftWidth">thin</property>
+                                        <property name="borderLeftColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">thin</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <property name="content">
+                                            <data id="1075">
+                                                <structure name="numberFormat">
+                                                    <property name="category">Currency</property>
+                                                    <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                                    <property name="locale">vi_VN</property>
+                                                </structure>
+                                                <property name="textAlign">right</property>
+                                                <property name="resultSetColumn">doanh_thu_ten_nhom_bh/ten_nhom_bh_nhom_loai/loai</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="aggregations">
+                                    <extended-item extensionName="AggregationCell" id="1085">
+                                        <property name="aggregationOnRow">ten_nhom_bh/ten_nhom_bh</property>
+                                        <property name="aggregationOnColumn">nhom_loai/nhom_loai</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderLeftStyle">solid</property>
+                                        <property name="borderLeftWidth">thin</property>
+                                        <property name="borderLeftColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">thin</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <property name="content">
+                                            <data id="1086">
+                                                <property name="fontWeight">bold</property>
+                                                <structure name="numberFormat">
+                                                    <property name="category">Currency</property>
+                                                    <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                                    <property name="locale">vi_VN</property>
+                                                </structure>
+                                                <property name="textAlign">right</property>
+                                                <property name="resultSetColumn">doanh_thu_ten_nhom_bh/ten_nhom_bh_nhom_loai/nhom_loai</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                    <extended-item extensionName="AggregationCell" id="1091">
+                                        <property name="aggregationOnColumn">nhom_loai/nhom_loai</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderLeftStyle">solid</property>
+                                        <property name="borderLeftWidth">thin</property>
+                                        <property name="borderLeftColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">thin</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <property name="content">
+                                            <data id="1092">
+                                                <property name="fontWeight">bold</property>
+                                                <structure name="numberFormat">
+                                                    <property name="category">Currency</property>
+                                                    <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                                    <property name="locale">vi_VN</property>
+                                                </structure>
+                                                <property name="textAlign">right</property>
+                                                <property name="resultSetColumn">doanh_thu_nhom_loai/nhom_loai</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                    <extended-item extensionName="AggregationCell" id="1093">
+                                        <property name="aggregationOnColumn">nhom_loai/loai</property>
+                                        <property name="verticalAlign">middle</property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderLeftStyle">solid</property>
+                                        <property name="borderLeftWidth">thin</property>
+                                        <property name="borderLeftColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">thin</property>
+                                        <property name="borderRightColor">#000000</property>
+                                        <property name="content">
+                                            <data id="1094">
+                                                <property name="fontWeight">bold</property>
+                                                <structure name="numberFormat">
+                                                    <property name="category">Currency</property>
+                                                    <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                                    <property name="locale">vi_VN</property>
+                                                </structure>
+                                                <property name="textAlign">right</property>
+                                                <property name="resultSetColumn">doanh_thu_nhom_loai/loai</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="header">
+                                    <extended-item extensionName="CrosstabCell" id="1076">
+                                        <property name="color">#FFFFFF</property>
+                                        <property name="backgroundColor">#233C98</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="verticalAlign">middle</property>
+                                    </extended-item>
+                                    <extended-item extensionName="CrosstabCell" id="1087">
+                                        <property name="backgroundColor">#233C98</property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                        </property>
+                        <property name="rows">
+                            <extended-item extensionName="CrosstabView" id="1029">
+                                <property name="grandTotal">
+                                    <extended-item extensionName="CrosstabCell" id="1090">
+                                        <property name="content">
+                                            <label id="1095">
+                                                <property name="fontWeight">bold</property>
+                                                <property name="textAlign">center</property>
+                                                <text-property name="text">Tổng</text-property>
+                                            </label>
+                                        </property>
+                                        <property name="borderTopStyle">solid</property>
+                                        <property name="borderTopWidth">thin</property>
+                                        <property name="borderTopColor">#000000</property>
+                                        <property name="borderLeftStyle">solid</property>
+                                        <property name="borderLeftWidth">thin</property>
+                                        <property name="borderLeftColor">#000000</property>
+                                        <property name="borderBottomStyle">solid</property>
+                                        <property name="borderBottomWidth">thin</property>
+                                        <property name="borderBottomColor">#000000</property>
+                                        <property name="borderRightStyle">solid</property>
+                                        <property name="borderRightWidth">thin</property>
+                                        <property name="borderRightColor">#000000</property>
+                                    </extended-item>
+                                </property>
+                                <property name="views">
+                                    <extended-item extensionName="DimensionView" id="1030">
+                                        <property name="dimension">ten_kh</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View" id="1031">
+                                                <property name="level">ten_kh/ten_kh</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="1032">
+                                                        <property name="content">
+                                                            <data name="ten_kh" id="1033">
+                                                                <property name="textAlign">left</property>
+                                                                <property name="resultSetColumn">ten_kh</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="verticalAlign">middle</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="borderTopColor">#000000</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">thin</property>
+                                                        <property name="borderLeftColor">#000000</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                        <property name="borderBottomColor">#000000</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">thin</property>
+                                                        <property name="borderRightColor">#000000</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                    <extended-item extensionName="DimensionView" id="1035">
+                                        <property name="dimension">sdt_kh</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View1" id="1036">
+                                                <property name="level">sdt_kh/sdt_kh</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="1037">
+                                                        <property name="content">
+                                                            <data name="sdt_kh" id="1039">
+                                                                <property name="textAlign">left</property>
+                                                                <property name="resultSetColumn">sdt_kh</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="verticalAlign">middle</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="borderTopColor">#000000</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">thin</property>
+                                                        <property name="borderLeftColor">#000000</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                        <property name="borderBottomColor">#000000</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">thin</property>
+                                                        <property name="borderRightColor">#000000</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                    <extended-item extensionName="DimensionView" id="1041">
+                                        <property name="dimension">hang</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View2" id="1042">
+                                                <property name="level">hang/hang</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="1043">
+                                                        <property name="content">
+                                                            <data name="hang" id="1045">
+                                                                <property name="textAlign">left</property>
+                                                                <property name="resultSetColumn">hang</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="verticalAlign">middle</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="borderTopColor">#000000</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">thin</property>
+                                                        <property name="borderLeftColor">#000000</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                        <property name="borderBottomColor">#000000</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">thin</property>
+                                                        <property name="borderRightColor">#000000</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                    <extended-item extensionName="DimensionView" id="1047">
+                                        <property name="dimension">ten_nhan_vien_cham_soc</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View3" id="1048">
+                                                <property name="level">ten_nhan_vien_cham_soc/ten_nhan_vien_cham_soc</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="1049">
+                                                        <property name="content">
+                                                            <data name="ten_nhan_vien_cham_soc" id="1051">
+                                                                <property name="textAlign">left</property>
+                                                                <property name="resultSetColumn">ten_nhan_vien_cham_soc</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="verticalAlign">middle</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="borderTopColor">#000000</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">thin</property>
+                                                        <property name="borderLeftColor">#000000</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                        <property name="borderBottomColor">#000000</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">thin</property>
+                                                        <property name="borderRightColor">#000000</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                    <extended-item extensionName="DimensionView" id="1053">
+                                        <property name="dimension">ten_nhom_bh</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View4" id="1054">
+                                                <property name="level">ten_nhom_bh/ten_nhom_bh</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="1055">
+                                                        <property name="content">
+                                                            <data name="ten_nhom_bh" id="1057">
+                                                                <property name="textAlign">left</property>
+                                                                <property name="resultSetColumn">ten_nhom_bh</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="verticalAlign">middle</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="borderTopColor">#000000</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">thin</property>
+                                                        <property name="borderLeftColor">#000000</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                        <property name="borderBottomColor">#000000</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">thin</property>
+                                                        <property name="borderRightColor">#000000</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="grandTotalLocation">after</property>
+                            </extended-item>
+                        </property>
+                        <property name="columns">
+                            <extended-item extensionName="CrosstabView" id="1059">
+                                <property name="views">
+                                    <extended-item extensionName="DimensionView" id="1060">
+                                        <property name="dimension">nhom_loai</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View5" id="1061">
+                                                <property name="level">nhom_loai/nhom_loai</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="1062">
+                                                        <property name="content">
+                                                            <data name="nhom_loai" id="1063">
+                                                                <property name="resultSetColumn">nhom_loai</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="color">#FFFFFF</property>
+                                                        <property name="backgroundColor">#FFC000</property>
+                                                        <property name="textAlign">center</property>
+                                                        <property name="verticalAlign">middle</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="borderTopColor">#000000</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">thin</property>
+                                                        <property name="borderLeftColor">#000000</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                        <property name="borderBottomColor">#000000</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">thin</property>
+                                                        <property name="borderRightColor">#000000</property>
+                                                    </extended-item>
+                                                </property>
+                                                <property name="aggregationHeader">
+                                                    <extended-item extensionName="CrosstabCell" id="1084">
+                                                        <property name="content">
+                                                            <data name="nhom_loai_TOTAL" id="1089">
+                                                                <property name="color">#FFFFFF</property>
+                                                                <property name="textAlign">center</property>
+                                                                <property name="resultSetColumn">nhom_loai_TOTAL</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">#FFC000</property>
+                                                        <property name="verticalAlign">middle</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="borderTopColor">#000000</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">thin</property>
+                                                        <property name="borderLeftColor">#000000</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                        <property name="borderBottomColor">#000000</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">thin</property>
+                                                        <property name="borderRightColor">#000000</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View6" id="1064">
+                                                <property name="level">nhom_loai/loai</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="1065">
+                                                        <property name="content">
+                                                            <data name="loai" id="1071">
+                                                                <property name="resultSetColumn">loai</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="color">#FFFFFF</property>
+                                                        <property name="backgroundColor">#233C98</property>
+                                                        <property name="textAlign">center</property>
+                                                        <property name="verticalAlign">middle</property>
+                                                        <property name="borderTopStyle">solid</property>
+                                                        <property name="borderTopWidth">thin</property>
+                                                        <property name="borderTopColor">#000000</property>
+                                                        <property name="borderLeftStyle">solid</property>
+                                                        <property name="borderLeftWidth">thin</property>
+                                                        <property name="borderLeftColor">#000000</property>
+                                                        <property name="borderBottomStyle">solid</property>
+                                                        <property name="borderBottomWidth">thin</property>
+                                                        <property name="borderBottomColor">#000000</property>
+                                                        <property name="borderRightStyle">solid</property>
+                                                        <property name="borderRightWidth">thin</property>
+                                                        <property name="borderRightColor">#000000</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="grandTotalLocation">after</property>
+                            </extended-item>
+                        </property>
+                        <property name="header">
+                            <extended-item extensionName="CrosstabCell" id="1066">
+                                <property name="color">#FFFFFF</property>
+                                <property name="backgroundColor">#233C98</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="1067">
+                                <property name="color">#FFFFFF</property>
+                                <property name="backgroundColor">#233C98</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="1068">
+                                <property name="color">#FFFFFF</property>
+                                <property name="backgroundColor">#233C98</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="1069">
+                                <property name="color">#FFFFFF</property>
+                                <property name="backgroundColor">#233C98</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="1070">
+                                <property name="color">#FFFFFF</property>
+                                <property name="backgroundColor">#233C98</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="1078">
+                                <property name="color">#FFFFFF</property>
+                                <property name="backgroundColor">#233C98</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="1079">
+                                <property name="color">#FFFFFF</property>
+                                <property name="backgroundColor">#233C98</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="1080">
+                                <property name="color">#FFFFFF</property>
+                                <property name="backgroundColor">#233C98</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="1081">
+                                <property name="color">#FFFFFF</property>
+                                <property name="backgroundColor">#233C98</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="1082">
+                                <property name="color">#FFFFFF</property>
+                                <property name="backgroundColor">#233C98</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="1028">
+                                <property name="content">
+                                    <label id="1034">
+                                        <text-property name="text">Tên khách hàng</text-property>
+                                    </label>
+                                </property>
+                                <property name="color">#FFFFFF</property>
+                                <property name="backgroundColor">#233C98</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderLeftColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderRightColor">#000000</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="1038">
+                                <property name="content">
+                                    <label id="1040">
+                                        <text-property name="text">Số điện thoại khách hàng</text-property>
+                                    </label>
+                                </property>
+                                <property name="color">#FFFFFF</property>
+                                <property name="backgroundColor">#233C98</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderLeftColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderRightColor">#000000</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="1044">
+                                <property name="content">
+                                    <label id="1046">
+                                        <text-property name="text">Hạng</text-property>
+                                    </label>
+                                </property>
+                                <property name="color">#FFFFFF</property>
+                                <property name="backgroundColor">#233C98</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderLeftColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderRightColor">#000000</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="1050">
+                                <property name="content">
+                                    <label id="1052">
+                                        <text-property name="text">Nhân viên chăm sóc</text-property>
+                                    </label>
+                                </property>
+                                <property name="color">#FFFFFF</property>
+                                <property name="backgroundColor">#233C98</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderLeftColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderRightColor">#000000</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="1056">
+                                <property name="content">
+                                    <label id="1058">
+                                        <text-property name="text">Nhóm bán hàng</text-property>
+                                    </label>
+                                </property>
+                                <property name="color">#FFFFFF</property>
+                                <property name="backgroundColor">#233C98</property>
+                                <property name="textAlign">center</property>
+                                <property name="verticalAlign">middle</property>
+                                <property name="borderTopStyle">solid</property>
+                                <property name="borderTopWidth">thin</property>
+                                <property name="borderTopColor">#000000</property>
+                                <property name="borderLeftStyle">solid</property>
+                                <property name="borderLeftWidth">thin</property>
+                                <property name="borderLeftColor">#000000</property>
+                                <property name="borderBottomStyle">solid</property>
+                                <property name="borderBottomWidth">thin</property>
+                                <property name="borderBottomColor">#000000</property>
+                                <property name="borderRightStyle">solid</property>
+                                <property name="borderRightWidth">thin</property>
+                                <property name="borderRightColor">#000000</property>
+                            </extended-item>
+                        </property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">ten_kh</property>
+                                <expression name="expression">dimension["ten_kh"]["ten_kh"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">sdt_kh</property>
+                                <expression name="expression">dimension["sdt_kh"]["sdt_kh"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">hang</property>
+                                <expression name="expression">dimension["hang"]["hang"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ten_nhan_vien_cham_soc</property>
+                                <expression name="expression">dimension["ten_nhan_vien_cham_soc"]["ten_nhan_vien_cham_soc"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ten_nhom_bh</property>
+                                <expression name="expression">dimension["ten_nhom_bh"]["ten_nhom_bh"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">nhom_loai</property>
+                                <expression name="expression">dimension["nhom_loai"]["nhom_loai"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">loai</property>
+                                <expression name="expression">dimension["nhom_loai"]["loai"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">doanh_thu_ten_nhom_bh/ten_nhom_bh_nhom_loai/loai</property>
+                                <expression name="expression">measure["doanh_thu"]</expression>
+                                <property name="dataType">decimal</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>ten_nhom_bh/ten_nhom_bh</value>
+                                    <value>nhom_loai/loai</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">doanh_thu_ten_nhom_bh/ten_nhom_bh_nhom_loai/nhom_loai</property>
+                                <expression name="expression">measure["doanh_thu"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>ten_nhom_bh/ten_nhom_bh</value>
+                                    <value>nhom_loai/nhom_loai</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">nhom_loai_TOTAL</property>
+                                <text-property name="displayName">Tổng</text-property>
+                                <expression name="expression" type="javascript">"Tổng"&#13;
+//dimension["nhom_loai"]["nhom_loai"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">doanh_thu_nhom_loai/nhom_loai</property>
+                                <expression name="expression">measure["doanh_thu"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>nhom_loai/nhom_loai</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">doanh_thu_nhom_loai/loai</property>
+                                <expression name="expression">measure["doanh_thu"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>nhom_loai/loai</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                        </list-property>
+                    </extended-item>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

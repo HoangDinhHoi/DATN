@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="rpt_employee_service_form_view">
+            <field name="name">Báo cáo nhân viên làm dịch vụ</field>
+            <field name="model">rpt.employee.service</field>
+            <field name="arch" type="xml">
+                <form string="Báo cáo nhân viên làm dịch vụ">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date_from" required="1" string="Từ ngày"/>
+                                <field name="branch_id" string="Chi nhánh"
+                                   options="{'no_create':1, 'no_open':1}"/>
+                            </group>
+                            <group>
+                                <field name="date_to" required="1" string="Đến ngày"/>
+                                <field name="is_export_excel" string="Xuất Excel"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button name="action_report"
+                                    type="object"
+                                    class="oe_highlight"
+                                    string="Xuất báo cáo"
+                                    icon="fa-print"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- action -->
+        <record model="ir.actions.act_window" id="rpt_employee_service_action">
+            <field name="name">rpt_employee_service</field>
+            <field name="res_model">rpt.employee.service</field>
+            <field name="view_mode">form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="rpt_employee_service_form_view"/>
+            <field name="target">new</field>
+        </record>
+
+        <!-- menu item -->
+        <menuitem id="rpt_employee_service_menu_item"
+                  name="Báo cáo nhân viên làm dịch vụ"
+                  action="rpt_employee_service_action"
+                  parent="izi_pos_report_birt.rpt_pos_employee_categ"/>
+    </data>
+</odoo>

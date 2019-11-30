@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="pos_report_case_session">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="izi_pos_report.izi_internal_layout" t-lang="en_US">
+                        <div class="page" style="font-size:13px;">
+                            <style>
+                                table, th, td {
+                                border: 0.1px solid #f0f5f5;
+                                }
+                            </style>
+                            <t t-if="(o.state == 'opening_control') or (o.state == 'opened')">
+                                <h3>
+                                    <strong>
+                                        Thông báo! Vui lòng đóng phiên trước khi in báo cáo!
+                                    </strong>
+                                </h3>
+                            </t>
+                            <t t-if="(o.state != 'opening_control') and (o.state != 'opened')">
+                                <br/>
+                                <br/>
+                                <h4 class="text-center">
+                                    <b>BÁO CÁO CA</b>
+                                </h4>
+                                <br/>
+                                <br/>
+                                <h6 style="font-size:12px;">
+                                    <strong>Người bán:
+                                        <span t-field="o.user_id"/>
+                                    </strong>
+                                </h6>
+                                <h6 style="font-size:12px;">
+                                    <strong>Thời gian mở:
+                                        <span t-esc="(o.start_at + relativedelta(hours=7)).strftime('%d/%m/%Y %H:%M:%S')"/>
+                                    </strong>
+                                </h6>
+                                <h6 style="font-size:12px;">
+                                    <strong>Thời gian đóng:
+                                        <span t-esc="(o.stop_at + relativedelta(hours=7)).strftime('%d/%m/%Y %H:%M:%S')"/>
+                                    </strong>
+                                </h6>
+                                <h6 style="font-size:12px;">
+                                    <strong>Mã shop:
+                                        <span t-field="o.config_id"/>
+                                    </strong>
+                                </h6>
+                                <h6 style="font-size:12px;">
+                                    <strong>Số phiên:
+                                        <span t-field="o.name"/>
+                                    </strong>
+                                </h6>
+                                <br/>
+                                <h6 style="font-size:12px;">
+                                    <strong>Số hóa đơn:
+                                        <span t-esc="int(o.sum_order())"/>
+                                    </strong>
+                                </h6>
+                                <p style="font-size:12px; border-bottom:1px solid #dbdbdb"></p>
+                                <br/>
+                                <br clear="both"/>
+                                <t>
+                                    <h5><strong>TÓM TẮT THEO CÁC PHƯƠNG THỨC THANH TOÁN</strong></h5>
+                                    <div>
+                                        <div style="float:left;">
+                                            <t t-foreach="o.statement_ids" t-as="statement">
+                                                <p style="margin-bottom: 0px;"><span t-field="statement.journal_id"/></p>
+                                            </t>
+                                            <p style="margin-bottom: 0px;">----------------------</p>
+                                            <p style="margin-bottom: 0px;">Tổng doanh thu:</p>
+                                        </div>
+                                        <div style="float:right" class="text-right">
+                                            <t t-foreach="o.statement_ids" t-as="statement">
+                                                <p style="margin-bottom: 0px;"><span t-field="statement.balance_end_real"/>
+                                            </p>
+                                            </t>
+                                            <br/>
+                                            <p style="margin-bottom: 0px;">
+                                                <span t-esc="'{0:,.0f}'.format(int(o.funtion_sum_casesession()))"/>
+                                                    đ
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <br clear="both"/>
+                                    <p>========================</p>
+                                    <h5><strong>CÁC SẢN PHẨM ĐÃ BÁN</strong></h5>
+                                    <table class="table table-sm" width="100%" style="font-size: 13px;">
+                                        <tr>
+                                            <th width="15%" class="text-center">Mã</th>
+                                            <th width="55%" class="text-center">Sản phẩm</th>
+                                            <th width="15%" class="text-center">Số lượng</th>
+                                            <th width="15%" class="text-center">Tổng số</th>
+                                        </tr>
+                                        <t t-foreach="o.product_in_order()" t-as="order">
+                                            <tr>
+                                                <td><span t-esc="order['code']"/></td>
+                                                <td><span t-esc="order['product_id']"/></td>
+                                                <td class="text-right"><span t-esc="order['qty']"/></td>
+                                                <td class="text-right"><span t-esc="order['price_subtotal_incl']"/></td>
+                                            </tr>
+                                        </t>
+                                    </table>
+                                    <p>========================
+                                    </p>
+                                    <h5><strong>CÁC DỊCH VỤ ĐÃ BÁN</strong></h5>
+                                    <table class="table table-sm" width="100%" style="font-size: 13px;">
+                                        <tr>
+                                            <th width="15%" class="text-center">Mã</th>
+                                            <th width="55%" class="text-center">Dịch vụ</th>
+                                            <th width="15%" class="text-center">Số lượng</th>
+                                            <th width="15%" class="text-center">Tổng số</th>
+                                        </tr>
+                                        <t t-foreach="o.service_card_in_order()" t-as="card">
+                                            <tr>
+                                                <td><span t-esc="card['code']"/></td>
+                                                <td><span t-esc="card['product_id']"/></td>
+                                                <td class="text-right"><span t-esc="card['qty']"/></td>
+                                                <td class="text-right"><span t-esc="card['price_subtotal_incl']"/></td>
+                                            </tr>
+                                        </t>
+                                    </table>
+                                </t>
+                            </t>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+        <record id="paperformat_qweb_pos_report_case_session" model="report.paperformat">
+            <field name="name">A4</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">20</field>
+            <field name="margin_right">10</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">96</field>
+        </record>
+
+        <report
+                string="Print Case Session"
+                id="action_report_case_session"
+                model="pos.session"
+                report_type="qweb-pdf"
+                name="izi_pos_report.pos_report_case_session"
+                file="izi_pos_report.pos_report_case_session"
+                print_report_name="'Pos Case Session - %s' % (object.name or '')"
+                paperformat="izi_pos_report.paperformat_qweb_pos_report_case_session"
+                menu="False"
+        />
+    </data>
+</odoo>
+

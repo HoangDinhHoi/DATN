@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="rpt_stock_delivery_form_view">
+            <field name="name">Rpt Stock Delivery</field>
+            <field name="model">rpt.stock.delivery</field>
+            <field name="arch" type="xml">
+                <form string="Rpt Stock Delivery">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date_from" required="1"/>
+                                <field name="type" required="1"/>
+                            </group>
+                            <group>
+                                <field name="date_to" required="1"/>
+                                <field name="company_id" invisible="1"/>
+                                <field name="location_id" required="1" options="{'no_create':1, 'no_create_edit':1}" domain="[('company_id','=',company_id)]"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button name="action_report" type="object" class="oe_highlight" string="Print"/>
+                            <button name="action_report_excel" type="object" class="oe_highlight" string="Print Excel"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- action -->
+        <record model="ir.actions.act_window" id="rpt_stock_delivery_action">
+            <field name="name">rpt_stock_delivery</field>
+            <field name="res_model">rpt.stock.delivery</field>
+            <field name="view_mode">form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="rpt_stock_delivery_form_view"/>
+            <field name="target">new</field>
+        </record>
+
+        <!-- menu item -->
+        <menuitem id="rpt_stock_delivery_menu_item"
+                  name="Rpt Stock Delivery" sequence="110"
+                  action="rpt_stock_delivery_action"
+                  parent="stock.menu_warehouse_report"/>
+    </data>
+</odoo>

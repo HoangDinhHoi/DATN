@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="pos_revenue_allocation_rule_group_pos_user_portal" model="ir.rule">
+            <field name="name">POS revenue allocation rule group_pos_user</field>
+            <field name="model_id" ref="izi_pos_revenue_allocation.model_pos_revenue_allocation"/>
+            <field name="domain_force">[('order_id.x_team_id.member_ids', 'child_of', [user.id])]</field>
+            <field name="groups" eval="[(4, ref('point_of_sale.group_pos_user'))]"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,160 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="stock_transfer_to_tree_view">
+            <field name="name">stock_transfer_to_tree</field>
+            <field name="model">stock.transfer</field>
+            <field name="arch" type="xml">
+                <tree default_order='name desc' decoration-info="state == 'draft'" decoration-muted="state == 'cancel'"
+                      decoration-danger="state not in ('cancel', 'done','draft')">
+                    <field name="name"/>
+                    <field name="warehouse_id"/>
+                    <field name="dest_warehouse_id"/>
+                    <field name="dest_location_id"/>
+                    <field name="date_receive"/>
+                    <field name="scheduled_date"/>
+                    <field name="origin"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="stock_transfer_to_form_view">
+            <field name="name">stock_transfer_to_form_view</field>
+            <field name="model">stock.transfer</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_receive" states="transfer" string="Comfirm" type="object"
+                                class="oe_highlight" groups="base.group_user"/>
+                        <button name="action_print" states="done" string="In" type="object"/>
+                        <field name="state" widget="statusbar" statusbar_visible="transfer,done"
+                               readonly="1"/>
+                    </header>
+                    <sheet>
+                        <div>
+                            <div>
+                                <h3 style="text-align: center;">CHUYỂN KHO NỘI BỘ</h3>
+                                <h3 class="text-center">
+                                    <field name="name" readonly="1" required="1"
+                                           style="margin-right: 35%%; margin-left: 35%%; max-width: 30%%; font-style: italic;"
+                                           placeholder="Number"/>
+                                </h3>
+                            </div>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="x_compute_wh" invisible="1"/>
+                                <field name="branch_id" invisible="1"/>
+                                <field name="dest_branch_id" invisible="1"/>
+                                <field name="warehouse_id" required="1"
+                                       options="{'no_create':1, 'no_create_edit':1}"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="location_id" readonly="1"
+                                       options="{'no_create':1, 'no_create_edit':1}"
+                                       attrs="{'invisible': [('x_compute_wh', '=', False)]}"/>
+                                <field name="dest_warehouse_id" required="1"
+                                       options="{'no_create':1, 'no_create_edit':1}"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="dest_location_id" required="1" domain="[('branch_id', '=', dest_branch_id),('usage','=','internal')]"
+                                       options="{'no_create':1, 'no_create_edit':1}"
+                                       attrs="{'readonly': ['|',('state', '!=', 'transfer'),('x_compute_wh', '=', True)]}"/>
+                                <field name="picking_from_id" invisible="1"/>
+                                <field name="picking_to_id" invisible="1"/>
+                            </group>
+                            <group>
+                                <field name="date_receive" readonly="1" force_save="1"/>
+                                <field name="company_id" readonly="1" force_save="1"/>
+                                <field name="origin" readonly="1" force_save="1"/>
+                                <field name="dest_account_move_id" readonly="1" force_save="1" invisible="1"/>
+                            </group>
+                        </group>
+                        <field name="note" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                        <notebook string="Detail">
+                            <page string="Operations">
+                                <field name="transfer_line_ids" readonly="1">
+                                    <tree editable="bottom">
+                                        <field name="product_id" readonly="1" force_save="1"
+                                               options="{'no_create':1, 'no_create_edit':1}"/>
+                                        <field name="qty" readonly="1" force_save="1" sum="Qty"/>
+                                        <field name="qty_done" readonly="1" force_save="1" sum="Qty done"/>
+                                        <field name="product_uom" required="1"
+                                               options="{'no_create':1, 'no_create_edit':1}" readonly="1" force_save="1"/>
+                                        <field name="note"/>
+                                        <field name="show_details_visible" invisible="1"/>
+                                        <button name="action_show_details" string="Register lots, packs, location" type="object" icon="fa-list"
+                                                attrs="{'invisible': [('show_details_visible', '=', False)]}" options='{"warn": true}'/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="stock_transfer_id"/>
+                                                <field name="product_id"/>
+                                                <field name="product_uom"/>
+                                            </group>
+                                            <group>
+                                                <field name="qty"/>
+                                                <field name="qty_done"/>
+                                                <field name="note"/>
+                                            </group>
+                                        </group>
+                                        <field name="lot_lines">
+                                            <tree>
+                                                <field name="transfer_line_id" invisible="1"/>
+                                                <field name="product_id" invisible="1"/>
+                                                <field name="location_id" readonly="1" force_save="1"/>
+                                                <field name="dest_location_id" readonly="1" force_save="1"/>
+                                                <field name="lot_id"/>
+                                                <field name="life_date"/>
+                                                <field name="qty_done" required="1"/>
+                                                <field name="uom_id" readonly="1" force_save="1"/>
+                                            </tree>
+                                        </field>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_stock_transfer_to" model="ir.actions.act_window">
+            <field name="name">Stock transfer</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">stock.transfer</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{'create':False,'delete':False,'receive': True}</field>
+            <field name="domain">[('state','in',('transfer','done')),('dest_warehouse_id.user_ids','in',(uid))]
+            </field>
+            <field name="help" type="html">
+                <p>
+                    Stock transfer allow you to move goods from one warehouse to another,
+                    allowing you to control the goods on the road
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window.view" id="action_stock_transfer_to_tree">
+            <field name="sequence" eval="1"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="stock_transfer_to_tree_view"/>
+            <field name="act_window_id" ref="action_stock_transfer_to"/>
+        </record>
+        <record model="ir.actions.act_window.view" id="action_stock_transfer_to_form">
+            <field name="sequence" eval="2"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="stock_transfer_to_form_view"/>
+            <field name="act_window_id" ref="action_stock_transfer_to"/>
+        </record>
+
+        <menuitem id="menu_stock_transfer_to" name="Stock transfer to" parent="menu_stock_transfer" sequence="2"
+                  action="action_stock_transfer_to"/>
+
+    </data>
+</odoo>

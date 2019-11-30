@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_partner_up_rank">
+            <field name="name">VIP customer up rank view</field>
+            <field name="model">partner.up.rank</field>
+            <field name="arch" type="xml">
+                <form string="Up rank">
+                    <sheet string="Up rank">
+                        <div class="oe_title">
+                            <h1>
+                                <field name="partner_id">
+                                    <field name="display_name"/>
+                                </field>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="partner_code" string="Partner code"/>
+                                <field name="partner_old_code" string="Partner old code"/>
+                                <field name="phone" string="Phone"/>
+                                <field name="email" string="Email"/>
+                                <field name="birthday" string="Birthday"/>
+                                <field name="customer_rank" string="Rank"/>
+                                <field name="team_code" string="Sale team"/>
+                                <field name="user_code" string="Sale Person"/>
+                            </group>
+                            <group>
+                                <label for="street" string="Address"/>
+                                <div>
+                                    <field name="street" placeholder="Street..."/>
+                                    <field name="street2"/>
+                                    <div class="address_format">
+                                        <field name="city" placeholder="City" style="width: 40%%;display:none"/>
+                                        <field name="state_id" class="oe_no_button" placeholder="State"
+                                               style="width: 37%%"/>
+                                        <field name="zip" placeholder="ZIP" style="width: 20%%"/>
+                                    </div>
+                                    <field name="country_id" placeholder="Country" class="oe_no_button"/>
+                                </div>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="profile_img_name" invisible="1"/>
+                                <field name="profile_img_view" filename="profile_img_name" widget='image'/>
+                            </group>
+                            <group>
+                                <field name="to_rank"/>
+                                <field name="register_date"/>
+                                <field name="is_extend" invisible="1"/>
+                                <field name="month_rank" readonly="1" force_save="1"/>
+                                <field name="make_exception"
+                                       attrs="{'invisible':['|',('is_extend','=',False),('month_rank','=',0)]}"/>
+
+                                <p attrs="{'invisible':['|',('is_extend','=',False),('month_rank','=',0)]}">
+                                    <i>*** Chú ý: Nếu muốn gia hạn nhiều hơn hãy tích vào ô
+                                        <strong>Gia hạn ngoại lệ</strong>
+                                    </i>
+                                </p>
+                                <p/>
+                                <field name="year_extend"
+                                       attrs="{'invisible':['|',('is_extend','=',False),('month_rank','>',0),('make_exception','=',False)],
+                                           'required':[('is_extend','=',True),'|',('month_rank','=',0),('make_exception','=',True)]}"/>
+                                <p attrs="{'invisible':['|',('is_extend','=',False),('month_rank','>',0)],
+                                                   'required':[('is_extend','=',True),('month_rank','=',0)]}">
+                                    <i>*** Chú ý: Khách hàng này không đủ điều kiện gia hạn, vui lòng nhập số
+                                        <strong>năm</strong>
+                                        bạn muốn gia hạn
+                                        <strong>ngoại lệ</strong>
+                                        cho khách hàng
+                                    </i>
+                                </p>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="is_get_old_form"/>
+                                <field name="form_img_name" invisible="1"/>
+                                <field name="form_img_view" widget="image"
+                                       filename="form_img_name"
+                                       attrs="{'readonly':[('is_get_old_form','=',True)]}"
+                                       context="{'readonly_by_pass': True}"/>
+                            </group>
+                            <group>
+                                <field name="is_get_old_signature"/>
+                                <field name="signature_img_name" invisible="1"/>
+                                <field name="signature_img_view" widget="image"
+                                       filename="signature_img_name"
+                                       attrs="{'readonly':[('is_get_old_signature','=',True)]}"
+                                       context="{'readonly_by_pass': True}"/>
+                            </group>
+                        </group>
+                        <p>
+                            <i>*** Chú ý: Để lên hạng trực tiếp và chiết khấu đơn hàng luôn, bạn cần upload
+                                <strong>Biểu mẫu</strong>
+                                lên hạng.
+                            </i>
+                        </p>
+                        <group>
+                            <field name="note"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="action_up_rank" string="Up rank" type="object" class="oe_highlight"
+                                confirm="Bạn đã chắc chắn ???"/>
+                        or
+                        <button special="cancel" string="Cancel" class="oe_link"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

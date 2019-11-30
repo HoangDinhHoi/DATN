@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hr_employee_level_tree" model="ir.ui.view">
+            <field name="name">Hr employee level</field>
+            <field name="model">hr.employee.level</field>
+            <field name="arch" type="xml">
+                <tree string="Hr employee level tree" editable="bottom">
+                    <field name="name"/>
+                    <field name="level"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="hr_employee_level_action" model="ir.actions.act_window">
+            <field name="name">Hr employee level action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">hr.employee.level</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <menuitem id="menuitem_hr_employee_level"
+                  name="Hr employee level"
+                  parent="hr.menu_human_resources_configuration"
+                  action="hr_employee_level_action"
+                  sequence="25"/>
+
+    </data>
+</odoo>

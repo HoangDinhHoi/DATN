@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--author: HoiHD-->
+<odoo>
+    <data>
+        <!--form view-->
+        <record id="izi_product_release_form_view" model="ir.ui.view">
+            <field name="name">Product Release</field>
+            <field name="model">product.release</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="generate_serial" string="Generate coupon" type="object" states="draft"
+                                class="oe_highlight"/>
+                        <button name="action_active" string="Activate" type="object" states="created"
+                                class="oe_highlight" groups="stock.group_stock_manager"
+                                confirm="Bạn có chắc chắn muốn kích hoạt tất cả các mã đã tạo trong lần phát hành này?"/>
+                        <button name="action_transfer" string="Transfer" type="object" states="activated"
+                                class="oe_highlight"/>
+                        <!--<button name="action_cancel_release"-->
+                        <!--string="Destroy"-->
+                        <!--type="object"-->
+                        <!--states="actived"-->
+                        <!--confirm="Tất cả mã đã tạo sẽ bị xóa không thể khôi phục lại, phôi sẽ hồi kho, Bạn có chắc chắn muốn xóa lần phát hành này?"-->
+                        <!--/>-->
+                        <field name="state" widget="statusbar" statusbar_visible="draft,created,actived,done"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="%(izi_product_release.action_stock_picking_inherit)d"
+                                    type="action"
+                                    attrs="{'invisible': [('count_picking', '=', 0)]}"
+                                    class="oe_stat_button" icon="fa-truck" >
+                                <field name="count_picking" widget="statinfo" string="Transfers"/>
+                            </button>
+                        </div>
+                        <h2 style="text-align:center">
+                            <field name="name" readonly="1" forcesave="1"/>
+                        </h2>
+                        <group>
+                            <group>
+                                <field name="company_id" options="{'no_open':1, 'no_create':1}" invisible="1"/>
+                                <field name="campaign_id" required="1"
+                                       options="{'no_create':1}"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="card_id" required="1"
+                                       domain="[('x_card_type', '!=', 'none')]"
+                                       options="{'no_create':1, 'no_edit':1}"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="product_type" invisible="1"/>
+<!--                                <field name="blank_card_id" options="{'no_create':1}"-->
+<!--                                       domain="[('x_is_blank_card', '=', True)]"-->
+<!--                                       attrs="{'invisible': [('product_type', '=', 'consu')], 'required': [('product_type', '=', 'product')], 'readonly': [('state', '!=', 'draft')]}"/>-->
+                                <field name="release_location_id" required="1" domain="[('usage', '=', 'internal'), ('company_id', '=', company_id)]"
+                                       options="{'no_create':1}" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+<!--                                <field name="location_id" required="1" domain="[('usage', '=', 'internal'), ('company_id', '=', company_id)]"-->
+<!--                                       options="{'no_create':1}"-->
+<!--                                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>-->
+                                <field name="quantity" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="branch_id" required="1" options="{'no_create':1}" attrs="{'readonly': [('state', '!=', 'draft')]}" domain="[('company_id', '=', company_id)]"/>
+                            </group>
+                            <group>
+                                <field name="card_type"
+                                       invisible="1"/>
+                                <field name="date"
+                                       readonly="1"
+                                       force_save="1"/>
+                                <field name="expired_type"
+                                       attrs="{'readonly': [('state', '!=', 'draft')],
+                                                                        'required': [('card_type', '=', 'voucher')]}"/>  <!-- added by HoiHD: Chi bat buoc khi la CP va VC -->
+                                <field name="expired_date"
+                                       attrs="{'invisible': [('expired_type', '=', 'flexible')],
+                                                                    'required': [('expired_type', '=', 'fixed'), ('card_type', '=', 'voucher')],
+                                                                        'readonly': [('state', '!=', 'draft')]}"/> <!-- added by HOIHD: chi bat buoc khi la VC va CP-->
+                                <field name="validity"
+                                       attrs="{'invisible': [('expired_type', '=', 'fixed')],
+                                                                    'required': [('expired_type', '=', 'flexible'), ('card_type', '=', 'voucher')],
+                                                                        'readonly': [('state', '!=', 'draft')]}"/> <!-- added by HOIHD: chi bat buoc khi la VC va CP-->
+                                <field name="use_type"
+                                       required="1"
+                                       attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="release_reason_id"
+                                       options="{'no_create':1}"
+                                       attrs="{'required': [('card_type', '!=', 'none')], 'readonly': [('state', '!=', 'draft')]}"/>
+                                <field name="preview_prefix_code"
+                                       readonly="1"
+                                       class="text-danger"
+                                       placeholder="PREFIX CODE"/>
+                            </group>
+                            <group colspan="2">
+                                <field name="stock_production_lot_ids" nolabel="1"
+                                       context="{'form_view_ref': 'izi_product_release.stock_production_lot_form_view_card'}" readonly="1">
+                                    <tree string="Product Detail" delete="0" create="0">
+                                        <field name="product_id" invisible="1"/>
+                                        <field name="name" string="Lot/Serial"/>
+                                        <field name="life_date" string="Life Date"/>
+                                        <field name="x_extend_date"/>
+                                        <field name="x_customer_id"/>
+                                        <field name="x_use_customer_id"/>
+                                        <field name="x_state" string="Status"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+        <!-- Tạo màu cho tree theo trạng thái và sắp xếp theo thứ tự tăng dần của ngày hết hạn -->
+        <!--tree view ta-->
+        <record id="izi_product_release_tree_view" model="ir.ui.view">
+            <field name="name">Product Release</field>
+            <field name="model">product.release</field>
+            <field name="arch" type="xml">
+                <tree default_order="name desc"
+                      decoration-info="state=='draft'"
+                      decoration-danger="state=='created'"
+                      decoration-success="state=='activated'"
+                      decoration-it="state=='transferring'"
+                      decoration-muted="state=='cancel'">
+                    <field name="name"/>
+                    <field name="campaign_id"/>
+                    <field name="card_id"/>
+<!--                    <field name="blank_card_id"/>-->
+                    <field name="quantity"/>
+                    <field name="date" string="Ngày tạo"/>
+                    <field name="expired_date"/>
+                    <field name="state" string="Trạng thái"/>
+                    <field name="company_id"/>
+                    <field name="branch_id"/>
+                </tree>
+            </field>
+        </record>
+        <!--action-->
+        <record id="izi_product_release_action" model="ir.actions.act_window">
+            <field name="name">Card Release</field>
+            <field name="res_model">product.release</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[]</field>
+        </record>
+        <!--menuitem-->
+        <menuitem id="izi_product_release_menu_item"
+                  name="Phát hành thẻ dịch vụ"
+                  action="izi_product_release_action"
+                  parent="izi_pos.booking_service_pos"
+                  sequence="4"/>
+
+    </data>
+</odoo>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="res_partner_inherit_form_view_inherit" model="ir.ui.view">
+            <field name="name">res.partner.inherit.form.view.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="izi_partner.res_partner_inherit_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='join_date']" position="after">
+                    <field name="source_id"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

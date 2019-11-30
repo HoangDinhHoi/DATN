@@ -1,0 +1,21 @@
+
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+
+@mixin modal-header--template($template, $color){
+  .modal-header--#{$template}{
+    border-top: 3px solid $color;
+    .modal-icon{
+      color: $color;
+      margin: 2px 10px 2px 0;
+    }
+    .modal-title{
+      color: $color;
+    }
+  }
+}
+
+@include modal-header--template(info, $info);
+@include modal-header--template(warning, $warning);
+@include modal-header--template(error, $danger);

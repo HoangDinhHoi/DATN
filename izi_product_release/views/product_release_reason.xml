@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--author: HoiHD-->
+<odoo>
+    <data>
+        <!-- form view -->
+        <record id="product_release_reason_form_view" model="ir.ui.view">
+            <field name="name">Product Release Reason</field>
+            <field name="model">product.release.reason</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="code" required="1"/>
+                                <field name="release_reason_type"/>
+                            </group>
+                            <group>
+                                <field name="name" required="1"/>
+                                <field name="description"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- tree view -->
+        <record id="product_release_reason_tree_view" model="ir.ui.view">
+            <field name="name">Product Release Reason</field>
+            <field name="model">product.release.reason</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code"/>
+                    <field name="release_reason_type"/>
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+        <!-- action -->
+        <record id="product_release_reason_action" model="ir.actions.act_window">
+            <field name="name">Product Release Reason</field>
+            <field name="res_model">product.release.reason</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!-- menu item -->
+        <menuitem id="product_release_reason_menu_item"
+                  name="Release Reason"
+                  action="product_release_reason_action"
+                  parent="stock.menu_product_in_config_stock"
+                  sequence="99"/>
+    </data>
+</odoo>

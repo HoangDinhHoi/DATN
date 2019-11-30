@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+
+access_izi_pos_search_1,access_izi_pos_search_1,model_pos_search,point_of_sale.group_pos_user,1,1,1,1
+access_izi_pos_search_2,access_izi_pos_search_2,model_coupon_transient,point_of_sale.group_pos_user,1,1,1,1
+access_izi_pos_search_9,access_izi_pos_search_9,model_card_service_detail_transient,point_of_sale.group_pos_user,1,1,1,1
+access_izi_pos_search_10,access_izi_pos_search_10,model_card_service_history_transient,point_of_sale.group_pos_user,1,1,1,1
+access_izi_pos_search_11,access_izi_pos_search_11,model_card_service_transient,point_of_sale.group_pos_user,1,1,1,1
+

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <template id="pos_material_request_report_view_id">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+
+                    <t t-call="izi_pos_report.izi_internal_layout">
+                        <div class="page">
+                            <div class="header-left text-left">
+                                <img src="/izi_pos_use_service/static/description/menard.png" height="40px"
+                                     width="254px"></img>
+                            </div>
+
+                            <div class="title">
+                                <!--<style>-->
+                                <!--table, th, td {-->
+                                <!--border: 0.1px solid #f0f5f5;-->
+                                <!--}-->
+                                <!--</style>-->
+                                <h2 class="text-center">
+                                    <strong>PHIẾU XUẤT KHO HÀNG LÀM</strong>
+                                </h2>
+                                <br></br>
+                                <h4 class="text-center">
+                                    SỐ PHIẾU XUẤT:
+                                    <span t-field="o.name"/>
+                                </h4>
+                                <h4 class="text-center">
+                                    HÓA ĐƠN:
+                                    <span t-field="o.use_service_id.name"></span>
+
+                                </h4>
+                            </div>
+                            <table cellspacing="10">
+                                <tr>
+                                    <td width="20%">MENARD SHOP:</td>
+                                    <td width="25%">
+                                        <span t-field="o.use_service_id.crm_team_id.name"></span>
+                                    </td>
+
+                                    <td width="10%">NGÀY:  </td>
+                                    <td width="15%">
+                                        <span t-field="o.use_service_id.date"></span>
+                                    </td>
+
+                                </tr>
+                                <br></br>
+                                <tr>
+                                    <td width="12%">MÃ DỊCH VỤ:</td>
+                                    <td width="5%">
+                                        <span t-field="o.use_service_id.use_service_ids[0].service_id.default_code"></span>
+                                    </td>
+
+                                    <td width="5%">Mã thẻ:</td>
+                                    <td width="5%">
+                                        <span t-field="o.use_service_id.use_service_ids[0].lot_id.name"></span>
+                                    </td>
+
+                                    <td width="10%">.....Số lần:</td>
+
+                                    <t t-set="lan" t-value="0"/>
+                                    <t t-set="lan"
+                                       t-value="o.use_service_id.use_service_ids[0].used_count + o.use_service_id.use_service_ids[0].qty"/>
+
+                                    <td>
+                                        L
+                                        <t t-esc="lan" class="text_center"/>
+                                        /
+                                        <span t-field="o.use_service_id.use_service_ids[0].paid_count"></span>
+
+                                    </td>
+
+                                </tr>
+                                <br></br>
+
+                                <tr>
+                                    <td width="12%">NHÂN VIÊN:</td>
+                                    <td width="5%">
+                                        <span t-field="o.use_service_id.use_service_ids[0].employee_ids[0].name"></span>
+                                    </td>
+                                </tr>
+
+
+                            </table>
+                            <br></br>
+
+                            <table class="table table-condensed" width="100%">
+                                <tr>
+                                    <td width="25%" class="text_center">
+                                        <strong>Tên liệu trình</strong>
+                                    </td>
+                                    <td width="35%" class="text_center">
+                                        <strong>Sản phẩm</strong>
+                                    </td>
+                                    <td width="7%" class="text_center">
+                                        <strong>Đơn vị</strong>
+                                    </td>
+                                    <td width="7%" class="text_center">
+                                        <strong>SL định mức</strong>
+                                    </td>
+                                    <td width="7%" class="text_center">
+                                        <strong>SL thực tế</strong>
+                                    </td>
+                                    <td width="7%" class="text_center">
+                                        <strong>Chênh lệch</strong>
+                                    </td>
+                                    <td class="text_center">
+                                        <strong>Ghi chú</strong>
+                                    </td>
+                                </tr>
+
+                                <t t-foreach="o.material_request_ids" t-as="line">
+                                    <tr>
+                                        <td>
+                                            <span t-field="line.name"/>
+                                        </td>
+                                        <t t-set="chenh_lech" t-value="0"/>
+
+
+                                        <t t-if="line.replace_product_id == False">
+
+                                            <t t-set="chenh_lech"
+                                               t-value="line.replace_qty_use - line.replace_qty_inventory"/>
+                                            <td>
+                                                <span t-field="line.replace_product_id.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="line.replace_product_id.uom_id.name"/>
+                                            </td>
+                                            <td class="text_center">
+                                                <span t-field="line.replace_qty_inventory"/>
+                                            </td>
+                                            <td class="text_center">
+                                                <span t-field="line.replace_qty_use"/>
+                                            </td>
+                                            <td class="text_center">
+                                                <t t-esc="round(chenh_lech,2)"/>
+                                            </td>
+                                        </t>
+                                        <t t-if="line.replace_product_id != False">
+                                            <t t-set="chenh_lech"
+                                               t-value="line.qty_use - line.qty"/>
+
+                                            <td>
+                                                <span t-field="line.product_id.name"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="line.product_id.uom_id.name"/>
+                                            </td>
+                                            <td class="text_center">
+                                                <span t-field="line.qty"/>
+                                            </td>
+                                            <td class="text_center">
+                                                <span t-field="line.qty_use"/>
+                                            </td>
+                                            <td class="text_center">
+                                                <t t-esc="round(chenh_lech,2)"/>
+                                            </td>
+                                            <td>
+                                            </td>
+
+                                        </t>
+                                    </tr>
+                                </t>
+
+
+                            </table>
+                            <br></br>
+                            <br></br>
+                            <br></br>
+
+                            <table cellspacing="10">
+                                <tr>
+                                    <td width="20%"></td>
+
+                                    <td>NHÂN VIÊN FS</td>
+
+                                    <td width="50%"></td>
+
+                                    <td>QUẢN LÝ SHOP</td>
+
+                                </tr>
+
+
+                            </table>
+
+                            <!--</t>-->
+                            <!--</div>-->
+                        </div>
+                    </t>
+                </t>
+            </t><!--</t>-->
+        </template>
+    </data>
+
+</odoo>

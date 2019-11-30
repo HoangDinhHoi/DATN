@@ -1,0 +1,30 @@
+<odoo>
+    <data>
+
+        <record id="assign_lead_dialog" model="ir.ui.view">
+            <field name="name">Assign dialog</field>
+            <field name="model">crm.lead.assign</field>
+            <field name="arch" type="xml">
+                <form string="Assign dialog">
+                    <sheet>
+                        <group col="2">
+                            <field name="team_id" required="True"/>
+                            <field name="user_id" required="True"/>
+                            <field name="override" invisible="not context.get('assign_multi', False)"/>
+                        </group>
+                    </sheet>
+                    <footer>
+                        <button name="action_assign" type="object" string="Assign" class="btn-primary"
+                                invisible="not context.get('assign', False)"/>
+                        <button name="action_assign_multi" type="object" string="Assign multi" class="btn-primary"
+                                invisible="not context.get('assign_multi', False)"/>
+                        <button name="action_reassign" type="object" string="Reassign" class="btn-primary"
+                                invisible="not context.get('reassign', False)"/>
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- HoiHD -->
+<odoo>
+    <data>
+       <record id="rpt_pos_revenue_product_and_service_by_dat_form" model="ir.ui.view">
+           <field name="name">Báo cáo doanh thu sản phẩm và dịch vụ theo ngày</field>
+           <field name="model">rpt.pos.revenue.product.and.service.by.date</field>
+           <field name="arch" type="xml">
+               <form string="Báo cáo doanh thu sản phẩm và dịch vụ theo ngày">
+                   <sheet>
+                       <group>
+                           <group>
+                               <field name="date_from" string="Từ ngày" required="1"/>
+                               <field name="branch_id" string="Chi nhánh" options="{'no_create':1, 'no_open': 1}"/>
+                           </group>
+                           <group>
+                               <field name="date_to" string="Đến ngày" required="1"/>
+                               <field name="is_export_excel" string="Xuất Excel"/>
+                           </group>
+                       </group>
+                       <footer>
+                           <button name="action_export_report" type="object" string="Xuất báo cáo"
+                           icon="fa-print" class="oe_highlight"/>
+                           <button special="cancel" string="Hủy"/>
+                       </footer>
+                   </sheet>
+               </form>
+           </field>
+       </record>
+
+
+        <record id="rpt_pos_revenue_product_and_service_by_date_action" model="ir.actions.act_window">
+            <field name="name">Báo cáo doanh thu sản phẩm và dịch vụ theo ngày</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rpt.pos.revenue.product.and.service.by.date</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="rpt_pos_revenue_product_and_service_by_dat_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="rpt_pos_revenue_product_and_service_by_date_menu"
+                  name="Báo cáo doanh thu sản phẩm và dịch vụ theo ngày"
+                  parent="izi_pos_report_birt.rpt_pos_revenue_categ"
+                  action="rpt_pos_revenue_product_and_service_by_date_action"/>
+    </data>
+</odoo>

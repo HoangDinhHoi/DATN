@@ -1,0 +1,434 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* izi_product
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-14 07:29+0000\n"
+"PO-Revision-Date: 2019-03-14 07:29+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: izi_product
+#: code:addons/izi_product/models/product_features.py:13
+#, python-format
+msgid "Active"
+msgstr ""
+
+#. module: izi_product
+#: model_terms:ir.actions.act_window,help:izi_product.product_features_action
+msgid "Add a new Product Feautures"
+msgstr ""
+
+#. module: izi_product
+#: model:ir.actions.act_window,name:izi_product.product_template_blank_card_action
+msgid "Blank Card"
+msgstr "Phôi"
+
+#. module: izi_product
+#: model:ir.ui.menu,name:izi_product.product_template_blank_card_menu_item
+msgid "Blank Card Management"
+msgstr "Quản lý phôi"
+
+#. module: izi_product
+#: model_terms:ir.ui.view,arch_db:izi_product.product_form_view_inherit
+msgid "Card Information"
+msgstr "Thông tin thẻ"
+
+#. module: izi_product
+#: code:addons/izi_product/models/product.py:17
+#, python-format
+msgid "Card Type"
+msgstr "Loại thẻ"
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_product__x_card_discount
+#: model:ir.model.fields,field_description:izi_product.field_product_template__x_card_discount
+msgid "Chiết khấu"
+msgstr ""
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_product__x_use_policy
+#: model:ir.model.fields,field_description:izi_product.field_product_template__x_use_policy
+msgid "Chính sách sử dụng"
+msgstr ""
+
+#. module: izi_product
+#: code:addons/izi_product/models/product_category.py:19
+#: code:addons/izi_product/models/product_features.py:11
+#: model_terms:ir.ui.view,arch_db:izi_product.product_category_only_form_view_inherit
+#, python-format
+msgid "Code"
+msgstr "Mã"
+
+#. module: izi_product
+#: model:ir.actions.act_window,name:izi_product.product_template_voucher_action
+#: model:ir.ui.menu,name:izi_product.product_template_voucher_menu_item
+msgid "Coupon"
+msgstr "Phiếu mua hàng"
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_card_allow__create_uid
+#: model:ir.model.fields,field_description:izi_product.field_product_category_card_allow__create_uid
+#: model:ir.model.fields,field_description:izi_product.field_product_features__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_card_allow__create_date
+#: model:ir.model.fields,field_description:izi_product.field_product_category_card_allow__create_date
+#: model:ir.model.fields,field_description:izi_product.field_product_features__create_date
+msgid "Created on"
+msgstr "Thời điểm tạo"
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_features__active
+msgid "Có hiệu lực"
+msgstr ""
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_features__name
+msgid "Công năng"
+msgstr ""
+
+#. module: izi_product
+#: code:addons/izi_product/models/product_features.py:12
+#, python-format
+msgid "Description"
+msgstr "Mô tả"
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_category__property_account_discount_tm_categ_id
+msgid "Discount TM Account"
+msgstr ""
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_category__property_account_discount_vip_categ_id
+msgid "Discount VIp Account"
+msgstr ""
+
+#. module: izi_product
+#: code:addons/izi_product/models/product.py:19
+#, python-format
+msgid "Discount(%)"
+msgstr "Chiết khấu"
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_card_allow__display_name
+#: model:ir.model.fields,field_description:izi_product.field_product_category_card_allow__display_name
+#: model:ir.model.fields,field_description:izi_product.field_product_features__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: izi_product
+#: code:addons/izi_product/models/product.py:26
+#: model_terms:ir.ui.view,arch_db:izi_product.product_normal_form_view_inherit
+#: model_terms:ir.ui.view,arch_db:izi_product.product_template_only_form_view_inherit
+#, python-format
+msgid "Feature Product"
+msgstr "Đặc tính sản phẩm"
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_product__x_card_value
+#: model:ir.model.fields,field_description:izi_product.field_product_template__x_card_value
+msgid "Giá trị"
+msgstr ""
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_card_allow__id
+#: model:ir.model.fields,field_description:izi_product.field_product_category_card_allow__id
+#: model:ir.model.fields,field_description:izi_product.field_product_features__id
+msgid "ID"
+msgstr ""
+
+#. module: izi_product
+#: code:addons/izi_product/models/product.py:10
+#, python-format
+msgid "Is Blank Card"
+msgstr "Là phôi thẻ"
+
+#. module: izi_product
+#: code:addons/izi_product/models/product.py:14
+#, python-format
+msgid "Keep Card"
+msgstr "Thẻ Keep"
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_card_allow____last_update
+#: model:ir.model.fields,field_description:izi_product.field_product_category_card_allow____last_update
+#: model:ir.model.fields,field_description:izi_product.field_product_features____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_card_allow__write_uid
+#: model:ir.model.fields,field_description:izi_product.field_product_category_card_allow__write_uid
+#: model:ir.model.fields,field_description:izi_product.field_product_features__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_card_allow__write_date
+#: model:ir.model.fields,field_description:izi_product.field_product_category_card_allow__write_date
+#: model:ir.model.fields,field_description:izi_product.field_product_features__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_product__x_card_type
+#: model:ir.model.fields,field_description:izi_product.field_product_template__x_card_type
+msgid "Loại thẻ"
+msgstr ""
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_product__x_is_blank_card
+#: model:ir.model.fields,field_description:izi_product.field_product_template__x_is_blank_card
+msgid "Là phôi thẻ"
+msgstr ""
+
+#. module: izi_product
+#: code:addons/izi_product/models/product_card_allow.py:11
+#: code:addons/izi_product/models/product_category_card_allow.py:12
+#, python-format
+msgid "Maximum Quantity"
+msgstr "Số lượng tối đa"
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_category__x_code
+#: model:ir.model.fields,field_description:izi_product.field_product_features__code
+msgid "Mã"
+msgstr ""
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_features__description
+msgid "Mô tả"
+msgstr ""
+
+#. module: izi_product
+#: code:addons/izi_product/models/product_features.py:10
+#, python-format
+msgid "Name"
+msgstr "Công năng"
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_category_card_allow__product_category_allow_id
+msgid "Nhóm sản phẩm"
+msgstr ""
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_product__x_product_category_card_ids
+#: model:ir.model.fields,field_description:izi_product.field_product_template__x_product_category_card_ids
+msgid "Nhóm sản phẩm & Dịch vụ"
+msgstr ""
+
+#. module: izi_product
+#: selection:product.template,x_card_type:0
+msgid "None"
+msgstr ""
+
+#. module: izi_product
+#: selection:product.template,x_card_type:0
+msgid "Phiếu mua hàng"
+msgstr ""
+
+#. module: izi_product
+#: code:addons/izi_product/models/product_card_allow.py:10
+#: model:ir.model,name:izi_product.model_product_product
+#, python-format
+msgid "Product"
+msgstr "Sản phẩm"
+
+#. module: izi_product
+#: code:addons/izi_product/models/product.py:22
+#: model_terms:ir.ui.view,arch_db:izi_product.product_card_allow_form_view
+#: model_terms:ir.ui.view,arch_db:izi_product.product_card_allow_tree_view
+#: model_terms:ir.ui.view,arch_db:izi_product.product_form_view_inherit
+#, python-format
+msgid "Product & Service"
+msgstr "Sản phẩm & Dịch vụ"
+
+#. module: izi_product
+#: code:addons/izi_product/models/product.py:23
+#: model_terms:ir.ui.view,arch_db:izi_product.product_category_card_allow_form_view
+#: model_terms:ir.ui.view,arch_db:izi_product.product_category_card_allow_tree_view
+#: model_terms:ir.ui.view,arch_db:izi_product.product_form_view_inherit
+#, python-format
+msgid "Product & Service Group"
+msgstr "Nhóm sản phẩm & Dịch vụ"
+
+#. module: izi_product
+#: code:addons/izi_product/models/product_category_card_allow.py:11
+#: model:ir.model,name:izi_product.model_product_category
+#, python-format
+msgid "Product Category"
+msgstr "Nhóm sản phẩm"
+
+#. module: izi_product
+#: model:ir.ui.menu,name:izi_product.menu_product_features
+msgid "Product Characteristics"
+msgstr "Đặc tính sản phẩm"
+
+#. module: izi_product
+#: model_terms:ir.ui.view,arch_db:izi_product.product_features_form
+msgid "Product Features form"
+msgstr "Đặc tính sản phẩm"
+
+#. module: izi_product
+#: model:ir.actions.act_window,name:izi_product.product_features_action
+msgid "Product Feautures"
+msgstr "Đặc tính sản phẩm"
+
+#. module: izi_product
+#: code:addons/izi_product/models/product_card_allow.py:9
+#: code:addons/izi_product/models/product_category_card_allow.py:10
+#: model:ir.model.fields,field_description:izi_product.field_product_card_allow__product_id
+#: model:ir.model.fields,field_description:izi_product.field_product_category_card_allow__product_id
+#, python-format
+msgid "Product Tempalte"
+msgstr ""
+
+#. module: izi_product
+#: model:ir.model,name:izi_product.model_product_template
+msgid "Product Template"
+msgstr "Mẫu sản phẩm"
+
+#. module: izi_product
+#: model_terms:ir.ui.view,arch_db:izi_product.product_normal_form_view_inherit
+#: model_terms:ir.ui.view,arch_db:izi_product.product_template_only_form_view_inherit
+msgid "Product code"
+msgstr "Mã sản phẩm"
+
+#. module: izi_product
+#: model:ir.actions.act_window,name:izi_product.product_template_service_action
+#: model:ir.ui.menu,name:izi_product.product_template_service_menu_item
+msgid "Service"
+msgstr "Dịch vụ"
+
+#. module: izi_product
+#: code:addons/izi_product/models/product.py:15
+#: model:ir.actions.act_window,name:izi_product.product_template_service_card_action
+#: model:ir.ui.menu,name:izi_product.product_template_service_card_menu_item
+#, python-format
+msgid "Service Card"
+msgstr "Thẻ dịch vụ"
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_card_allow__product_allow_id
+msgid "Sản phẩm"
+msgstr ""
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_product__x_product_card_ids
+#: model:ir.model.fields,field_description:izi_product.field_product_template__x_product_card_ids
+msgid "Sản phẩm & Dịch vụ"
+msgstr ""
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_card_allow__maximum_quantity
+#: model:ir.model.fields,field_description:izi_product.field_product_category_card_allow__maximum_quantity
+msgid "Số lượng tối đa"
+msgstr ""
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_product__x_card_count
+#: model:ir.model.fields,field_description:izi_product.field_product_template__x_card_count
+msgid "Số lần sử dụng"
+msgstr ""
+
+#. module: izi_product
+#: code:addons/izi_product/models/product.py:42
+#: code:addons/izi_product/models/product.py:51
+#: code:addons/izi_product/models/product.py:93
+#: code:addons/izi_product/models/product.py:101
+#: code:addons/izi_product/models/product_category.py:27
+#: code:addons/izi_product/models/product_features.py:21
+#, python-format
+msgid "The code do not allow any space!"
+msgstr "Mã không được có khoảng trống!"
+
+#. module: izi_product
+#: code:addons/izi_product/models/product.py:30
+#: code:addons/izi_product/models/product.py:58
+#: sql_constraint:product.product:0
+#: sql_constraint:product.template:0
+#, python-format
+msgid "The code must be unique!"
+msgstr "Mã phải là duy nhất!"
+
+#. module: izi_product
+#: sql_constraint:product.category:0
+#: sql_constraint:product.features:0
+msgid "The code of this product features must be unique !"
+msgstr "Mã của các tính năng sản phẩm này phải là duy nhất!"
+
+#. module: izi_product
+#: selection:product.template,x_card_type:0
+msgid "Thẻ Keep"
+msgstr ""
+
+#. module: izi_product
+#: selection:product.template,x_card_type:0
+msgid "Thẻ dịch vụ"
+msgstr ""
+
+#. module: izi_product
+#: code:addons/izi_product/models/product.py:21
+#, python-format
+msgid "Use Policy"
+msgstr "Chính sách sử dụng"
+
+#. module: izi_product
+#: code:addons/izi_product/models/product.py:20
+#, python-format
+msgid "Use Times"
+msgstr "Số lần sử dụng"
+
+#. module: izi_product
+#: code:addons/izi_product/models/product.py:18
+#, python-format
+msgid "Value"
+msgstr "Giá trị"
+
+#. module: izi_product
+#: code:addons/izi_product/models/product.py:16
+#, python-format
+msgid "Voucher"
+msgstr "Phiếu mua hàng"
+
+#. module: izi_product
+#: model:ir.model,name:izi_product.model_product_card_allow
+msgid "product.card.allow"
+msgstr ""
+
+#. module: izi_product
+#: model:ir.actions.act_window,name:izi_product.product_card_allow_action
+msgid "product.card.allow.action"
+msgstr ""
+
+#. module: izi_product
+#: model:ir.model,name:izi_product.model_product_category_card_allow
+msgid "product.category.card.allow"
+msgstr ""
+
+#. module: izi_product
+#: model:ir.actions.act_window,name:izi_product.product_category_card_allow_action
+msgid "product.category.card.allow.action"
+msgstr ""
+
+#. module: izi_product
+#: model:ir.model,name:izi_product.model_product_features
+msgid "product.features"
+msgstr ""
+
+#. module: izi_product
+#: model:ir.model.fields,field_description:izi_product.field_product_product__x_feature_product
+#: model:ir.model.fields,field_description:izi_product.field_product_template__x_feature_product
+msgid "Đặc tính sản phẩm"
+msgstr ""
+

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="res_brand_tree" model="ir.ui.view">
+            <field name="name">Brand tree</field>
+            <field name="model">res.brand</field>
+            <field name="arch" type="xml">
+                <tree string="Brand tree">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="res_brand_form" model="ir.ui.view">
+            <field name="name">Brand form</field>
+            <field name="model">res.brand</field>
+            <field name="arch" type="xml">
+                <form string="Brand form">
+                    <sheet>
+                        <group col="4">
+                            <field name="name"/>
+                            <field name="code"/>
+                        </group>
+                        <field name="description"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="res_brand_act" model="ir.actions.act_window">
+            <field name="name">Brand action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">res.brand</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menuitem_res_brand"
+                  name="Brand"
+                  parent="contacts.res_partner_menu_config"
+                  action="izi_brand.res_brand_act"
+                  sequence="30"/>
+
+    </data>
+</odoo>

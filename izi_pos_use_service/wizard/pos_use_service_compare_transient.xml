@@ -1,0 +1,18 @@
+<odoo>
+    <data>
+        <record id="pos_use_service_inherit_compare_transient_form_view" model="ir.ui.view">
+            <field name="name">Pos Use Service Compare transient</field>
+            <field name="model">pos.use.service.compare.transient</field>
+            <field name="arch" type="xml">
+                <form>
+                    <p>Đơn sử dụng dịch vụ hợp lệ?</p>
+                    <footer>
+                        <button name="action_compare" type="object" string="Yes" class="oe_highlight"/>
+                        <button name="action_compare_not_ok" type="object" string="No" class="oe_highlight"/>
+                        <button name="cancel" string="Cancel" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

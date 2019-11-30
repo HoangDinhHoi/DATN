@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="izi_pos_customer_confirm_form">
+            <field name="name">izi_pos_customer_confirm Form</field>
+            <field name="model">pos.customer.confirm</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="partner_id" readonly="1" force_save="1"/>
+                            <field name="signature" widget="signature"/>
+                            <field name="state" invisible="1"/>
+                            <field name="date" invisible="1"/>
+                        </group>
+                        <notebook>
+                            <page name="order_line" string="Order Line">
+                                <field name="order_line_ids" readonly="1" force_save="1">
+                                </field>
+                            </page>
+                            <page name="use_service" string="Use Service">
+                                <field name="use_service_line_ids" >
+                                    <tree editable="bottom" create="false" delete="false">
+                                        <field name="service_id" readonly="1" force_save="1"/>
+                                        <field name="qty" readonly="1" force_save="1"/>
+                                        <field name="employee_ids" widget="many2many_tags" readonly="1" force_save="1"/>
+                                        <field name="customer_rate" widget="sentiment_icon" show_all_icon="true"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <footer>
+                        <button name="action_confirm" type="object" string="Confirm" class="oe_highlight"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_pos_customer_confirm" model="ir.actions.act_window">
+            <field name="name">Customer Confirm</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">pos.customer.confirm</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

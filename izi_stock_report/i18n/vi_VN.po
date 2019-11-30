@@ -1,0 +1,753 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* izi_stock_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-07-07 15:18+0000\n"
+"PO-Revision-Date: 2019-07-07 15:18+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "(Ban hành theo Thông tư số: 200/2014/TT-BTC"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+msgid "(Hoặc bộ phận có nhu cầu nhập)"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "(Hoặc bộ phận có nhu cầu xuất)"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "(Ký, họ tên)"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "- Số chứng từ gốc kèm theo :"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "<b>Kế toán kho</b>"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "<b>Người giao hàng</b>"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "<b>Người lập phiếu</b>"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "<b>Thủ kho</b>"
+msgstr ""
+
+#. module: izi_stock_report
+#: code:addons/izi_stock_report/models/rpt_stock_list_card_according_to_branch.py:21
+#: selection:rpt.list.card.branch,state:0
+#, python-format
+msgid "Activated"
+msgstr "Đã kích hoạt"
+
+#. module: izi_stock_report
+#: code:addons/izi_stock_report/models/rpt_stock_list_card_according_to_branch.py:12
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_list_card_branch__branch_id
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_transfer_intype__branch_id
+#, python-format
+msgid "Branch"
+msgstr "Chi nhánh"
+
+#. module: izi_stock_report
+#: code:addons/izi_stock_report/models/rpt_inventory.py:103
+#: code:addons/izi_stock_report/models/rpt_inventory.py:349
+#, python-format
+msgid "Bạn chưa chọn ngày!"
+msgstr ""
+
+#. module: izi_stock_report
+#: code:addons/izi_stock_report/models/rpt_inventory_in_and_out.py:172
+#: code:addons/izi_stock_report/models/rpt_inventory_in_and_out.py:397
+#: code:addons/izi_stock_report/models/rpt_stock_location_in_out.py:38
+#, python-format
+msgid "Bạn đang chọn điều kiện ngày không đúng."
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.rpt_stock_location_in_out_form
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: izi_stock_report
+#: code:addons/izi_stock_report/models/rpt_stock_list_card_according_to_branch.py:18
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_list_card_branch__type_card
+#, python-format
+msgid "Card Type"
+msgstr "Loại thẻ"
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.rpt_stock_location_in_out_form
+msgid "Choose your warehouse"
+msgstr "Chọn kho"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out_line__closing_location
+msgid "Closing location"
+msgstr ""
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_delivery__company_id
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_transfer_intype__company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: izi_stock_report
+#: selection:rpt.list.card.branch,type_card:0
+msgid "Coupon/Voucher"
+msgstr ""
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_list_card_branch__create_uid
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_delivery__create_uid
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out__create_uid
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out_line__create_uid
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_transfer_intype__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_list_card_branch__create_date
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_delivery__create_date
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out__create_date
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out_line__create_date
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_transfer_intype__create_date
+msgid "Created on"
+msgstr "Thời điểm tạo"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_delivery__date_from
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_transfer_intype__date_from
+msgid "Date From"
+msgstr "Từ ngày"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_delivery__date_to
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_transfer_intype__date_to
+msgid "Date To"
+msgstr "Đến ngày"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_transfer_intype__location_dest_ids
+msgid "Destination Locations"
+msgstr "Địa điểm nguồn"
+
+#. module: izi_stock_report
+#: code:addons/izi_stock_report/models/rpt_stock_list_card_according_to_branch.py:24
+#: selection:rpt.list.card.branch,state:0
+#, python-format
+msgid "Destroy"
+msgstr "Hủy"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_list_card_branch__display_name
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_delivery__display_name
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out__display_name
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out_line__display_name
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_transfer_intype__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "Diễn giải:"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "Email:"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.rpt_stock_location_in_out_form
+msgid "Export excel"
+msgstr "Xuất Excel"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out__from_date
+msgid "From date"
+msgstr "Từ ngày"
+
+#. module: izi_stock_report
+#: code:addons/izi_stock_report/models/rpt_inventory_in_and_out.py:360
+#, python-format
+msgid "General Account of Input - Output - Inventory"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "Ghi chú"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "Hạn sử dụng"
+msgstr ""
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_list_card_branch__id
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_delivery__id
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out__id
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out_line__id
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_transfer_intype__id
+msgid "ID"
+msgstr ""
+
+#. module: izi_stock_report
+#: selection:rpt.stock.delivery,type:0
+#: selection:rpt.stock.transfer.intype,type:0
+msgid "In"
+msgstr ""
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out_line__in_location
+msgid "In location"
+msgstr ""
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out__name
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out_line__in_out_inventory_id
+#: model:ir.ui.menu,name:izi_stock_report.menu_rpt_stock_location_in_out
+msgid "In/Out Location"
+msgstr "Báo cáo tồn kho"
+
+#. module: izi_stock_report
+#: selection:rpt.stock.transfer.intype,type:0
+msgid "Internal"
+msgstr "Nội bộ"
+
+#. module: izi_stock_report
+#: code:addons/izi_stock_report/models/rpt_inventory.py:227
+#, python-format
+msgid "Inventory"
+msgstr "Tồn kho"
+
+#. module: izi_stock_report
+#: code:addons/izi_stock_report/models/rpt_inventory_value.py:129
+#, python-format
+msgid "Inventory value report"
+msgstr "Báo cáo giá trị tồn kho"
+
+#. module: izi_stock_report
+#: code:addons/izi_stock_report/models/rpt_stock_list_card_according_to_branch.py:17
+#: selection:rpt.list.card.branch,type_card:0
+#, python-format
+msgid "Keep Card"
+msgstr "Thẻ Keep"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_list_card_branch____last_update
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_delivery____last_update
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out____last_update
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out_line____last_update
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_transfer_intype____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_list_card_branch__write_uid
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_delivery__write_uid
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out__write_uid
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out_line__write_uid
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_transfer_intype__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_list_card_branch__write_date
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_delivery__write_date
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out__write_date
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out_line__write_date
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_transfer_intype__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out__line_ids
+msgid "Lines"
+msgstr "Chi tiết"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_delivery__location_id
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out_line__location_id
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_transfer_intype__location_id
+msgid "Location"
+msgstr "Địa điểm"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out__location_ids
+msgid "Locations"
+msgstr "Địa điểm"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out_line__lot_id
+msgid "Lot"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "Lot/Serial Number"
+msgstr "Số Lot/Serial"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,help:izi_stock_report.field_rpt_list_card_branch__partner_id
+msgid "Lựa chọn khách hàng mua thẻ, nếu muốn lấy ra tất cả thì hãy để trống."
+msgstr ""
+
+#. module: izi_stock_report
+#: model:ir.model.fields,help:izi_stock_report.field_rpt_list_card_branch__customer_id
+msgid "Lựa chọn người sử dụng thẻ, nếu muốn lấy ra tất cả thì hãy để trống."
+msgstr ""
+
+#. module: izi_stock_report
+#: model:ir.model.fields,help:izi_stock_report.field_rpt_list_card_branch__state
+msgid "Lựa chọn trạng thái của thẻ, nếu muốn lấy ra tất cả thì hãy để trống."
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "Mã hàng"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "Mẫu Số 02-VT"
+msgstr ""
+
+#. module: izi_stock_report
+#: code:addons/izi_stock_report/models/rpt_stock_list_card_according_to_branch.py:20
+#: selection:rpt.list.card.branch,state:0
+#, python-format
+msgid "New"
+msgstr "Mới"
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "Ngày"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "Ngày 22/12/2014 của BTC)"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+msgid "Ngày nhập:"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "Ngày xuất:"
+msgstr ""
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out_line__opening_location
+msgid "Opening Location"
+msgstr ""
+
+#. module: izi_stock_report
+#: selection:rpt.stock.delivery,type:0
+#: selection:rpt.stock.transfer.intype,type:0
+msgid "Out"
+msgstr ""
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out_line__out_location
+msgid "Out location"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+msgid "PHIẾU NHẬP MUA"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "PHIẾU XUẤT BÁN"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.izi_stock_report_qweb_form
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.rpt_list_card_branch_form_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.rpt_stock_delivery_form_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.rpt_stock_transfer_intype_form_view
+msgid "Print"
+msgstr "In"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_list_card_branch__is_print_excel
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.rpt_stock_delivery_form_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.rpt_stock_transfer_intype_form_view
+msgid "Print Excel"
+msgstr "Xuất excel"
+
+#. module: izi_stock_report
+#: model:ir.actions.report,name:izi_stock_report.qweb_stock_picking_incoming_rpt
+msgid "Print stock In"
+msgstr "In nhập kho"
+
+#. module: izi_stock_report
+#: model:ir.actions.report,name:izi_stock_report.qweb_stock_picking_outgoing_rpt
+msgid "Print stock out"
+msgstr "In xuất kho"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out_line__product_id
+msgid "Product"
+msgstr "Sản phẩm"
+
+#. module: izi_stock_report
+#: code:addons/izi_stock_report/models/rpt_stock_list_card_according_to_branch.py:27
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_list_card_branch__partner_id
+#, python-format
+msgid "Purchaser"
+msgstr "Người mua"
+
+#. module: izi_stock_report
+#: model:ir.actions.act_window,name:izi_stock_report.rpt_list_card_branch_action
+#: model:ir.ui.menu,name:izi_stock_report.rpt_list_card_categ
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.rpt_list_card_branch_form_view
+msgid "Report List Card"
+msgstr "Báo cáo danh sách thẻ"
+
+#. module: izi_stock_report
+#: model:ir.model,name:izi_stock_report.model_rpt_list_card_branch
+msgid "Report List Card according to Branch"
+msgstr "Báo cáo danh sách thẻ theo chi nhánh"
+
+#. module: izi_stock_report
+#: model:ir.ui.menu,name:izi_stock_report.rpt_list_card_according_to_branches
+msgid "Report List Card according to Branches"
+msgstr "Báo cáo danh sách thẻ theo các chi nhánh"
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.rpt_stock_transfer_intype_form_view
+msgid "Rpt Stock"
+msgstr "Chi tiết xuất kho"
+
+#. module: izi_stock_report
+#: model:ir.ui.menu,name:izi_stock_report.rpt_stock_delivery_menu_item
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.rpt_stock_delivery_form_view
+msgid "Rpt Stock Delivery"
+msgstr "Báo cáo xuất nhập trực tiếp"
+
+#. module: izi_stock_report
+#: model:ir.ui.menu,name:izi_stock_report.rpt_stock_transfer_intype_menu_item
+msgid "Rpt Stock Transfer Intype"
+msgstr "Báo cáo chi tiết dịch chuyển kho"
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "STT"
+msgstr ""
+
+#. module: izi_stock_report
+#: code:addons/izi_stock_report/models/rpt_stock_list_card_according_to_branch.py:16
+#: selection:rpt.list.card.branch,type_card:0
+#, python-format
+msgid "Service Card"
+msgstr "Thẻ dịch vụ"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_transfer_intype__location_ids
+msgid "Source Locations"
+msgstr "Địa điểm nguồn"
+
+#. module: izi_stock_report
+#: code:addons/izi_stock_report/models/rpt_stock_list_card_according_to_branch.py:25
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_list_card_branch__state
+#, python-format
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: izi_stock_report
+#: model:ir.model,name:izi_stock_report.model_stock_move
+msgid "Stock Move"
+msgstr "Dịch chuyển kho"
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "SỐ:"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "Số lượng"
+msgstr ""
+
+#. module: izi_stock_report
+#: code:addons/izi_stock_report/models/rpt_inventory.py:103
+#: code:addons/izi_stock_report/models/rpt_inventory.py:349
+#: code:addons/izi_stock_report/models/rpt_inventory_in_and_out.py:172
+#: code:addons/izi_stock_report/models/rpt_inventory_in_and_out.py:397
+#: code:addons/izi_stock_report/models/rpt_stock_location_in_out.py:38
+#, python-format
+msgid "Thông báo"
+msgstr ""
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out__to_date
+msgid "To date"
+msgstr "Đến ngày"
+
+#. module: izi_stock_report
+#: model:ir.model,name:izi_stock_report.model_stock_picking
+msgid "Transfer"
+msgstr "Dịch chuyển"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_delivery__type
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_transfer_intype__type
+msgid "Type"
+msgstr "Loại"
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "Tên hàng"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "Tên khách hàng:"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+msgid "Tên nhà cung cấp:"
+msgstr ""
+
+#. module: izi_stock_report
+#: code:addons/izi_stock_report/models/rpt_stock_list_card_according_to_branch.py:23
+#: selection:rpt.list.card.branch,state:0
+#, python-format
+msgid "Used"
+msgstr "Đã sử dụng"
+
+#. module: izi_stock_report
+#: code:addons/izi_stock_report/models/rpt_stock_list_card_according_to_branch.py:29
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_list_card_branch__customer_id
+#, python-format
+msgid "User"
+msgstr "Người dùng"
+
+#. module: izi_stock_report
+#: code:addons/izi_stock_report/models/rpt_stock_list_card_according_to_branch.py:22
+#: selection:rpt.list.card.branch,state:0
+#, python-format
+msgid "Using"
+msgstr "Đang sử dụng"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out__view_location_id
+msgid "View Location"
+msgstr "Địa điểm chỉ xem"
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.rpt_stock_location_in_out_form
+msgid "View Web"
+msgstr "Xem trên web"
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out__warehouse_id
+msgid "Warehouse"
+msgstr "Kho hàng"
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+msgid "Xưởng/Kho nhập:"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "Xưởng/Kho xuất:"
+msgstr ""
+
+#. module: izi_stock_report
+#: model:ir.model,name:izi_stock_report.model_izi_detail_in_line
+msgid "izi.detail.in.line"
+msgstr "Chi tiết nhập"
+
+#. module: izi_stock_report
+#: model:ir.model,name:izi_stock_report.model_izi_detail_in_out
+msgid "izi.detail.in.out"
+msgstr "Chi tiết nhập xuất"
+
+#. module: izi_stock_report
+#: model:ir.model,name:izi_stock_report.model_izi_detail_out_line
+msgid "izi.detail.out.line"
+msgstr "Chi tiết xuất"
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "năm"
+msgstr ""
+
+#. module: izi_stock_report
+#: model:ir.model,name:izi_stock_report.model_report_production_material
+msgid "report.production.material"
+msgstr "Nguyên liệu sản xuất"
+
+#. module: izi_stock_report
+#: model:ir.model,name:izi_stock_report.model_report_production_material_line
+msgid "report.production.material.line"
+msgstr "Chi tiết nguyên liệu sản xuất"
+
+#. module: izi_stock_report
+#: model:ir.model,name:izi_stock_report.model_rpt_stock_delivery
+msgid "rpt.stock.delivery"
+msgstr ""
+
+#. module: izi_stock_report
+#: model:ir.actions.act_window,name:izi_stock_report.action_rpt_stock_location_in_out
+#: model:ir.model,name:izi_stock_report.model_rpt_stock_location_in_out
+msgid "rpt.stock.location.in.out"
+msgstr ""
+
+#. module: izi_stock_report
+#: model:ir.model,name:izi_stock_report.model_rpt_stock_location_in_out_line
+msgid "rpt.stock.location.in.out.line"
+msgstr ""
+
+#. module: izi_stock_report
+#: model:ir.model,name:izi_stock_report.model_rpt_stock_transfer_intype
+msgid "rpt.stock.transfer.intype"
+msgstr ""
+
+#. module: izi_stock_report
+#: model:ir.actions.act_window,name:izi_stock_report.rpt_stock_delivery_action
+msgid "rpt_stock_delivery"
+msgstr ""
+
+#. module: izi_stock_report
+#: model:ir.actions.act_window,name:izi_stock_report.rpt_stock_transfer_intype_action
+msgid "rpt_stock_transfer_intype"
+msgstr ""
+
+#. module: izi_stock_report
+#: model:ir.model,name:izi_stock_report.model_stock_move_line_report
+msgid "stock.move.line.report"
+msgstr "Chi tiết dịch chuyển kho"
+
+#. module: izi_stock_report
+#: model:ir.model,name:izi_stock_report.model_stock_report_data_warehouse_day
+msgid "stock.report.data.warehouse.day"
+msgstr "Dữ liệu kho theo ngày"
+
+#. module: izi_stock_report
+#: model:ir.model,name:izi_stock_report.model_stock_report_data_warehouse_month
+msgid "stock.report.data.warehouse.month"
+msgstr "Dữ liệu kho theo tháng"
+
+#. module: izi_stock_report
+#: model:ir.model,name:izi_stock_report.model_stock_report_inventory_line
+msgid "stock.report.inventory.line"
+msgstr "Chi tiết hàng tồn kho"
+
+#. module: izi_stock_report
+#: model:ir.model,name:izi_stock_report.model_stock_report_inventory_report
+msgid "stock.report.inventory.report"
+msgstr "Tồn kho"
+
+#. module: izi_stock_report
+#: model:ir.model,name:izi_stock_report.model_stock_report_inventory_value
+msgid "stock.report.inventory.value"
+msgstr "Giá trị tồn kho"
+
+#. module: izi_stock_report
+#: model:ir.model,name:izi_stock_report.model_stock_report_inventory_value_line
+msgid "stock.report.inventory.value.line"
+msgstr "Chi tiết giá trị tồn kho"
+
+#. module: izi_stock_report
+#: model:ir.model,name:izi_stock_report.model_stock_report_io_inventory_report
+msgid "stock.report.io.inventory.report"
+msgstr "Xuất nhập tồn"
+
+#. module: izi_stock_report
+#: model:ir.model,name:izi_stock_report.model_stock_report_io_inventory_report_line
+msgid "stock.report.io.inventory.report.line"
+msgstr "Chi tiết xuất nhập tồn kho"
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "tháng"
+msgstr ""
+
+#. module: izi_stock_report
+#: model:ir.model.fields,field_description:izi_stock_report.field_rpt_stock_location_in_out_line__uom_id
+msgid "uom"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "Điện thoại:"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "Đvt"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_incoming_view
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.report_template_stock_picking_outgoing_view
+msgid "Địa chỉ"
+msgstr ""
+
+#. module: izi_stock_report
+#: model_terms:ir.ui.view,arch_db:izi_stock_report.izi_internal_session
+msgid "• Email: info@vmt.vn • Website: http://w w w .vmt.vn\n"
+"                Page: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr ""
+

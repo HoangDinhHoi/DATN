@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hợi HD -->
+<!-- date: 24-04-2019 at 11:25 AM -->
+<odoo>
+    <data>
+        <!-- Ẩn báo cáo tồn kho của core -->
+        <record id="stock.menu_valuation" model="ir.ui.menu">
+            <field name="active" eval="False"/>
+        </record>
+
+        <!-- Chuyển truy vết lên thứ 2 trong báo cáo kho -->
+        <record id="stock.stock_move_line_menu" model="ir.ui.menu">
+            <field name="sequence" eval="2"/>
+        </record>
+
+        <!-- Chuyển định giá tồn kho lên thứ 3 trong báo cáo kho -->
+        <record id="stock_account.menu_valuation" model="ir.ui.menu">
+            <field name="sequence" eval="3"/>
+        </record>
+    </data>
+</odoo>

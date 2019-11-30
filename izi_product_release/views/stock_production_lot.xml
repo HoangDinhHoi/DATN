@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- author: HoiHD -->
+<odoo>
+    <data>
+        <!-- form view -->
+        <record id="stock_production_lot_form_view_card" model="ir.ui.view">
+            <field name="name">stock.production.lot.form.view.inherit</field>
+            <field name="model">stock.production.lot</field>
+            <field name="arch" type="xml">
+                <form string="Stock Production Lot">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" string="Lot/Serial"/>
+                                <field name="product_id"/>
+                                <field name="x_release_id"/>
+                                <field name="life_date" string="Life Date"/>
+                                <field name="x_extend_date"/>
+                                <field name="x_order_id"/>
+                                <field name="x_order_use_id"/>
+                                <field name="x_company_id"/>
+                            </group>
+                            <group>
+                                <field name="x_customer_id"/>
+                                <field name="x_branch_id"/>
+                                <field name="x_use_customer_id"/>
+                                <field name="x_total_count"/>
+                                <field name="x_used_count"/>
+                                <field name="x_state" string="Status"/>
+                            </group>
+                            <group colspan="2">
+                                <field name="x_stock_production_lot_line_ids" nolabel="1">
+                                    <tree>
+                                        <field name="product_id"/>
+                                        <field name="total_count"/>
+                                        <field name="used_count"/>
+                                        <field name="price_unit"/>
+                                        <field name="price_sub_total"/>
+                                        <field name="remain_sub_total"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

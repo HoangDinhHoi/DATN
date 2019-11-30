@@ -1,0 +1,101 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="crm_contact_tree">
+            <field name="name">crm.contact</field>
+            <field name="model">crm.contact</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="phone"/>
+                    <field name="mobile"/>
+                    <field name="partner_id"/>
+                    <field name="user_id"/>
+                    <field name="team_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="crm_contact_search">
+            <field name="name">crm.contact</field>
+            <field name="model">crm.contact</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="phone"/>
+                    <field name="mobile"/>
+                    <field name="partner_id"/>
+                    <field name="user_id"/>
+                    <field name="team_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="crm_contact_form">
+            <field name="name">crm.contact</field>
+            <field name="model">crm.contact</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_create_partner" string="Create Partner" type="object"
+                                attrs="{'invisible': [('partner_id', '!=', False)]}"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" required="1"/>
+                            </h1>
+                        </div>
+                        <group name="form_contact_group">
+                            <group>
+                                <field name="brand_id" required="True"/>
+                                <label for="street" string="Address"/>
+                                <div class="o_address_format">
+                                    <field name="street" string="Street" placeholder="Street" class="o_address_street"/>
+                                    <field name="street2" string="Street2" placeholder="Street2"
+                                           class="o_address_street"/>
+                                    <field name="state_id" string="State" placeholder="State" class="o_address_state"
+                                           options="{&quot;no_open&quot;: True}"
+                                           context="{'country_id': country_id}"/>
+                                    <field name="country_id" string="Country" placeholder="Country"
+                                           class="o_address_country"
+                                           options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}"/>
+                                </div>
+                            </group>
+                            <group>
+                                <field name="email"/>
+                                <field name="phone" required="True"/>
+                                <field name="mobile"/>
+                                <field name="join_date" readonly="True" force_save="1"/>
+                                <field name="source_id"/>
+                                <field name="presenter_id"/>
+                            </group>
+                            <group>
+                                <field name="user_id"/>
+                                <field name="team_id"/>
+                            </group>
+                            <group>
+                                <field name="partner_id" readonly="True" force_save="1"/>
+                            </group>
+                        </group>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread" options="{'post_refresh': 'recipients'}"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_crm_contact" model="ir.actions.act_window">
+            <field name="name">Contact</field>
+            <field name="res_model">crm.contact</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="contact_menu_item" name="Contact" action="action_crm_contact" parent="crm.crm_menu_sales"
+                  sequence="50"/>
+    </data>
+</odoo>

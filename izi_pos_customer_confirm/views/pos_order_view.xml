@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="pos_service_lot_form_view" model="ir.ui.view">
+            <field name="name">pos.service.lot</field>
+            <field name="model">pos.order</field>
+            <field name="priority">30</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <group>
+                            <field name="name" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="x_service_lot_ids" widget="many2many_tags" readonly="1"/>
+                        </group>
+                    </group>
+                    <group string="Lựa chọn thẻ DV">
+                        <field name="x_service_lot_line_ids" nolabel="1">
+                            <tree editable="bottom" create="0" delete="0">
+                                <field name="order_id" invisible="1"/>
+                                <field name="service_id" readonly="1"/>
+                                <field name="lot_id" required="1" domain="[('id','in',parent.x_service_lot_ids)]"
+                                       options="{'no_create':1, 'no_create_edit':1}"/>
+                            </tree>
+                        </field>
+                    </group>
+                    <footer>
+                        <button name="action_customer_confirm_order_popup" type="object" string="Confirm" class="oe_highlight"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+
+        <record id="pos_order_signature_inherit_view" model="ir.ui.view">
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"></field>
+            <field name="arch" type="xml">
+                <field name="state" position="replace">
+                    <field name="state" widget="statusbar" statusbar_visible="draft,paid,customer_confirm"/>
+                </field>
+                <field name="pos_reference" position="before">
+                    <field name="x_signature" widget="image" readonly="1" force_save="1"/>
+                </field>
+                <xpath expr="//button[@name='action_confirm_order']" position="before">
+                    <button name="action_customer_confirm" type="object" class="oe_highlight"
+                            string="Customer Confirm" states="customer_confirm"/>
+                    <button name="action_customer_confirm_order" type="object" class="oe_highlight"
+                            string="Confirm" attrs="{'invisible':['|',('state','not in',('draft')), ('x_pos_partner_refund_id','!=', False)]}"/>
+                    <button name="action_back" type="object" string="Back" states="customer_confirm"/>
+                </xpath>
+                <xpath expr="//button[@name='action_confirm_order']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//page[@name='notes']" position="after">
+                    <page name="service_lot" string="Service Lot" attrs="{'invisible': [('x_service_lot_ids', '=', [])]}">
+                        <field name="x_service_lot_ids" widget="many2many_tags" invisible="1"/>
+                        <field name="x_service_lot_line_ids" nolabel="1" readonly="1">
+                            <tree editable="bottom" create="0" delete="0">
+                                <field name="order_id" invisible="1"/>
+                                <field name="service_id" readonly="1"/>
+                                <field name="lot_id" required="1" domain="[('id','in',parent.x_service_lot_ids)]"
+                                       options="{'no_create':1, 'no_create_edit':1}"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

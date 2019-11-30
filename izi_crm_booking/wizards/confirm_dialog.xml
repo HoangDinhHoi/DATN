@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+       <record id="meeting_no_sale_confirm_dialog" model="ir.ui.view">
+           <field name="name">Meeting no sale confirm dialog</field>
+           <field name="model">message.dialog</field>
+           <field name="priority">1000</field>
+           <field name="arch" type="xml">
+               <form string="Meeting no sale confirm dialog">
+                   <sheet>
+                       <button name="action_yes" string="Yes" type="object" class="btn-primary"/>
+                       <button name="action_no" string="No" type="object" class="btn-danger float-right"/>
+                   </sheet>
+               </form>
+           </field>
+       </record>
+
+       <record id="message_form_dialog" model="ir.ui.view">
+           <field name="name">Message form dialog</field>
+           <field name="model">message.dialog</field>
+           <field name="priority">1000</field>
+           <field name="arch" type="xml">
+               <form string="Message form dialog">
+                   <sheet>
+                       <label for="message" string="Reason"/>
+                       <field name="message" required="True"/>
+                       <button name="action_save_region" string="Save" type="object" class="btn-primary"/>
+                   </sheet>
+               </form>
+           </field>
+       </record>
+
+    </data>
+</odoo>

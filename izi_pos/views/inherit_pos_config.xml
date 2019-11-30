@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--author: hoihd-->
+<odoo>
+    <data>
+        <!-- add field x_shop_id into pos_config model -->
+        <record id="pos_config_view_form_inherit" model="ir.ui.view">
+            <field name="name">pos.config.view.form.inherit</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="arch" type="xml">
+                <!--<div id="company" position="after">-->
+                    <!--<div class="row mt16 o_settings_container" id="x_select_shop_id">-->
+                        <!--<div class="col-12 col-lg-6 o_setting_box">-->
+                            <!--<div class="o_setting_right_pane">-->
+                                <!--<label for="x_shop_id" class="col-lg-3"/>-->
+                                <!--<field name="x_shop_id" required="1" options="{'no_create':1}"-->
+                                       <!--domain="[('x_is_shop','=',1)]"/>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <div id="payment_methods" position="after">
+                    <!-- Phương thức tt ghi nhận doanh thu -->
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_right_pane">
+                            <label for="x_journal_loyal_ids"/>
+                            <div class="content-group mt16">
+                                <field name="x_journal_loyal_ids" colspan="4" nolabel="1" widget="many2many_tags"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="order_reference" position="after">
+                    <div id="session_reference" class="col-12 col-lg-6 o_setting_box" groups="base.group_no_one">
+                        <div class="o_setting_right_pane">
+                            <span class="o_form_label">Session Reference</span>
+                            <div class="text-muted">
+                                Generation of your session references
+                            </div>
+                            <div class="content-group mt16">
+                                <field name="x_pos_session_sequence_id" readonly="1"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Cấu hình xác nhận của khách hàng trên đơn hàng-->
+                <div id="company" position="before">
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_izi_pos_customer_confirm"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_izi_pos_customer_confirm"/>
+                                <button string="Save" type="object" name="execute" class="oe_highlight"
+                                        id="btn_pos_customer_confirm"
+                                        attrs="{'invisible': [('module_izi_pos_customer_confirm','=',False)]}"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="inventory_location" position="after">
+                    <h2>POS category</h2>
+                    <group string="Available product categories">
+                        <field name="x_category_ids" widget="many2many_checkboxes"/>
+                    </group>
+                </div>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,102 @@
+<odoo>
+    <data>
+        <!-- form view -->
+        <record id="list_booking_by_employee_form" model="ir.ui.view">
+            <field name="name">list.booking.by.employee.form</field>
+            <field name="model">list.booking.by.employee</field>
+            <field name="arch" type="xml">
+                <form string="Choose your warehouse">
+                    <group>
+                        <group>
+                            <field name="from_date" required="1"/>
+                            <field name="team_id"/>
+                        </group>
+                        <group>
+                            <field name="to_date" required="1"/>
+                            <field name="employee_id"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="general_booking" string="General" type="object"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_list_booking_by_employee" model="ir.actions.act_window">
+            <field name="name">Chi tiết đơn đặt làm dịch vụ</field>
+            <field name="res_model">list.booking.by.employee</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="list_booking_by_employee_form"/>
+            <field name="target">new</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem id="menu_list_booking_by_employee"
+                  name="Chi tiết các đơn đặt làm dịch vụ"
+                  parent="izi_crm_booking.crm_service_booking_category"
+                  sequence="10"
+                  action="action_list_booking_by_employee"/>
+
+
+        <!--# hiển thị gantt chart-->
+
+
+        <!-- Gantt view -->
+        <record id="list_booking_by_employee_line_view_gantt" model="ir.ui.view">
+            <field name="name">list.booking.by.employee.line.gantt</field>
+            <field name="model">list.booking.by.employee.line</field>
+            <field name="arch" type="xml">
+                <gantt type="consolidate"
+                       create="false"
+                       edit="false"
+                       date_start="time_from"
+                       date_stop="time_to"
+                       fold_last_level="true"
+                       round_dnd_dates="true"
+                       consolidation="time"
+                       consolidation_max='{"employee_id": 100}'
+                       consolidation_exclude="exclude">
+                </gantt>
+            </field>
+        </record>
+
+        <!--search view -->
+        <record id="list_booking_by_employee_line_filter_view" model="ir.ui.view">
+            <field name="name">Service booking by employee filter view</field>
+            <field name="model">list.booking.by.employee.line</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="team_id"/>
+                    <field name="employee_id"/>
+                    <!--<filter name="future" string="Tương lai"-->
+                    <!--domain="[('time_to', '>=', time.strftime('%%Y-%%m-%%d 00:00:00'))]"/>-->
+                    <!--<filter name="past" string="Quá khứ"-->
+                    <!--domain="[('time_to', '&lt;=', time.strftime('%%Y-%%m-%%d 22:59:59'))]"/>-->
+                    <filter name="to_day" string="To day"
+                            domain="[('time_from', '>=', time.strftime('%%Y-%%m-%%d 00:00:00')), ('time_to', '&lt;=', time.strftime('%%Y-%%m-%%d 23:59:59'))]"/>
+                    <group string="Group By">
+                        <filter name="Employee" string="Nhân viên" context="{'group_by':'employee_id'}"/>
+                        <filter name="Team" string="Team"
+                                context="{'group_by': 'team_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_list_booking_by_employee_line" model="ir.actions.act_window">
+            <field name="name">Chi tiết đơn đặt làm dịch vụ</field>
+            <field name="res_model">list.booking.by.employee.line</field>
+            <field name="view_mode">gantt</field>
+            <field name="context">{
+                'short_name': 1,
+                'search_default_employee': 1,
+                'search_default_to_day': 1,
+                }
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

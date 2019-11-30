@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+       <record id="message_dialog" model="ir.ui.view">
+           <field name="name">Message dialog</field>
+           <field name="model">message.dialog</field>
+           <field name="arch" type="xml">
+               <form string="Message dialog">
+                   <sheet>
+                       <field name="message" nolabel="1" readonly="1"/>
+                   </sheet>
+               </form>
+           </field>
+       </record>
+
+    </data>
+</odoo>

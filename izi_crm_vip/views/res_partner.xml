@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_form_view_tree_inherit" model="ir.ui.view">
+            <field name="name">Partner form view inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+<!--                <xpath expr="//field[@name='x_partner_old_code']" position="after">-->
+<!--                    <field name="x_rank_id" readonly="1" force_save="1"/>-->
+<!--                </xpath>-->
+                <xpath expr="//page[@name='sales_purchases']" position="after">
+                    <page string="Partner revenue">
+                        <field name="partner_revenue_ids">
+                            <tree default_order='revenue_date'>
+                                <field name="revenue_date_view"/>
+                                <field name="revenue_date" invisible="1"/>
+                                <field name="revenue" sum="Total revenue"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+                <xpath expr="//page[@name='sales_purchases']" position="after">
+                    <page string="Up rank history">
+                        <field name="history_ids">
+                            <tree create="0" delete="0">
+                                <field name="from_rank"/>
+                                <field name="to_rank"/>
+                                <field name="up_rank_date"/>
+                                <field name="up_rank_expired_date"/>
+                                <field name="extend_date"/>
+                                <field name="request_shop_id"/>
+                                <field name="state"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

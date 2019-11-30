@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="pos_config_inherit_form">
+            <field name="name">pos_config_inherit_fomr</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="arch" type="xml">
+                <!--Cấu hình xác nhận của khách hàng trên đơn hàng-->
+                <div id="company" position="before">
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <field name="module_izi_pos_request_material"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="module_izi_pos_request_material"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <field name="picking_type_id" position="after">
+                    <div groups="stock.group_stock_multi_locations">
+                        <div>
+                            <label for="material_location_id"/>
+                            <div class="text-muted">
+                                Stock location used for the material
+                            </div>
+                            <div>
+                                <field name="material_location_id" options="{'no_create':1, 'no_create_edit':1}" required="1"/>
+                            </div>
+                        </div>
+                    </div>
+                </field>
+                <!--<field name="picking_type_id" position="after">-->
+                    <!--<div groups="stock.group_stock_multi_locations">-->
+                        <!--<div>-->
+                            <!--<label for="x_material_picking_type_id"/>-->
+                            <!--<div class="text-muted">-->
+                                <!--Stock location used for the material-->
+                            <!--</div>-->
+                            <!--<div>-->
+                                <!--<field name="x_material_picking_type_id"/>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</field>-->
+            </field>
+        </record>
+    </data>
+</odoo>

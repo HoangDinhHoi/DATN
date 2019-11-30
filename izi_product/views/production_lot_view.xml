@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- author: NgaDV-->
+<odoo>
+    <data>
+        <record id="production_lot_expiration_date_of_supplier_form_view_inherit" model="ir.ui.view">
+            <field name="name">Production lot</field>
+            <field name="model">stock.production.lot</field>
+            <field name="inherit_id" ref="stock.view_production_lot_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='main_group']" position="after">
+                    <group name="x_expiration_date_of_supplier">
+                        <field name="x_expiration_date_of_supplier"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+

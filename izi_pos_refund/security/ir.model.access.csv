@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_izi_pos_refund_izi_pos_refund,izi_pos_refund.izi_pos_refund,model_izi_pos_refund_izi_pos_refund,,1,0,0,0

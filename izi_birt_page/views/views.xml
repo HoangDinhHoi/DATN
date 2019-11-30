@@ -1,0 +1,8 @@
+<odoo>
+    <template id="assets_backend" name="birt_page_assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/izi_birt_page/static/src/js/birt_page.js"/>
+            <script type="text/javascript" src="/izi_birt_page/static/src/js/birt_page_current_view.js"/>
+        </xpath>
+    </template>
+</odoo>

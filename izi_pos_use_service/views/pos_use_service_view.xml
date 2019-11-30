@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="pos_use_service_list" model="ir.ui.view">
+            <field name="name">Pos Use Service List</field>
+            <field name="model">pos.use.service</field>
+            <field name="arch" type="xml">
+                <tree default_order='date desc' decoration-info="state == 'draft'" decoration-muted="state == 'cancel'"
+                      decoration-danger="state not in ('cancel', 'done','draft','done_refund')">
+                    <field name="name"/>
+                    <field name="partner_id"/>
+                    <field name="date"/>
+                    <field name="type"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pos_use_service_form" model="ir.ui.view">
+            <field name="name">Pos Use Service Form</field>
+            <field name="model">pos.use.service</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+                        <button name="action_confirm" type="object" class="oe_highlight" string="Confirm" states="draft"/>
+                        <button name="action_payment" type="object" class="oe_highlight" string="Payment" states="wait_payment"/>
+                        <button name="action_done" states="working" type="object" class="oe_highlight" string="Done"/>
+                        <button name="action_create_material" type="object" states="wait_payment" class="oe_highlight" string="Done POS &amp; Out Material "/>
+                        <button name="action_back" type="object" string="Back" states="wait_payment"/>
+                        <button name="action_cancel" type="object" string="Cancel" states="wait_material"/>
+                        <button name="refund" type="object" string="Refund" states="done"/>
+                        <button name="action_confirm_refund" type="object" string="Approval" class="oe_highlight" states="wait_confirm"
+                                groups="point_of_sale.group_pos_manager"/>
+                        <button name="action_not_confirm_refund" type="object" string="Not approval" states="wait_confirm"
+                                groups="point_of_sale.group_pos_manager"/>
+                        <button name="action_done_refund" type="object" string="Done refund" states="approval" class="oe_highlight"/>
+<!--                        <button name="action_compare" type="object" string="Compare" class="oe_highlight" groups="point_of_sale.group_pos_manager"-->
+<!--                                attrs="{'invisible': [('compare', '!=', 'need_compare')]}"/>-->
+                        <button name="action_print" type="object" string="IN PHIẾU SỬ DỤNG DỊCH VỤ" class="oe_highlight"
+                                attrs="{'invisible': [('state', 'not in', ('done','wait_material'))]}"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,working,done"
+                               readonly="1"
+                               force_save="1"/>
+                    </header>
+                    <sheet>
+                        <h2 class="text-center">SỬ DỤNG DỊCH VỤ</h2>
+                        <h3 class="text-center">
+                            <field name="name"
+                                   style="margin-right: 35%%; margin-left: 35%%; max-width: 30%%"
+                                   readonly="1" attrs="{'invisible': [('name', '=', '/')]}"/>
+                        </h3>
+                        <group>
+                            <field name="type" widget="radio" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"
+                                   options="{'horizontal': true}"/>
+                            <field name="type_use" invisible="1"/>
+                        </group>
+                        <group attrs="{'invisible': ['|',('type', '!=', 'card'),('state', '!=', 'draft')]}">
+                            <group>
+                                <!--<field name="partner_search_id" options="{'no_create':1, 'no_create_edit':1}" attrs="{'invisible': ['|',('type', '!=', 'card'), ('state', '!=', 'draft')]}"/>-->
+                                <field name="serial_code" widget="enter2action"
+                                       attrs="{'action_element_class': '.izi_btn_action_search_serial', 'invisible': ['|',('type', '!=', 'card'), ('state', '!=', 'draft')]}"
+                                       placeholder="Mã thẻ, Mã KH, SĐT KH ..." class="text-left"/>
+                            </group>
+                            <group>
+                                <button name="action_search_serial" type="object" string="Search" icon="fa-search"
+                                        class="oe_edit_only oe_highlight izi_btn_action_search_serial"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="partner_id" domain="[('customer', '=', 1)]" options="{'no_create':1, 'no_create_edit':1}"
+                                       attrs="{'readonly': [('state', '!=', 'draft')], 'required': [('type', '=', 'service')]}"
+                                       context="{'search_default_customer':1, 'form_view_ref':'izi_partner.customer_form_view_ref', 'limit_company': 1}"/>
+                                <field name="pricelist_id" readonly="1"/>
+                                <field name="crm_team_id" readonly="1"/>
+                            </group>
+                            <group>
+                                <field name="date" readonly="1"/>
+<!--                                <field name="refund_date" readonly="1" string="Ngày hoàn trả"/>-->
+                                <field name="company_id" readonly="1"/>
+<!--                                <field name="start_date" readonly="1"/>-->
+<!--                                <field name="end_date" readonly="1"/>-->
+                                <field name="keep_card" invisible="1"/>
+                                <field name="pos_order_id" readonly="1" attrs="{'invisible': [('pos_order_id', '=', False)]}"
+                                       context="{'form_view_ref': 'point_of_sale.view_pos_pos_form','pos_refund':True}"/>
+                                <field name="pos_order_refund_id" readonly="1" attrs="{'invisible': [('pos_order_refund_id', '=', False)]}"
+                                       context="{'form_view_ref': 'point_of_sale.view_pos_pos_form','pos_refund':True}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="general" string="General">
+                                <field name="use_service_ids" attrs="{'readonly': [('state', '!=', 'draft')]}">
+                                    <tree editable="bottom">
+                                        <field name="use_service_id" invisible="1"/>
+                                        <field name="lot_id" required="1" force_save="1" readonly="1"
+                                               attrs="{'column_invisible': [('parent.type', '!=', 'card')]}"
+                                               context="{'form_view_ref': 'izi_product_release.stock_production_lot_form_view_card'}"/>
+                                        <field name="service_id" options="{'no_create':1, 'no_create_edit':1}"
+                                               domain="[('product_tmpl_id.type', '=', 'service')]"
+                                               attrs="{'readonly': ['|',('parent.state', '!=', 'draft'), ('parent.type', '=', 'card')], 'required': ['|',('parent.keep_card', '=', True), ('parent.type', '=', 'service')]}"/>
+                                        <field name="total_count" readonly="1" force_save="1" attrs="{'column_invisible': [('parent.type', '!=', 'card')]}"/>
+                                        <field name="paid_count" readonly="1" force_save="1" attrs="{'column_invisible': [('parent.type', '!=', 'card')]}"/>
+                                        <field name="used_count" readonly="1" force_save="1" attrs="{'column_invisible': [('parent.type', '!=', 'card')]}"/>
+                                        <field name="qty"/>
+                                        <field name="employee_ids" widget="many2many_tags" options="{'no_create':1, 'no_create_edit':1}"
+                                               attrs="{'required': [('qty', '!=', 0)]}"/>
+                                        <field name="price_unit"
+                                               attrs="{'column_invisible': [('parent.type', '=', 'card'),('parent.keep_card', '=', False)], 'required': ['|',('parent.keep_card', '=', True), ('parent.type', '=', 'service')]}"/>
+                                        <field name="discount" attrs="{'column_invisible': [('parent.type', '=', 'card'),('parent.keep_card', '=', False)]}"
+                                               readonly="1" force_save="1"/>
+                                        <field name="amount" attrs="{'column_invisible': [('parent.type', '=', 'card'),('parent.keep_card', '=', False)]}"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <group>
+                                                <field name="lot_id"/>
+                                                <field name="service_id"/>
+                                                <field name="total_count"/>
+                                                <field name="paid_count"/>
+                                                <field name="used_count"/>
+                                                <field name="qty"/>
+                                            </group>
+                                            <group>
+                                                <field name="employee_ids"/>
+                                                <field name="price_unit"/>
+                                                <field name="discount"/>
+                                                <field name="amount"/>
+                                            </group>
+                                        </group>
+                                    </form>
+                                </field>
+                                <group class="oe_subtotal_footer oe_right" colspan="2" name="order_total">
+                                    <div class="oe_subtotal_footer_separator oe_inline">
+                                        <label for="amount_total"/>
+                                    </div>
+                                    <field name="amount_total" nolabel="1" class="oe_subtotal_footer_separator"
+                                           widget="monetary"/>
+                                </group>
+                            </page>
+                            <page name="material_request" string="Material Request">
+                                <field name="material_request_ids" context="{'form_view_ref': 'izi_pos_use_service.pos_material_request_form'}">
+                                    <tree create="false" delete="false">
+                                        <field name="name" readonly="1" force_save="1"/>
+                                        <field name="state" readonly="1" force_save="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="payment" string="Payment">
+                                <field name="payment_ids"/>
+                            </page>
+                            <page name="note" string="Note">
+                                <group>
+                                    <group>
+                                        <field name="compare" readonly="1" force_save="1" attrs="{'invisible': [('compare', '=', 'compare')]}"/>
+                                        <field name="user_compare_id" readonly="1" force_save="1" attrs="{'invisible': [('user_compare_id', '=', False)]}"/>
+                                    </group>
+                                </group>
+                                <group>
+                                    <field name="note"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers"/>
+                        <field name="activity_ids" widget="mail_activity"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="pos_use_service_action" model="ir.actions.act_window">
+            <field name="name">Pos Use Service</field>
+            <field name="res_model">pos.use.service</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="domain">[('type_use','=','normal')]</field>
+            <field name="context">{'default_type_use': 'normal'}</field>
+        </record>
+
+        <record id="pos_use_service_action_tree" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence"/>
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="pos_use_service_list"/>
+            <field name="act_window_id" ref="pos_use_service_action"/>
+        </record>
+
+        <record id="pos_use_service_action_form" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence"/>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="pos_use_service_form"/>
+            <field name="act_window_id" ref="pos_use_service_action"/>
+        </record>
+
+        <menuitem id="pos_use_service_menu"
+                  action="pos_use_service_action"
+                  sequence="2"
+                  parent="izi_pos.booking_service_pos"/>
+    </data>
+</odoo>

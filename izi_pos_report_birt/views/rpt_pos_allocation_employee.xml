@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- author: HOIHD -->
+<odoo>
+    <data>
+        <!-- form view -->
+        <record model="ir.ui.view" id="revenue_allocation_employee_form_view">
+            <field name="name">Báo cáo phân bổ doanh thu cho nhân viên</field>
+            <field name="model">rpt.revenue.allocation.employee</field>
+            <field name="arch" type="xml">
+                <form string="Báo cáo phân bổ doanh thu cho nhân viên">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date_from" required="1" string="Từ ngày"/>
+                                <field name="branch_id" string="Chi nhánh"
+                                       options="{'no_create':1, 'no_open':1}"/>
+                            </group>
+                            <group>
+                                <field name="date_to" required="1" string="Đến ngày"/>
+                                <field name="is_export_excel" string="Xuất Excel"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button name="action_report"
+                                    type="object"
+                                    icon="fa-print"
+                                    class="oe_highlight" string="Xuất báo cáo"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- action -->
+        <record model="ir.actions.act_window" id="revenue_allocation_employee_action">
+            <field name="name">Báo cáo phân bổ doanh thu nhân viên</field>
+            <field name="res_model">rpt.revenue.allocation.employee</field>
+            <field name="view_mode">form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="revenue_allocation_employee_form_view"/>
+            <field name="target">new</field>
+        </record>
+
+        <!-- menu item -->
+        <menuitem id="revenue_allocation_employee_menu_item"
+                  name="Báo cáo phân bổ doanh thu nhân viên"
+                  action="revenue_allocation_employee_action"
+                  parent="izi_pos_report_birt.rpt_pos_employee_categ"
+                  sequence="5"/>
+
+        <!-- Detail Revenue Allocation Employee -->
+        <record id="detail_revenue_allocation_employee_form_view" model="ir.ui.view">
+            <field name="name">Báo cáo phân bổ chi tiết doanh thu nhân viên</field>
+            <field name="model">rpt.revenue.allocation.employee</field>
+            <field name="arch" type="xml">
+                <form string="Báo cáo phân bổ chi tiết doanh thu nhân viên">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date_from" required="1" string="Từ ngày"/>
+                                <field name="branch_detail_id" required="1" string="Chi nhánh"
+                                       options="{'no_create':1, 'no_open':1}"/>
+                            </group>
+                            <group>
+                                <field name="date_to" required="1" string="Đến ngày"/>
+                                <field name="is_export_excel" string="Xuất Excel"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button name="action_report_detail_allocation"
+                                    type="object"
+                                    class="oe_highlight"
+                                    string="Xuất báo cáo" icon="fa-print"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="detail_revenue_allocation_employee_action" model="ir.actions.act_window">
+            <field name="name">Báo cáo phân bổ chi tiết doanh thu nhân viên</field>
+            <field name="res_model">rpt.revenue.allocation.employee</field>
+            <field name="view_mode">form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="detail_revenue_allocation_employee_form_view"/>
+            <field name="target">new</field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="detail_revenue_allocation_employee_menu_item"
+                  name="Báo cáo phân bổ chi tiết doanh thu nhân viên"
+                  parent="izi_pos_report_birt.rpt_pos_employee_categ"
+                  action="detail_revenue_allocation_employee_action"/>
+    </data>
+</odoo>

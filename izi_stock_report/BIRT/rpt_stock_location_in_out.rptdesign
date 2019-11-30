@@ -1,0 +1,1326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.5.0.v201506092134 Build &lt;@BUILD@></property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">4</property>
+        </structure>
+        <structure>
+            <property name="name">odaUser</property>
+            <property name="id">4</property>
+        </structure>
+        <structure>
+            <property name="name">odaPassword</property>
+            <property name="id">4</property>
+        </structure>
+        <structure>
+            <property name="name">odaDriverClass</property>
+            <property name="id">4</property>
+        </structure>
+        <structure>
+            <property name="name">odaAutoCommit</property>
+            <property name="id">4</property>
+        </structure>
+        <structure>
+            <property name="name">odaIsolationMode</property>
+            <property name="id">4</property>
+        </structure>
+        <structure>
+            <property name="name">odaJndiName</property>
+            <property name="id">4</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileName</property>
+            <property name="id">4</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileStorePath</property>
+            <property name="id">4</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="from_date" id="232">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">01/05/2019</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="to_date" id="233">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">01/06/2019</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="name" id="255">
+            <property name="valueType">static</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://103.74.122.50:5336/erp_vmt_190503</property>
+            <property name="odaUser">odoo</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">TW5fT2Rvb19WbXRfMjAxOQ==</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/erp_menard</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">x_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">x_code</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">x_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">location_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">location_name</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">location_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">default_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">default_code</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">default_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ten_sp</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ten_sp</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">ten_sp</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">opening_location</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">opening_location</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">opening_location</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">closing_location</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">closing_location</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">closing_location</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">out_location</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">out_location</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">out_location</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">in_location</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">in_location</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">in_location</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">donvi</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">donvi</text-property>
+                    <text-property name="heading">donvi</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ma_lot</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ma_lot</text-property>
+                    <text-property name="heading">ma_lot</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">life_date</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">life_date</text-property>
+                    <text-property name="heading">life_date</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">x_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">location_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">default_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">ten_sp</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">opening_location</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">closing_location</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">out_location</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">in_location</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">donvi</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">ma_lot</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">life_date</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">x_code</property>
+                    <property name="nativeName">x_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">location_name</property>
+                    <property name="nativeName">location_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">default_code</property>
+                    <property name="nativeName">default_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">ten_sp</property>
+                    <property name="nativeName">ten_sp</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">opening_location</property>
+                    <property name="nativeName">opening_location</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">closing_location</property>
+                    <property name="nativeName">closing_location</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">out_location</property>
+                    <property name="nativeName">out_location</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">in_location</property>
+                    <property name="nativeName">in_location</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">donvi</property>
+                    <property name="nativeName">donvi</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">ma_lot</property>
+                    <property name="nativeName">ma_lot</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">life_date</property>
+                    <property name="nativeName">life_date</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT
+	b.x_code,
+	b.x_code || '-' || b. NAME location_name,
+	C .default_code,
+	D."name" ten_sp,
+	A .opening_location,
+	A .closing_location,
+	A .out_location,
+	A .in_location,
+	G.name donvi,
+	F.name ma_lot,
+	to_char(F.life_date, 'dd/mm/yyyy') life_date
+FROM
+	rpt_stock_location_in_out_line A
+LEFT JOIN stock_location b ON b. ID = A .location_id
+LEFT JOIN product_product C ON C . ID = A .product_id
+LEFT JOIN product_template D ON D. ID = C .product_tmpl_id
+LEFT JOIN stock_production_lot F ON F. ID = A .lot_id
+LEFT JOIN uom_uom G ON G. ID = A .uom_id
+where d.type != 'consu' and d.x_card_type = 'none'
+ORDER BY
+	b.x_code,
+	b."name"]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube" id="116">
+            <property name="dimensions">
+                <tabular-dimension name="Group" id="121">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="122">
+                            <property name="levels">
+                                <tabular-level name="default_code" id="123">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">default_code</property>
+                                </tabular-level>
+                                <tabular-level name="ten_sp" id="124">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">ten_sp</property>
+                                </tabular-level>
+                                <tabular-level name="ma_lot" id="210">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">ma_lot</property>
+                                </tabular-level>
+                                <tabular-level name="life_date" id="225">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">life_date</property>
+                                </tabular-level>
+                                <tabular-level name="donvi" id="211">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">donvi</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group1" id="130">
+                    <property name="defaultHierarchy">NewTabularHierarchy1</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy1" id="131">
+                            <property name="levels">
+                                <tabular-level name="location_name" id="133">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">location_name</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field" id="125">
+                    <property name="measures">
+                        <tabular-measure name="opening_location" id="126">
+                            <expression name="measureExpression" type="javascript">dataSetRow["opening_location"]</expression>
+                            <property name="dataType">float</property>
+                        </tabular-measure>
+                        <tabular-measure name="in_location" id="127">
+                            <expression name="measureExpression" type="javascript">dataSetRow["in_location"]</expression>
+                            <property name="dataType">float</property>
+                        </tabular-measure>
+                        <tabular-measure name="out_location" id="128">
+                            <expression name="measureExpression" type="javascript">dataSetRow["out_location"]</expression>
+                            <property name="dataType">float</property>
+                        </tabular-measure>
+                        <tabular-measure name="closing_location" id="129">
+                            <expression name="measureExpression" type="javascript">dataSetRow["closing_location"]</expression>
+                            <property name="dataType">float</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">Data Set</property>
+        </tabular-cube>
+    </cubes>
+    <styles>
+        <style name="report" id="58">
+            <property name="fontFamily">"Times New Roman"</property>
+            <property name="fontSize">12pt</property>
+        </style>
+        <style name="page" id="59"/>
+        <style name="data" id="60"/>
+        <style name="text" id="61"/>
+        <style name="reportTitle" id="62">
+            <property name="fontSize">16pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="grid" id="63"/>
+        <style name="grid-row" id="64">
+            <property name="paddingTop">3px</property>
+            <property name="paddingLeft">3px</property>
+            <property name="paddingBottom">3px</property>
+            <property name="paddingRight">3px</property>
+        </style>
+        <style name="grid-cell" id="65"/>
+        <style name="table" id="66">
+            <property name="paddingTop">4px</property>
+            <property name="paddingLeft">4px</property>
+            <property name="paddingBottom">4px</property>
+            <property name="paddingRight">4px</property>
+        </style>
+        <style name="table-cell" id="67">
+            <property name="borderBottomColor">black</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">black</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">black</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">black</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="paddingTop">3px</property>
+            <property name="paddingLeft">3px</property>
+            <property name="paddingBottom">3px</property>
+            <property name="paddingRight">3px</property>
+        </style>
+        <style name="table-header" id="68">
+            <property name="backgroundColor">#233C98</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#FFFFFF</property>
+        </style>
+        <style name="table-header-cell" id="69"/>
+        <style name="table-footer" id="70">
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">right</property>
+        </style>
+        <style name="table-footer-cell" id="71"/>
+        <style name="table-detail" id="72"/>
+        <style name="table-detail-cell" id="73"/>
+        <style name="crosstab" id="74"/>
+        <style name="crosstab-header" id="75">
+            <property name="backgroundColor">#233C98</property>
+        </style>
+        <style name="crosstab-cell" id="76">
+            <property name="borderBottomColor">black</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">black</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">black</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">black</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="paddingTop">3px</property>
+            <property name="paddingLeft">3px</property>
+            <property name="paddingBottom">3px</property>
+            <property name="paddingRight">3px</property>
+        </style>
+        <style name="crosstab-column-header" id="77">
+            <property name="backgroundColor">#CCCCCC</property>
+        </style>
+        <style name="crosstab-row-header" id="78">
+            <property name="backgroundColor">#CCCCCC</property>
+        </style>
+        <style name="crosstab-row-grand-total" id="79">
+            <property name="fontWeight">bold</property>
+        </style>
+        <style name="crosstab-column-grand-total" id="80">
+            <property name="fontWeight">bold</property>
+        </style>
+        <style name="crosstab-row-sub-total" id="81">
+            <property name="fontWeight">bold</property>
+        </style>
+        <style name="crosstab-column-sub-total" id="82">
+            <property name="fontWeight">bold</property>
+        </style>
+        <style name="reportHeader1" id="83">
+            <property name="fontSize">13pt</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="reportHeader2" id="84">
+            <property name="fontSize">13pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="master1" id="85">
+            <property name="textAlign">left</property>
+        </style>
+        <style name="reportFooter1" id="86">
+            <property name="fontSize">13pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="reportFooter2" id="87">
+            <property name="fontSize">13pt</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="reportFooter3" id="88">
+            <property name="fontSize">13pt</property>
+            <property name="fontStyle">italic</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="reportHeaderDate" id="89">
+            <property name="fontSize">13pt</property>
+            <property name="fontStyle">italic</property>
+        </style>
+        <style name="center" id="90">
+            <property name="textAlign">center</property>
+        </style>
+        <style name="ev-table-group-header-1" id="91">
+            <property name="borderBottomColor">black</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">black</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">black</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">black</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="paddingTop">3px</property>
+            <property name="paddingLeft">3px</property>
+            <property name="paddingBottom">3px</property>
+            <property name="paddingRight">3px</property>
+        </style>
+        <style name="ev-column-width-1cm" id="92">
+            <property name="width">1cm</property>
+        </style>
+        <style name="ev-column-width-2cm" id="93">
+            <property name="width">2cm</property>
+        </style>
+        <style name="ev-column-width-3cm" id="94">
+            <property name="width">3cm</property>
+        </style>
+        <style name="ev-column-width-4cm" id="95">
+            <property name="width">4cm</property>
+        </style>
+        <style name="ev-column-width-5cm" id="96">
+            <property name="width">5cm</property>
+        </style>
+        <style name="ev-column-width-6cm" id="97">
+            <property name="width">6cm</property>
+        </style>
+        <style name="ev-column-width-7cm" id="98">
+            <property name="width">7cm</property>
+        </style>
+        <style name="ev-column-width-8cm" id="99">
+            <property name="width">8cm</property>
+        </style>
+        <style name="ev-column-width-9cm" id="100">
+            <property name="width">9cm</property>
+        </style>
+        <style name="ev-column-width-10cm" id="101">
+            <property name="width">10cm</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">custom</property>
+            <property name="height">10000in</property>
+            <property name="width">25in</property>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="102">
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">dateee</property>
+                    <expression name="expression" type="javascript">'Từ ngày '+ params["from_date"].value + ' đến ngày '+ params["to_date"].value</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+            </list-property>
+            <column id="103"/>
+            <row id="104">
+                <cell id="105">
+                    <label id="114">
+                        <property name="fontWeight">bold</property>
+                        <text-property name="text">BÁO CÁO XUẤT NHẬP TỒN</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="106">
+                <cell id="107">
+                    <data id="234">
+                        <property name="resultSetColumn">dateee</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="108">
+                <cell id="109">
+                    <data id="256">
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">name</property>
+                                <expression name="expression" type="javascript">params["name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">name</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="110">
+                <cell id="111">
+                    <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="112">
+                        <property name="cube">Data Cube</property>
+                        <property name="measures">
+                            <extended-item extensionName="MeasureView" id="150">
+                                <property name="measure">opening_location</property>
+                                <property name="detail">
+                                    <extended-item extensionName="AggregationCell" id="151">
+                                        <property name="aggregationOnRow">Group/donvi</property>
+                                        <property name="aggregationOnColumn">Group1/location_name</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="content">
+                                            <data id="152">
+                                                <property name="fontSize">11pt</property>
+                                                <property name="resultSetColumn">opening_location_Group/donvi_Group1/location_name</property>
+                                            </data>
+                                        </property>
+                                        <property name="style">ev-column-width-3cm</property>
+                                    </extended-item>
+                                </property>
+                                <property name="aggregations">
+                                    <extended-item extensionName="AggregationCell" id="265">
+                                        <property name="aggregationOnColumn">Group1/location_name</property>
+                                        <property name="content">
+                                            <data id="266">
+                                                <property name="textAlign">right</property>
+                                                <property name="resultSetColumn">opening_location_Group1/location_name</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="header">
+                                    <extended-item extensionName="CrosstabCell" id="153">
+                                        <property name="content">
+                                            <label id="154">
+                                                <property name="fontSize">11pt</property>
+                                                <text-property name="text">Đầu kỳ</text-property>
+                                            </label>
+                                        </property>
+                                        <property name="color">#FFFFFF</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="style">ev-column-width-3cm</property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                            <extended-item extensionName="MeasureView" id="157">
+                                <property name="measure">in_location</property>
+                                <property name="detail">
+                                    <extended-item extensionName="AggregationCell" id="158">
+                                        <property name="aggregationOnRow">Group/donvi</property>
+                                        <property name="aggregationOnColumn">Group1/location_name</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="content">
+                                            <data id="159">
+                                                <property name="fontSize">11pt</property>
+                                                <property name="resultSetColumn">in_location_Group/donvi_Group1/location_name</property>
+                                            </data>
+                                        </property>
+                                        <property name="style">ev-column-width-3cm</property>
+                                    </extended-item>
+                                </property>
+                                <property name="aggregations">
+                                    <extended-item extensionName="AggregationCell" id="267">
+                                        <property name="aggregationOnColumn">Group1/location_name</property>
+                                        <property name="content">
+                                            <data id="268">
+                                                <property name="textAlign">right</property>
+                                                <property name="resultSetColumn">in_location_Group1/location_name</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="header">
+                                    <extended-item extensionName="CrosstabCell" id="160">
+                                        <property name="content">
+                                            <label id="161">
+                                                <property name="fontSize">11pt</property>
+                                                <text-property name="text">Nhập</text-property>
+                                            </label>
+                                        </property>
+                                        <property name="color">#FFFFFF</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="style">ev-column-width-3cm</property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                            <extended-item extensionName="MeasureView" id="162">
+                                <property name="measure">out_location</property>
+                                <property name="detail">
+                                    <extended-item extensionName="AggregationCell" id="163">
+                                        <property name="aggregationOnRow">Group/donvi</property>
+                                        <property name="aggregationOnColumn">Group1/location_name</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="content">
+                                            <data id="164">
+                                                <property name="fontSize">11pt</property>
+                                                <property name="resultSetColumn">out_location_Group/donvi_Group1/location_name</property>
+                                            </data>
+                                        </property>
+                                        <property name="style">ev-column-width-3cm</property>
+                                    </extended-item>
+                                </property>
+                                <property name="aggregations">
+                                    <extended-item extensionName="AggregationCell" id="269">
+                                        <property name="aggregationOnColumn">Group1/location_name</property>
+                                        <property name="content">
+                                            <data id="270">
+                                                <property name="textAlign">right</property>
+                                                <property name="resultSetColumn">out_location_Group1/location_name</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="header">
+                                    <extended-item extensionName="CrosstabCell" id="165">
+                                        <property name="content">
+                                            <label id="166">
+                                                <property name="fontSize">11pt</property>
+                                                <text-property name="text">Xuất</text-property>
+                                            </label>
+                                        </property>
+                                        <property name="color">#FFFFFF</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="style">ev-column-width-3cm</property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                            <extended-item extensionName="MeasureView" id="167">
+                                <property name="measure">closing_location</property>
+                                <property name="detail">
+                                    <extended-item extensionName="AggregationCell" id="168">
+                                        <property name="aggregationOnRow">Group/donvi</property>
+                                        <property name="aggregationOnColumn">Group1/location_name</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="content">
+                                            <data id="169">
+                                                <property name="fontSize">11pt</property>
+                                                <property name="resultSetColumn">closing_location_Group/donvi_Group1/location_name</property>
+                                            </data>
+                                        </property>
+                                        <property name="style">ev-column-width-3cm</property>
+                                    </extended-item>
+                                </property>
+                                <property name="aggregations">
+                                    <extended-item extensionName="AggregationCell" id="271">
+                                        <property name="aggregationOnColumn">Group1/location_name</property>
+                                        <property name="content">
+                                            <data id="272">
+                                                <property name="textAlign">right</property>
+                                                <property name="resultSetColumn">closing_location_Group1/location_name</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="header">
+                                    <extended-item extensionName="CrosstabCell" id="170">
+                                        <property name="content">
+                                            <label id="171">
+                                                <property name="fontSize">11pt</property>
+                                                <text-property name="text">Cuối kỳ</text-property>
+                                            </label>
+                                        </property>
+                                        <property name="color">#FFFFFF</property>
+                                        <property name="textAlign">center</property>
+                                        <property name="style">ev-column-width-3cm</property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                        </property>
+                        <property name="rows">
+                            <extended-item extensionName="CrosstabView" id="134">
+                                <property name="grandTotal">
+                                    <extended-item extensionName="CrosstabCell" id="264">
+                                        <property name="content">
+                                            <label id="273">
+                                                <property name="fontWeight">bold</property>
+                                                <property name="color">#FFFFFF</property>
+                                                <text-property name="text">TỔNG</text-property>
+                                            </label>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="views">
+                                    <extended-item extensionName="DimensionView" id="135">
+                                        <property name="dimension">Group</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View" id="136">
+                                                <property name="level">Group/default_code</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="137">
+                                                        <property name="content">
+                                                            <data name="default_code" id="138">
+                                                                <property name="fontSize">11pt</property>
+                                                                <property name="textAlign">left</property>
+                                                                <property name="resultSetColumn">default_code</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">white</property>
+                                                        <property name="style">ev-column-width-3cm</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View1" id="140">
+                                                <property name="level">Group/ten_sp</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="141">
+                                                        <property name="content">
+                                                            <data name="ten_sp" id="143">
+                                                                <property name="fontSize">11pt</property>
+                                                                <property name="textAlign">left</property>
+                                                                <property name="resultSetColumn">ten_sp</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">white</property>
+                                                        <property name="width">7cm</property>
+                                                        <property name="style">ev-column-width-5cm</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View3" id="212">
+                                                <property name="level">Group/ma_lot</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="213">
+                                                        <property name="content">
+                                                            <data name="ma_lot" id="216">
+                                                                <property name="fontSize">11pt</property>
+                                                                <property name="textAlign">center</property>
+                                                                <property name="resultSetColumn">ma_lot</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">white</property>
+                                                        <property name="style">ev-column-width-3cm</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View5" id="226">
+                                                <property name="level">Group/life_date</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="227">
+                                                        <property name="content">
+                                                            <data name="life_date" id="230">
+                                                                <property name="fontSize">11pt</property>
+                                                                <property name="resultSetColumn">life_date</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">white</property>
+                                                        <property name="style">ev-column-width-4cm</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View4" id="218">
+                                                <property name="level">Group/donvi</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="219">
+                                                        <property name="content">
+                                                            <data name="donvi" id="222">
+                                                                <property name="fontSize">11pt</property>
+                                                                <property name="textAlign">center</property>
+                                                                <property name="resultSetColumn">donvi</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">white</property>
+                                                        <property name="style">ev-column-width-3cm</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="grandTotalLocation">after</property>
+                            </extended-item>
+                        </property>
+                        <property name="columns">
+                            <extended-item extensionName="CrosstabView" id="145">
+                                <property name="views">
+                                    <extended-item extensionName="DimensionView" id="146">
+                                        <property name="dimension">Group1</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View2" id="147">
+                                                <property name="level">Group1/location_name</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="148">
+                                                        <property name="content">
+                                                            <data name="location_name" id="149">
+                                                                <property name="fontSize">11pt</property>
+                                                                <property name="resultSetColumn">location_name</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="color">#FFFFFF</property>
+                                                        <property name="backgroundColor">#233C98</property>
+                                                        <property name="textAlign">center</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="grandTotalLocation">before</property>
+                            </extended-item>
+                        </property>
+                        <property name="header">
+                            <extended-item extensionName="CrosstabCell" id="155">
+                                <property name="color">#FFFFFF</property>
+                                <property name="textAlign">center</property>
+                                <property name="style">ev-column-width-3cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="215"/>
+                            <extended-item extensionName="CrosstabCell" id="221">
+                                <property name="color">#FFFFFF</property>
+                                <property name="style">ev-column-width-3cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="229">
+                                <property name="style">ev-column-width-4cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="156">
+                                <property name="color">#FFFFFF</property>
+                                <property name="textAlign">center</property>
+                                <property name="style">ev-column-width-3cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="113">
+                                <property name="content">
+                                    <label id="139">
+                                        <text-property name="text">Mã sản phẩm</text-property>
+                                    </label>
+                                </property>
+                                <property name="color">#FFFFFF</property>
+                                <property name="textAlign">center</property>
+                                <property name="style">ev-column-width-3cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="142">
+                                <property name="content">
+                                    <label id="144">
+                                        <text-property name="text">Sản phẩm</text-property>
+                                    </label>
+                                </property>
+                                <property name="color">#FFFFFF</property>
+                                <property name="textAlign">center</property>
+                                <property name="style">ev-column-width-5cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="214">
+                                <property name="content">
+                                    <label id="217">
+                                        <property name="textAlign">center</property>
+                                        <text-property name="text">Mã Lot</text-property>
+                                    </label>
+                                </property>
+                                <property name="color">#FFFFFF</property>
+                                <property name="style">ev-column-width-3cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="228">
+                                <property name="content">
+                                    <label id="231">
+                                        <property name="color">#FFFFFF</property>
+                                        <text-property name="text">Ngày hết hạn</text-property>
+                                    </label>
+                                </property>
+                                <property name="style">ev-column-width-4cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="220">
+                                <property name="content">
+                                    <label id="223">
+                                        <property name="textAlign">center</property>
+                                        <text-property name="text">Đơn vị</text-property>
+                                    </label>
+                                </property>
+                                <property name="color">#FFFFFF</property>
+                                <property name="style">ev-column-width-3cm</property>
+                            </extended-item>
+                        </property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">default_code</property>
+                                <expression name="expression">dimension["Group"]["default_code"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ten_sp</property>
+                                <expression name="expression">dimension["Group"]["ten_sp"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">location_name</property>
+                                <expression name="expression">dimension["Group1"]["location_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">opening_location_Group/ten_sp_Group1/location_name</property>
+                                <expression name="expression">measure["opening_location"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/ten_sp</value>
+                                    <value>Group1/location_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">in_location_Group/ten_sp_Group1/location_name</property>
+                                <expression name="expression">measure["in_location"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/ten_sp</value>
+                                    <value>Group1/location_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">out_location_Group/ten_sp_Group1/location_name</property>
+                                <expression name="expression">measure["out_location"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/ten_sp</value>
+                                    <value>Group1/location_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">closing_location_Group/ten_sp_Group1/location_name</property>
+                                <expression name="expression">measure["closing_location"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/ten_sp</value>
+                                    <value>Group1/location_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">opening_location_Group/ten_sp</property>
+                                <expression name="expression">measure["opening_location"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/ten_sp</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">in_location_Group/ten_sp</property>
+                                <expression name="expression">measure["in_location"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/ten_sp</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">out_location_Group/ten_sp</property>
+                                <expression name="expression">measure["out_location"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/ten_sp</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">closing_location_Group/ten_sp</property>
+                                <expression name="expression">measure["closing_location"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/ten_sp</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">opening_location</property>
+                                <expression name="expression">measure["opening_location"]</expression>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">in_location</property>
+                                <expression name="expression">measure["in_location"]</expression>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">out_location</property>
+                                <expression name="expression">measure["out_location"]</expression>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">closing_location</property>
+                                <expression name="expression">measure["closing_location"]</expression>
+                                <property name="dataType">float</property>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">opening_location_Group1/location_name</property>
+                                <expression name="expression">measure["opening_location"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group1/location_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">in_location_Group1/location_name</property>
+                                <expression name="expression">measure["in_location"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group1/location_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">out_location_Group1/location_name</property>
+                                <expression name="expression">measure["out_location"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group1/location_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">closing_location_Group1/location_name</property>
+                                <expression name="expression">measure["closing_location"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group1/location_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ma_lot</property>
+                                <expression name="expression">dimension["Group"]["ma_lot"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">opening_location_Group/ma_lot_Group1/location_name</property>
+                                <expression name="expression">measure["opening_location"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/ma_lot</value>
+                                    <value>Group1/location_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">in_location_Group/ma_lot_Group1/location_name</property>
+                                <expression name="expression">measure["in_location"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/ma_lot</value>
+                                    <value>Group1/location_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">out_location_Group/ma_lot_Group1/location_name</property>
+                                <expression name="expression">measure["out_location"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/ma_lot</value>
+                                    <value>Group1/location_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">closing_location_Group/ma_lot_Group1/location_name</property>
+                                <expression name="expression">measure["closing_location"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/ma_lot</value>
+                                    <value>Group1/location_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">donvi</property>
+                                <expression name="expression">dimension["Group"]["donvi"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">opening_location_Group/donvi_Group1/location_name</property>
+                                <expression name="expression">measure["opening_location"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/donvi</value>
+                                    <value>Group1/location_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">in_location_Group/donvi_Group1/location_name</property>
+                                <expression name="expression">measure["in_location"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/donvi</value>
+                                    <value>Group1/location_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">out_location_Group/donvi_Group1/location_name</property>
+                                <expression name="expression">measure["out_location"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/donvi</value>
+                                    <value>Group1/location_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">closing_location_Group/donvi_Group1/location_name</property>
+                                <expression name="expression">measure["closing_location"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/donvi</value>
+                                    <value>Group1/location_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">SUM</property>
+                            </structure>
+                            <structure>
+                                <property name="name">life_date</property>
+                                <expression name="expression">dimension["Group"]["life_date"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                        </list-property>
+                    </extended-item>
+                </cell>
+            </row>
+            <row id="235">
+                <cell id="236">
+                    <label id="241"/>
+                </cell>
+            </row>
+            <row id="237">
+                <cell id="238">
+                    <label id="242"/>
+                </cell>
+            </row>
+            <row id="239">
+                <cell id="240">
+                    <grid id="243">
+                        <column id="244"/>
+                        <column id="260"/>
+                        <column id="245"/>
+                        <row id="246">
+                            <cell id="247">
+                                <label id="261">
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">Kế toán kiểm kê ( ký ,ghi rõ họ tên)</text-property>
+                                </label>
+                            </cell>
+                            <cell id="257">
+                                <label id="262">
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">Kế toán POS ( ký, ghi rõ họ tên)</text-property>
+                                </label>
+                            </cell>
+                            <cell id="248">
+                                <label id="263">
+                                    <property name="textAlign">center</property>
+                                    <text-property name="text">Cửa hàng trưởng ( ký, ghi rõ họ tên)</text-property>
+                                </label>
+                            </cell>
+                        </row>
+                        <row id="249">
+                            <cell id="250"/>
+                            <cell id="258"/>
+                            <cell id="251"/>
+                        </row>
+                        <row id="252">
+                            <cell id="253"/>
+                            <cell id="259"/>
+                            <cell id="254"/>
+                        </row>
+                    </grid>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

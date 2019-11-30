@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- author: HoiHD-->
+<odoo>
+    <data>
+        <!-- add field x_is_blank_card into product_tempalte -->
+        <!-- add tab card information into product_product -->
+        <record id="product_form_view_inherit" model="ir.ui.view">
+            <field name="name">product.form.view.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='options']" postion="inside">
+                    <div>
+                        <field name="x_is_blank_card"/>
+                        <label for="x_is_blank_card"/>
+                    </div>
+                </xpath>
+                <notebook>
+                    <page name="card_information" string="Card Information" attrs="{'invisible': ['|',('tracking', '!=', 'serial'),('x_is_blank_card', '=', True)]}">
+                        <form>
+                            <sheet>
+                                <group>
+                                    <group>
+                                        <field name="x_card_type" required="1"/>
+                                        <field name="x_temporary_card"/>
+                                    </group>
+                                    <group>
+                                        <field name="x_card_value" attrs="{'invisible': [('x_card_type', 'in', ['keep_card', 'service_card'])]}"/>
+                                        <field name="x_card_discount" attrs="{'invisible': [('x_card_type', 'in', ['keep_card', 'service_card'])]}"/>
+                                        <field name="x_card_count" attrs="{'invisible': [('x_card_type', 'in', ['service_card', 'voucher'])], 'required': [('x_card_type', '=', 'keep_card')]}"/>
+                                        <field name="x_use_policy"/>
+                                    </group>
+                                </group>
+                                <notebook attrs="{'invisible': [('x_card_type', 'not in', ['voucher'])]}">
+                                    <page id="product_card" string="Product &amp; Service">
+                                        <field name="x_product_card_ids">
+                                            <tree editable="1">
+                                                <field name="product_allow_id" options="{'no_open':1, 'no_create':1}"/>
+                                                <field name="maximum_quantity"/>
+                                            </tree>
+                                        </field>
+                                    </page>
+                                    <page id="product_category_card" string="Product &amp; Service Group">
+                                        <field name="x_product_category_card_ids">
+                                            <tree editable="1">
+                                                <field name="product_category_allow_id" options="{'no_open':1, 'no_create':1}"/>
+                                                <field name="maximum_quantity"/>
+                                            </tree>
+                                        </field>
+                                    </page>
+                                </notebook>
+                            </sheet>
+                        </form>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+    </data>
+</odoo>
+

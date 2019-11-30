@@ -1,0 +1,288 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* izi_product_bundle
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-21 02:10+0000\n"
+"PO-Revision-Date: 2019-02-21 02:10+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,help:izi_product_bundle.field_pos_order_line__x_type_product
+#: model:ir.model.fields,help:izi_product_bundle.field_product_template__type
+msgid "A storable product is a product for which you manage stock. The Inventory app has to be installed.\n"
+"A consumable product is a product for which stock is not managed.\n"
+"A service is a non-material product you provide."
+msgstr ""
+
+#. module: izi_product_bundle
+#: selection:product.bundle.component,status:0
+msgid "Active"
+msgstr "Hiệu lực"
+
+#. module: izi_product_bundle
+#: model_terms:ir.ui.view,arch_db:izi_product_bundle.pos_order_form_view_inherit
+msgid "Add a bundle"
+msgstr "Thêm một gói"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_component__product_tmpl_id
+#: model_terms:ir.ui.view,arch_db:izi_product_bundle.product_template_form_view_inherit
+#: selection:product.template,type:0
+msgid "Bundle"
+msgstr "Gói"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item__bundle_component_id
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_template__x_bundle_component_ids
+msgid "Bundle component"
+msgstr "Thành phần gói"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_line__x_bundle_item_ids
+msgid "Bundle items"
+msgstr "Sản phẩm trong gói"
+
+#. module: izi_product_bundle
+#: model_terms:ir.ui.view,arch_db:izi_product_bundle.pos_order_line_bundle_form_view
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_option__bundle_component_id
+msgid "Component"
+msgstr "Thành phần"
+
+#. module: izi_product_bundle
+#: selection:product.template,type:0
+msgid "Consumable"
+msgstr "Tiêu dùng"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item__create_uid
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item_lot__create_uid
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_component__create_uid
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_option__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item__create_date
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item_lot__create_date
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_component__create_date
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_option__create_date
+msgid "Created on"
+msgstr "Thời điểm tạo"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,help:izi_product_bundle.field_product_bundle_component__revenue_rate
+msgid "Define when you sell a Bundle product, how many percent of the sale price is applied to this item."
+msgstr "Xác định khi bạn bán một gói sản phẩm, bao nhiêu phần trăm giá bán được áp dụng cho mặt hàng này."
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item__display_name
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item_lot__display_name
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_component__display_name
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_option__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,help:izi_product_bundle.field_pos_order_product_item__tracking_product
+#: model:ir.model.fields,help:izi_product_bundle.field_pos_order_product_item_lot__tracking_product
+msgid "Ensure the traceability of a storable product in your warehouse."
+msgstr "Đảm bảo truy xuất nguồn gốc của một sản phẩm có thể lưu trữ trong kho của bạn."
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item__id
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item_lot__id
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_component__id
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_option__id
+msgid "ID"
+msgstr ""
+
+#. module: izi_product_bundle
+#: selection:product.bundle.component,status:0
+msgid "Inactive"
+msgstr "Hết hiệu lực"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item__product_item_lot_ids
+msgid "Item lot"
+msgstr "Lô/serial"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item____last_update
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item_lot____last_update
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_component____last_update
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_option____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item__write_uid
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item_lot__write_uid
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_component__write_uid
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_option__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item__write_date
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item_lot__write_date
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_component__write_date
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_option__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối lúc"
+
+#. module: izi_product_bundle
+#: sql_constraint:product.bundle.option:0
+msgid "Lựa chọn này đã tồn tại, vui lòng chọn mã sản phẩm khác !!!"
+msgstr ""
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_component__name
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_option__name
+msgid "Name"
+msgstr "Tên"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_component__bundle_option_ids
+msgid "Options"
+msgstr "Tùy chọn"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item__order_line_id
+msgid "Order line"
+msgstr ""
+
+#. module: izi_product_bundle
+#: model:ir.model,name:izi_product_bundle.model_pos_order_line
+msgid "Point of Sale Order Lines"
+msgstr ""
+
+#. module: izi_product_bundle
+#: model:ir.model,name:izi_product_bundle.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "Đơn Bán Điểm bán lẻ"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item__product_id
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item_lot__product_id
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_option__product_id
+msgid "Product"
+msgstr "Sản phẩm"
+
+#. module: izi_product_bundle
+#: model:ir.model,name:izi_product_bundle.model_product_template
+msgid "Product Template"
+msgstr "Mẫu sản phẩm"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_template__type
+msgid "Product Type"
+msgstr "Loại sản phẩm"
+
+#. module: izi_product_bundle
+#: model:ir.actions.act_window,name:izi_product_bundle.action_product_bundle_management
+#: model:ir.ui.menu,name:izi_product_bundle.menu_product_bundle_management
+msgid "Product bundle management"
+msgstr "Quản lý gói sản phẩm"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item_lot__product_item_id
+msgid "Product item"
+msgstr ""
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item_lot__lot_id
+msgid "Production lot"
+msgstr "Lô/serial"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item__qty
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item_lot__qty
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_option__qty
+msgid "Quantity"
+msgstr "Số lượng"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_component__revenue_rate
+msgid "Revenue rate (%)"
+msgstr "Tỷ lệ phân bổ doanh thu (%)"
+
+#. module: izi_product_bundle
+#: model_terms:ir.ui.view,arch_db:izi_product_bundle.pos_order_line_bundle_form_view
+msgid "Save"
+msgstr "Lưu"
+
+#. module: izi_product_bundle
+#: selection:product.template,type:0
+msgid "Service"
+msgstr "Dịch vụ"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_component__status
+msgid "Status"
+msgstr "Trạng thái"
+
+#. module: izi_product_bundle
+#: selection:product.template,type:0
+msgid "Storable Product"
+msgstr ""
+
+#. module: izi_product_bundle
+#: model_terms:ir.ui.view,arch_db:izi_product_bundle.pos_order_line_bundle_form_view
+msgid "Taxes"
+msgstr "Các loại thuế"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item__tracking_product
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item_lot__tracking_product
+msgid "Tracking product"
+msgstr "Truy vết theo"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_line__x_type_product
+msgid "Type product"
+msgstr "Loại sản phẩm"
+
+#. module: izi_product_bundle
+#: model:ir.model.fields,field_description:izi_product_bundle.field_pos_order_product_item__uom_id
+#: model:ir.model.fields,field_description:izi_product_bundle.field_product_bundle_option__uom_id
+msgid "Unit Of Measure"
+msgstr "Đơn vị"
+
+#. module: izi_product_bundle
+#: model_terms:ir.ui.view,arch_db:izi_product_bundle.pos_order_line_bundle_form_view
+msgid "or"
+msgstr "hoặc"
+
+#. module: izi_product_bundle
+#: model:ir.model,name:izi_product_bundle.model_pos_order_product_item
+msgid "pos.order.product.item"
+msgstr ""
+
+#. module: izi_product_bundle
+#: model:ir.model,name:izi_product_bundle.model_pos_order_product_item_lot
+msgid "pos.order.product.item.lot"
+msgstr ""
+
+#. module: izi_product_bundle
+#: model:ir.model,name:izi_product_bundle.model_product_bundle_component
+msgid "product.bundle.component"
+msgstr ""
+
+#. module: izi_product_bundle
+#: model:ir.model,name:izi_product_bundle.model_product_bundle_option
+msgid "product.bundle.option"
+msgstr ""
+

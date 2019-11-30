@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--author: HoiHD-->
+<odoo>
+    <data>
+        <!--form view-->
+        <record id="product_card_allow_form_view" model="ir.ui.view">
+            <field name="name">product.card.allow.form.view</field>
+            <field name="model">product.card.allow</field>
+            <field name="arch" type="xml">
+                <form string="Product &amp; Service">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="product_id" invisible="1" forcesave="1"/>
+                                <field name="product_allow_id"/>
+                            </group>
+                            <group>
+                                <field name="maximum_quantity"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!--tree view-->
+        <record id="product_card_allow_tree_view" model="ir.ui.view">
+            <field name="name">product.card.allow.tree.view</field>
+            <field name="model">product.card.allow</field>
+            <field name="arch" type="xml">
+                <tree string="Product &amp; Service">
+                    <field name="product_allow_id"/>
+                    <field name="maximum_quantity"/>
+                </tree>
+            </field>
+        </record>
+        <!--action-->
+        <record id="product_card_allow_action" model="ir.actions.act_window">
+            <field name="name">product.card.allow.action</field>
+            <field name="res_model">product.card.allow</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

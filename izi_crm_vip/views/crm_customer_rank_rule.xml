@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="crm_customer_rank_rule_tree" model="ir.ui.view">
+            <field name="name">Crm customer rank rule tree</field>
+            <field name="model">crm.customer.rank.rule</field>
+            <field name="arch" type="xml">
+                <tree string="Crm customer rank rule tree">
+                    <field name="name"/>
+                    <field name="rank_id"/>
+                    <field name="type"/>
+                    <field name="brand_id"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="crm_customer_rank_rule_form" model="ir.ui.view">
+            <field name="name">Crm customer rank rule form</field>
+            <field name="model">crm.customer.rank.rule</field>
+            <field name="arch" type="xml">
+                <form string="Crm customer rank rule form">
+                    <header>
+                        <button name="action_active" type="object" string="Active" states="deactive" class="btn-primary"/>
+                        <button name="action_deactive" type="object" string="Deactive" states="active" class="btn-primary"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <label for="name"/>
+                        <h2><field name="name" nolabel="1"/></h2>
+                        <group col="4">
+                            <group col="2" colspan="2">
+                                <field name="brand_id"/>
+                                <field name="rank_id"/>
+                                <field name="type"/>
+                                <field name="duration_year"/>
+                                <field name="target_revenue" widget="monetary"/>
+                            </group>
+                            <group col="1" colspan="2">
+                                <label for="description"/>
+                                <field name="description" nolabel="1"/>
+                            </group>
+                        </group>
+                        <label for="ranks_allowed"/>
+                        <field name="ranks_allowed">
+                            <tree>
+                                <field name="name"/>
+                                <field name="code"/>
+                                <field name="active_month"/>
+                                <field name="active"/>
+                            </tree>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="crm_customer_rank_rule_action" model="ir.actions.act_window">
+            <field name="name">Crm customer rank rule action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crm.customer.rank.rule</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="menu_crm_customer_rank_rule"
+                  name="Customer rank rule"
+                  action="crm_customer_rank_rule_action"
+                  parent="izi_crm_vip.partner_vip_menu_categ"
+                  sequence="11"/>
+    </data>
+</odoo>

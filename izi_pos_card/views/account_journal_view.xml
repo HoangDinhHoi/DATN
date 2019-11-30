@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="view_account_journal_coupon_form" model="ir.ui.view">
+            <field name="name">account.journal.coupon</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="point_of_sale.view_account_journal_pos_user_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='journal_user']" position="attributes">
+                    <attribute name="attrs">{'invisible': [('type', 'not in', ['bank', 'cash','coupon'])]}</attribute>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

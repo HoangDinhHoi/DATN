@@ -1,0 +1,40 @@
+<odoo>
+    <data>
+        <record id="pos_order_inherit_search_code_form" model="ir.ui.view">
+            <field name="name">Pos Order Search</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <group name="order_fields" position="after">
+                    <group attrs="{'invisible': ['|',('state', '!=', 'draft')]}">
+                        <group>
+                            <field name="x_code_search" widget="enter2action" style="max-width: 345px;margin-left:145px" nolabel="1" placeholder="Search Code"
+                                   attrs="{'action_element_class': '.izi_btn_action_pos_card'}"/>
+                        </group>
+                        <group>
+                            <button name="action_search_code" type="object" string="Search" icon="fa-search" class="izi_btn_action_pos_card"/>
+                        </group>
+                    </group>
+                </group>
+                <xpath expr="//field[@name='lines']/tree/field[@name='product_id']" position="after">
+                    <field name="product_id" invisible="1" options="{'no_create':1, 'no_create_edit':1}"/>
+                    <field name="x_tracking" invisible="1"/>
+                    <field name="x_lot_id" options="{'no_create':1, 'no_create_edit':1}" domain="[('product_id','=',product_id)]"
+                           attrs="{'readonly': [('x_tracking', '=', 'none')],'required': [('x_tracking', '!=', 'none')]}"/>
+                </xpath>
+                <xpath expr="//field[@name='lines']/tree/field[@name='qty']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('x_tracking', '=', 'serial')],'required': [('x_tracking', '!=', 'serial')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='lines']/form/group/field[@name='product_id']" position="after">
+                    <field name="x_lot_id" readonly="1" force_save="1"/>
+                </xpath>
+                <!--<xpath expr="//field[@name='lines']/tree/field[@name='price_subtotal_incl']" position="after">-->
+                <!--<field name="x_revenue_rate" readonly="1" force_save="1"/>-->
+                <!--</xpath>-->
+                <xpath expr="//field[@name='statement_ids']/form/group/group/field[@name='amount']" position="after">
+                    <field name="x_lot_ids" readonly="1" force_save="1" widget="many2many_tags" attrs="{'invisible': [('x_lot_ids', '=', [])]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

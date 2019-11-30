@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--author: hoihd: add field x_is_shop-->
+<odoo>
+    <data>
+        <!-- search view-->
+        <record id="res_partner_inherit_search_view" model="ir.ui.view">
+            <field name="name">Search View</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"
+                           filter_domain="['|','|',('name', 'ilike', self),('phone', 'ilike', self),('email', 'ilike', self)]"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                </search>
+            </field>
+        </record>
+        <!--tree view-->
+        <record id="res_partner_inherit_tree_view" model="ir.ui.view">
+            <field name="name">res.partner.inherit.tree.view</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="display_name"/>
+                    <field name="phone"/>
+                    <field name="email"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="res_partner_tree_view_inherit" model="ir.ui.view">
+            <field name="name">Partner tree view inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='display_name']" position="before">
+                    <field name="x_partner_code"/>
+                    <field name="x_partner_old_code"/>
+                    <field name="brand_id"/>
+                </xpath>
+            </field>
+        </record>
+        <!--form view-->
+        <record id="res_partner_inherit_form_view" model="ir.ui.view">
+            <field name="name">res.partner.inherit.form.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//label[@for='street']" position="before">
+                    <field name="x_partner_code" readonly="1"/>
+                    <field name="x_partner_old_code"/>
+                    <field name="brand_id"/>
+                </xpath>
+                <xpath expr="//group[@name='sale']/field[@name='customer']" position="before">
+                    <field name="x_is_shop"/>
+                </xpath>
+                <xpath expr="//group[@name='sale']/field[@name='user_id']" position="replace">
+                    <field name="team_id" attrs="{'required': [('customer', '=', True)]}"/>
+                    <field name="user_id" attrs="{'required': [('customer', '=', True)]}" domain="[('sale_team_id', '=', team_id)]"/>
+                    <field name="presenter_id"/>
+                </xpath>
+                <xpath expr="//field[@name='phone']" position="replace">
+                    <field name="phone" attrs="{'required': [('customer', '=', True)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='mobile']" position="replace">
+                    <field name="mobile" attrs="{'required': [('customer', '=', True)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='title']" position="before">
+                    <field name="x_gender" attrs="{'invisible': [('is_company', '=', True)]}"/>
+                </xpath>
+                <xpath expr="//field[@name='function']" position="before">
+                    <field name="join_date"/>
+                </xpath>
+                <xpath expr="//field[@name='function']" position="after">
+                    <field name="x_birthday"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="shop_form_view" model="ir.ui.view">
+            <field name="name">Shop</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <field name="image" widget="image" class="oe_avatar"
+                               options="{&quot;preview_image&quot;: &quot;image_medium&quot;, &quot;size&quot;: [90, 90]}"/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Name"/>
+                            </h1>
+                        </div>
+                        <group col="4">
+                            <field name="x_partner_code" readonly="1"/>
+                            <field name="x_is_shop" readonly="1"/>
+                            <field name="x_partner_old_code" required="1"/>
+                            <field name="company_id" readonly="1" required="1"/>
+                            <field name="phone"/>
+                            <field name="street"/>
+                            <field name="mobile"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="customer_form_view_ref" model="ir.ui.view">
+            <field name="name">Customer</field>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <form create="0" edit="0">
+                    <sheet>
+                        <field name="image" widget="image" class="oe_avatar"
+                               options="{&quot;preview_image&quot;: &quot;image_medium&quot;, &quot;size&quot;: [90, 90]}"
+                               readonly="1"/>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" default_focus="1" placeholder="Name" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group col="4">
+                            <field name="x_partner_code" readonly="1"/>
+                            <field name="phone" readonly="1"/>
+                            <field name="x_partner_old_code" readonly="1"/>
+                            <field name="mobile" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--action-->
+        <record id="res_partner_inherit_action" model="ir.actions.act_window">
+            <field name="name">Shop Management</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_ids" eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'tree', 'view_id': ref('res_partner_inherit_tree_view')}),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('shop_form_view')})]"/>
+            <field name="context">{'default_x_is_shop':1, 'default_customer': 0}</field>
+            <field name="domain">[('x_is_shop', '=', 1)]</field>
+            <field name="search_view_id" ref="res_partner_inherit_search_view"/>
+        </record>
+
+        <menuitem id="res_partner_inherit_menu_item"
+                  name="Shop Management"
+                  action="res_partner_inherit_action"
+                  parent="point_of_sale.menu_point_config_product"
+                  sequence="3"/>
+    </data>
+</odoo>

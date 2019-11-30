@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="rule_pos_use_service_multi_company" model="ir.rule">
+            <field name="name">Pos User Service Company</field>
+            <field name="model_id" ref="model_pos_use_service" />
+            <field name="global" eval="True" />
+            <field name="domain_force">[('company_id', '=', user.company_id.id)]</field>
+        </record>
+
+        <record id="rule_pos_material_multi_company" model="ir.rule">
+            <field name="name">Pos Material Company</field>
+            <field name="model_id" ref="model_pos_material_request" />
+            <field name="global" eval="True" />
+            <field name="domain_force">[('company_id', '=', user.company_id.id)]</field>
+        </record>
+
+        <record id="pos_use_service_rule_group_pos_user_portal" model="ir.rule">
+            <field name="name">POS use service rule group_pos_user</field>
+            <field name="model_id" ref="model_pos_use_service"/>
+            <field name="domain_force">[('crm_team_id.member_ids', 'child_of', [user.id])]</field>
+            <field name="groups" eval="[(4, ref('point_of_sale.group_pos_user'))]"/>
+        </record>
+
+        <record id="pos_order_rule_group_pos_manager_portal" model="ir.rule">
+            <field name="name">POS use service rule group_pos_manager</field>
+            <field name="model_id" ref="model_pos_use_service"/>
+            <field name="domain_force">[]</field>
+            <field name="groups" eval="[(4, ref('point_of_sale.group_pos_manager'))]"/>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <!-- form view -->
+        <record id="rpt_stock_location_in_out_form" model="ir.ui.view">
+            <field name="name">Báo cáo tồn kho</field>
+            <field name="model">rpt.stock.location.in.out</field>
+            <field name="arch" type="xml">
+                <form string="Báo cáo tồn kho">
+                    <group>
+                        <group>
+                            <field name="from_date" required="1" string="Từ ngày"/>
+                            <field name="warehouse_id" required="1" string="Kho hàng"
+                                   options="{'no_create':1}"/>
+                            <field name="view_location_id" invisible="1" string="Địa điểm"/>
+                        </group>
+                        <group>
+                            <field name="to_date" required="1" string="Đến ngày"/>
+                            <field name="location_ids" string="Các địa điểm"
+                               domain="[('location_id', '=', view_location_id)]"
+                               attrs="{'invisible':[('warehouse_id', '=', False)]}"
+                               options="{'no_create':1, 'color_field': 'color'}"
+                               widget="many2many_tags" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="action_export_report"
+                                string="Xuất báo cáo"
+                                class="oe_highlight"
+                                type="object"
+                                icon="fa-print"/>
+                        <button string="Hủy"
+                                class="btn-default"
+                                special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <!-- action -->
+        <record id="action_rpt_stock_location_in_out" model="ir.actions.act_window">
+            <field name="name">Báo cáo tồn kho</field>
+            <field name="res_model">rpt.stock.location.in.out</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="rpt_stock_location_in_out_form"/>
+            <field name="target">new</field>
+            <field name="context">{}</field>
+        </record>
+        <!-- menu -->
+        <menuitem id="menu_rpt_stock_location_in_out"
+                  name="Báo cáo tồn kho"
+                  parent="stock.menu_warehouse_report"
+                  sequence="120"
+                  action="action_rpt_stock_location_in_out"/>
+    </data>
+</odoo>

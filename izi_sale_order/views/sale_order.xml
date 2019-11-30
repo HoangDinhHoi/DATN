@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="sale_order_retail_tree" model="ir.ui.view">
+            <field name="name">Sale order retail tree</field>
+            <field name="model">sale.order</field>
+            <field name="arch" type="xml">
+                <tree string="Sales Orders retail tree">
+                    <field name="name" string="Order Number"/>
+                    <field name="date_order"/>
+                    <field name="confirmation_date" string="Confirmation Date"/>
+                    <field name="commitment_date" groups="sale.group_sale_order_dates"/>
+                    <field name="expected_date" groups="sale.group_sale_order_dates"/>
+                    <field name="partner_id"/>
+                    <field name="user_id"/>
+                    <field name="amount_total" sum="Total Tax Included" widget="monetary"/>
+                    <field name="currency_id"/>
+                    <field name="invoice_status"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sale_order_retail_form" model="ir.ui.view">
+            <field name="name">Sale order retail form</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='authorized_transaction_ids']" position="before">
+                    <field name="type" invisible="1"/>
+                </xpath>
+                <xpath expr="//button[@name='payment_action_capture']" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|', ('type', '=', 'retail')]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='payment_action_void']" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|', ('type', '=', 'retail')]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_quotation_send']" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|', ('type', '=', 'retail')]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='print_quotation']" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|', ('type', '=', 'retail')]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_confirm']" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|', ('type', '=', 'retail')]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_confirm'][2]" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|', ('type', '=', 'retail')]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='preview_sale_order']" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|', ('type', '=', 'retail')]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='action_done']" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|', ('type', '=', 'retail')]}</attribute>
+                </xpath>
+                <xpath expr="//button[@name='payment_action_capture']" position="before">
+                    <button name="action_move_to_pos" string="Move to pos" type="object" class="btn-primary"
+                            attrs="{'invisible': ['|', ('type', '=', 'wholesale'), ('state', '=', 'moved_to_pos')]}"/>
+                </xpath>
+                <xpath expr="//field[@name='payment_term_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('done', 'cancel', 'moved_to_pos'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('done', 'cancel', 'moved_to_pos'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='user_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('done', 'cancel', 'moved_to_pos'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='team_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('done', 'cancel', 'moved_to_pos'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='client_order_ref']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('done', 'cancel', 'moved_to_pos'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='require_signature']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('done', 'cancel', 'moved_to_pos'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='require_payment']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('done', 'cancel', 'moved_to_pos'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='company_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('done', 'cancel', 'moved_to_pos'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='analytic_account_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('done', 'cancel', 'moved_to_pos'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='date_order']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('done', 'cancel', 'moved_to_pos'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='fiscal_position_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('done', 'cancel', 'moved_to_pos'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='invoice_status']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('done', 'cancel', 'moved_to_pos'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='origin']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('done', 'cancel', 'moved_to_pos'))]}</attribute>
+                </xpath>
+                <xpath expr="//page[@name='other_information']" position="after">
+                    <page string="Pos Orders" name="pos_orders" attrs="{'invisible': [('type', '!=', 'retail')]}">
+                        <field name="pos_order_ids" readonly="1">
+                            <tree string="POS Orders">
+                                <button icon="fa-archive" name="action_detail" string="Detail" type="object"/>
+                                <field name="name"/>
+                                <field name="pos_reference"/>
+                                <field name="partner_id"/>
+                                <field name="date_order"/>
+                                <field name="user_id"/>
+                                <field name="amount_total" sum="Amount total" widget="monetary"/>
+                                <field name="company_id" groups="base.group_multi_company"/>
+                                <field name="state"/>
+                                <field name="session_id" />
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="view_order_form_inherit_branch_inherit" model="ir.ui.view">
+            <field name="name">view_order_form_inherit_branch_inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="izi_branch.view_order_form_inherit_branch"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='branch_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('done', 'cancel', 'moved_to_pos'))]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="sale_order_form_sale_management_inherit" model="ir.ui.view">
+            <field name="name">sale_order_form_sale_management_inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_management.sale_order_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='%(sale.action_view_sale_advance_payment_inv)d']" position="attributes">
+                    <attribute name="attrs">{'invisible': ['|', '|', ('type', '=', 'retail'), ('invoice_status', '!=', 'no'), ('state', '!=', 'sale')]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="sale_order_form_inherit_sale_inherit" model="ir.ui.view">
+            <field name="name">sale_order_form_inherit_sale_inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale_crm.sale_view_inherit123"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='tag_ids']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('done', 'cancel', 'moved_to_pos'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='campaign_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('done', 'cancel', 'moved_to_pos'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='medium_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('done', 'cancel', 'moved_to_pos'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='source_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('done', 'cancel', 'moved_to_pos'))]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='opportunity_id']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('state', 'in', ('done', 'cancel', 'moved_to_pos'))]}</attribute>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="sale.action_quotations_with_onboarding" model="ir.actions.act_window">
+            <field name="name">Quotations</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="sale.view_quotation_tree_with_onboarding"/>
+            <field name="view_mode">tree,kanban,form,calendar,pivot,graph,activity</field>
+            <field name="search_view_id" ref="sale.sale_order_view_search_inherit_quotation"/>
+            <field name="domain">[('type', '!=', 'retail')]</field>
+            <field name="context">{'search_default_my_quotation': 1}</field>
+            <field name="help" type="html">
+              <p class="o_view_nocontent_smiling_face">
+                Create a new quotation, the first step of a new sale!
+              </p><p>
+                Once the quotation is confirmed by the customer, it becomes a sales order.<br/> You will be able to create an invoice and collect the payment.
+              </p>
+            </field>
+        </record>
+
+        <record id="sale.action_orders" model="ir.actions.act_window">
+            <field name="name">Sales Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,kanban,form,calendar,pivot,graph,activity</field>
+            <field name="search_view_id" ref="sale.sale_order_view_search_inherit_sale"/>
+            <field name="context">{}</field>
+            <field name="domain">[('state', 'not in', ('draft', 'sent', 'cancel')), ('type', '!=', 'retail')]</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Create a new quotation, the first step of a new sale!
+                </p><p>
+                    Once the quotation is confirmed, it becomes a sales order.<br/> You will be able to create an invoice and collect the payment.
+                </p>
+            </field>
+        </record>
+
+        <record id="sale_orders_retail_action" model="ir.actions.act_window">
+            <field name="name">Sale orders retail action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="sale_order_retail_tree"/>
+            <field name="domain">[('type', '=', 'retail')]</field>
+            <field name="context">{'default_type': 'retail'}</field>
+        </record>
+
+        <menuitem id="menuitem_sale_orders_retail"
+                  name="Retail"
+                  parent="sale.sale_order_menu"
+                  action="sale_orders_retail_action"
+                  sequence="4"/>
+
+        <menuitem id="menuitem_sale_orders_retail_crm"
+                  name="Retail"
+                  parent="crm.crm_menu_sales"
+                  action="sale_orders_retail_action"
+                  sequence="8"/>
+
+    </data>
+</odoo>

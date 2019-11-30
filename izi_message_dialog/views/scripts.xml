@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="assets_backend" name="izi_message_dialog_assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <link rel="stylesheet" type="text/scss" href="/izi_message_dialog/static/src/css/style.css" />
+                <script type="text/javascript" src="/izi_message_dialog/static/src/js/dialog.js"/>
+                <script type="text/javascript" src="/izi_message_dialog/static/src/js/action_manager.js"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

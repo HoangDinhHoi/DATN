@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="pos_report_session">
+            <t t-call="web.html_container">
+                <t t-foreach="docs" t-as="o">
+                    <t t-call="izi_pos_report.izi_internal_session" t-lang="en_US">
+                        <div class="page" style="font-size:13px;">
+                            <style>
+                                table, th, td {
+                                border: 0.1px solid #f0f5f5;
+                                }
+                            </style>
+                            <t t-if="(o.state == 'opening_control') or (o.state == 'opened')">
+                                <h3>
+                                    <strong>
+                                        Thông báo! Vui lòng đóng phiên trước khi in báo cáo!
+                                    </strong>
+                                </h3>
+                            </t>
+                            <t t-if="(o.state != 'opening_control') and (o.state != 'opened')">
+                                <br/>
+                                <div>
+                                    <p style="border-bottom: 1px solid black;text-align: right;font-size: 12px; margin: 0;">
+                                        Sắc đẹp là vĩnh cửu
+                                    </p>
+                                    <p style="border-bottom: 1px solid black;float:left;font-size: 12px;margin: 0;">TCT -
+                                        Tổng công ty
+                                    </p>
+                                </div>
+                                <br clear="both"/>
+                                <br/>
+                                <br/>
+                                <h4 class="text-center">
+                                    <b>CÁC GIAO DỊCH NGĂN KÉO</b>
+                                </h4>
+                                <br/>
+                                <br/>
+                                <h6 style="font-size:13px;">
+                                    <strong>Shop:
+                                        <span t-field="o.config_id.name"/>
+                                    </strong>
+                                </h6>
+                                <h6 style="font-size:13px;">
+                                    <strong>Số phiên:
+                                        <span t-field="o.name"/>
+                                    </strong>
+                                </h6>
+                                <h6 style="font-size:13px;">
+                                    <strong>Ngày mở:
+                                        <span t-esc="(o.start_at + relativedelta(hours=7)).strftime('%d/%m/%Y %H:%M:%S')"/>
+                                    </strong>
+                                </h6>
+                                <h6 style="font-size:13px;">
+                                    <strong>Ngày đóng:
+                                        <span t-esc="(o.stop_at + relativedelta(hours=7)).strftime('%d/%m/%Y %H:%M:%S')"/>
+                                    </strong>
+                                </h6>
+                                <br/>
+                                <t t-foreach="o.statement_ids" t-as="statement">
+                                    <t t-if="len(statement.line_ids) > 0 ">
+                                        <strong>
+                                            <u>Kiểu thanh toán:</u>
+                                            <span t-field="statement.journal_id.name"/>
+                                        </strong>
+                                        <br/>
+                                        <table class="table table-condensed" width="100%" style="font-size: 13px;">
+                                            <tr>
+                                                <td width="20%" class="text-left">Mã Đơn hàng</td>
+                                                <td width="35%" class="text-left">Khách hàng</td>
+                                                <td width="10%" class="text-right">Chiết khấu</td>
+                                                <td width="10%" class="text-right">Chi</td>
+                                                <td width="15%" class="text-right">Thu</td>
+                                            </tr>
+                                            <tr t-foreach="statement.line_ids" t-as="line">
+                                                <td class="text-left">
+                                                    <span t-field="line.name"/>
+                                                </td>
+                                                <td class="text-left">
+                                                    <span t-field="line.partner_id.x_partner_code"/>-
+                                                    <span t-field="line.partner_id.name"/>
+                                                </td>
+                                                <td class="text-right">
+                                                </td>
+                                                <td class="text-right">
+                                                </td>
+                                                <td class="text-right">
+                                                    <span t-field="line.amount"/>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="4" class="text-right">Tổng:
+                                                    <span t-field="o.config_id.name"/>
+                                                    <span t-field="statement.journal_id.name"/>
+                                                </td>
+                                                <td class="text-right">
+                                                    <span t-field="statement.balance_end" t-a="bank"/>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </t>
+                                </t>
+                                <table width="100%" style="font-size: 13px;">
+                                    <tr>
+                                        <td width="40%"></td>
+                                        <td width="40%">
+                                            <strong>
+                                                <u>Tổng cộng</u>
+                                            </strong>
+                                        </td>
+                                        <td width="20%" class="text-right">
+                                            <strong>
+                                                <u>
+                                                    <span t-esc="'{0:,.0f}'.format(int(o.funtion_sum()))"/>
+                                                    đ
+                                                </u>
+                                            </strong>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </t>
+                        </div>
+                    </t>
+                </t>
+            </t>
+        </template>
+        <record id="paperformat_qweb_pos_session" model="report.paperformat">
+            <field name="name">A4</field>
+            <field name="default" eval="True"/>
+            <field name="format">A4</field>
+            <field name="page_height">0</field>
+            <field name="page_width">0</field>
+            <field name="orientation">Portrait</field>
+            <field name="margin_top">10</field>
+            <field name="margin_bottom">10</field>
+            <field name="margin_left">20</field>
+            <field name="margin_right">10</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">96</field>
+        </record>
+
+        <report
+                string="Print Session"
+                id="action_report_session"
+                model="pos.session"
+                report_type="qweb-pdf"
+                name="izi_pos_report.pos_report_session"
+                file="izi_pos_report.pos_report_session"
+                print_report_name="'Pos Session - %s' % (object.name or '')"
+                paperformat="izi_pos_report.paperformat_qweb_pos_session"
+                menu="False"
+        />
+    </data>
+</odoo>
+

@@ -1,0 +1,369 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* izi_pos_report
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-26 03:02+0000\n"
+"PO-Revision-Date: 2019-03-26 03:02+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "(Ký, họ tên)"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_case_session
+msgid "<b>BÁO CÁO CA</b>"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_session
+msgid "<b>CÁC GIAO DỊCH NGĂN KÉO</b>"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "<b>Kiểm soát</b>"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "<b>Người lập phiếu</b>"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "<b>Người mua hàng</b>"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "<b>ĐT:</b>"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_session
+msgid "<strong>\n"
+"                                                <u>Tổng cộng</u>\n"
+"                                            </strong>"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_case_session
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_session
+msgid "<strong>\n"
+"                                        Thông báo! Vui lòng đóng phiên trước khi in báo cáo!\n"
+"                                    </strong>"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_case_session
+msgid "<strong>CÁC DỊCH VỤ ĐÃ BÁN</strong>"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_case_session
+msgid "<strong>CÁC SẢN PHẨM ĐÃ BÁN</strong>"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_case_session
+msgid "<strong>TÓM TẮT THEO CÁC PHƯƠNG THỨC THANH TOÁN</strong>"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_session
+msgid "<u>Kiểu thanh toán:</u>"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "APN"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "BILL"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "Bộ phận:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "CK đơn hàng"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_session
+msgid "Chi"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_session
+msgid "Chiết khấu"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "Chiết khấu đơn hàng:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "Các thẻ thu hồi:\n"
+"                                                <br/>"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "Còn lại:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "Cảm ơn quý khách đã sử dụng\n"
+"                                            sản phẩm và dịch vụ của\n"
+"                                            Menard"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_case_session
+msgid "Dịch vụ"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "Ghi chú:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "Hạng:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_session
+msgid "Khách hàng"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "Khách hàng:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "Lý do"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_case_session
+msgid "Mã"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "Mã KH:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "Mã hàng"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_case_session
+msgid "Mã shop:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_session
+msgid "Mã Đơn hàng"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "Mọi thắc mắc xin liên hệ với chúng tôi trong giờ hành chính"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "NV bán hàng:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "NV làm: _"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_session
+msgid "Ngày mở:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_session
+msgid "Ngày đóng:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_case_session
+msgid "Người bán:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model:ir.model,name:izi_pos_report.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "Đơn Bán Điểm bán lẻ"
+
+#. module: izi_pos_report
+#: model:ir.model,name:izi_pos_report.model_pos_session
+msgid "Point of Sale Session"
+msgstr "Phiên Điểm bán lẻ"
+
+#. module: izi_pos_report
+#: model:ir.actions.report,name:izi_pos_report.action_report_bill
+msgid "Print Bill"
+msgstr "In hóa đơn"
+
+#. module: izi_pos_report
+#: model:ir.actions.report,name:izi_pos_report.action_report_case_session
+msgid "Print Case Session"
+msgstr "In báo cáo phiên"
+
+#. module: izi_pos_report
+#: model:ir.actions.report,name:izi_pos_report.action_report_session
+msgid "Print Session"
+msgstr "In báo cáo ngăn kéo"
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "SL"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_session
+msgid "Shop:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_case_session
+msgid "Sản phẩm"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_session
+msgid "Sắc đẹp là vĩnh cửu"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_case_session
+msgid "Số hóa đơn:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_case_session
+msgid "Số lượng"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_case_session
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_session
+msgid "Số phiên:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "Số:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_session
+msgid "TCT -\n"
+"                                        Tổng công ty"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_session
+msgid "Thu"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "Thành tiền"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_case_session
+msgid "Thời gian mở:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_case_session
+msgid "Thời gian đóng:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "Trung tâm chăm sóc khách\n"
+"                                            hàng - 037 901 0101"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "Tên hàng"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "Tổng cộng:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_case_session
+msgid "Tổng doanh thu:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "Tổng phải trả:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_case_session
+msgid "Tổng số"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_session
+msgid "Tổng:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "Điểm được thêm:"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.pos_report_bill
+msgid "Đơn giá"
+msgstr ""
+
+#. module: izi_pos_report
+#: model_terms:ir.ui.view,arch_db:izi_pos_report.izi_internal_session
+msgid "• Email: info@vmt.vn • Website: http://w w w .vmt.vn\n"
+"                Page: <span class=\"page\"/> / <span class=\"topage\"/>"
+msgstr ""
+

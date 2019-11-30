@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="sequence_product_release_izi" model="ir.sequence">
+            <field name="name">Sequence Product Release Card</field>
+            <field name="code">product.release</field>
+            <field name="prefix">PH%(y)s%(month)s/</field>
+            <field name="padding">4</field>
+            <field name="number_next">1</field>
+            <field name="number_increment">1</field>
+            <field name="company_id" eval="False"/>
+        </record>
+    </data>
+</odoo>

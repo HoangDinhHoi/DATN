@@ -1,0 +1,77 @@
+<odoo>
+    <data>
+        <!-- form view -->
+        <record id="stock_report_io_inventory_report_form" model="ir.ui.view">
+            <field name="name">stock.report.io.inventory.report.form</field>
+            <field name="model">stock.report.io.inventory.report</field>
+            <field name="arch" type="xml">
+                <form string="Choose your warehouse">
+                    <group>
+                        <group>
+                            <field name="from_date" required="1"/>
+                            <!--<field name="all"/>-->
+                            <field name="warehouse_id" required="1"
+                                   options="{'no_create':1, 'no_create_edit':1}"/>
+                            <field name="view_location_id" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="to_date" required="1"/>
+                            <field name="location_ids"
+                               domain="[('location_id', '=', view_location_id)]"
+                               attrs="{'invisible':[('warehouse_id', '=', False)]}"
+                               options="{'no_create':1, 'color_field': 'color'}" widget="many2many_tags" />
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="open_table" string="General Account of Input - Output - Inventory" type="object"
+                                class="btn-primary"/>
+                        <button name="view_report_on_web" string="VIEW REPORT ON WEB" class="btn-info" type="object" icon="fa-globe"/> <!-- HoiHD -->
+                        <button name="export_report_to_excel" string="EXPORT REPORT TO EXCEL" class="btn-success" type="object" icon="fa-file-excel-o"/> <!-- HoiHD -->
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="stock_report_io_inventory_report_pivot" model="ir.ui.view">
+            <field name="name">Input - output - inventory report pivot</field>
+            <field name="model">stock.report.io.inventory.report.line</field>
+            <field name="arch" type="xml">
+                <pivot string="Input - output - inventory report">
+                    <field name="location_id" type="col"/>
+                    <field name="product_id" type="row"/>
+                    <field name="opening_stock" type="measure"/>
+                    <field name="in_inventory" type="measure"/>
+                    <field name="out_inventory" type="measure"/>
+                    <field name="closing_stock" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+        <record id="stock_report_io_inventory_report_search" model="ir.ui.view">
+            <field name="name">stock.report.io.inventory.report.line.search</field>
+            <field name="model">stock.report.io.inventory.report.line</field>
+            <field name="arch" type="xml">
+                <search string="Input - output - inventory report search">
+                    <field name="product_id"/>
+                    <field name="lot_id"/>
+                    <field name="location_id"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_stock_report_io_inventory_report" model="ir.actions.act_window">
+            <field name="name">General account of input - output - inventory</field>
+            <field name="res_model">stock.report.io.inventory.report</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="stock_report_io_inventory_report_form"/>
+            <field name="target">new</field>
+            <field name="context">{}</field>
+        </record>
+
+        <menuitem id="menu_stock_report_io_inventory_report" name="Input - output - inventory report"
+                  parent="stock.menu_warehouse_report" sequence="100" action="action_stock_report_io_inventory_report"/>
+
+    </data>
+</odoo>

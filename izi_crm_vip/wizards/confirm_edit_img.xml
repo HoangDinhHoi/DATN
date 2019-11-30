@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+         <record model="ir.ui.view" id="confirm_edit_img_view">
+                <field name="name">Confirm edit image tree</field>
+                <field name="model">confirm.edit.img</field>
+                <field name="arch" type="xml">
+                    <form string="confirm edit image" create="false" delete="false">
+                        <sheet>
+                            <group col="3">
+                                <group col="1">
+                                    <field name="form_img_name" invisible="1"/>
+                                    <field name="form_img_view" filename="form_img_name" widget="image"/>
+                                </group>
+                                <group col="1">
+                                    <field name="signature_img_name" invisible="1"/>
+                                    <field name="signature_img_view" filename="signature_img_name" widget="image"/>
+                                </group>
+                                <group col="1">
+                                    <field name="profile_img_name" invisible="1"/>
+                                    <field name="profile_img_view" filename="profile_img_name" widget="image"/>
+                                </group>
+                            </group>
+                            <button name="action_confirm" string="Confirm" type="object" class="oe_highlight"/>
+                        </sheet>
+                    </form>
+                </field>
+         </record>
+    </data>
+</odoo>

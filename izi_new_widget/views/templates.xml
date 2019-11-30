@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="assets_backend" name="izi_widget assets" inherit_id="web.assets_backend">
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/izi_new_widget/static/src/js/icon_widget.js"/>
+            <link rel="stylesheet" type="text/css" href="/izi_new_widget/static/src/sentiment-icon.css"/>
+        </xpath>
+    </template>
+</odoo>

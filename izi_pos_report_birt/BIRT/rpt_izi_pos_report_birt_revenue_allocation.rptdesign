@@ -1,0 +1,1906 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.5.0.v201506092134 Build &lt;@BUILD@></property>
+    <list-property name="userProperties">
+        <structure>
+            <property name="name">Data Cube.Data Set.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data Cube.Data Set.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data.Data Set.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data.Data Set.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data.Data Set.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Data.Data Set.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Customer.Customer.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Customer.Customer.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Customer.Employee.NewTabularHierarchy1.x</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Customer.Employee.NewTabularHierarchy1.y</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Customer.Employee.NewTabularHierarchy1.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Customer.Employee.NewTabularHierarchy1.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Customer.Customer.width</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+        <structure>
+            <property name="name">Customer.Customer.height</property>
+            <property name="type">integer</property>
+            <property name="isVisible">false</property>
+        </structure>
+    </list-property>
+    <property name="Data Cube.Data Set.x">135</property>
+    <property name="Data Cube.Data Set.y">80</property>
+    <property name="Data.Data Set.x">304</property>
+    <property name="Data.Data Set.y">52</property>
+    <property name="Data.Data Set.width">150</property>
+    <property name="Data.Data Set.height">200</property>
+    <property name="Customer.Customer.x">285</property>
+    <property name="Customer.Customer.y">46</property>
+    <property name="Customer.Employee.NewTabularHierarchy1.x">35</property>
+    <property name="Customer.Employee.NewTabularHierarchy1.y">62</property>
+    <property name="Customer.Employee.NewTabularHierarchy1.width">150</property>
+    <property name="Customer.Employee.NewTabularHierarchy1.height">200</property>
+    <property name="Customer.Customer.width">131</property>
+    <property name="Customer.Customer.height">188</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">odaURL</property>
+            <property name="id">454</property>
+        </structure>
+        <structure>
+            <property name="name">odaUser</property>
+            <property name="id">454</property>
+        </structure>
+        <structure>
+            <property name="name">odaPassword</property>
+            <property name="id">454</property>
+        </structure>
+        <structure>
+            <property name="name">odaDriverClass</property>
+            <property name="id">454</property>
+        </structure>
+        <structure>
+            <property name="name">odaAutoCommit</property>
+            <property name="id">454</property>
+        </structure>
+        <structure>
+            <property name="name">odaIsolationMode</property>
+            <property name="id">454</property>
+        </structure>
+        <structure>
+            <property name="name">odaJndiName</property>
+            <property name="id">454</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileName</property>
+            <property name="id">454</property>
+        </structure>
+        <structure>
+            <property name="name">OdaConnProfileStorePath</property>
+            <property name="id">454</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="branch_id" id="1626">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">0</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="concealValue">false</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="date_from" id="1629">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="date_to" id="1630">
+            <property name="valueType">static</property>
+            <property name="isRequired">true</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="454">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">org.postgresql.Driver</property>
+            <property name="odaURL">jdbc:postgresql://103.74.122.50:5336/erp_vmt_190503</property>
+            <property name="odaUser">odoo</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">TW5fT2Rvb19WbXRfMjAxOQ==</encrypted-property>
+            <property name="odaJndiName">java:comp/env/jdbc/erp_menard</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Content" id="1327">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">rownum</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">rownum</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">rownum</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">to_char</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">to_char</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">to_char</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">date_order</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">date_order</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">date_order</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">order_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">order_name</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">order_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">x_partner_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">x_partner_code</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">x_partner_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">customer_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">customer_name</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">customer_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">amount_total</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">amount_total</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">amount_total</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">employee_name</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">employee_name</text-property>
+                    <text-property name="heading">employee_name</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">employee_code</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">employee_code</text-property>
+                    <text-property name="heading">employee_code</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">amount_product</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">amount_product</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">amount_product</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">amount_service</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">amount_service</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">amount_service</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">amount_keep</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">amount_keep</text-property>
+                    <property name="onColumnLayout">false</property>
+                    <text-property name="heading">amount_keep</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">branch_id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">branch_id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_3</property>
+                    <property name="paramName">date_from</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">3</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_4</property>
+                    <property name="paramName">date_to</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">4</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">rownum</property>
+                        <property name="dataType">integer</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">to_char</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">date_order</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">order_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">x_partner_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">customer_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">amount_total</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">employee_name</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">employee_code</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">amount_product</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">amount_service</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">amount_keep</property>
+                        <property name="dataType">float</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">rownum</property>
+                    <property name="nativeName">rownum</property>
+                    <property name="dataType">integer</property>
+                    <property name="nativeDataType">4</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">to_char</property>
+                    <property name="nativeName">to_char</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">date_order</property>
+                    <property name="nativeName">date_order</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">order_name</property>
+                    <property name="nativeName">order_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">x_partner_code</property>
+                    <property name="nativeName">x_partner_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">customer_name</property>
+                    <property name="nativeName">customer_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">amount_total</property>
+                    <property name="nativeName">amount_total</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">employee_name</property>
+                    <property name="nativeName">employee_name</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">employee_code</property>
+                    <property name="nativeName">employee_code</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">amount_product</property>
+                    <property name="nativeName">amount_product</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">amount_service</property>
+                    <property name="nativeName">amount_service</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">amount_keep</property>
+                    <property name="nativeName">amount_keep</property>
+                    <property name="dataType">float</property>
+                    <property name="nativeDataType">8</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT 
+--row_number() over (ORDER BY pra.state) as rownum,
+     po.id as rownum,
+     to_char(pra.create_date,'dd-MM-yyyy'),to_char(po.date_order,'dd-MM-yyyy') date_order, po.name order_name, rp.x_partner_code,
+       rp.name customer_name, (SELECT SUM(m.amount_total) FROM pos_revenue_allocation m WHERE m.order_id = po.id) amount_total,
+       (SELECT rp.name FROM res_partner rp, res_users ru, resource_resource re,hr_employee he WHERE he.id = pral.employee_id and rp.id = ru.partner_id AND re.id = he.resource_id AND re.user_id = ru.id) employee_name,
+       (SELECT he.x_employee_code FROM hr_employee he WHERE he.id = pral.employee_id ) employee_code,
+       pral.amount_product, pral.amount_service, 
+       pral.amount_keep
+FROM   pos_revenue_allocation pra, pos_order po, res_partner rp, pos_revenue_allocation_line pral, res_branch rb
+WHERE  po.id = pra.order_id
+and    rp.id = po.partner_id
+AND    pra.id = pral.revenue_allocation_id
+and    pra.state = 'confirmed'
+and    po.branch_id = rb.id
+and (rb.id = ANY(string_to_array(?, ',')::integer[]) or ? = '0')
+AND to_date(to_char(b.date_order + INTERVAL '7 hours','dd/mm/yyyy'),'dd/mm/yyyy') >= to_date(?,'dd/mm/yyyy') 
+AND to_date(to_char(b.date_order + INTERVAL '7 hours','dd/mm/yyyy'),'dd/mm/yyyy') <= to_date(?,'dd/mm/yyyy')
+Order by po.date_order, po.name
+]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>to_char</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>to_char</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>to_char</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>order_name</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>order_name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>order_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>customer_name</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>customer_name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>customer_name</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>amount_total</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>amount_total</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>amount_total</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>name</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Unknown</design:nullability>
+            <design:uiHints>
+              <design:displayName>name</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>name</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>amount_product</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>amount_product</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>amount_product</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>amount_service</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>amount_service</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>amount_service</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>amount_keep</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>8</design:nativeDataTypeCode>
+            <design:precision>17</design:precision>
+            <design:scale>17</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>amount_keep</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>amount_keep</design:label>
+            <design:formattingHints>
+              <design:displaySize>25</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Tittle" id="1575">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">shop</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">shop</text-property>
+                    <text-property name="heading">shop</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">branch_id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">branch_id</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">shop</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">shop</property>
+                    <property name="nativeName">shop</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT name shop FROM res_branch WHERE id = ANY(string_to_array(?, ',')::integer[]) or ? = '0']]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>2</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>0</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Unknown</design:nullability>
+        </design:attributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>shop</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>2147483647</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>shop</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>shop</design:label>
+            <design:formattingHints>
+              <design:displaySize>2147483647</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube" id="1332">
+            <property name="dimensions">
+                <tabular-dimension name="Group" id="1333">
+                    <property name="isTimeType">false</property>
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="1334">
+                            <property name="levels">
+                                <tabular-level name="rownum" id="2029">
+                                    <property name="dataType">decimal</property>
+                                    <property name="columnName">rownum</property>
+                                </tabular-level>
+                                <tabular-level name="to_char" id="1987">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">to_char</property>
+                                </tabular-level>
+                                <tabular-level name="date_order" id="1989">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">date_order</property>
+                                </tabular-level>
+                                <tabular-level name="x_partner_code" id="1990">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">x_partner_code</property>
+                                </tabular-level>
+                                <tabular-level name="customer_name" id="1991">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">customer_name</property>
+                                </tabular-level>
+                                <tabular-level name="order_name" id="1988">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">order_name</property>
+                                </tabular-level>
+                                <tabular-level name="amount_total" id="1992">
+                                    <property name="dataType">float</property>
+                                    <property name="columnName">amount_total</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+                <tabular-dimension name="Group1" id="1388">
+                    <property name="defaultHierarchy">NewTabularHierarchy1</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy1" id="1389">
+                            <property name="levels">
+                                <tabular-level name="employee_code" id="1737">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">employee_code</property>
+                                </tabular-level>
+                                <tabular-level name="employee_name" id="1390">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">employee_name</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field" id="1471">
+                    <property name="measures">
+                        <tabular-measure name="amount_product" id="1472">
+                            <property name="function">sum</property>
+                            <property name="isCalculated">false</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["amount_product"]</expression>
+                            <property name="dataType">float</property>
+                            <property name="isVisible">true</property>
+                        </tabular-measure>
+                        <tabular-measure name="amount_service" id="1473">
+                            <property name="function">sum</property>
+                            <property name="isCalculated">false</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["amount_service"]</expression>
+                            <property name="dataType">float</property>
+                            <property name="isVisible">true</property>
+                        </tabular-measure>
+                        <tabular-measure name="amount_keep" id="1474">
+                            <property name="function">sum</property>
+                            <property name="isCalculated">false</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["amount_keep"]</expression>
+                            <property name="dataType">float</property>
+                            <property name="isVisible">true</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">Content</property>
+        </tabular-cube>
+    </cubes>
+    <styles>
+        <style name="report" id="617">
+            <property name="fontFamily">"Times New Roman"</property>
+            <property name="fontSize">12pt</property>
+        </style>
+        <style name="page" id="618"/>
+        <style name="data" id="619"/>
+        <style name="text" id="620"/>
+        <style name="reportTitle" id="621">
+            <property name="fontSize">16pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="grid" id="622"/>
+        <style name="grid-row" id="623">
+            <property name="paddingTop">3px</property>
+            <property name="paddingLeft">3px</property>
+            <property name="paddingBottom">3px</property>
+            <property name="paddingRight">3px</property>
+        </style>
+        <style name="grid-cell" id="624"/>
+        <style name="table" id="625">
+            <property name="paddingTop">4px</property>
+            <property name="paddingLeft">4px</property>
+            <property name="paddingBottom">4px</property>
+            <property name="paddingRight">4px</property>
+        </style>
+        <style name="table-cell" id="626">
+            <property name="borderBottomColor">black</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">black</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">black</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">black</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="paddingTop">3px</property>
+            <property name="paddingLeft">3px</property>
+            <property name="paddingBottom">3px</property>
+            <property name="paddingRight">3px</property>
+        </style>
+        <style name="table-header" id="627">
+            <property name="backgroundColor">#233C98</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#FFFFFF</property>
+        </style>
+        <style name="table-header-cell" id="628"/>
+        <style name="table-footer" id="629">
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">right</property>
+        </style>
+        <style name="table-footer-cell" id="630"/>
+        <style name="table-detail" id="631"/>
+        <style name="table-detail-cell" id="632"/>
+        <style name="crosstab" id="633"/>
+        <style name="crosstab-header" id="634">
+            <property name="backgroundColor">#233C98</property>
+        </style>
+        <style name="crosstab-cell" id="635">
+            <property name="borderBottomColor">black</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">black</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">black</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">black</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="paddingTop">3px</property>
+            <property name="paddingLeft">3px</property>
+            <property name="paddingBottom">3px</property>
+            <property name="paddingRight">3px</property>
+        </style>
+        <style name="crosstab-column-header" id="636">
+            <property name="backgroundColor">#CCCCCC</property>
+        </style>
+        <style name="crosstab-row-header" id="637">
+            <property name="backgroundColor">#CCCCCC</property>
+        </style>
+        <style name="crosstab-row-grand-total" id="638">
+            <property name="fontWeight">bold</property>
+        </style>
+        <style name="crosstab-column-grand-total" id="639">
+            <property name="fontWeight">bold</property>
+        </style>
+        <style name="crosstab-row-sub-total" id="640">
+            <property name="fontWeight">bold</property>
+        </style>
+        <style name="crosstab-column-sub-total" id="641">
+            <property name="fontWeight">bold</property>
+        </style>
+        <style name="reportHeader1" id="642">
+            <property name="fontSize">13pt</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="reportHeader2" id="643">
+            <property name="fontSize">13pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="master1" id="644">
+            <property name="textAlign">left</property>
+        </style>
+        <style name="reportFooter1" id="645">
+            <property name="fontSize">13pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="reportFooter2" id="646">
+            <property name="fontSize">13pt</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="reportFooter3" id="647">
+            <property name="fontSize">13pt</property>
+            <property name="fontStyle">italic</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="reportHeaderDate" id="648">
+            <property name="fontSize">13pt</property>
+            <property name="fontStyle">italic</property>
+        </style>
+        <style name="center" id="649">
+            <property name="textAlign">center</property>
+        </style>
+        <style name="report1" id="853">
+            <property name="fontFamily">"Times New Roman"</property>
+            <property name="fontSize">12pt</property>
+        </style>
+        <style name="page1" id="854"/>
+        <style name="data1" id="855"/>
+        <style name="text1" id="856"/>
+        <style name="reportTitle1" id="857">
+            <property name="fontSize">16pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="grid1" id="858"/>
+        <style name="grid-row1" id="859">
+            <property name="paddingTop">3px</property>
+            <property name="paddingLeft">3px</property>
+            <property name="paddingBottom">3px</property>
+            <property name="paddingRight">3px</property>
+        </style>
+        <style name="grid-cell1" id="860"/>
+        <style name="table1" id="861">
+            <property name="paddingTop">4px</property>
+            <property name="paddingLeft">4px</property>
+            <property name="paddingBottom">4px</property>
+            <property name="paddingRight">4px</property>
+        </style>
+        <style name="table-cell1" id="862">
+            <property name="borderBottomColor">black</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">black</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">black</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">black</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="paddingTop">3px</property>
+            <property name="paddingLeft">3px</property>
+            <property name="paddingBottom">3px</property>
+            <property name="paddingRight">3px</property>
+        </style>
+        <style name="table-header1" id="863">
+            <property name="backgroundColor">#233C98</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#FFFFFF</property>
+        </style>
+        <style name="table-header-cell1" id="864"/>
+        <style name="table-footer1" id="865">
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">right</property>
+        </style>
+        <style name="table-footer-cell1" id="866"/>
+        <style name="table-detail1" id="867"/>
+        <style name="table-detail-cell1" id="868"/>
+        <style name="crosstab1" id="869"/>
+        <style name="crosstab-header1" id="870">
+            <property name="backgroundColor">#233C98</property>
+        </style>
+        <style name="crosstab-cell1" id="871">
+            <property name="borderBottomColor">black</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">black</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">black</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">black</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="paddingTop">3px</property>
+            <property name="paddingLeft">3px</property>
+            <property name="paddingBottom">3px</property>
+            <property name="paddingRight">3px</property>
+        </style>
+        <style name="crosstab-column-header1" id="872">
+            <property name="backgroundColor">#CCCCCC</property>
+        </style>
+        <style name="crosstab-row-header1" id="873">
+            <property name="backgroundColor">#CCCCCC</property>
+        </style>
+        <style name="crosstab-row-grand-total1" id="874">
+            <property name="fontWeight">bold</property>
+        </style>
+        <style name="crosstab-column-grand-total1" id="875">
+            <property name="fontWeight">bold</property>
+        </style>
+        <style name="crosstab-row-sub-total1" id="876">
+            <property name="fontWeight">bold</property>
+        </style>
+        <style name="crosstab-column-sub-total1" id="877">
+            <property name="fontWeight">bold</property>
+        </style>
+        <style name="reportHeader11" id="878">
+            <property name="fontSize">13pt</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="reportHeader21" id="879">
+            <property name="fontSize">13pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="master11" id="880">
+            <property name="textAlign">left</property>
+        </style>
+        <style name="reportFooter11" id="881">
+            <property name="fontSize">13pt</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="reportFooter21" id="882">
+            <property name="fontSize">13pt</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="reportFooter31" id="883">
+            <property name="fontSize">13pt</property>
+            <property name="fontStyle">italic</property>
+            <property name="textAlign">center</property>
+        </style>
+        <style name="reportHeaderDate1" id="884">
+            <property name="fontSize">13pt</property>
+            <property name="fontStyle">italic</property>
+        </style>
+        <style name="center1" id="885">
+            <property name="textAlign">center</property>
+        </style>
+        <style name="ev-table-group-header-1" id="1642">
+            <property name="borderBottomColor">black</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1px</property>
+            <property name="borderLeftColor">black</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1px</property>
+            <property name="borderRightColor">black</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1px</property>
+            <property name="borderTopColor">black</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1px</property>
+            <property name="paddingTop">3px</property>
+            <property name="paddingLeft">3px</property>
+            <property name="paddingBottom">3px</property>
+            <property name="paddingRight">3px</property>
+        </style>
+        <style name="ev-column-width-1cm" id="1643">
+            <property name="width">1cm</property>
+        </style>
+        <style name="ev-column-width-2cm" id="1644">
+            <property name="width">2cm</property>
+        </style>
+        <style name="ev-column-width-3cm" id="1645">
+            <property name="width">3cm</property>
+        </style>
+        <style name="ev-column-width-4cm" id="1646">
+            <property name="width">4cm</property>
+        </style>
+        <style name="ev-column-width-5cm" id="1647">
+            <property name="width">5cm</property>
+        </style>
+        <style name="ev-column-width-6cm" id="1648">
+            <property name="width">6cm</property>
+        </style>
+        <style name="ev-column-width-7cm" id="1649">
+            <property name="width">7cm</property>
+        </style>
+        <style name="ev-column-width-8cm" id="1650">
+            <property name="width">8cm</property>
+        </style>
+        <style name="ev-column-width-9cm" id="1651">
+            <property name="width">9cm</property>
+        </style>
+        <style name="ev-column-width-10cm" id="1652">
+            <property name="width">10cm</property>
+        </style>
+        <style name="VNĐ" id="1712">
+            <structure name="numberFormat">
+                <property name="category">Currency</property>
+                <property name="pattern">#,##0.00{RoundingMode=HALF_UP}</property>
+                <property name="locale">vi</property>
+            </structure>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="type">custom</property>
+            <property name="height">19in</property>
+            <property name="width">20in</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="1653">
+            <column id="1654"/>
+            <row id="1655">
+                <cell id="1656">
+                    <text id="1576">
+                        <property name="fontSize">16pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <property name="contentType">auto</property>
+                        <text-property name="content"><![CDATA[Phân Bổ Doanh Thu]]></text-property>
+                    </text>
+                </cell>
+            </row>
+            <row id="1657">
+                <cell id="1658">
+                    <data id="1577">
+                        <property name="fontSize">11pt</property>
+                        <property name="fontStyle">italic</property>
+                        <property name="textAlign">center</property>
+                        <property name="dataSet">Tittle</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">shop</property>
+                                <text-property name="displayName">shop</text-property>
+                                <expression name="expression" type="javascript">var a ="";&#13;
+if (dataSetRow["shop"] != null){&#13;
+a = dataSetRow["shop"];&#13;
+}&#13;
+"Cửa Hàng: "+a</expression>
+                                <property name="dataType">string</property>
+                                <property name="allowExport">true</property>
+                            </structure>
+                        </list-property>
+                        <property name="resultSetColumn">shop</property>
+                    </data>
+                </cell>
+            </row>
+            <row id="1659">
+                <cell id="1660">
+                    <text-data id="1641">
+                        <property name="fontSize">10pt</property>
+                        <property name="fontStyle">italic</property>
+                        <property name="textAlign">center</property>
+                        <expression name="valueExpr">"Từ ngày: "+params["date_from"].value+" - Đến ngày: "+params["date_to"].value</expression>
+                        <property name="contentType">html</property>
+                    </text-data>
+                </cell>
+            </row>
+            <row id="1661">
+                <cell id="1662"/>
+            </row>
+            <row id="1663">
+                <cell id="1664">
+                    <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="1917">
+                        <property name="cube">Data Cube</property>
+                        <property name="measures">
+                            <extended-item extensionName="MeasureView" id="1950">
+                                <property name="measure">amount_product</property>
+                                <property name="detail">
+                                    <extended-item extensionName="AggregationCell" id="1951">
+                                        <property name="aggregationOnRow">Group/amount_total</property>
+                                        <property name="aggregationOnColumn">Group1/employee_name</property>
+                                        <property name="content">
+                                            <data id="1952">
+                                                <property name="style">VNĐ</property>
+                                                <property name="fontSize">11pt</property>
+                                                <property name="textAlign">right</property>
+                                                <property name="resultSetColumn">amount_product_Group/amount_total_Group1/employee_name</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="header">
+                                    <extended-item extensionName="CrosstabCell" id="1953">
+                                        <property name="content">
+                                            <label id="1670">
+                                                <property name="fontSize">11pt</property>
+                                                <property name="fontWeight">bold</property>
+                                                <property name="color">white</property>
+                                                <property name="textAlign">center</property>
+                                                <text-property name="text">Sản Phẩm</text-property>
+                                            </label>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                            <extended-item extensionName="MeasureView" id="1955">
+                                <property name="measure">amount_service</property>
+                                <property name="detail">
+                                    <extended-item extensionName="AggregationCell" id="1956">
+                                        <property name="aggregationOnRow">Group/amount_total</property>
+                                        <property name="aggregationOnColumn">Group1/employee_name</property>
+                                        <property name="content">
+                                            <data id="1957">
+                                                <property name="style">VNĐ</property>
+                                                <property name="fontSize">11pt</property>
+                                                <property name="textAlign">right</property>
+                                                <property name="resultSetColumn">amount_service_Group/amount_total_Group1/employee_name</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="header">
+                                    <extended-item extensionName="CrosstabCell" id="1958">
+                                        <property name="content">
+                                            <label id="1675">
+                                                <property name="fontSize">11pt</property>
+                                                <property name="fontWeight">bold</property>
+                                                <property name="color">white</property>
+                                                <property name="textAlign">center</property>
+                                                <text-property name="text">Dịch Vụ</text-property>
+                                            </label>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                            <extended-item extensionName="MeasureView" id="1960">
+                                <property name="measure">amount_keep</property>
+                                <property name="detail">
+                                    <extended-item extensionName="AggregationCell" id="1961">
+                                        <property name="aggregationOnRow">Group/amount_total</property>
+                                        <property name="aggregationOnColumn">Group1/employee_name</property>
+                                        <property name="content">
+                                            <data id="1962">
+                                                <property name="style">VNĐ</property>
+                                                <property name="fontSize">11pt</property>
+                                                <property name="textAlign">right</property>
+                                                <property name="resultSetColumn">amount_keep_Group/amount_total_Group1/employee_name</property>
+                                            </data>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                                <property name="header">
+                                    <extended-item extensionName="CrosstabCell" id="1963">
+                                        <property name="content">
+                                            <label id="1680">
+                                                <property name="fontSize">11pt</property>
+                                                <property name="fontWeight">bold</property>
+                                                <property name="color">white</property>
+                                                <property name="textAlign">center</property>
+                                                <text-property name="text">Keep</text-property>
+                                            </label>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                        </property>
+                        <property name="rows">
+                            <extended-item extensionName="CrosstabView" id="1993">
+                                <property name="views">
+                                    <extended-item extensionName="DimensionView" id="2030">
+                                        <property name="dimension">Group</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View" id="2031">
+                                                <property name="level">Group/rownum</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="2032">
+                                                        <property name="backgroundColor">white</property>
+                                                        <property name="width">25px</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View1" id="2034">
+                                                <property name="level">Group/to_char</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="2035">
+                                                        <property name="content">
+                                                            <data name="to_char" id="2039">
+                                                                <property name="fontWeight">normal</property>
+                                                                <property name="textAlign">left</property>
+                                                                <property name="resultSetColumn">to_char</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">white</property>
+                                                        <property name="width">273px</property>
+                                                        <property name="style">ev-column-width-3cm</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View2" id="2041">
+                                                <property name="level">Group/date_order</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="2042">
+                                                        <property name="content">
+                                                            <data name="date_order" id="2046">
+                                                                <property name="fontWeight">normal</property>
+                                                                <property name="textAlign">left</property>
+                                                                <property name="resultSetColumn">date_order</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">white</property>
+                                                        <property name="style">ev-column-width-3cm</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View3" id="2048">
+                                                <property name="level">Group/x_partner_code</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="2049">
+                                                        <property name="content">
+                                                            <data name="x_partner_code" id="2053">
+                                                                <property name="fontWeight">normal</property>
+                                                                <property name="textAlign">left</property>
+                                                                <property name="resultSetColumn">x_partner_code</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">white</property>
+                                                        <property name="style">ev-column-width-3cm</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View4" id="2055">
+                                                <property name="level">Group/customer_name</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="2056">
+                                                        <property name="content">
+                                                            <data name="customer_name" id="2060">
+                                                                <property name="fontWeight">normal</property>
+                                                                <property name="textAlign">left</property>
+                                                                <property name="resultSetColumn">customer_name</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">white</property>
+                                                        <property name="style">ev-column-width-4cm</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View5" id="2062">
+                                                <property name="level">Group/order_name</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="2063">
+                                                        <property name="content">
+                                                            <data name="order_name" id="2067">
+                                                                <property name="fontWeight">normal</property>
+                                                                <property name="textAlign">left</property>
+                                                                <property name="resultSetColumn">order_name</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">white</property>
+                                                        <property name="style">ev-column-width-3cm</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View6" id="2069">
+                                                <property name="level">Group/amount_total</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="2070">
+                                                        <property name="content">
+                                                            <data name="amount_total" id="2074">
+                                                                <property name="fontWeight">normal</property>
+                                                                <property name="textAlign">right</property>
+                                                                <property name="resultSetColumn">amount_total</property>
+                                                            </data>
+                                                        </property>
+                                                        <property name="backgroundColor">white</property>
+                                                        <property name="width">3cm</property>
+                                                        <property name="style">VNĐ</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                        </property>
+                        <property name="columns">
+                            <extended-item extensionName="CrosstabView" id="1965">
+                                <property name="views">
+                                    <extended-item extensionName="DimensionView" id="1966">
+                                        <property name="dimension">Group1</property>
+                                        <property name="levels">
+                                            <extended-item extensionName="LevelView" name="NewLevel View7" id="1967">
+                                                <property name="level">Group1/employee_code</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="1968">
+                                                        <property name="backgroundColor">#233C98</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                            <extended-item extensionName="LevelView" name="NewLevel View15" id="1977">
+                                                <property name="level">Group1/employee_name</property>
+                                                <property name="member">
+                                                    <extended-item extensionName="CrosstabCell" id="1978">
+                                                        <property name="backgroundColor">#233C98</property>
+                                                    </extended-item>
+                                                </property>
+                                            </extended-item>
+                                        </property>
+                                    </extended-item>
+                                </property>
+                            </extended-item>
+                        </property>
+                        <property name="header">
+                            <extended-item extensionName="CrosstabCell" id="2038"/>
+                            <extended-item extensionName="CrosstabCell" id="2045">
+                                <property name="style">ev-column-width-3cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="2052">
+                                <property name="style">ev-column-width-3cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="2059">
+                                <property name="style">ev-column-width-3cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="2066">
+                                <property name="style">ev-column-width-4cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="2073">
+                                <property name="style">ev-column-width-3cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="1981">
+                                <property name="verticalAlign">bottom</property>
+                                <property name="style">VNĐ</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="2037"/>
+                            <extended-item extensionName="CrosstabCell" id="2044">
+                                <property name="style">ev-column-width-3cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="2051">
+                                <property name="style">ev-column-width-3cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="2058">
+                                <property name="style">ev-column-width-3cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="2065">
+                                <property name="style">ev-column-width-4cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="2072">
+                                <property name="style">ev-column-width-3cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="1927">
+                                <property name="verticalAlign">bottom</property>
+                                <property name="style">VNĐ</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="2022"/>
+                            <extended-item extensionName="CrosstabCell" id="2036">
+                                <property name="content">
+                                    <label id="2040">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="color">white</property>
+                                        <property name="textAlign">center</property>
+                                        <text-property name="text"> Ngày phân bổ</text-property>
+                                    </label>
+                                </property>
+                                <property name="style">ev-column-width-3cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="2043">
+                                <property name="content">
+                                    <label id="2047">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="color">white</property>
+                                        <property name="textAlign">center</property>
+                                        <text-property name="text">Ngày hóa đơn</text-property>
+                                    </label>
+                                </property>
+                                <property name="style">ev-column-width-3cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="2050">
+                                <property name="content">
+                                    <label id="2054">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="color">white</property>
+                                        <property name="textAlign">center</property>
+                                        <text-property name="text">Mã KH</text-property>
+                                    </label>
+                                </property>
+                                <property name="style">ev-column-width-3cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="2057">
+                                <property name="content">
+                                    <label id="2061">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="color">white</property>
+                                        <property name="textAlign">center</property>
+                                        <text-property name="text">Tên KH</text-property>
+                                    </label>
+                                </property>
+                                <property name="style">ev-column-width-4cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="2064">
+                                <property name="content">
+                                    <label id="2068">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="color">white</property>
+                                        <property name="textAlign">center</property>
+                                        <text-property name="text">Số HĐ</text-property>
+                                    </label>
+                                </property>
+                                <property name="style">ev-column-width-3cm</property>
+                            </extended-item>
+                            <extended-item extensionName="CrosstabCell" id="2071">
+                                <property name="content">
+                                    <label id="2075">
+                                        <property name="fontWeight">bold</property>
+                                        <property name="color">white</property>
+                                        <property name="textAlign">center</property>
+                                        <text-property name="text">Tổng</text-property>
+                                    </label>
+                                </property>
+                                <property name="style">VNĐ</property>
+                            </extended-item>
+                        </property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">employee_code</property>
+                                <expression name="expression" type="javascript">dimension["Group1"]["employee_code"]+"_"+data["employee_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">employee_name</property>
+                                <expression name="expression">dimension["Group1"]["employee_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_product_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_product"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_service_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_service"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_keep_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_keep"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">rownum</property>
+                                <expression name="expression">dimension["Group"]["rownum"]</expression>
+                                <property name="dataType">decimal</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_product_Group/rownum_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_product"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/rownum</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_service_Group/rownum_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_service"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/rownum</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_keep_Group/rownum_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_keep"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/rownum</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">to_char</property>
+                                <expression name="expression">dimension["Group"]["to_char"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_product_Group/to_char_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_product"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/to_char</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_service_Group/to_char_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_service"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/to_char</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_keep_Group/to_char_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_keep"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/to_char</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">date_order</property>
+                                <expression name="expression">dimension["Group"]["date_order"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_product_Group/date_order_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_product"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/date_order</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_service_Group/date_order_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_service"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/date_order</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_keep_Group/date_order_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_keep"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/date_order</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">x_partner_code</property>
+                                <expression name="expression">dimension["Group"]["x_partner_code"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_product_Group/x_partner_code_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_product"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/x_partner_code</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_service_Group/x_partner_code_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_service"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/x_partner_code</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_keep_Group/x_partner_code_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_keep"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/x_partner_code</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">customer_name</property>
+                                <expression name="expression">dimension["Group"]["customer_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_product_Group/customer_name_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_product"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/customer_name</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_service_Group/customer_name_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_service"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/customer_name</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_keep_Group/customer_name_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_keep"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/customer_name</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">order_name</property>
+                                <expression name="expression">dimension["Group"]["order_name"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_product_Group/order_name_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_product"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/order_name</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_service_Group/order_name_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_service"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/order_name</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_keep_Group/order_name_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_keep"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/order_name</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_total</property>
+                                <expression name="expression">dimension["Group"]["amount_total"]</expression>
+                                <property name="dataType">float</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_product_Group/amount_total_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_product"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/amount_total</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_service_Group/amount_total_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_service"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/amount_total</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                            <structure>
+                                <property name="name">amount_keep_Group/amount_total_Group1/employee_name</property>
+                                <expression name="expression">measure["amount_keep"]</expression>
+                                <property name="dataType">float</property>
+                                <simple-property-list name="aggregateOn">
+                                    <value>Group/amount_total</value>
+                                    <value>Group1/employee_name</value>
+                                </simple-property-list>
+                                <property name="aggregateFunction">FIRST</property>
+                            </structure>
+                        </list-property>
+                    </extended-item>
+                </cell>
+            </row>
+        </grid>
+    </body>
+</report>

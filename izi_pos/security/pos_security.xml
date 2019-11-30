@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="pos_config_rule_group_pos_user_portal" model="ir.rule">
+            <field name="name">POS config rule group_pos_user</field>
+            <field name="model_id" ref="point_of_sale.model_pos_config"/>
+            <field name="domain_force">[('crm_team_id.member_ids', 'child_of', [user.id])]</field>
+            <field name="groups" eval="[(4, ref('point_of_sale.group_pos_user'))]"/>
+        </record>
+
+        <record id="pos_config_rule_group_pos_manager_portal" model="ir.rule">
+            <field name="name">POS config rule group_pos_manager</field>
+            <field name="model_id" ref="point_of_sale.model_pos_config"/>
+            <field name="domain_force">[]</field>
+            <field name="groups" eval="[(4, ref('point_of_sale.group_pos_manager'))]"/>
+        </record>
+
+        <record id="pos_order_rule_group_pos_user_portal" model="ir.rule">
+            <field name="name">POS order rule group_pos_user</field>
+            <field name="model_id" ref="point_of_sale.model_pos_order"/>
+            <field name="domain_force">[('x_team_id.member_ids', 'child_of', [user.id])]</field>
+            <field name="groups" eval="[(4, ref('point_of_sale.group_pos_user'))]"/>
+        </record>
+
+        <record id="pos_order_rule_group_pos_manager_portal" model="ir.rule">
+            <field name="name">POS order rule group_pos_manager</field>
+            <field name="model_id" ref="point_of_sale.model_pos_order"/>
+            <field name="domain_force">[]</field>
+            <field name="groups" eval="[(4, ref('point_of_sale.group_pos_manager'))]"/>
+        </record>
+    </data>
+</odoo>

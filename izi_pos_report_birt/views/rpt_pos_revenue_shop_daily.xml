@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="rpt_revenue_shop_daily_form_view">
+            <field name="name">Báo cáo doanh thu chi nhánh theo ngày</field>
+            <field name="model">rpt.revenue.shop.daily</field>
+            <field name="arch" type="xml">
+                <form string="Revenue Shop daily">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="date_from" required="1" string="Từ ngày"/>
+                                <field name="branch_id"
+                                       options="{'no_create':1}"
+                                       string="Chi nhánh"/>
+                            </group>
+                            <group>
+                                <field name="date_to" required="1" string="Đến ngày"/>
+                                <field name="export_excel" string="Xuất Excel"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button name="action_report"
+                                    type="object" class="oe_highlight"
+                                    string="Xuất báo cáo"/>
+                            <button special="cancel"
+                                    string="Hủy" class="btn-default"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- action -->
+        <record model="ir.actions.act_window" id="rpt_revenue_shop_daily_action">
+            <field name="name">Báo cáo doanh thu chi nhánh theo ngày</field>
+            <field name="res_model">rpt.revenue.shop.daily</field>
+            <field name="view_mode">form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="rpt_revenue_shop_daily_form_view"/>
+            <field name="target">new</field>
+        </record>
+
+        <!-- menu item -->
+        <menuitem id="rpt_revenue_shop_daily_menu_item"
+                  name="Báo cáo doanh thu chi nhánh theo ngày"
+                  action="rpt_revenue_shop_daily_action"
+                  parent="izi_pos_report_birt.rpt_pos_revenue_categ"/>
+    </data>
+</odoo>

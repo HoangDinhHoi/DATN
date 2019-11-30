@@ -1,0 +1,14 @@
+<odoo>
+    <data>
+        <record id="pos_order_inherit_bank_card_form" model="ir.ui.view">
+            <field name="name">Pos Order Bank Card</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='statement_ids']/form/group/group/field[@name='amount']" position="after">
+                    <field name="x_bank_card_id" readonly="1" force_save="1" attrs="{'invisible': [('x_bank_card_id', '=', False)]}"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

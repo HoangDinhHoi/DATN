@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="crm_team_bed_search" model="ir.ui.view">
+            <field name="model">crm.team.bed</field>
+            <field name="arch" type="xml">
+                <search string="Crm team bed search">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <group expand="0" string="Group By">
+                        <filter string="Company" name="group_by_company" domain="[]" context="{'group_by':'company_id'}"/>
+                        <filter string="Team" name="group_by_team" domain="[]" context="{'group_by':'team_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="crm_team_bed_tree" model="ir.ui.view">
+            <field name="name">Crm team bed tree</field>
+            <field name="model">crm.team.bed</field>
+            <field name="arch" type="xml">
+                <tree string="Crm team bed tree">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="description"/>
+                    <field name="team_id"/>
+                    <field name="company_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="crm_team_bed_tree_state" model="ir.ui.view">
+            <field name="name">Crm team bed state tree</field>
+            <field name="model">crm.team.bed</field>
+            <field name="priority">10000</field>
+            <field name="arch" type="xml">
+                <tree string="Crm team bed state tree">
+                    <field name="name"/>
+                    <field name="code"/>
+                    <field name="description"/>
+<!--                    <field name="team_id"/>-->
+<!--                    <field name="company_id"/>-->
+                    <field name="state" string="Trạng thái"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="crm_team_bed_form" model="ir.ui.view">
+            <field name="name">Crm team bed form</field>
+            <field name="model">crm.team.bed</field>
+            <field name="arch" type="xml">
+                <form string="Crm team bed form">
+                    <sheet>
+                        <group col="4">
+                            <field name="name" required="True"/>
+                            <field name="team_id" required="True"/>
+                            <field name="code" readonly="True" force_save="True"/>
+                            <field name="company_id" readonly="True" force_save="True"/>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="crm_team_bed_action" model="ir.actions.act_window">
+            <field name="name">Crm team bed action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">crm.team.bed</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_crm_team_bed"
+                  name="Crm team bed"
+                  parent="crm.crm_menu_sales"
+                  action="crm_team_bed_action"
+                  sequence="10"
+                  groups="sales_team.group_sale_manager"/>
+    </data>
+</odoo>

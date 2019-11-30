@@ -1,0 +1,169 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* izi_pos_payment_bank
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-03-13 08:00+0000\n"
+"PO-Revision-Date: 2019-03-13 08:00+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: izi_pos_payment_bank
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card_line__account_id
+msgid "Account cost"
+msgstr "Tài khoản chi phí"
+
+#. module: izi_pos_payment_bank
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card__active
+msgid "Active"
+msgstr "Có hiệu lực"
+
+#. module: izi_pos_payment_bank
+#: model_terms:ir.actions.act_window,help:izi_pos_payment_bank.pos_bank_card_action_view
+msgid "Add a new bank card."
+msgstr "Click để tạo mới!"
+
+#. module: izi_pos_payment_bank
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card_line__bank_id
+msgid "Bank"
+msgstr "Ngân hàng"
+
+#. module: izi_pos_payment_bank
+#: model:ir.model,name:izi_pos_payment_bank.model_account_bank_statement_line
+msgid "Bank Statement Line"
+msgstr "Giao dịch trên sổ phụ ngân hàng"
+
+#. module: izi_pos_payment_bank
+#: model:ir.actions.act_window,name:izi_pos_payment_bank.pos_bank_card_action_view
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_account_bank_statement_line__x_bank_card_id
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_make_payment__x_bank_card_id
+#: model:ir.ui.menu,name:izi_pos_payment_bank.menu_pos_bank_card
+#: model_terms:ir.ui.view,arch_db:izi_pos_payment_bank.pos_bank_card_form_view
+msgid "Bank card"
+msgstr "Thẻ ngân hàng"
+
+#. module: izi_pos_payment_bank
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card__code
+msgid "Code"
+msgstr "Mã"
+
+#. module: izi_pos_payment_bank
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card__company_id
+msgid "Company"
+msgstr "Công ty"
+
+#. module: izi_pos_payment_bank
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card_line__cost_rate
+msgid "Cost Rate"
+msgstr "Phí quẹt thẻ (%)"
+
+#. module: izi_pos_payment_bank
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card__create_uid
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card_line__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: izi_pos_payment_bank
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card__create_date
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card_line__create_date
+msgid "Created on"
+msgstr "Thời điểm tạo"
+
+#. module: izi_pos_payment_bank
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card__description
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card_line__description
+msgid "Description"
+msgstr "Miêu tả"
+
+#. module: izi_pos_payment_bank
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card__display_name
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card_line__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: izi_pos_payment_bank
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card__id
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card_line__id
+msgid "ID"
+msgstr ""
+
+#. module: izi_pos_payment_bank
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card____last_update
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card_line____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: izi_pos_payment_bank
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card__write_uid
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card_line__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: izi_pos_payment_bank
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card__write_date
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card_line__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: izi_pos_payment_bank
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card__line_ids
+msgid "Line"
+msgstr "Dòng"
+
+#. module: izi_pos_payment_bank
+#: model_terms:ir.ui.view,arch_db:izi_pos_payment_bank.pos_bank_card_form_view
+msgid "Lines"
+msgstr "Chi tiết"
+
+#. module: izi_pos_payment_bank
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card__name
+msgid "Name"
+msgstr "Tên"
+
+#. module: izi_pos_payment_bank
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_bank_card__journal_id
+msgid "Payment journal"
+msgstr "Hình thức thanh toán"
+
+#. module: izi_pos_payment_bank
+#: model:ir.model,name:izi_pos_payment_bank.model_pos_order
+msgid "Point of Sale Orders"
+msgstr "Đơn Bán Điểm bán lẻ"
+
+#. module: izi_pos_payment_bank
+#: model:ir.model,name:izi_pos_payment_bank.model_pos_make_payment
+msgid "Point of Sale Payment"
+msgstr "Thanh toán PoS"
+
+#. module: izi_pos_payment_bank
+#: model:ir.model,name:izi_pos_payment_bank.model_pos_session
+msgid "Point of Sale Session"
+msgstr "Phiên Điểm bán lẻ"
+
+#. module: izi_pos_payment_bank
+#: model_terms:ir.ui.view,arch_db:izi_pos_payment_bank.pos_bank_card_form_view
+msgid "THẺ NGÂN HÀNG"
+msgstr ""
+
+#. module: izi_pos_payment_bank
+#: model:ir.model.fields,field_description:izi_pos_payment_bank.field_pos_make_payment__x_check_payment_bank
+msgid "X Check Payment Bank"
+msgstr ""
+
+#. module: izi_pos_payment_bank
+#: model:ir.model,name:izi_pos_payment_bank.model_pos_bank_card
+msgid "pos.bank.card"
+msgstr ""
+
+#. module: izi_pos_payment_bank
+#: model:ir.model,name:izi_pos_payment_bank.model_pos_bank_card_line
+msgid "pos.bank.card.line"
+msgstr ""
+

@@ -1,0 +1,193 @@
+<odoo>
+    <data>
+        <record id="pos_order_line_bundle_form_view" model="ir.ui.view">
+            <field name="name">Pos order line</field>
+            <field name="model">pos.order.line</field>
+            <field name="arch" type="xml">
+                <form>
+                    <!--<sheet>-->
+                    <group col="4">
+                        <field name="product_id" domain="[('sale_ok', '=', 1),('type', '=', 'bundle')]"
+                               context="{'x_type_product': 'bundle'}"
+                               options="{'no_create':1, 'no_create_edit':1}"/>
+                        <field name="qty"/>
+                        <field name="discount" widget="monetary"/>
+                        <field name="price_unit" widget="monetary" readonly="1" force_save="1"/>
+                        <!--<field name="notice"/>-->
+                        <field name="order_id" invisible="1"/>
+                        <field name="price_subtotal" invisible="1" widget="monetary" force_save="1"/>
+                        <field name="price_subtotal_incl" invisible="1" widget="monetary" force_save="1"/>
+                        <field name="tax_ids_after_fiscal_position" widget="many2many_tags" string="Taxes"
+                               invisible="1"/>
+                        <field name="tax_ids" widget="many2many_tags" invisible="1"/>
+                        <field name="x_type_product" invisible="1"/>
+                        <field name="company_id" invisible="1"/>
+                    </group>
+                    <field name="x_bundle_item_ids" attrs="{'invisible': [('x_type_product', '!=', 'bundle')]}">
+                        <tree create="0" delete="0">
+                            <field name="order_line_id" invisible="1"/>
+                            <field name="tracking_product" invisible="1"/>
+                            <field name="bundle_component_id" readonly="1" force_save="1"/>
+                            <field name="revenue_rate" readonly="1" force_save="1"/>
+                            <field name="product_id" required="1" context="{'bundle_component_id': bundle_component_id}"
+                                   options="{'no_create':1, 'no_create_edit':1}"/>
+                            <field name="uom_id" readonly="1" force_save="1"/>
+                            <field name="qty" readonly="1" force_save="1"/>
+                            <field name="qty_inventory" readonly="1" force_save="1"/>
+                            <field name="qty_inventory_consign" readonly="1" force_save="1"/>
+                            <field name="qty_export" force_save="1"/>
+                        </tree>
+                        <form>
+                            <sheet>
+                                <group col="4">
+                                    <field name="bundle_component_id" readonly="1" force_save="1"/>
+                                    <field name="qty" readonly="1" force_save="1"/>
+                                    <field name="qty_inventory" readonly="1" force_save="1"/>
+                                    <field name="qty_inventory_consign" readonly="1" force_save="1"/>
+                                    <field name="qty_export" force_save="1"/>
+                                    <field name="revenue_rate" readonly="1" force_save="1"/>
+                                    <field name="uom_id" readonly="1" force_save="1"/>
+                                    <field name="product_id" required="1"
+                                           context="{'bundle_component_id': bundle_component_id}"
+                                           options="{'no_create':1, 'no_create_edit':1}"/>
+                                    <field name="tracking_product" readonly="1" force_save="1"/>
+                                    <field name="order_line_id" invisible="1"/>
+                                </group>
+                                <field name="product_item_lot_ids"
+                                       attrs="{'invisible': [('tracking_product', 'not in', ['serial', 'lot'])]}">
+                                    <!--<field name="product_item_lot_ids">-->
+                                    <tree editable="bottom">
+                                        <field name="tracking_product" invisible="1"/>
+                                        <!--<field name="code_lot"/>-->
+                                        <field name="lot_id" domain="[('product_id', '=', parent.product_id)]"
+                                               options="{'no_create':1, 'no_create_edit':1}"
+                                               readonly="0"/>
+                                        <field name="qty"/>
+                                    </tree>
+                                </field>
+                            </sheet>
+                        </form>
+                    </field>
+                    <footer>
+                        <button name="action_save" string="Save" type="object"/>
+                        or
+                        <button name="cancel" string="Cancel" special="cancel"/>
+                    </footer>
+                    <!--</sheet>-->
+                </form>
+            </field>
+        </record>
+
+        <record id="pos_order_product_item_form_view" model="ir.ui.view">
+            <field name="name">Product Item</field>
+            <field name="model">pos.order.product.item</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                            <field name="bundle_component_id" readonly="1" force_save="1"/>
+                            <field name="qty" readonly="1" force_save="1"/>
+                            <field name="qty_inventory" readonly="1" force_save="1"/>
+                            <field name="qty_inventory_consign" readonly="1" force_save="1"/>
+                            <field name="qty_export" force_save="1"/>
+                            <field name="product_id" required="1" context="{'bundle_component_id': bundle_component_id}"
+                                   options="{'no_create':1, 'no_create_edit':1}"/>
+                            <field name="uom_id" readonly="1" force_save="1"/>
+                            <field name="tracking_product" invisible="1"/>
+                            <field name="order_line_id" invisible="1"/>
+                        </group>
+                        <field name="product_item_lot_ids"
+                               attrs="{'invisible': [('tracking_product', 'not in', ['serial', 'lot'])]}">
+                            <tree editable="bottom">
+                                <field name="tracking_product" invisible="1"/>
+                                <field name="lot_id" domain="[('product_id', '=', parent.product_id)]"
+                                       options="{'no_create':1, 'no_create_edit':1}"/>
+                                <field name="qty"/>
+                            </tree>
+                        </field>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pos_order_form_view_inherit" model="ir.ui.view">
+            <field name="name">Pos order</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <!-- button add bundle -->
+                <xpath expr="/form/sheet/notebook/page[1]/field[@name='lines']" position="before">
+                    <button name="action_add_a_bundle" string="Add a bundle" type="object"
+                            attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                </xpath>
+                <!-- xpath tree view -->
+                <xpath expr="//field[@name='lines']/tree/field[@name='product_id']" position="before">
+                    <field name="x_type_product" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='lines']/tree/field[@name='product_id']" position="attributes">
+                    <attribute name="domain">{[('sale_ok', '=', 1),('type', '!=', 'bundle')]}</attribute>
+                    <attribute name="context">{'x_type_product': 'not_bundle', 'tracking': 'none'}</attribute>
+                    <attribute name="attrs">{'readonly': [('x_type_product', '=', 'bundle')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='lines']/tree/field[@name='qty']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('x_type_product', '=', 'bundle')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='lines']/tree/field[@name='price_unit']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('x_type_product', '=', 'bundle')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='lines']/tree/field[@name='discount']" position="attributes">
+                    <attribute name="attrs">{'readonly': 1}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='lines']/tree/field[@name='price_subtotal']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('x_type_product', '=', 'bundle')]}</attribute>
+                </xpath>
+                <xpath expr="//field[@name='lines']/tree/field[@name='price_subtotal_incl']" position="attributes">
+                    <attribute name="attrs">{'readonly': [('x_type_product', '=', 'bundle')]}</attribute>
+                </xpath>
+                <!-- xpath form view -->
+                <xpath expr="//field[@name='lines']/form/group" position="after">
+                    <field name="x_type_product" invisible="1"/>
+                    <field name="x_bundle_item_ids" attrs="{'invisible': [('x_type_product', '!=', 'bundle')]}">
+                        <tree create="0" delete="0" editable="bottom">
+                            <field name="order_line_id" invisible="1"/>
+                            <field name="tracking_product" invisible="1"/>
+                            <field name="bundle_component_id" readonly="1" force_save="1"/>
+                            <field name="product_id" required="1" context="{'bundle_component_id': bundle_component_id}"
+                                   options="{'no_create':1, 'no_create_edit':1}"/>
+                            <field name="uom_id" readonly="1" force_save="1"/>
+                            <field name="qty" readonly="1" force_save="1"/>
+                            <field name="qty_inventory" readonly="1" force_save="1"/>
+                            <field name="qty_inventory_consign" readonly="1" force_save="1"/>
+                            <field name="qty_export" force_save="1"/>
+                        </tree>
+                        <form>
+                            <sheet>
+                                <group col="4">
+                                    <field name="bundle_component_id" readonly="1" force_save="1"/>
+                                    <field name="qty" readonly="1" force_save="1"/>
+                                    <field name="qty_inventory" readonly="1" force_save="1"/>
+                                    <field name="qty_inventory_consign" readonly="1" force_save="1"/>
+                                    <field name="qty_export" force_save="1"/>
+                                    <field name="product_id" required="1"
+                                           context="{'bundle_component_id': bundle_component_id}"
+                                           options="{'no_create':1, 'no_create_edit':1}"/>
+                                    <field name="uom_id" readonly="1" force_save="1"/>
+                                    <field name="order_line_id" invisible="1"/>
+                                    <field name="tracking_product" invisible="1"/>
+                                </group>
+                                <field name="product_item_lot_ids"
+                                       attrs="{'invisible': [('tracking_product', 'not in', ['serial', 'lot'])]}">
+                                    <tree editable="bottom">
+                                        <field name="lot_id" domain="[('product_id', '=', parent.product_id)]"
+                                               options="{'no_create':1, 'no_create_edit':1}"/>
+                                        <field name="qty"/>
+                                    </tree>
+                                </field>
+                            </sheet>
+                        </form>
+                    </field>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

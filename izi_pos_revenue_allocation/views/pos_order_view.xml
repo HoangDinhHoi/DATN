@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="pos_order_inherit" model="ir.ui.view">
+            <field name="name">pos.order.view.form.inherit</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='notes']" position="after">
+                    <page name="revenue_allocation" string="Revenue Allocation" attrs="{'invisible': [('state', '=', 'draft')]}">
+                        <button name="action_revenue_allocation" type="object" string="Revenue Allocation"
+                               class="oe_highlight"/>
+                        <field name="revenue_allocation_ids" readonly="1">
+                            <tree>
+                                <field name="order_id"/>
+                                <field name="amount_total"/>
+                                <field name="amount_allocated"/>
+                                <field name="remain_amount"/>
+                                <field name="amount_product"/>
+                                <field name="amount_service"/>
+                                <field name="amount_keep"/>
+                                <field name="state"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

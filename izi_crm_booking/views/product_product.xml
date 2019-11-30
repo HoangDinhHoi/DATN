@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="product_product_tree_view_p1000" model="ir.ui.view">
+            <field name="name">product_product_tree_view_p1000</field>
+            <field name="model">product.product</field>
+            <field name="priority">1000</field>
+            <field name="arch" type="xml">
+                <tree string="Product">
+                    <field name="default_code"/>
+                    <field name="name"/>
+                    <field name="uom_id"/>
+                    <field name="x_duration" string="Thời lượng"/>
+                </tree>
+            </field>
+        </record>
+
+    </data>
+</odoo>

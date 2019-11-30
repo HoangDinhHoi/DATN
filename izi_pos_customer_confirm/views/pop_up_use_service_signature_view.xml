@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="izi_pos_use_service_confirm_form">
+            <field name="name">izi_pos_use_service_confirm Form</field>
+            <field name="model">pos.use.service</field>
+            <field name="priority">20</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="partner_id" readonly="1" force_save="1"/>
+                            <field name="signature" widget="signature"/>
+                            <!--<field name="state" invisible="1"/>-->
+                            <!--<field name="date" invisible="1"/>-->
+                        </group>
+                        <notebook>
+                            <page name="use_service" string="Use Service Line">
+                                <field name="use_service_ids">
+                                    <tree editable="bottom" create="false" delete="false">
+                                        <field name="service_id" readonly="1" force_save="1"/>
+                                        <field name="qty" readonly="1" force_save="1"/>
+                                        <field name="employee_ids" widget="many2many_tags" readonly="1" force_save="1"/>
+                                        <field name="customer_rate" widget="sentiment_icon" show_all_icon="true" />
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <footer>
+                        <button name="action_customer_signature" type="object" string="Confirm" class="oe_highlight"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

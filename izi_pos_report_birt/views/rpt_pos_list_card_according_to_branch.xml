@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="rpt_list_card_branch_form_view" model="ir.ui.view">
+            <field name="name">Báo cáo danh sách thẻ theo chi nhánh</field>
+            <field name="model">rpt.list.card.branch</field>
+            <field name="arch" type="xml">
+                <form string="Báo cáo danh sách thẻ theo chi nhánh">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="type_card" required="1" string="Loại thẻ"/>
+                                <field name="partner_id" string="Người mua"
+                                       options="{'no_create':1}"
+                                       context="{'limit_company':1}"/>
+                                <field name="customer_id" string="Người sử dụng"
+                                       attrs="{'invisible': [('type_card', '!=', 'voucher')]}"
+                                       options="{'no_create':1}"
+                                       context="{'limit_company':1}"/>
+                            </group>
+                            <group>
+                                <field name="branch_id" required="1"
+                                       options="{'no_create':1}" string="Chi nhánh"/>
+                                <field name="state" string="Trạng thái"/>
+                                <field name="is_print_excel" string="Xuất Excel"/>
+                            </group>
+                        </group>
+                        <footer>
+                            <button name="action_print" type="object" string="Xuất báo cáo" icon="fa-print"
+                                    class="oe_highlight"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="rpt_list_card_branch_action" model="ir.actions.act_window">
+            <field name="name">Báo cáo danh sách thẻ theo chi nhánh</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">rpt.list.card.branch</field>
+            <field name="view_mode">form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="izi_pos_report_birt.rpt_list_card_branch_form_view"/>
+            <field name="target">new</field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="rpt_list_card_according_to_branches"
+                  name="Báo cáo danh sách thẻ theo chi nhánh"
+                  parent="izi_pos_report_birt.rpt_pos_card_categ"
+                  action="rpt_list_card_branch_action"
+                  sequence="1"/>
+    </data>
+</odoo>

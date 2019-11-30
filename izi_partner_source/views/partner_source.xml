@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+       <record id="partner_source_tree" model="ir.ui.view">
+           <field name="name">Partner source tree</field>
+           <field name="model">partner.source</field>
+           <field name="arch" type="xml">
+               <tree string="Partner source tree">
+                   <field name="name"/>
+                   <field name="code"/>
+                   <field name="description"/>
+               </tree>
+           </field>
+       </record>
+
+        <record id="partner_source_form" model="ir.ui.view">
+            <field name="name">Partner source form</field>
+            <field name="model">partner.source</field>
+            <field name="arch" type="xml">
+                <form string="Partner source form">
+                    <sheet>
+                        <group col="4">
+                            <field name="name" required="True"/>
+                            <field name="code" required="True"/>
+                            <field name="description"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="partner_source_act" model="ir.actions.act_window">
+            <field name="name">Partner source action</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">partner.source</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menuitem_partner_source"
+                  name="Partner source"
+                  parent="contacts.res_partner_menu_config"
+                  action="izi_partner_source.partner_source_act"
+                  sequence="20"/>
+
+    </data>
+</odoo>

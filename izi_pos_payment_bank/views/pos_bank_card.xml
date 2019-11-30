@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="pos_bank_card_form_view" model="ir.ui.view">
+            <field name="name">Bank card</field>
+            <field name="model">pos.bank.card</field>
+            <field name="arch" type="xml">
+                <form string="Bank card">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="toggle_active" type="object" class="oe_stat_button" icon="fa-check">
+                                <field name="active" widget="boolean_button" options='{"terminology": "active"}'/>
+                            </button>
+                        </div>
+                        <h2 class="text-center">THẺ NGÂN HÀNG</h2>
+                        <group>
+                            <group>
+                                <field name="code" required="1"/>
+                                <field name="name" required="1"/>
+                                <field name="description"/>
+                            </group>
+                            <group>
+                                <field name="company_id" readonly="1" force_save="1"/>
+                                <field name="journal_id" required="1" domain="[('type', 'in', ('bank','general')), ('company_id', '=', company_id)]"
+                                       options="{'no_create':1, 'no_create_edit':1}"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Lines">
+                                <field name="line_ids">
+                                    <tree editable="bottom">
+                                        <field name="account_id" required="1" domain="[('company_id', '=', parent.company_id)]"
+                                               options="{'no_create':1, 'no_create_edit':1}"/>
+                                        <field name="cost_rate" required="1"/>
+                                        <field name="description"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="pos_bank_card_tree_view" model="ir.ui.view">
+            <field name="name">Bank card</field>
+            <field name="model">pos.bank.card</field>
+            <field name="arch" type="xml">
+                <tree default_order="journal_id">
+                    <field name="journal_id"/>
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="company_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="pos_bank_card_action_view" model="ir.actions.act_window">
+            <field name="name">Bank card</field>
+            <field name="res_model">pos.bank.card</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Add a new bank card.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_pos_bank_card"
+                  action="pos_bank_card_action_view"
+                  parent="point_of_sale.menu_point_config_product"
+                  sequence="11"
+                  name="Bank card"/>
+    </data>
+</odoo>

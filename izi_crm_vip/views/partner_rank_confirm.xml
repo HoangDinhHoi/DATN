@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="partner_rank_confirm_tree_view">
+            <field name="name">partner rank confirm tree view</field>
+            <field name="model">partner.rank.confirm</field>
+            <field name="arch" type="xml">
+                <tree create="0" edit="0" delete="0"
+                      colors="blue:state=='new';green:state=='approve';blue:state=='auto'">
+                    <field name="partner_code"/>
+                    <field name="partner_old_code"/>
+                    <field name="partner_id"/>
+                    <field name="team_code" string="Sale team"/>
+                    <field name="user_code" string="Sale Person"/>
+                    <field name="customer_rank" string="Rank"/>
+                    <field name="to_rank"/>
+                    <field name="type"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="partner_rank_confirm_search_view">
+            <field name="name">Partner rank confirm search view</field>
+            <field name="model">partner.rank.confirm</field>
+            <field name="arch" type="xml">
+                <search string="Search">
+                    <field name="name" string="Name"
+                           filter_domain="
+                           ['|','|','|',
+                           ('partner_id.name','ilike',self),
+                           ('partner_id.x_partner_code','ilike',self),
+                           ('partner_id.x_partner_old_code','ilike',self),
+                           ('partner_id.phone','ilike',self)]"/>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="partner_rank_confirm_form_view">
+            <field name="name">Partner rank confirm form view</field>
+            <field name="model">partner.rank.confirm</field>
+            <field name="arch" type="xml">
+                <form string="VIP Customer" create="0" delete="0">
+                    <header>
+                        <button name="action_up_rank" string="Up rank"
+                                type="object" class="oe_highlight"
+                                groups="sales_team.group_sale_salesman_all_leads"
+                                attrs="{'invisible':['|',('state','!=','new'),('type','in',['exception','extend_exception','extend','auto_extend'])]}"
+                                confirm="Bạn đã chắc chắn lên hạng cho khách hàng này ?"
+                        />
+                        <button name="action_up_rank" string="Up rank"
+                                groups="izi_base.group_supervisor"
+                                type="object" class="oe_highlight"
+                                attrs="{'invisible':['|','|',('state','!=','approve'),('type','!=','exception'),('type','=','extend')]}"
+                                confirm="Bạn đã chắc chắn lên hạng cho khách hàng này ?"
+                        />
+                        <button name="action_extend" string="Extend"
+                                groups="sales_team.group_sale_manager"
+                                type="object" class="oe_highlight"
+                                attrs="{'invisible':['|',('state','!=','new'),('type','not in',['extend','auto_extend'])]}"
+                                confirm="Bạn đã chắc chắn gia hạn cho khách hàng này ?"
+                        />
+                        <button name="action_extend" string="Extend"
+                                type="object" class="oe_highlight"
+                                groups="izi_base.group_supervisor"
+                                attrs="{'invisible':['|',('state','!=','approve'),('type','!=','extend_exception')]}"
+                                confirm="Bạn đã chắc chắn lên hạng cho khách hàng này ?"
+                        />
+                        <button name="action_confirm" string="Confirm"
+                                type="object" class="oe_highlight"
+                                groups="sales_team.group_sale_salesman_all_leads"
+                                attrs="{'invisible':['|',('state','!=','new'),('type','not in',['exception','extend_exception'])]}"
+                                confirm="Đây là trường hợp gia hạn ngoại lệ, bạn chắc chắn muốn xác nhận?"
+                        />
+                        <button name="action_cancel" string="Cancel" class="oe_highlight"
+                                groups="sales_team.group_sale_manager"
+                                type="object" attrs="{'invisible':[('state','!=','new')]}"
+                                confirm="Bạn đã chắc chắn hủy bỏ yêu cầu lên hạng cho khách hàng này ?"
+                        />
+                        <button name="action_cancel" string="Cancel"
+                                type="object"
+                                groups="izi_base.group_supervisor"
+                                attrs="{'invisible':['|',('state','!=','approve'),('type','not in',['exception','extend_exception'])]}"
+                                confirm="Bạn đã chắc chắn hủy bỏ yêu cầu lên hạng cho khách hàng này ?"
+                        />
+                        <button name="confirm_information" string="Confirm information"
+                                type="object" class="oe_highlight"
+                                attrs="{'invisible':[('state','!=','auto')]}"
+                                confirm="Bạn đã chắc chắn xác nhận thông tin của khách hàng này ?"
+                        />
+                        <button name="extend_exception" string="Extend exception"
+                                type="object"
+                                groups="sales_team.group_sale_manager"
+                                attrs="{'invisible':['|',('state','!=','auto'),('type','not in',['extend','auto_extend'])]}"
+                        />
+                        <button name="up_rank_exception" string="Up rank exception"
+                                type="object"
+                                attrs="{'invisible':['|',('state','!=','auto'),('type','=','auto_extend')]}"
+                                context="{'exception_from_auto': 1}"
+                                help="Up rank exception"/>
+                        <button name="action_cancel_auto" string="Cancel"
+                                type="object"
+                                attrs="{'invisible':[('state','!=','auto')]}"
+                                confirm="Bạn đã chắc chắn hủy bỏ yêu cầu lên hạng cho khách hàng này ?"
+                        />
+                        <field name="state" widget="statusbar" statusbar_visible="auto,new,approve,done,canceled"/>
+                    </header>
+                    <sheet string="Up rank confirm">
+                        <div class="oe_title">
+                            <label for="partner_id" string="Customer Name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="partner_id" readonly="1"/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="type" readonly="1"/>
+                                <field name="team_code" string="Sale team" readonly="1"/>
+                                <field name="user_code" string="Sale Person"  readonly="1"/>
+                                <field name="phone" string="Phone"
+                                       attrs="{'readonly':[('state','in',('done','cancel'))]}"/>
+                                <field name="email" string="Email"
+                                       attrs="{'readonly':[('state','in',('done','cancel'))]}"/>
+                                <field name="birthday" string="Birthday"
+                                       attrs="{'readonly':[('state','in',('done','cancel'))]}"/>
+                                <field name="customer_rank" string="Rank" readonly="1"/>
+                            </group>
+                            <group>
+                                <label for="street" string="Address"/>
+                                <div>
+                                    <field name="street" placeholder="Street..."
+                                           attrs="{'readonly':[('state','in',('done','cancel'))]}"/>
+                                    <field name="street2" attrs="{'readonly':[('state','in',('done','cancel'))]}"/>
+                                    <div class="address_format">
+                                        <field name="city" placeholder="City" style="width: 40%%;display:none"
+                                               attrs="{'readonly':[('state','in',('done','cancel'))]}"/>
+                                        <field name="state_id" class="oe_no_button" placeholder="State"
+                                               style="width: 37%%"
+                                               attrs="{'readonly':[('state','in',('done','cancel'))]}"/>
+                                        <field name="zip" placeholder="ZIP" style="width: 20%%"
+                                               attrs="{'readonly':[('state','!=','new')]}"/>
+                                    </div>
+                                    <field name="country_id" placeholder="Country" class="oe_no_button"
+                                           attrs="{'readonly':[('state','in',('done','cancel'))]}"/>
+                                </div>
+                            </group>
+                        </group>
+                        <group>
+                            <group>
+                                <field name="profile_img_view" widget="image"
+                                       attrs="{'readonly':[('state','in','(done,cancel)')]}"/>
+                            </group>
+                            <group>
+                                <field name="to_rank" readonly="1"/>
+                                <field name="user_id" readonly="1"/>
+                                <field name="register_date"
+                                       attrs="{'readonly':[('state','=','auto_extend'),('state','in',('done','cancel'))]}"/>
+                                <field name="month_rank" readonly="1" context="{'readonly_by_pass':True}"/>
+                                <field name="confirm_date" attrs="{'readonly':[('state','in',('done','cancel'))]}"/>
+                                <field name="partner_vip_id" readonly="1"/>
+                            </group>
+                        </group>
+                        <p states="auto">
+                            <i>*** Chú ý: Để lên hạng trực tiếp và chiết khấu đơn hàng luôn, bạn cần upload
+                                <strong>Biểu mẫu</strong>
+                                lên hạng.
+                            </i>
+                        </p>
+                        <group>
+                            <group>
+                                <field name="is_get_old_form" attrs="{'readonly':[('state','in',('done','cancel'))]}"/>
+                                <field name="form_img_view" widget="image"
+                                       context="{'readonly_by_pass': True}"
+                                       attrs="{'readonly':['|',('state','in',('done','cancel')),('is_get_old_form','=',True)]}"/>
+                            </group>
+                            <group>
+                                <field name="is_get_old_signature" attrs="{'readonly':[('state','in',('done','cancel'))]}"/>
+                                <field name="signature_img_view" widget="image"
+                                       context="{'readonly_by_pass': True}"
+                                       attrs="{'readonly':['|',('state','in',('done','cancel')),('is_get_old_signature','=',True)]}"/>
+                            </group>
+                            <group>
+                                <field name="missing_documents" attrs="{'readonly':[('state','in',('done','cancel'))]}"/>
+                            </group>
+                        </group>
+                        <group>
+                            <button class="oe_highlight" name="complete_documents" type="object"
+                                    string="Hoàn thiện" attrs="{'invisible':[('missing_documents','!=', True)]}"/>
+                        </group>
+                        <notebook>
+                            <page string="History">
+                                <field name="old_history_ids" readonly="1">
+                                    <tree>
+                                        <field name="from_rank"/>
+                                        <field name="to_rank"/>
+                                        <field name="up_rank_date"/>
+                                        <field name="up_rank_expired_date"/>
+                                        <field name="extend_date"/>
+                                        <field name="request_shop_id"/>
+                                        <field name="state"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Revenue">
+                                <field name="partner_revenue_ids" readonly="1">
+                                    <tree default_order='revenue_date'>
+                                        <field name="revenue_date_view"/>
+                                        <field name="revenue_date" invisible="1"/>
+                                        <field name="revenue" sum="Total revenue"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Note">
+                                <field name="note" attrs="{'readonly':[('state','in',('done','cancel'))]}"/>
+                            </page>
+                        </notebook>
+                        <group>
+                            <field name="shop_confirm_time" readonly="1"/>
+                            <field name="crm_confirm_time" readonly="1"/>
+                            <field name="director_confirm_time" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_partner_rank_confirm" model="ir.actions.act_window">
+            <field name="name">Partner rank confirm</field>
+            <field name="res_model">partner.rank.confirm</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('state','not in',['auto','nothing'])]</field>
+            <field name="context">{'readonly_by_pass':True}</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_partner_auto_rank_confirm" model="ir.actions.act_window">
+            <field name="name">Partner rank confirm</field>
+            <field name="res_model">partner.rank.confirm</field>
+            <field name="view_type">form</field>
+            <field name="domain">[('state','=','auto')]</field>
+            <field name="context">{'readonly_by_pass':True}</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="partner_rank_confirm_menu" name="Partner rank confirm" parent="partner_vip_menu_categ"
+                  action="action_partner_rank_confirm"/>
+    </data>
+</odoo>

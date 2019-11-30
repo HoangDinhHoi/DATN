@@ -1,0 +1,172 @@
+<odoo>
+    <data>
+        <record id="pos_search_view_form" model="ir.ui.view">
+            <field name="name">Pos Search</field>
+            <field name="model">pos.search</field>
+            <field name="arch" type="xml">
+                <form string="Search">
+                    <sheet>
+                        <div>
+                            <h2 class="text-center">Tìm kiếm thông tin(Khách hàng, mã khách hàng, số điện thoại, mã thẻ)
+                            </h2>
+                        </div>
+                        <div class="text-center"
+                             style="margin-left:300px;margin-right:300px;margin-top:10px;margin-bottom:10px;">
+                            <h2>
+                                <field name="serial" string="" widget="enter2action" placeholder="Code" required="1"
+                                       attrs="{'action_element_class': '.izi_btn_action_check_card'}"
+                                       default_focus="1"/>
+                            </h2>
+                        </div>
+                        <div class="text-center">
+                            <button name="action_search_serial" type="object" string="Search"
+                                    class="oe_highlight izi_btn_action_check_card" icon="fa-search"/>
+                        </div>
+                        <group>
+                            <group>
+                                <field name="x_name" readonly="1"
+                                       attrs="{'invisible': ['|',('check_coupon', '=', False),('check_service_card', '=', False)]}"/>
+                                <field name="x_partner_code" readonly="1"
+                                       attrs="{'invisible': ['|',('check_coupon', '=', False),('check_service_card', '=', False)]}"/>
+                            </group>
+                            <group>
+                                <field name="x_street" readonly="1"
+                                       attrs="{'invisible': ['|',('check_coupon', '=', False),('check_service_card', '=', False)]}"/>
+                                <field name="x_phone" readonly="1"
+                                       attrs="{'invisible': ['|',('check_coupon', '=', False),('check_service_card', '=', False)]}"/>
+                                <field name="x_email" readonly="1"
+                                       attrs="{'invisible': ['|',('check_coupon', '=', False),('check_service_card', '=', False)]}"/>
+                                <field name="x_company_id" readonly="1"
+                                       attrs="{'invisible': ['|',('check_coupon', '=', False),('check_service_card', '=', False)]}"/>
+                        </group>
+                        </group>
+                        <field name="check_service_card" invisible="1"/>
+                        <field name="check_coupon" invisible="1"/>
+                        <notebook>
+                            <page name="service_card" attrs="{'invisible': ['|',('serial', '=', False),('check_service_card', '=', False)]}"
+                                  string="Service Card">
+                                <field name="service_card_ids" readonly="1">
+                                    <tree default_order="name desc" default_muted="(state!='using')">
+                                        <field name="name" invisible="1"/>
+                                        <field name="stk_prdt_lot_id"/>
+                                        <field name="product_id"/>
+                                        <field name="order_id"/>
+                                        <field name="customer_id"/>
+                                        <field name="branch_id"/>
+                                        <field name="life_date"/>
+                                        <field name="state"/>
+                                        <field name="total_count"/>
+                                        <field name="used_count"/>
+                                        <field name="residual_count"/>
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <group>
+                                                    <field name="stk_prdt_lot_id" context="{'form_view_ref': 'izi_product_release.stock_production_lot_form_view_card', 'create': False, 'edit': False, 'delete': False}"/>
+                                                    <field name="product_id"/>
+                                                    <field name="order_id"/>
+                                                    <field name="product_release_id"/>
+                                                    <field name="state"/>
+                                                    <field name="life_date"/>
+                                                </group>
+                                                <group>
+                                                    <field name="customer_id"/>
+                                                    <field name="branch_id"/>
+                                                    <field name="total_count"/>
+                                                    <field name="used_count"/>
+                                                    <field name="residual_count"/>
+                                                </group>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                            <page name="service_card_detail" attrs="{'invisible': ['|',('serial', '=', False),('check_service_card', '=', False)]}"
+                                  string="Service Card Detail">
+                                <field name="detail_service_card_ids" readonly="1">
+                                    <tree default_order="name desc" default_muted="(residual_count==0 or state!='using')">
+                                        <field name="name" invisible="1"/>
+                                        <field name="stk_prdt_lot_id"/>
+                                        <field name="product_id"/>
+                                        <field name="order_id"/>
+                                        <field name="customer_id"/>
+                                        <field name="life_date"/>
+                                        <field name="state"/>
+                                        <field name="service_id"/>
+                                        <field name="total_count"/>
+                                        <field name="used_count"/>
+                                        <field name="residual_count"/>
+                                        <field name="branch_id"/>
+                                    </tree>
+                                    <form>
+                                        <sheet>
+                                            <group>
+                                                <group>
+                                                    <field name="stk_prdt_lot_id" context="{'form_view_ref': 'izi_product_release.stock_production_lot_form_view_card', 'create': False, 'edit': False, 'delete': False}"/>
+                                                    <field name="product_id"/>
+                                                    <field name="order_id"/>
+                                                    <field name="product_release_id"/>
+                                                    <field name="service_id"/>
+                                                    <field name="life_date"/>
+                                                    <field name="price_unit"/>
+                                                    <field name="price_sub_total"/>
+                                                    <field name="remain_sub_total"/>
+                                                </group>
+                                                <group>
+                                                    <field name="state"/>
+                                                    <field name="customer_id"/>
+                                                    <field name="branch_id"/>
+                                                    <field name="service_id"/>
+                                                    <field name="total_count"/>
+                                                    <field name="used_count"/>
+                                                    <field name="residual_count"/>
+                                                </group>
+                                            </group>
+                                        </sheet>
+                                    </form>
+                                </field>
+                            </page>
+                            <page name="service_card_history" attrs="{'invisible': ['|',('serial', '=', False),('check_service_card', '=', False)]}"
+                                  string="History Use Service Card">
+                                <field name="history_service_card_ids" readonly="1">
+                                    <tree default_order="using_id desc">
+                                        <field name="using_id"/>
+                                        <field name="date"/>
+                                        <field name="lot_id"/>
+                                        <field name="service_id"/>
+                                        <field name="qty"/>
+                                        <field name="price_unit"/>
+                                        <field name="amount_total"/>
+                                        <field name="employee_ids" widget="many2many_tags"/>
+                                        <field name="order_id"/>
+                                        <field name="state"/>
+                                        <field name="customer_sign" widget="image" class="oe_avatar"/>
+                                        <field name="note"/>
+                                        <field name="company_id"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="pos_search_action" model="ir.actions.act_window">
+            <field name="name">Pos Search</field>
+            <field name="res_model">pos.search</field>
+            <field name="view_mode">form</field>
+            <field name="view_type">form</field>
+            <field name="target">inline</field>
+            <field name="view_id" ref="pos_search_view_form"/>
+        </record>
+
+        <!-- thêm menu Search Information vào trong menu Các hoạt động hằng ngày-->
+        <menuitem id="pos_search_menu_item"
+                  name="Tìm kiếm thông tin"
+                  action="pos_search_action"
+                  parent="izi_pos.booking_service_pos"
+                  sequence="3"
+                  groups=""/>
+    </data>
+</odoo>

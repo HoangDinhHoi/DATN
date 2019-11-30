@@ -1,0 +1,305 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* izi_crm_lead
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-09-13 10:31+0000\n"
+"PO-Revision-Date: 2019-09-13 17:35+0700\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: vi_VN\n"
+"X-Generator: Poedit 2.2.3\n"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead__account_facebook
+msgid "Account Facebook"
+msgstr "Tài khoản facebook"
+
+#. module: izi_crm_lead
+#: model_terms:ir.ui.view,arch_db:izi_crm_lead.assign_lead_dialog
+#: model_terms:ir.ui.view,arch_db:izi_crm_lead.crm_case_form_view_leads_inherit
+msgid "Assign"
+msgstr "Giao"
+
+#. module: izi_crm_lead
+#: model_terms:ir.ui.view,arch_db:izi_crm_lead.assign_lead_dialog
+msgid "Assign dialog"
+msgstr "Giao"
+
+#. module: izi_crm_lead
+#: model:ir.actions.act_window,name:izi_crm_lead.action_assign_multi_lead
+#: model_terms:ir.ui.view,arch_db:izi_crm_lead.assign_lead_dialog
+msgid "Assign multi"
+msgstr "Giao nhiều"
+
+#. module: izi_crm_lead
+#: selection:crm.lead,state:0
+msgid "Assigned"
+msgstr "Đã giao"
+
+#. module: izi_crm_lead
+#: selection:crm.lead,state:0
+msgid "Booking"
+msgstr "Booking"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead__brand_id
+msgid "Brand"
+msgstr "Nhãn hiệu"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_quotation__lead_id
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_serial__crm_lead_id
+msgid "CRM Lead"
+msgstr "Lead"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_contact__crm_lead_ids
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead__crm_lead_ids
+msgid "CRM Leads"
+msgstr "Lead"
+
+#. module: izi_crm_lead
+#: model_terms:ir.ui.view,arch_db:izi_crm_lead.assign_lead_dialog
+msgid "Cancel"
+msgstr "Hủy"
+
+#. module: izi_crm_lead
+#: selection:crm.lead,state:0
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead__contact_id
+msgid "Contact"
+msgstr "Liên hệ"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_assign__create_uid
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_quotation__create_uid
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_serial__create_uid
+msgid "Created by"
+msgstr "Được tạo bởi"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_assign__create_date
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_quotation__create_date
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_serial__create_date
+msgid "Created on"
+msgstr "Thời điểm tạo"
+
+#. module: izi_crm_lead
+#: model:ir.model,name:izi_crm_lead.model_crm_contact
+msgid "Crm Contact"
+msgstr "Contact"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead__partner_id
+msgid "Customer"
+msgstr "Khách hàng"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead__date_of_birth
+msgid "Date of Birth"
+msgstr "Ngày sinh"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead__datetime_assigned
+msgid "Datetime assigned"
+msgstr "Thời gian giao"
+
+#. module: izi_crm_lead
+#: selection:crm.lead,state:0
+#: model_terms:ir.ui.view,arch_db:izi_crm_lead.crm_case_form_view_leads_inherit
+msgid "Dead"
+msgstr "Thất bại"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_assign__display_name
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_quotation__display_name
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_serial__display_name
+msgid "Display Name"
+msgstr "Tên hiển thị"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_assign__id
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_quotation__id
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_serial__id
+msgid "ID"
+msgstr ""
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,help:izi_crm_lead.field_crm_lead_assign__override
+msgid "If check this, when save record this will be override content of record has exist value"
+msgstr "Nếu chọn thì khi lưu sẽ ghi đè dữ liệu nếu trước đó đã tồn tại"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_assign____last_update
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_quotation____last_update
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_serial____last_update
+msgid "Last Modified on"
+msgstr "Sửa lần cuối vào"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_assign__write_uid
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_quotation__write_uid
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_serial__write_uid
+msgid "Last Updated by"
+msgstr "Cập nhật lần cuối bởi"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_assign__write_date
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_quotation__write_date
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_serial__write_date
+msgid "Last Updated on"
+msgstr "Cập nhật lần cuối vào"
+
+#. module: izi_crm_lead
+#: model:ir.model,name:izi_crm_lead.model_crm_lead
+msgid "Lead/Opportunity"
+msgstr "Tiềm năng/Cơ hội"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,help:izi_crm_lead.field_crm_lead__partner_id
+msgid "Linked partner (optional). Usually created when converting the lead. You can find a partner by its Name, TIN, Email or Internal Reference."
+msgstr ""
+
+#. module: izi_crm_lead
+#: selection:crm.lead,state:0
+msgid "Meeting"
+msgstr "Meeting"
+
+#. module: izi_crm_lead
+#: selection:crm.lead,state:0
+msgid "New"
+msgstr "Mới"
+
+#. module: izi_crm_lead
+#: selection:crm.lead,state:0
+msgid "No pick up"
+msgstr "Không nhấc máy"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_assign__override
+msgid "Override"
+msgstr "Ghi đè"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_quotation__product_id
+msgid "Product"
+msgstr "Sản phẩm"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead__product_quotation_ids
+msgid "Product Quotation"
+msgstr "Sản phẩm dự kiến"
+
+#. module: izi_crm_lead
+#: sql_constraint:crm.lead.quotation:0
+msgid "Product quantity greater than 0"
+msgstr "Số lượng sản phẩm phải lớn hơn 0"
+
+#. module: izi_crm_lead
+#: model_terms:ir.ui.view,arch_db:izi_crm_lead.crm_case_form_view_leads_inherit
+msgid "Product quotations"
+msgstr "Sản phẩm dự kiến"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_quotation__qty
+msgid "Quantity"
+msgstr "Số lượng"
+
+#. module: izi_crm_lead
+#: model_terms:ir.ui.view,arch_db:izi_crm_lead.assign_lead_dialog
+#: model_terms:ir.ui.view,arch_db:izi_crm_lead.crm_case_form_view_leads_inherit
+msgid "Reassign"
+msgstr "Giao lại"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead__register_time
+msgid "Register Time"
+msgstr "Thời gian đăng ký"
+
+#. module: izi_crm_lead
+#: selection:crm.lead,state:0
+msgid "Sale order"
+msgstr "Đơn hàng SO"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead__team_id
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_assign__team_id
+msgid "Sales Team"
+msgstr "Đội ngũ bán hàng"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead__user_id
+msgid "Salesperson"
+msgstr "Nhân viên kinh doanh"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead__serial_ids
+msgid "Serial"
+msgstr "Mã"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead__source_id
+msgid "Source"
+msgstr "Nguồn"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead__state
+msgid "State"
+msgstr "Giai đoạn"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_serial__stock_production_lot_id
+msgid "Stock Production Lot"
+msgstr "Mã thẻ"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,help:izi_crm_lead.field_crm_lead__source_id
+msgid "This is the source of the link, e.g. Search Engine, another domain, or name of email list"
+msgstr ""
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead__tool_id
+msgid "Tool"
+msgstr "Công cụ"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,field_description:izi_crm_lead.field_crm_lead_assign__user_id
+msgid "User"
+msgstr "Người dùng"
+
+#. module: izi_crm_lead
+#: model:ir.model.fields,help:izi_crm_lead.field_crm_lead__team_id
+msgid "When sending mails, the default email address is taken from the Sales Team."
+msgstr ""
+
+#. module: izi_crm_lead
+#: selection:crm.lead,state:0
+msgid "Won"
+msgstr "Thành công"
+
+#. module: izi_crm_lead
+#: selection:crm.lead,state:0
+msgid "Wrong number"
+msgstr "Sai số điện thoại"
+
+#. module: izi_crm_lead
+#: model:ir.model,name:izi_crm_lead.model_crm_lead_assign
+msgid "crm.lead.assign"
+msgstr ""
+
+#. module: izi_crm_lead
+#: model:ir.model,name:izi_crm_lead.model_crm_lead_quotation
+msgid "crm.lead.quotation"
+msgstr ""
+
+#. module: izi_crm_lead
+#: model:ir.model,name:izi_crm_lead.model_crm_lead_serial
+msgid "crm.lead.serial"
+msgstr ""
