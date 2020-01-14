@@ -22,18 +22,18 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <button name="action_confirm" type="object" class="oe_highlight" string="Confirm" states="draft"/>
-                        <button name="action_payment" type="object" class="oe_highlight" string="Payment" states="wait_payment"/>
-                        <button name="action_done" states="working" type="object" class="oe_highlight" string="Done"/>
+                        <button name="action_confirm" type="object" class="oe_highlight" string="Xác nhận" states="draft"/>
+                        <button name="action_payment" type="object" class="oe_highlight" string="Thanh toán" states="wait_payment"/>
+                        <button name="action_done" states="working" type="object" class="oe_highlight" string="Hoàn thành"/>
                         <button name="action_create_material" type="object" states="wait_payment" class="oe_highlight" string="Done POS &amp; Out Material "/>
-                        <button name="action_back" type="object" string="Back" states="wait_payment"/>
-                        <button name="action_cancel" type="object" string="Cancel" states="wait_material"/>
-                        <button name="refund" type="object" string="Refund" states="done"/>
-                        <button name="action_confirm_refund" type="object" string="Approval" class="oe_highlight" states="wait_confirm"
+                        <button name="action_back" type="object" string="Trở lại" states="wait_payment"/>
+                        <button name="action_cancel" type="object" string="Hủy" states="wait_material"/>
+                        <button name="refund" type="object" string="Hoàn trả" states="done"/>
+                        <button name="action_confirm_refund" type="object" string="Chấp thuận" class="oe_highlight" states="wait_confirm"
                                 groups="point_of_sale.group_pos_manager"/>
-                        <button name="action_not_confirm_refund" type="object" string="Not approval" states="wait_confirm"
+                        <button name="action_not_confirm_refund" type="object" string="Không chấp thuận" states="wait_confirm"
                                 groups="point_of_sale.group_pos_manager"/>
-                        <button name="action_done_refund" type="object" string="Done refund" states="approval" class="oe_highlight"/>
+                        <button name="action_done_refund" type="object" string="Hoàn thành hoàn trả" states="approval" class="oe_highlight"/>
 <!--                        <button name="action_compare" type="object" string="Compare" class="oe_highlight" groups="point_of_sale.group_pos_manager"-->
 <!--                                attrs="{'invisible': [('compare', '!=', 'need_compare')]}"/>-->
                         <button name="action_print" type="object" string="IN PHIẾU SỬ DỤNG DỊCH VỤ" class="oe_highlight"
@@ -71,8 +71,8 @@
                                 <field name="partner_id" domain="[('customer', '=', 1)]" options="{'no_create':1, 'no_create_edit':1}"
                                        attrs="{'readonly': [('state', '!=', 'draft')], 'required': [('type', '=', 'service')]}"
                                        context="{'search_default_customer':1, 'form_view_ref':'izi_partner.customer_form_view_ref', 'limit_company': 1}"/>
-                                <field name="pricelist_id" readonly="1"/>
-                                <field name="crm_team_id" readonly="1"/>
+                                <field name="pricelist_id" invisible="1"/>
+                                <field name="crm_team_id" invisible="1"/>
                             </group>
                             <group>
                                 <field name="date" readonly="1"/>

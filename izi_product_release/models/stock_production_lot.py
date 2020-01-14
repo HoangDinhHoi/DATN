@@ -17,10 +17,8 @@ class stock_production_lot(models.Model):
     x_order_use_id = fields.Many2one('pos.order', string=_('Order Use'))
     x_company_id = fields.Many2one('res.company', string=_('Company'), default=_company_default)
     x_customer_id = fields.Many2one('res.partner', string=_('Customer'))
-    # chuyen doi tac sang chi nhanh: HoiHD
     x_branch_id = fields.Many2one('res.branch', string=_('Partner'))
-    # end
-    x_use_customer_id =fields.Many2one('res.partner', string=_('User'))
+    x_use_customer_id = fields.Many2one('res.partner', string=_('User'))
     x_total_count = fields.Integer(string=_('Total Count'), default=1)
     x_used_count = fields.Integer(string=_('Used Count'))
     x_state = fields.Selection([
@@ -36,7 +34,7 @@ class stock_production_lot(models.Model):
 
 class StockProductionLotLine(models.Model):
     _name = 'stock.production.lot.line'
-    
+
     product_id = fields.Many2one('product.product', string=_('Product'))
     total_count = fields.Integer(string=_('Total Count'))
     used_count = fields.Integer(string=_('Used Count'))

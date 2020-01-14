@@ -26,7 +26,7 @@
                     <header>
                         <button name="action_receive" states="transfer" string="Comfirm" type="object"
                                 class="oe_highlight" groups="base.group_user"/>
-                        <button name="action_print" states="done" string="In" type="object"/>
+                        <button name="action_print" states="done" string="In báo cáo" type="object"/>
                         <field name="state" widget="statusbar" statusbar_visible="transfer,done"
                                readonly="1"/>
                     </header>

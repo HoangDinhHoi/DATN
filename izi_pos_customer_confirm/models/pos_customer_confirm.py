@@ -2,6 +2,7 @@
 
 from odoo import models, fields, api
 
+
 class PosCustomerConfirm(models.Model):
     _name = 'pos.customer.confirm'
 

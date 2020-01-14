@@ -16,12 +16,6 @@
                                 confirm="Bạn có chắc chắn muốn kích hoạt tất cả các mã đã tạo trong lần phát hành này?"/>
                         <button name="action_transfer" string="Transfer" type="object" states="activated"
                                 class="oe_highlight"/>
-                        <!--<button name="action_cancel_release"-->
-                        <!--string="Destroy"-->
-                        <!--type="object"-->
-                        <!--states="actived"-->
-                        <!--confirm="Tất cả mã đã tạo sẽ bị xóa không thể khôi phục lại, phôi sẽ hồi kho, Bạn có chắc chắn muốn xóa lần phát hành này?"-->
-                        <!--/>-->
                         <field name="state" widget="statusbar" statusbar_visible="draft,created,actived,done"/>
                     </header>
                     <sheet>

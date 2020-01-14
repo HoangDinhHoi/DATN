@@ -22,21 +22,21 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <button name="action_confirm" type="object" class="oe_highlight" string="Confirm" states="draft"/>
+                        <button name="action_confirm" type="object" class="oe_highlight" string="Xác nhận" states="draft"/>
                         <button name="action_create_material" type="object" states="wait_payment" class="oe_highlight" string="Done POS &amp; Out Material "/>
-                        <button name="action_done" states="working" type="object" class="oe_highlight" string="Done"/>
-                        <button name="action_back" type="object" string="Back" states="wait_payment"/>
-                        <button name="refund" type="object" string="Refund" states="done"/>
-                        <button name="action_confirm_refund" type="object" string="Approval" class="oe_highlight" states="wait_confirm"
+                        <button name="action_done" states="working" type="object" class="oe_highlight" string="Hoàn thành"/>
+                        <button name="action_back" type="object" string="Trở lại" states="wait_payment"/>
+                        <button name="refund" type="object" string="Hoàn trả" states="done"/>
+                        <button name="action_confirm_refund" type="object" string="Chấp thuận" class="oe_highlight" states="wait_confirm"
                                 groups="point_of_sale.group_pos_manager"/>
-                        <button name="action_not_confirm_refund" type="object" string="Not approval" states="wait_confirm"
+                        <button name="action_not_confirm_refund" type="object" string="Không chấp thuận" states="wait_confirm"
                                 groups="point_of_sale.group_pos_manager"/>
-                        <button name="action_done_refund" type="object" string="Done refund" states="approval" class="oe_highlight"/>
+                        <button name="action_done_refund" type="object" string="Hoàn thành hoàn trả" states="approval" class="oe_highlight"/>
 <!--                        <button name="action_compare" type="object" string="Compare" class="oe_highlight" groups="point_of_sale.group_pos_manager"-->
 <!--                                attrs="{'invisible': [('compare', '!=', 'need_compare')]}"/>-->
-                        <button name="action_print" type="object" string="In" class="oe_highlight"
+                        <button name="action_print" type="object" string="In báo cáo" class="oe_highlight"
                                 attrs="{'invisible': [('state', 'not in', ('done','wait_material'))]}"/>
-                        <button name="action_cancel" type="object" string="Cancel" states="wait_material"/>
+                        <button name="action_cancel" type="object" string="Hủy" states="wait_material"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,working,done"
                                readonly="1"
                                force_save="1"/>

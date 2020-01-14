@@ -87,5 +87,3 @@ class PosUseServiceReport(models.Model):
                         payment_method_debit.update({str(item.journal_id.name): amount})
         return payment_method_debit
 
-
-

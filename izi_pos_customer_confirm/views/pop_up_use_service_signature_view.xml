@@ -16,7 +16,7 @@
                             <!--<field name="date" invisible="1"/>-->
                         </group>
                         <notebook>
-                            <page name="use_service" string="Use Service Line">
+                            <page name="use_service" string="Danh sách">
                                 <field name="use_service_ids">
                                     <tree editable="bottom" create="false" delete="false">
                                         <field name="service_id" readonly="1" force_save="1"/>
@@ -29,8 +29,8 @@
                         </notebook>
                     </sheet>
                     <footer>
-                        <button name="action_customer_signature" type="object" string="Confirm" class="oe_highlight"/>
-                        <button string="Cancel" class="btn-default" special="cancel"/>
+                        <button name="action_customer_signature" type="object" string="XÁC NHẬN" class="oe_highlight"/>
+                        <button string="HỦY" class="btn-default" special="cancel"/>
                     </footer>
                 </form>
             </field>

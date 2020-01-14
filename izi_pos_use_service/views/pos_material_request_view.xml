@@ -149,7 +149,7 @@
 
         <menuitem id="pos_material_request_menu"
                   action="action_pos_material_request"
-                  parent="izi_pos.booking_service_pos"
+                  parent="stock.menu_stock_warehouse_mgmt"
                   sequence="5"/>
     </data>
 </odoo>

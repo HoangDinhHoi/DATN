@@ -6,7 +6,7 @@
             <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
             <field name="arch" type="xml">
                 <button name="action_confirm_order" position="after">
-                    <button name="action_print" type="object" string="In" class="oe_highlight" states="done,invoiced"/>
+                    <button name="action_print" type="object" string="In hóa đơn" class="oe_highlight" states="done,invoiced"/>
                 </button>
             </field>
         </record>
@@ -16,8 +16,8 @@
             <field name="inherit_id" ref="point_of_sale.view_pos_session_form"/>
             <field name="arch" type="xml">
                 <button name="action_pos_session_validate" position="after">
-                    <button name="action_print_bill" type="object" string="Print Session" class="oe_highlight" states="closing_control,closed"/>
-                    <button name="action_print_case" type="object" string="Print Case Session" class="oe_highlight" states="closing_control,closed"/>
+                    <button name="action_print_bill" type="object" string="In báo cáo ngăn kéo" class="oe_highlight" states="closing_control,closed"/>
+                    <button name="action_print_case" type="object" string="In báo cáo ca" class="oe_highlight" states="closing_control,closed"/>
                 </button>
             </field>
         </record>

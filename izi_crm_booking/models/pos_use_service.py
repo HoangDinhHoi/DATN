@@ -31,21 +31,21 @@ class InheritPosUseService(models.Model):
             service_booking.use_service_id = res.id
         return res
 
-    @api.multi
-    def action_search_serial(self):
-        res = super(InheritPosUseService, self).action_search_serial()
-        if self.origin:
-            service_booking = self.env['service.booking'].search([('name', '=', self.origin)])
-            if len(service_booking) == 1:
-                #kiểm tra dịch vụ trong booking và dịch vụ làm sử dụng thẻ
-                for i in  self.use_service_ids:
-                    if i.service_id.id not in service_booking.services.ids:
-                        raise except_orm('Thông báo!', ('Dịch vụ %s không có trong Đơn đặt làm dịch vụ') % (i.service_id.default_code))
-                    if i.employee_ids:
-                        for emp in i.employee_ids:
-                            if emp.id not in service_booking.employees.ids:
-                                raise except_orm('Thông báo!', ('Nhân viên %s không có trong Đơn đặt làm dịch vụ') % (emp.x_employee_code))
-            service_booking.use_service_id = self.id
+    # @api.multi
+    # def action_search_serial(self):
+    #     res = super(InheritPosUseService, self).action_search_serial()
+    #     if self.origin:
+    #         service_booking = self.env['service.booking'].search([('name', '=', self.origin)])
+    #         if len(service_booking) == 1:
+    #             #kiểm tra dịch vụ trong booking và dịch vụ làm sử dụng thẻ
+    #             for i in self.use_service_ids:
+    #                 if i.service_id.id not in service_booking.services.ids:
+    #                     raise except_orm('Thông báo!', ('Dịch vụ %s không có trong Đơn đặt làm dịch vụ') % (i.service_id.default_code))
+    #                 if i.employee_ids:
+    #                     for emp in i.employee_ids:
+    #                         if emp.id not in service_booking.employees.ids:
+    #                             raise except_orm('Thông báo!', ('Nhân viên %s không có trong Đơn đặt làm dịch vụ') % (emp.x_employee_code))
+    #         service_booking.use_service_id = self.id
 
     @api.multi
     def action_confirm(self):
@@ -62,7 +62,7 @@ class InheritPosUseService(models.Model):
             service_booking = self.env['service.booking'].search([('name', '=', self.origin)])
             if len(service_booking) == 1:
                 #kiểm tra dịch vụ trong booking và dịch vụ làm sử dụng thẻ
-                for i in  self.use_service_ids:
+                for i in self.use_service_ids:
                     if i.service_id.id not in service_booking.services.ids:
                         raise except_orm('Thông báo!', ('Dịch vụ %s không có trong Đơn đặt làm dịch vụ') % (i.service_id.default_code))
                     if i.employee_ids:

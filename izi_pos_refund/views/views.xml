@@ -6,11 +6,11 @@
             <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"></field>
             <field name="arch" type="xml">
                 <xpath expr="//button[@name='action_confirm_order']" position="after">
-                    <button name="refund" type="object" string="Refund" class="oe_highlight" attrs="{'invisible':['|',('state','not in',('invoiced', 'done'))]}"/>
-                    <button name="send_refund" type="object" string="Send Refund" class="oe_highlight" attrs="{'invisible':['|',('state','not in',('draft')), ('x_pos_partner_refund_id','=', False)]}"/>
-                    <button name="confirm_refund" type="object" string="Confirm Refund" class="oe_highlight" attrs="{'invisible':['|',('state','not in',('wait_confirm')), ('x_pos_partner_refund_id','=', False)]}"/>
-                    <button name="back_refund" type="object" string="Back Refund" attrs="{'invisible':['|',('state','not in',('wait_confirm')), ('x_pos_partner_refund_id','=', False)]}"/>
-                    <button name="done_refund" type="object" string="Done" class="oe_highlight" attrs="{'invisible':[('state','not in',('confirm'))]}"/>
+                    <button name="refund" type="object" string="Hoàn trả" class="oe_highlight" attrs="{'invisible':['|',('state','not in',('invoiced', 'done'))]}"/>
+                    <button name="send_refund" type="object" string="Gửi hoàn trả" class="oe_highlight" attrs="{'invisible':['|',('state','not in',('draft')), ('x_pos_partner_refund_id','=', False)]}"/>
+                    <button name="confirm_refund" type="object" string="Xác nhận hoàn trả" class="oe_highlight" attrs="{'invisible':['|',('state','not in',('wait_confirm')), ('x_pos_partner_refund_id','=', False)]}"/>
+                    <button name="back_refund" type="object" string="Hủy hoàn trả" attrs="{'invisible':['|',('state','not in',('wait_confirm')), ('x_pos_partner_refund_id','=', False)]}"/>
+                    <button name="done_refund" type="object" string="Hoàn thành hoàn trả" class="oe_highlight" attrs="{'invisible':[('state','not in',('confirm'))]}"/>
                 </xpath>
             </field>
         </record>

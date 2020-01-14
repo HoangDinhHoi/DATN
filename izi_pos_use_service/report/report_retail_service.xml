@@ -247,12 +247,13 @@
                                                 <p style="font-style:italic">(Ký, họ tên)</p>
                                             </td>
                                             <td>
-                                                <b>Kiểm soát</b>
+                                                <b>Shop trưởng</b>
                                                 <p style="font-style:italic">(Ký, họ tên)</p>
                                             </td>
                                             <td>
                                                 <b>Người mua hàng</b>
                                                 <p style="font-style:italic">(Ký, họ tên)</p>
+                                                <img t-att-src="image_data_uri(o.signature)" style="width:100px;height:100px;" class="img"/>
                                             </td>
                                         </tr>
                                     </table>

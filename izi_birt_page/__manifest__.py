@@ -8,7 +8,7 @@
         Nothing to description
     """,
 
-    'author': "IZISolution",
+    'author': "HoiHD",
 
     'category': 'Custom',
     'version': '0.1',

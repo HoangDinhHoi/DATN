@@ -6,7 +6,7 @@ from odoo import fields, models, api, _
 class PosUseService(models.Model):
     _inherit = 'pos.use.service'
 
-    signature = fields.Binary("Signature", default=False, attachment=True)
+    signature = fields.Binary("Signature", attachment=True, store=True)
     customer_confirm = fields.Boolean(related='pos_session_id.config_id.module_izi_pos_customer_confirm',
                                       string="Customer Confirm")
     # custmer_confirm_id = fields.Many2one('pos.customer.confirm', "Customer Confirm")
@@ -32,8 +32,13 @@ class PosUseService(models.Model):
 
     @api.multi
     def action_customer_signature(self):
+        self.write({
+            'signature': self.signature
+        })
         if self.pos_order_id:
-            self.pos_order_id.x_signature = self.signature
+            self.pos_order_id.write({
+                'x_signature': self.signature
+            })
         return self._action_done()
 
 

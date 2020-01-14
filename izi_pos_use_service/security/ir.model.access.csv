@@ -9,3 +9,4 @@ access_izi_pos_use_service7,izi_pos_use_service7,model_pos_material_request,stoc
 access_izi_pos_use_service8,izi_pos_use_service8,model_pos_material_request_line,stock.group_stock_user,1,1,1,1
 access_izi_pos_use_service9,izi_pos_use_service9,model_pos_material_request_lot_line,stock.group_stock_user,1,1,1,1
 access_izi_pos_use_service10,izi_pos_use_service10,model_pos_material_request_lot_line,point_of_sale.group_pos_user,1,1,1,1
+access_izi_pos_use_service11,izi_pos_use_service11,model_pos_use_service,stock.group_stock_user,1,1,0,0

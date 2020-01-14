@@ -4,6 +4,7 @@ from datetime import datetime, timedelta
 
 from odoo import fields, models, api, _
 from odoo.exceptions import except_orm
+from dateutil.relativedelta import relativedelta
 
 
 class PosUseService(models.Model):
@@ -29,7 +30,7 @@ class PosUseService(models.Model):
 
     name = fields.Char("Name", default='/')
     serial_code = fields.Char("Serial Code", track_visibility='onchange')
-    date = fields.Datetime("Date", default=fields.Datetime.now, track_visibility='onchange')
+    date = fields.Datetime("Date", default=fields.Datetime.now() + relativedelta(hours=-7), track_visibility='onchange')
     partner_id = fields.Many2one('res.partner', "Partner", track_visibility='onchange')
     pricelist_id = fields.Many2one('product.pricelist', "Pricelist", track_visibility='onchange', default=_default_pricelist)
     state = fields.Selection([('draft', "Draft"), ('wait_payment', "Wait Payment"), ('wait_material', "Wait Material"),

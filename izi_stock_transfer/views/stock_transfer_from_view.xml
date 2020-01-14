@@ -35,7 +35,7 @@
                         <button name="action_back" states="ready" type="object" string="Back"/>
                         <button name="action_cancel" states="ready,not_available"
                                 string="Cancel" groups="stock.group_stock_manager" type="object"/>
-                        <button name="action_print" states="done" string="In" type="object"/>
+                        <button name="action_print" states="done" string="In báo cáo" type="object"/>
                         <field name="state" widget="statusbar" statusbar_visible="draft,ready,done"
                                readonly="1"/>
                     </header>

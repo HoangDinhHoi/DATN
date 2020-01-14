@@ -88,9 +88,9 @@
                                                 <th class="text-center" width="10%" style="padding:1px; margin: 1px;">
                                                     <p style="padding:1px; margin: 1px;">Mã hàng</p>
                                                 </th>
-                                                <th class="text-center" width="8%" style="padding:1px; margin: 1px;">
-                                                    <p style="padding:1px; margin: 1px;">APN</p>
-                                                </th>
+<!--                                                <th class="text-center" width="8%" style="padding:1px; margin: 1px;">-->
+<!--                                                    <p style="padding:1px; margin: 1px;">APN</p>-->
+<!--                                                </th>-->
                                                 <th class="text-center" width="32%" style="padding:1px; margin: 1px;">
                                                     <p style="padding:1px; margin: 1px;">Tên hàng</p>
                                                 </th>
@@ -113,7 +113,7 @@
                                                     <td>
                                                         <t t-esc="i.product_id.default_code"/>
                                                     </td>
-                                                    <td class="text-center"></td>
+<!--                                                    <td class="text-center"></td>-->
                                                     <td>
                                                         <t t-esc="i.product_id.name"/>
                                                     </td>
@@ -156,7 +156,7 @@
                                                     <td>
                                                         <t t-esc="i.product_id.default_code"/>
                                                     </td>
-                                                    <td class="text-center"></td>
+<!--                                                    <td class="text-center"></td>-->
                                                     <td>
                                                         <t t-esc="i.product_id.name"/>
                                                     </td>
@@ -197,9 +197,9 @@
                                                 </t>
 
                                             </p>
-                                            <p style="margin: 0;padding: 0;">Điểm được thêm:
-                                                <span t-esc="'{0:,.0f}'.format(o.x_revenue).replace(',', '.')"/>
-                                            </p>
+<!--                                            <p style="margin: 0;padding: 0;">Điểm được thêm:-->
+<!--                                                <span t-esc="'{0:,.0f}'.format(o.x_revenue).replace(',', '.')"/>-->
+<!--                                            </p>-->
                                         </div>
                                         <div style="width: 45%; float: left;">
                                             <table style="width: 100%;">
@@ -304,6 +304,7 @@
                                             <td>
                                                 <b>Người mua hàng</b>
                                                 <p style="font-style:italic">(Ký, họ tên)</p>
+                                                <img t-att-src="image_data_uri(o.x_signature)" style="width:100px;height:100px;" class="img"/>
                                             </td>
                                         </tr>
                                     </table>
@@ -330,15 +331,15 @@
         </record>
 
         <report
-                string="Print Bill"
-                id="action_report_bill"
-                model="pos.order"
-                report_type="qweb-pdf"
-                name="izi_pos_report.pos_report_bill"
-                file="izi_pos_report.pos_report_bill"
-                print_report_name="'Bill - %s - %s' % (object.partner_id.name or '', object.name)"
-                paperformat="izi_pos_report.paperformat_qweb_pos_report_bill"
-                menu="False"
+            string="Print Bill"
+            id="action_report_bill"
+            model="pos.order"
+            report_type="qweb-pdf"
+            name="izi_pos_report.pos_report_bill"
+            file="izi_pos_report.pos_report_bill"
+            print_report_name="'Bill - %s - %s' % (object.partner_id.name or '', object.name)"
+            paperformat="izi_pos_report.paperformat_qweb_pos_report_bill"
+            menu="False"
         />
     </data>
 </odoo>

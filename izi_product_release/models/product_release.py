@@ -3,7 +3,6 @@
 # author: HoiHD
 from odoo import fields, models, api, _
 from odoo.exceptions import except_orm, ValidationError, AccessDenied
-from datetime import date, datetime
 
 
 class ProductRelease(models.Model):
@@ -48,12 +47,13 @@ class ProductRelease(models.Model):
     picking_ids = fields.One2many('stock.picking', 'x_product_release_id', string='Stock Picking')
     count_picking = fields.Integer(string=_('Transfers'), readonly=True,
                                    store=True, compute='_compute_count_picking', default=0)
-    # them field ref de tham chieu tu ban 8 sang: HoiHD
     reference = fields.Char(string=_('Reference'))
-    #end
 
     @api.onchange('release_location_id')
     def _onchange_release_location(self):
+        """
+        :return: mặc định kho phát hành là kho nhận
+        """
         if self.release_location_id:
             self.location_id = self.release_location_id
 
@@ -67,6 +67,7 @@ class ProductRelease(models.Model):
     # Tạo mã cho đợt phát hành
     @api.model
     def create(self, vals):
+        # Chỉ có quản trị viên mới được phát hành thẻ
         is_superuser = self.env.user.has_group('base.group_system')
         if not is_superuser:
             raise AccessDenied("Bạn không có quyền tạo đợt phát hành thẻ dịch vụ!")
@@ -100,7 +101,6 @@ class ProductRelease(models.Model):
             self.validity = 0
 
     # Kiểm tra số tháng hiệu lực của thẻ, phải lớn hơn 0
-    # added by HoiHD on 13:03, 10/05/2019.
     @api.constrains('card_id', 'expired_type', 'validity')
     def _check_validity(self):
         if self.card_id.x_card_type == 'voucher':  # added By HoiHD: Chỉ bắt > 0 khi thẻ là coupon và voucher
@@ -143,7 +143,7 @@ class ProductRelease(models.Model):
                 if line.branch_id.code:
                     line.preview_prefix_code = prefix + release_reason_code + receive_unit_code + str(line.date.year)[2:] + (str(month) if month > 10 else '0' + str(month)) + 'x x x x x x'
                 else:
-                    raise except_orm(_('Attention!!!'), _("Đơn vị nhận không có mã."))
+                    raise except_orm(_('Thông báo'), _("Đơn vị nhận không có mã."))
 
     # Hiển thị tiền tố của mã
     @api.onchange('release_reason_id', 'branch_id', 'blank_card_id', 'date', 'card_id')
@@ -162,7 +162,7 @@ class ProductRelease(models.Model):
                 if line.branch_id.code:
                     line.preview_prefix_code = prefix + release_reason_code + receive_unit_code + str(line.date.year)[2:] + (str(month) if month > 10 else '0' + str(month)) + 'x x x x x x'
                 else:
-                    raise except_orm(_('Attention!!!'), _("Receive Unit don't have code."))
+                    raise except_orm(_('Thông báo'), _("Receive Unit don't have code."))
 
     # Kiểm tra số lượng phôi nhập vào
     @api.onchange('quantity')

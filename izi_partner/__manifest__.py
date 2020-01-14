@@ -28,8 +28,4 @@
         'data/sequence.xml',
         # 'security/partner_security.xml',#tạm thời tắt đi
     ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
 }

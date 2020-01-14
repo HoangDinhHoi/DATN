@@ -43,21 +43,19 @@
                                context="{'search_default_customer':1, 'form_view_ref':'izi_partner.customer_form_view_ref', 'limit_company': 1}"
                                attrs="{'readonly':[('state','not in',('new'))]}"/>
                         <h2>
-                            <field name="customer_id" options="{'no_create': 1, 'no_create_edit': 1, 'no_open': True}"
+                            <field name="customer_id"
+                                   options="{'no_create': 1, 'no_create_edit': 1, 'no_open': True}"
                                    context="{'search_default_customer':1, 'form_view_ref':'izi_partner.customer_form_view_ref', 'limit_company': 1}"
-                                   attrs="{'readonly':[('state','not in',('new'))]}"/>
+                                   attrs="{'readonly':[('state','not in',('new'))], 'required': 1}"/>
                         </h2>
                         <group>
                             <group>
-                                <field name="branch_id"
-                                       options="{'no_create': 1, 'no_create_edit': 1, 'no_open': True}"
-                                       attrs="{'readonly':[('state','not in',('new'))]}"/>
-                                <field name="team_id" required="1" force_save="1"
-                                       attrs="{'readonly':[('state','not in',('new'))]}"/>
-                                <field name="company_id" invisible="1" force_save="1"
-                                       attrs="{'readonly':[('state','not in',('new'))]}"/>
-                                <field name="user_id" required="1" force_save="1"
-                                       attrs="{'readonly':[('state','not in',('new'))]}"/>
+                                <field name="company_id" invisible="1" force_save="1"/>
+                                <field name="team_id" invisible="1"/>
+                                <field name="time_from" attrs="{'readonly':[('state','not in',('new', 'confirmed'))]}"
+                                       required="1"/>
+                                <field name="time_to" attrs="{'readonly':[('state','not in',('new', 'confirmed'))]}"
+                                       required="1"/>
                             </group>
                             <group>
                                 <field name="contact_number" attrs="{'readonly':[('state','not in',('new'))]}"/>
@@ -66,19 +64,13 @@
                         </group>
                         <group>
                             <group>
-                                <field name="time_from" attrs="{'readonly':[('state','not in',('new', 'confirmed'))]}"
-                                       required="1"/>
-                                <field name="time_to" attrs="{'readonly':[('state','not in',('new', 'confirmed'))]}"
-                                       required="1"/>
-<!--                                <field name="is_create_event" attrs="{'readonly':[('state','not in',('new'))]}"/>-->
-                            </group>
-                            <group>
-                                <field name="note" attrs="{'readonly':[('state','not in',('new'))]}"/>
-<!--                                <field name="ref_sale_order_id" readonly="1"/>-->
                                 <field name="ref_order_id" readonly="1"/>
                                 <field name="use_service_id" readonly="1" attrs="{'invisible': [('type', '=', 'meeting')]}"/>
                                 <field name="reason_no_sale" readonly="1"
-                                       attrs="{'invisible': [('state', '!=', 'no_sale')]}"/>
+                                   attrs="{'invisible': [('state', '!=', 'no_sale')]}"/>
+                            </group>
+                            <group>
+                                <field name="note" attrs="{'readonly':[('state','not in',('new'))]}"/>
                             </group>
                         </group>
                         <notebook>
@@ -89,7 +81,8 @@
                                     <tree editable="bottom">
                                         <field name="default_code"/>
                                         <field name="name"/>
-                                        <field name="x_duration" widget="float_time" sum="Total duration" string="Thời lượng"/>
+                                        <field name="x_duration" widget="float_time"
+                                               sum="Total duration" string="Thời lượng"/>
                                     </tree>
                                 </field>
                             </page>

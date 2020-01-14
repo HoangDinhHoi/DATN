@@ -11,6 +11,7 @@ class ProductReleaseInherit(models.Model):
     _inherit = 'product.release'
 
     def _get_inventory(self, product_id, location_id):
+        # Lấy số lượng tồn kho của 1 sản phẩm tại 1 địa điểm cho sẵn
         total_availability = self.env['stock.quant']._get_available_quantity(product_id, location_id)
         return total_availability
 
@@ -68,7 +69,7 @@ class ProductReleaseInherit(models.Model):
                 'x_extend_date': False,
                 'x_customer_id': False,
                 'x_use_customer_id': False,
-                'x_branch_id': self.location_id.branch_id.id,  # mới thêm
+                'x_branch_id': self.location_id.branch_id.id,
             }
             list_production.append(vals)
         self.stock_production_lot_ids = list_production

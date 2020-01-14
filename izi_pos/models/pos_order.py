@@ -17,7 +17,7 @@ class PosOrder(models.Model):
     x_revenue = fields.Float("Revenue")
     x_team_id = fields.Many2one('crm.team', "Team", default=_default_team)
     x_type = fields.Selection([('pos', "Pos"), ('service', "Service")], default='pos')
-    state = fields.Selection(selection_add=[('confirm', 'Confirm'),('wait_confirm', 'Wait Confirm')])
+    state = fields.Selection(selection_add=[('confirm', 'Confirm'), ('wait_confirm', 'Wait Confirm')])
 
     amount_paid = fields.Float(string='Paid', states={'draft': [('readonly', False)]},
                                readonly=True, digits=0, default=0)

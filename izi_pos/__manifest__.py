@@ -32,8 +32,4 @@
         'security/pos_security.xml',
         'views/inherit_utm_and_jouranl_view.xml',
     ],
-    # only loaded in demonstration mode
-    'demo': [
-        'demo/demo.xml',
-    ],
 }
